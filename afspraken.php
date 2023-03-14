@@ -9,9 +9,9 @@
 <body>
     <?php
     $date = date("y-m-d");
-    $dag = date('F');
+    $dag = date("d");
+    $maand = date('F');
     $jaar = date('y');
-    echo $jaar;
     $newDate = date('l', strtotime($date));
     $translate = array( 
         "Monday"=>"Maandag",
@@ -21,17 +21,23 @@
         "Friday"=>"Vrijdag",
         "Saturday"=>"Zaterdag",
         "Sunday"=>"Zondag",
-<<<<<<< Updated upstream
         "January"=>"Januari",
         "February"=>"Februari",
         "March"=>"Maart",
         "April"=>"April",
-=======
->>>>>>> Stashed changes
+        "May"=>"Mei",
+        "June"=>"Juni",
+        "Jule"=>"Julie",
+        "August"=>"Augustus",
+        "September"=>"September",
+        "October"=>"October",
+        "November"=>"November",
+        "December"=>"December",
+
     );
   
 
-    echo $translate[$newDate];
+    echo $translate[$newDate]." ".$dag." ".$translate[$maand];
 
   
     ?>
