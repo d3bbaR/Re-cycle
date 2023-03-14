@@ -25,20 +25,22 @@ foreach ( query($account) as $user ) {
     #code
     if (password_verify($un,$user["username"]) && password_verify($pw,$user["pw"]) ) {
         //session variabelen aanmaaken bij een hit (pw en un is hetzelfde)
-        echo "succeded";
-        /*$_SESSION["pk"] = $user["pk_account"];
-        $_SESSION["klantid"] = $user["fk_klanten"];
-        $_SESSION["username"] = $username;
-        $_SESSION["password"] = $password;
-        $_SESSION["rol"] = $user["fk_rol_account"];*/
+        $_SESSION["rol"] = $user["FK_rol"];
+        $_SESSION["klantid"] = $user["FK_klant"];
+        $select = "SELECT * from klant where PK =".$user["FK_klant"];
+        foreach (query($select) as $dat)
+        $_SESSION["naam"] = $dat["naam"];
+        $_SESSION["familienaam"] = $dat["familienaam"];
+        $_SESSION["email"] = $dat["email"];
+        $_SESSION["telefoon"] = $dat["telefoon"];
       
        
-        //header("Location:login.php");
+        header("Location:login.php");
         break;
         }
     else{
-        echo ",iks";
-        //header("Location:login.php?bad=1"); 
+        
+        header("Location:login.php?bad=1"); 
     }
     }
         
