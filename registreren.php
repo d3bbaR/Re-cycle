@@ -69,11 +69,11 @@
             <span></span>
          </div>
          <div class="registratietxt">
-            <input placeholder="Wachtwoord" name="paswoord" type="text" required>
+            <input placeholder="Wachtwoord" name="paswoord" type="password" required>
             <span></span>
          </div>
          <div class="registratietxt">
-            <input placeholder="Herhaal Wachtwoord" name="paswoord2" type="text" required>
+            <input placeholder="Herhaal Wachtwoord" name="paswoord2" type="password" required>
             <span></span>
          </div>
          <input type="submit" value="Registreer">
