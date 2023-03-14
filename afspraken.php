@@ -21,10 +21,13 @@
         "Friday"=>"Vrijdag",
         "Saturday"=>"Zaterdag",
         "Sunday"=>"Zondag",
+<<<<<<< Updated upstream
         "January"=>"Januari",
         "February"=>"Februari",
         "March"=>"Maart",
         "April"=>"April",
+=======
+>>>>>>> Stashed changes
     );
   
 
