@@ -45,16 +45,41 @@
             </div>
         </section>
     </header>
-    <form action="PHP/C/account.php" method ="post">
-        <input type="text" name="naam" placeholder="naam">
-        <input type="text" name="familienaam" placeholder="familienaam">
-        <input type="email" name="email" placeholder="e-mail">
-        <input type="text" name="telefoon" placeholder="telefoonnummer">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="paswoord">
-        <input type="password" name="password2" placeholder="herhaal paswoord">
-        <button type="submit">Registreer</button>
-    </form>
+    <div class="registratiecontainer">
+      <h1>Geen Account? Registreer NU!</h1>
+      <form action="">
+         <div class="registratietxt">
+            <input placeholder="Voornaam" name="naam" type="text" required>
+            <span></span>
+         </div>
+         <div class="registratietxt">
+            <input placeholder="Achternaam" name="familienaam" type="text" required>
+            <span></span>
+         </div>
+         <div class="registratietxt">
+            <input placeholder="Email" name="email" type="email" required>
+            <span></span>
+         </div>
+         <div class="registratietxt">
+            <input placeholder="Telefoonnummer" name="telefoon" type="number" required>
+            <span></span>
+         </div>
+         <div class="registratietxt">
+            <input placeholder="Gebruikersnaam" name="username" type="text" required>
+            <span></span>
+         </div>
+         <div class="registratietxt">
+            <input placeholder="Wachtwoord" name="paswoord" type="text" required>
+            <span></span>
+         </div>
+         <div class="registratietxt">
+            <input placeholder="Herhaal Wachtwoord" name="paswoord2" type="text" required>
+            <span></span>
+         </div>
+         <input type="submit" value="Registreer">
+
+      </form>
+   </div>
     <?php
     if (isset($_GET["bad"])){
         echo "<p style='color:red'>Je wachtwoord is niet hetzelfde, probeer opnieuw</p>";
