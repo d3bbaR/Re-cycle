@@ -494,6 +494,7 @@ input[type="submit"] {
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -521,6 +522,8 @@ input[type="submit"] {
 
 
 
+=======
+>>>>>>> 34600a537faf546a495e7a8f9a0545f42ce412fc
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
@@ -615,6 +618,9 @@ ul{
     width: 100%;
 }
 }
+<<<<<<< HEAD
 
 /*-----------------------------REGISTER--------------/*
 >>>>>>> ab972536308a8e8d957a496b6c07bf41a9a19a0d
+=======
+>>>>>>> 34600a537faf546a495e7a8f9a0545f42ce412fc
