@@ -47,7 +47,7 @@
     </header>
     <div class="registratiecontainer">
       <h1>Geen Account? Registreer NU!</h1>
-      <form action="">
+      <form action="PHP/C/account.php" method ="post">
          <div class="registratietxt">
             <input placeholder="Voornaam" name="naam" type="text" required>
             <span></span>
