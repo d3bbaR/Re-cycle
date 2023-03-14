@@ -31,11 +31,11 @@
        
     ;
        
-       echo "</br></br></br><div class='driekol'>";
+       echo "</br></br></br><div class=''>";
        foreach ($folder as $file){
         if(substr($file ,-4 ) == '.php'){
             $filename = substr($file, 0, -4);
-            if ($translate[$filename] != "ignore"){
+            if ([$filename] != "ignore"){
             echo"<a href='PHP/R/$file'><button>".$filename."</button></a>";
             }
         }
