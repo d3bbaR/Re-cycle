@@ -17,18 +17,10 @@
 </body>
 </html>
 <?php
+include "../functions.php";
 foreach (query($account_sort) as $dat) {
-    if($dat["visible"] == 1) {
-        echo "<div class='tb'><p>pk:".$dat["PK"]."; 
-        <form action='../E/tekst.php' method='post'> <button name ='edit' value='".$dat["PK"]."'><i class='fa fa-pencil'></i></button></form>".
-        "<form action='../D/tekst.php' method='post'> <button name ='delete' value='".$dat["PK"]."'><i class='fa fa-trash'></i></button></form><i class = 'fa fa-eye'></i></div>";
-    }
-    else{
-        echo "<div class='tb'><p>tekst:".$dat["tekst"]."</p> 
-        <form action='../E/tekst.php' method='post'> <button name ='edit' value='".$dat["PK"]."'><i class='fa fa-pencil'></i></button></form>".
-        "<form action='../D/tekst.php' method='post'> <button name ='delete' value='".$dat["PK"]."'><i class='fa fa-trash'></i></button></form><i class = 'fa fa-eye-slash'></i></div>";
-    }
 
+        echo "<div class='tb'><p>pk:".$dat["PK"].""; 
 }
 ?>
 </table>

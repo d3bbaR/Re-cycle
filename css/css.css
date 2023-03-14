@@ -120,7 +120,7 @@ nav ul li ul li a {
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Mobile navigation */
+/*----------------------------------- Mobile navigation -------------------*/
 .nav-mobile {
   display: none;
   position: absolute;
@@ -369,12 +369,12 @@ a {
 }
 
 
-/*--------------------------- Login ------------- */
+/*-------------------------------------------- LOGIN-------------------------- */
 
 .container {
   margin: 0;
   padding: 0;
-  background: linear-gradient(120deg, #56B40C, #0000);
+  background: linear-gradient(120deg, #94ec5b, #b4e8b0);
   width: 100vw;
   height: 91.2vh;
   overflow: hidden;
@@ -494,6 +494,7 @@ input[type="submit"] {
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -615,3 +616,6 @@ ul{
     width: 100%;
 }
 }
+=======
+/*-----------------------------REGISTER--------------/*
+>>>>>>> ab972536308a8e8d957a496b6c07bf41a9a19a0d
