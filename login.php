@@ -58,7 +58,7 @@ session_start();
             <p>account email:"." ".$_SESSION["email"]." </p>
             <p>account telefoon:"." ".$_SESSION["telefoon"]." </p>";
         ?>
-        <form method="post" action="loginfunction.php">
+        <form method="post" action="logout.php">
         <input type="submit" value="logout">
         </form>
         </div>
