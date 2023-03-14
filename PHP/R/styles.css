@@ -1,0 +1,18 @@
+.tb{
+    display: grid;
+    max-width: 700px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+
+.tb i{
+    margin-top: 15px;
+}
+
+.tb button{
+    margin-top: 15px;
+}
+
+.tb button i{
+    margin-top: 0;
+}
