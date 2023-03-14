@@ -16,15 +16,12 @@ $password1 = $_POST["password"];
     //variabelen opvangen
     $un = $_POST["username"];
     $pw = $_POST["password"];
-    $username = password_hash($un,2);
-    $password = password_hash($pw,1);
-   
-    
-
 foreach ( query($account) as $user ) {
     #code
+    
     if (password_verify($un,$user["username"]) && password_verify($pw,$user["pw"]) ) {
         //session variabelen aanmaaken bij een hit (pw en un is hetzelfde)
+        echo "succesvol";
         $_SESSION["rol"] = $user["FK_rol"];
         $_SESSION["klantid"] = $user["FK_klant"];
         $select = "SELECT * from klant where PK =".$user["FK_klant"];
@@ -35,12 +32,11 @@ foreach ( query($account) as $user ) {
         $_SESSION["telefoon"] = $dat["telefoon"];
       
        
-        header("Location:login.php");
+       header("Location:login.php");
         break;
         }
     else{
-        
-        header("Location:login.php?bad=1"); 
+        header("Location:login.php?bad=1");
     }
     }
         
