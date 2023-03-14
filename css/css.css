@@ -93,7 +93,7 @@ nav ul li a:visited {
 nav ul li a:hover,
 nav ul li a:visited:hover {
   background:
-    #9d8b85;
+    #53b408;
   color: black;
   transition-duration: 1.5s;
 }
@@ -279,7 +279,7 @@ a {
 
 
 .overons {
-  background-color: rgb(236, 228, 228);
+  background-color: #ffffff;
   padding-bottom: 2vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -494,12 +494,11 @@ input[type="submit"] {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
+
 body {
   line-height: 1.5;
   font-family: 'Poppins', sans-serif;
-=======
-<<<<<<< HEAD
+}
 
 
 
@@ -527,12 +526,10 @@ body {
 
 
 
-=======
->>>>>>> 34600a537faf546a495e7a8f9a0545f42ce412fc
+
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
->>>>>>> ff950f9e96aad4036fa7030ccaa321d183f7f793
 }
 
 * {
@@ -645,7 +642,7 @@ body {
   background: linear-gradient(120deg, #94ec5b, #b4e8b0);
   height: 100vh;
 }
-<<<<<<< HEAD
+
 
 .registratiecontainer {
   position: absolute;
@@ -724,11 +721,16 @@ input[type="submit"]:hover {
   border-color: #2691d9;
   transition: .5s;
 }
-=======
-<<<<<<< HEAD
 
-/*-----------------------------REGISTER--------------/*
->>>>>>> ab972536308a8e8d957a496b6c07bf41a9a19a0d
-=======
->>>>>>> 34600a537faf546a495e7a8f9a0545f42ce412fc
->>>>>>> ff950f9e96aad4036fa7030ccaa321d183f7f793
+
+
+
+
+
+
+
+
+
+
+
+
