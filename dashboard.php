@@ -8,6 +8,10 @@
 </head>
 <body>
 <?php
+session_start();
+if ($_SESSION["rol"] != 1){
+    header("Location:index.php");
+}
        $folder = scandir('PHP/R');
        echo print_r($folder);
        /*$translate = array( 
