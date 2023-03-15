@@ -37,7 +37,7 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="#">Afspraken</a>
+                            <a href="afspraken.php">Afspraken</a>
                         </li>
                         <li>
                             <a href="#">Nieuw</a>
@@ -82,7 +82,7 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="#">Afspraken</a>
+                            <a href="afspraken.php">Afspraken</a>
                         </li>
                         <li>
                             <a href="#">Nieuw</a>

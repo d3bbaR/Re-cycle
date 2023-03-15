@@ -1,13 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://use.fontawesome.com/1a4d35d4d9.js"></script>
+    <title>Re-cycle</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="css/css.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/agenda.css">
-    <title>Afspraken</title>
 </head>
+
 <body>
+    <?php
+    session_start();
+    if(isset($_SESSION["naam"])){
+        if ($_SESSION["rol"] == 1){
+    ?>
+    <header>
+        <section class="navigation">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
+                </div>
+                <nav>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="afspraken.php">Afspraken</a>
+                        </li>
+                        <li>
+                            <a href="#">Nieuw</a>
+                        </li>
+                        <li>
+                            <a href="#">Cadeau ideeën</a>
+                        </li>
+                        <li>
+                            <a href="#">Fietsen</a>
+                        </li>
+                        <li>
+                            <a href="#">More</a>
+                        </li>
+                        <li>
+                            <a href="dashboard.php">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </header>
+            <?php
+        }
+    }
+        else {
+    
+            ?>
+
+    <header>
+        <section class="navigation">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
+                </div>
+                <nav>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="afspraken.php">Afspraken</a>
+                        </li>
+                        <li>
+                            <a href="#">Nieuw</a>
+                        </li>
+                        <li>
+                            <a href="#">Cadeau ideeën</a>
+                        </li>
+                        <li>
+                            <a href="#">Fietsen</a>
+                        </li>
+                        <li>
+                            <a href="#">More</a>
+                        </li>
+                        <li>
+                            <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </header>
+    <?php
+        }
+    ?>
     <?php
     $date = date("Y-m-d");
     $dag = date("d");
