@@ -10,6 +10,9 @@
 .naam {
     border: 1px solid #000;
     padding: 3px 3px;
+    width: 27px;
+    max-width: 27px;
+    max-height: 27px;
 }
 
 .tabel {
@@ -29,6 +32,7 @@
 
 .dag {
     border: 1px solid #000;
-    width: 20px;
+    width: 27px;
+    height: 27px;
     text-align: center;
 }
