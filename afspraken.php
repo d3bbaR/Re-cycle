@@ -177,10 +177,18 @@
     echo "<div class='dagen'>";
     //for each lus pusht alle dagen in de array naar de kalender
     $y = 0; 
+    $y = 0; 
     foreach ($dagenvoorkalender as $day ) {
         if ($y < 7){
-            echo "<div class='dag'>".$trans[$day]."</div>";
-            $y += 1;
+            if ($y == 3){
+                echo "<div class='donderdag'>".$trans[$day]."</div>";
+                $y +=1;
+            }
+            else{
+                echo "<div class='dag'>".$trans[$day]."</div>";
+                $y += 1;
+        
+            }
         }
         else{
             echo"</div><div class='dagen'>";
@@ -188,6 +196,7 @@
             $y = 1;
         }
     }
+
     echo "</div>";
     echo "</div>";
     ?>
