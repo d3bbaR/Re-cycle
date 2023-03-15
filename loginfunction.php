@@ -1,6 +1,6 @@
 <?php
+include "/PHP/conn.php";
 include "PHP/functions.php";
-include "PHP/conn.php";
 //sessions gebruiken
 session_start();
 
@@ -12,6 +12,11 @@ $password1 = $_POST["password"];
 
 //als Post van "username" wordt gevraagt --> login functie uitvoeren.
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 
     //variabelen opvangen
     $un = $_POST["username"];
@@ -21,9 +26,15 @@ $password1 = $_POST["password"];
    
     
 
+<<<<<<< Updated upstream
 foreach ( query($account) as $user ) {
     #code
     if (password_verify($un,$user["username"]) && password_verify($pw,$user["pw"]) ) {
+=======
+    echo "ik ben hier";
+    #code
+    if (password_verify($un,$user["username"]) = 1 && password_verify($pw,$user["pw"])) = 1 {
+>>>>>>> Stashed changes
         //session variabelen aanmaaken bij een hit (pw en un is hetzelfde)
         $_SESSION["rol"] = $user["FK_rol"];
         $_SESSION["klantid"] = $user["FK_klant"];
@@ -39,10 +50,15 @@ foreach ( query($account) as $user ) {
         break;
         }
     else{
+<<<<<<< Updated upstream
         
         header("Location:login.php?bad=1"); 
+=======
+        echo "u suck";
+        //header("Location:login.php?bad=1"); 
+>>>>>>> Stashed changes
     }
-    }
+    
         
 
 
