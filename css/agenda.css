@@ -16,3 +16,18 @@
     height: 300px;
     width: 300px;
 }
+
+.dagen {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.dag {
+    border: 1px solid #000;
+    width: 20px;
+    text-align: center;
+}
