@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -9,9 +10,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://use.fontawesome.com/1a4d35d4d9.js"></script>
     <title>Re-cycle</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/extra.css">
-    <link  rel="stylesheet"  href="css/css.css"/>
+    <link href="css/css.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/extra.css">
     <link rel="stylesheet" href="css/agenda.css">
 </head>
 <body>
@@ -27,7 +35,7 @@
                     <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
                 </div>
                 <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <div class="nav-mobile"><a id="nav-toggle"  href="#!"><span></span></a></div>
                     <ul class="nav-list">
                         <li>
                             <a href="index.php">Home</a>
@@ -72,7 +80,7 @@
                     <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
                 </div>
                 <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <div class="nav-mobile"><a id="nav-toggle"  href="#!"><span></span></a></div>
                     <ul class="nav-list">
                         <li>
                             <a href="index.php">Home</a>
@@ -296,5 +304,8 @@
     echo "</div>";
     ?>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html> 
