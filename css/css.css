@@ -388,7 +388,6 @@ a {
   width: 50vw;
   background-color: white;
   border-radius: 10px;
-  ;
 }
 
 .login h1 {
@@ -608,12 +607,12 @@ body {
 
 .registratiecontainer {
   position: absolute;
-  top: 59%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 10px;
-  height: 65%;
+  height: 100vh;
   width: 50%;
 }
 
@@ -682,4 +681,11 @@ input[type="submit"] {
 input[type="submit"]:hover {
   border-color: #2691d9;
   transition: .5s;
+}
+/*Responsive van Registratie form*/
+@media only screen and (max-width:400) {
+  .registratiecontainer{
+    position: absolute;
+    top: 0;
+  }
 }
