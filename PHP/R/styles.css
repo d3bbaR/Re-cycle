@@ -16,6 +16,7 @@
 .tb button i{
     margin-top: 0;
 }
+
 .footcontainer{
     background-color: green;
     margin: 0;
@@ -44,3 +45,33 @@
     padding: 0 40px;
     box-sizing: border-box;
   }
+/*ETHAN VOORSTEL*/
+.footercontainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.tb{
+    border: 1px solid #adadad;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background: linear-gradient(120deg, #94ec5b, #b4e8b0);
+}
+.tb p{
+    border: 1px solid #adadad;
+}
+
+/*DASHBOARD VOOR DE UREN*/
+.dashboarduren{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+

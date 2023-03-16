@@ -93,7 +93,7 @@ nav ul li a:visited {
 nav ul li a:hover,
 nav ul li a:visited:hover {
   background:
-    #9d8b85;
+    #53b408;
   color: black;
   transition-duration: 1.5s;
 }
@@ -279,7 +279,7 @@ a {
 
 
 .overons {
-  background-color: rgb(236, 228, 228);
+  background-color: #ffffff;
   padding-bottom: 2vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -499,6 +499,44 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .containerf {
   max-width: 1170px;
   margin: auto;
@@ -689,3 +727,191 @@ input[type="submit"]:hover {
     top: 0;
   }
 }
+
+
+@media screen and (max-width: 480px){
+	.registratiecontainer{
+    font-size: 10px;
+  }
+  .registratietxt input{
+    height: 23px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 480px){
+	.registratiecontainer{
+    font-size: 15px;
+  }
+  .registratietxt input{
+    height: 25px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+	.registratiecontainer{
+    height: 70%;
+  }
+}
+
+@media screen and (min-width: 1280px){
+	.registratiecontainer{
+    height: 55%;
+  }
+}
+
+@media screen and (min-width: 280px) and (max-width:290px){
+	.registratiecontainer{
+    font-size: 8px;
+    height: 50%;
+  }
+  .registratietxt input{
+    height: 15px;
+    font-size: 5px;
+  }
+  input[type="submit"]{
+    height: 15px;
+    font-size: 8px;
+  }
+}
+
+@media screen and (min-height: 844px) and (max-height:1000px){
+	.registratiecontainer{
+    height: 50%;
+  }
+}
+
+@media screen and (min-height: 1024px) and (max-height:1028px){
+	.registratiecontainer{
+    height: 41%;
+  }
+}
+
+@media screen and (min-height: 1180px) and (max-height:1182px){
+	.registratiecontainer{
+    height: 37%;
+  }
+}
+@media screen and (min-height: 1368px) and (max-height:1370px){
+	.registratiecontainer{
+    height: 31%;
+  }
+}
+/*-----------------------------CONTACT-----------------------------*/
+
+.contactcontainer{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.contactcontainer:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url("../assets/contact_re-cycle.png") no-repeat center;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.contact{
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+
+.linkscontact{
+	background: url("../assets/contact_re-cycle.png") no-repeat center;
+	height: 100%;
+}
+
+.rechtscontact{
+	padding: 25px 40px;
+}
+
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+}
+
+h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #2ecc71;
+}
+
+.txtveld{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.txtveld:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.txtarea{
+	min-height: 150px;
+}
+
+.btncontainer{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btncontainer:hover{
+    background-color: #27ae60;
+}
+
+.txtveld:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+@media screen and (max-width: 880px){
+	.contact{
+		grid-template-columns: 1fr;
+	}
+	.linkscontact{
+		height: 200px;
+	}
+    .txtveld{
+        font-size: 12px;
+    }
+    h2{
+        font-size: 20px;
+    }
+}
+
