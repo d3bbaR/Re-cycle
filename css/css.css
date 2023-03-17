@@ -858,7 +858,6 @@ h2:after{
     height: 4px;
     width: 50px;
     border-radius: 2px;
-    background-color: #2ecc71;
 }
 
 .txtveld{
@@ -917,3 +916,266 @@ h2:after{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header2{
+     background: #364155;
+     height: 660px;
+     color: #fff;
+     overflow: hidden;
+}
+
+.header2 .container2 {
+  display: flex;
+}
+.header2 .container2 div {
+  width: 50%;
+}
+
+.header2 .first{
+  position: relative;
+  margin-top: 200px;
+}
+
+.header2 .first:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 10%;
+  width: 1px;
+  background: #53b408;
+
+}
+
+.header2 .first .box2{
+position: relative;
+width: 100%;
+padding-left: 80px;
+
+}
+
+.header2 .first .box2:before{
+content: '';
+position: absolute;
+left: 0;
+top: 10px;
+height: 98%;
+width: 1px;
+background: rgba(255, 255, 255, 0,38);
+
+}
+
+
+.header2 .first .box2 h2{
+  width: 90%;
+  font-size: 50px;
+  margin: 0;
+  margin-bottom: 10px;
+
+}
+
+.header2 .first .box2 p {
+  width: 90%;
+  margin-bottom: 17px;
+  line-height: 1.9;
+  
+}
+
+.header2 .first .box2 span{
+display: block;
+letter-spacing: 8px;
+font-size: 22px;
+margin-bottom: 40px;
+
+}
+
+.header2 .first a { 
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 0;
+  width: 20%;
+  text-align: center;
+  background: #53b408;
+  margin-right: 20px;
+  transition: 0.5s;
+  text-transform:uppercase;
+  margin-left: 80px;
+  min-width: 40%;
+  max-width: 0%;
+
+}
+
+.header2 .first a:hover{
+
+  background: #fff;
+  color:#364155 ;
+}
+
+.header2 .first a i {
+
+  margin-left: 5px;
+}
+
+.header2 .first .left i {
+display: block;
+margin-top: 15px;
+cursor: pointer;
+padding: 5px 0;
+
+}
+
+.header2 .first .left i:hover{
+
+color: #53b408;
+
+}
+
+.header2 .first .right{
+  width:85%;
+  float: left;
+  list-style: none;
+  position: absolute;
+  bottom: -20px;
+  padding: 0;
+  left: 7%;
+
+}
+
+.header2 .first .right li {
+  float: left;
+  padding: 5px;
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+.header2 .second {
+ position: relative;
+ margin-top: 120px;
+
+}
+
+.header2 .second .overlay{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+
+
+}
+
+.header2 .second .overlay .num{
+width: 100%;
+text-align: right;
+list-style: none;
+margin-top: 170px;
+}
+
+.header2 .second .overlay .num li{
+  padding: 5px;
+  font-size: 13px;
+  color: #fff;
+  margin-top: 20px;
+  opacity: 0.5;
+  }
+
+  .header2 .second .overlay .num li span{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: 3px;
+    border-radius: 50%;
+    background: #364155;
+    border: 1px solid #53b408;
+    }
+
+    .header2 .second .overlay .num .active2 span{
+      width: 9px;
+      height: 9px;
+      margin-left: 5px;
+      }
+
+    .header2 .second .overlay .num .active2{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    opacity: 1;
+      }
+  
+      .header2 .second .overlay .div{
+        margin-top: 170px;
+        width: 50%;
+        float: left;
+        }
+       
+   .header2 .second .overlay .left{
+          padding-left: 160px;
+          }     
+
+          .header2 .second .overlay .right{
+            text-align: right;
+            }
+
+.header2 .second .overlay .right i {
+   display: inline-block;
+   padding: 5px 17px;
+   background: rgba(255, 255, 255, 0.25);
+   cursor: pointer;
+
+}
+
+
+.header2 .second .overlay .right i:hover{
+  background: rgba(255, 255, 255, 0,38);
+  }
+
+  .header2 .second .overlay .right i:last-of-type{
+   margin-left: -5px;
+
+  }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

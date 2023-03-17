@@ -11,8 +11,14 @@
     <title>Re-cycle</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/extra.css">
-   
     <link href="css/css.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -104,6 +110,28 @@
     <?php
         }
     ?>
+
+<div class="header2">
+  <div class="container2">
+      <div class="first">
+        <div class=box2>
+        <h2>Re-cycle</h2>
+   </div>
+   <a href="cat.php">Zie meer fietsen <i class="fa fa-angle-right"></a></i>
+   <div class="left">
+    <i  class="fa fa-facebook"></i>
+    </div>
+    <div class="second">
+        <div class="overlay">
+          
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
     <div class="overons">
 
         <div class="p">
@@ -123,7 +151,7 @@
                 beschikbaar, kostenloze leen/vervangfiets bij grote herstelling.
             </p>
         </div>
-        <div class="img"><img class="imgoverons" src="assets/hd-wallpaper-1872682.jpg" alt="foto van een fiets"></div>
+        <div class="img"><img class="imgoverons" src="assets/b1.png" alt="foto van een fiets"></div>
     </div>
     <div class="containerservices">
 
