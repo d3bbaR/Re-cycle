@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/css.css">
 </head>
 
-<body>
+<body class="registratiebody">
 <header>
         <section class="navigation">
             <div class="nav-container">

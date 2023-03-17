@@ -17,18 +17,23 @@ include "../functions.php";
  <form class="item-1-dashboard" action="../C/footer.php" method ="post">
 
  <div class="gegdash">
+    <div class="centerdash">
     <h2>Openingsuren toevoegen</h2>
     <input type="text" name ="gegevens" placeholder ="naam dag" required>
     <input type="text" name = "uren" placeholder ="uren" required>
+</div>
     <br>
+    
     <button class ="btn" name="btn" type ="submit" value =1>Voeg toe</button>
     <br>
+<div class="centerdash">
 </form>
     <form action="../C/footer.php" method="post">
     <h2 >tekst toevoegen</h2>
     <input type="text" name="tekst" placeholder="tekst" required>
     <br>
     <button class ="btn" name="btn" type ="submit" value =2>Voeg toe</button>
+</div>
 </div>
 </form>
 </div>
