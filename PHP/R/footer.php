@@ -13,18 +13,31 @@ include "../functions.php";
 </head>
 <body>
 
- <form action="../C/footer.php" method ="post">
+    <div class="dashboardfooter">
+ <form class="item-1-dashboard" action="../C/footer.php" method ="post">
 
-    <label >Openingsuren toevoegen</label>
-    <input type="text" name ="gegevens" placeholder ="gegevens" required>
+ <div class="gegdash">
+    <h2>Openingsuren toevoegen</h2>
+    <input type="text" name ="gegevens" placeholder ="naam dag" required>
     <input type="text" name = "uren" placeholder ="uren" required>
-    <button class ="btn" type ="submit" value =1>Voeg toe</button>
+    <br>
+    <button class ="btn" name="btn" type ="submit" value =1>Voeg toe</button>
+    <br>
 </form>
-<form action="../C/footer.php" method = "post">
-    <label >tekst toevoegen</label>
+    <form action="../C/footer.php" method="post">
+    <h2 >tekst toevoegen</h2>
     <input type="text" name="tekst" placeholder="tekst" required>
-    <button class ="btn" type ="submit" value =2>Voeg toe</button>
+    <br>
+    <button class ="btn" name="btn" type ="submit" value =2>Voeg toe</button>
+</div>
 </form>
+</div>
+<div class="footercontainer">
+
+
+
+
+
 <?php
 foreach (query($footer_sort) as $dat) {
     if($dat["visible"] == 1) {
@@ -57,7 +70,7 @@ foreach (query($footer_sort) as $dat) {
    
 }
 ?>
-</table>
+</div>
 
 </body>
 </html>
