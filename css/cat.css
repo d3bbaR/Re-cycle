@@ -51,7 +51,7 @@ html {
   
   .brand a,
   .brand a:visited {
-    color: #ffffff;
+    color: #e0dede;
     text-decoration: none !important;
   }
   
@@ -183,7 +183,7 @@ html {
     border-radius: 1px;
     height: 5px;
     width: 35px;
-    background: #ffffff;
+    background: #e0dede;
     position: absolute;
     display: block;
     content: "";
