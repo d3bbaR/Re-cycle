@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -10,20 +9,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://use.fontawesome.com/1a4d35d4d9.js"></script>
     <title>Re-cycle</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/extra.css">
-    <link href="css/css.css" rel="stylesheet" />
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="css/extra.css">
-    <link rel="stylesheet" href="css/agenda.css">
-</head>
+    <link  rel="stylesheet"  href="css/css.css"/>
+    <link rel="stylesheet" href="css/agend.css"/>
 <body>
     <?php
+    include "PHP/functions.php";
+    include "PHP/conn.php";
     session_start();
     if(isset($_SESSION["naam"])){
         if ($_SESSION["rol"] == 1){
@@ -35,7 +28,7 @@
                     <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
                 </div>
                 <nav>
-                    <div class="nav-mobile"><a id="nav-toggle"  href="#!"><span></span></a></div>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                     <ul class="nav-list">
                         <li>
                             <a href="index.php">Home</a>
@@ -80,7 +73,7 @@
                     <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
                 </div>
                 <nav>
-                    <div class="nav-mobile"><a id="nav-toggle"  href="#!"><span></span></a></div>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                     <ul class="nav-list">
                         <li>
                             <a href="index.php">Home</a>
@@ -132,10 +125,10 @@
         "April"=>"April",
         "May"=>"Mei",
         "June"=>"Juni",
-        "Jule"=>"Julie",
+        "July"=>"Juli",
         "August"=>"Augustus",
         "September"=>"September",
-        "October"=>"October",
+        "October"=>"Oktober",
         "November"=>"November",
         "December"=>"December",
 
@@ -270,6 +263,89 @@
         "30"=>"30",
         "31"=>"31",
     )   ;
+    switch ($translate[$naamedag]) {
+        case 'Maandag':
+            $ervoor = 0;
+            break;
+        case 'Dinsdag':
+            $ervoor = 1;
+            break;
+        case 'Woensdag':
+            $ervoor = 2;
+            break;
+        case 'Donderdag':
+            $ervoor = 3;
+            break;
+        case 'Vrijdag':
+            $ervoor = 4;
+            break;
+        case 'Zaterdag':
+            $ervoor = 5;
+            break;
+        case 'Zondag':
+            $ervoor = 6;
+            break;
+    }
+    switch ($translate[$naamedag2]) {
+        case 'Maandag':
+            $erna = 6;
+            break;
+        case 'Dinsdag':
+            $erna = 5;
+            break;
+        case 'Woensdag':
+            $erna = 4;
+            break;
+        case 'Donderdag':
+            $erna = 3;
+            break;
+        case 'Vrijdag':
+            $erna = 2;
+            break;
+        case 'Zaterdag':
+            $erna = 1;
+            break;
+        case 'Zondag':
+            $erna = 0;
+            break;
+    }
+    //pushen dagen in nieuw array (deze keer met heel de datum om mee te geven als waarde naar de js in de onclick functie
+        $jsdagen = array();
+        $dezedag = date("d");
+        $eerstedag = date("01");
+        $dezedag = $trans[$dezedag];
+        $eerstedag = $trans[$eerstedag];
+        $w = $eerstedag - $dezedag;
+        $splice = 0;
+    while ($ervoor != -1) {
+        // de vorige maand dagen voor op kalender
+        $ervoor -= 1;
+        $w -=1;
+        $splice += 1;
+        array_push($jsdagen,$w);
+    }
+    array_splice($jsdagen,0,$splice);
+    //begin maand - einder maand --> steken in kalender
+    $laatstedag = date('t');
+    $laatstedag = $trans[$laatstedag];
+    $p = $laatstedag - $dezedag;
+    while ($w != 0 ){
+        $w += 1;
+        array_push($jsdagen,$w);
+    }
+    while ($w != $p) {
+        $w +=1;
+        array_push($jsdagen,$w);
+    }
+    // de volgende maand dagen voor op kalender
+    
+    while ($erna != 0) {
+        $erna -= 1;
+        $w +=1;
+        array_push($jsdagen,$w);
+    }
+
+
     echo $translate[$newDate]." ".$dag." ".$translate[$naammaand];
     echo "<div class='tabel'>";
     echo "<div class='naamdag'>";
@@ -280,32 +356,154 @@
     echo "<div class='dagen'>";
     //for each lus pusht alle dagen in de array naar de kalender
     $y = 0; 
-    $y = 0; 
+    $d = 0; 
     foreach ($dagenvoorkalender as $day ) {
         if ($y < 7){
-            if ($y == 3){
-                echo "<div class='donderdag'>".$trans[$day]."</div>";
-                $y +=1;
+            if ($jsdagen[$d] < 0){
+                if ($y == 3){
+                    echo "<div class='donderdag gesl' id ='".$jsdagen[$d]."'>".$trans[$day]."</div>";
+                    $y +=1;
+                    $d += 1;
+                }
+                else{
+                    echo "<div class='dag gesl' id ='".$jsdagen[$d]."'>".$trans[$day]."</div>";
+                    $y += 1;
+                    $d += 1;
+        
+                }
             }
             else{
-                echo "<div class='dag'>".$trans[$day]."</div>";
-                $y += 1;
+                if ($y == 3){
+                    echo "<div class='donderdag ' id ='".$jsdagen[$d]."'onclick = 'ladenuren($jsdagen[$d])'>".$trans[$day]."</div>";
+                    $y +=1;
+                    $d += 1;
+                }
+                else{
+                    echo "<div class='dag ' id ='".$jsdagen[$d]."' onclick = 'ladenuren($jsdagen[$d])'>".$trans[$day]."</div>";
+                    $y += 1;
+                    $d += 1;
         
+                }
             }
         }
         else{
-            echo"</div><div class='dagen'>";
-            echo "<div class='dag'>".$trans[$day]."</div>";
-            $y = 1;
+            if($jsdagen[$d] < 0){
+                echo"</div><div class='dagen'>";
+                echo "<div class='dag gesl' id ='".$jsdagen[$d]."'>".$trans[$day]."</div>";
+                $y = 1;
+                $d += 1;
+            }
+            else{
+                echo"</div><div class='dagen'>";
+                echo "<div class='dag' id ='".$jsdagen[$d]."' onclick = 'ladenuren($jsdagen[$d])'>".$trans[$day]."</div>";
+                $y = 1;
+                $d += 1;
+            }
         }
     }
+    echo "</div>";
+    echo "</div>";
+    $dagen = "SELECT * from dagen";
+    $result = mysqli_query($conn,$dagen);
+    $maand = date('m');
+    $maand = $trans[$maand];
+    $maand = strval($maand);    
+        while ( $dag = mysqli_fetch_assoc($result) ){
 
-    echo "</div>";
-    echo "</div>";
+       if ($dag = $date){  
+            break;
+       }
+       else{
+       }
+
+    }
+    $vand = date('l');
+    echo "<div class='urenkalender' id ='kalender'>";
+    echo "<div class='urenk' id = 'uren'>";
+    //switch voor waarde vanaf wanneer de uren gegenereerd mogen worden (1 per half uur)
+    $y = 0;
+    switch ($translate[$vand]) {
+        case 'Maandag':
+            $y = 8;
+            break;
+        case 'Dinsdag':
+            $y = 2;
+            break;
+        case 'Woensdag':
+            $y = 2;
+            break;
+        case 'Donderdag':
+            $y = 100;
+            break;
+        case 'Vrijdag':
+            $y = 2;
+            break;
+        case 'Zaterdag':
+            $y = 0;
+            break;
+        case 'Zondag':
+            $y = 0;
+            break;
+        }
+    $g = 0;
+    if ($maand < 5 or $maand > 9 ){
+        if($y == 100){
+            echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+        }
+        foreach (query($uren) as $dat){
+           
+            if ($g >= $y){
+                if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                }
+                else{
+                    echo "<label class='uren' for='".$dat['uren']."'>
+                    <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
+                }
+                
+            }
+            else{
+                $g+=1;
+            }
+        }
+    }
+    else{
+        if($y == 100){
+            echo "<div class='uren'>".$dat["uren"]."</div>";    
+        }
+        foreach (query($uren) as $dat){
+            if ($g >= $y){
+                
+                echo "<label class='uren' for='".$dat['uren']."'>
+            <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
+            }
+            else{
+                $g+=1;
+            }
+        }
+    }   
+    echo "</div></div>";
+    //forbidden loop genereren van tussentabel
+    /*$x = 432;
+    while ($x < 5719){
+        $dagen_pk = "SELECT * from dagen where PK ="." ".$x;
+        foreach (query($dagen_pk) as $dag) {
+            foreach (query($uren) as $dat){
+                $fk_u = $dat["PK"];
+                $insert = "INSERT into resuren (FK_uren,bezet,FK_dagen) Values($fk_u,0,$x)";
+                $result = mysqli_query($conn,$insert);
+                
+
+            }
+            $x +=1;
+        }
+       
+
+    }*/
+    //echo print_r($jsdagen);
     ?>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <form action="PHP/C/afspraak.php" id ='form'>
+        <p>afspraak:</p>
+    </form>
+    <script src="js/tes.js"></script>
 </body>
 </html> 
