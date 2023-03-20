@@ -36,11 +36,11 @@ foreach ( query($account) as $user ) {
             $_SESSION["telefoon"] = $dat["telefoon"];
         }
        
-        //header("Location:login.php");
-        //break;
+        header("Location:login.php");
+        break;
         }
     else{
-        //header("Location:login.php?bad=1");
+        header("Location:login.php?bad=1");
     }
     }
         
