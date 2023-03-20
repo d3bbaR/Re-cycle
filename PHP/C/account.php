@@ -1,8 +1,8 @@
 <?php
 include "../conn.php";
 include "../functions.php";
-$password = mysqli_real_escape_string($conn,$_POST["password"]);
-$password2 = mysqli_real_escape_string($conn,$_POST["password2"]);
+$password = mysqli_real_escape_string($conn,$_POST["paswoord"]);
+$password2 = mysqli_real_escape_string($conn,$_POST["paswoord2"]);
 if ($password != $password2){
     header("Location:../../registreren.php?bad=1");
 
@@ -22,8 +22,8 @@ $pk = mysqli_insert_id($conn);
 
 //account
 $username = mysqli_real_escape_string($conn,$_POST["username"]);
-$pw = password_hash($password,1);
-$un = password_hash($username,2);
+$pw = sha1($password);
+$un = sha1($username);
 $insert = "INSERT INTO account (username,pw,FK_rol,FK_klant)
 Values ('$un','$pw',2,$pk)";
 echo $insert;
