@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  margin: 0;
+ 
   font-family: 'Signika', sans-serif !important;
 }
 
@@ -22,6 +22,7 @@ p {
 header {
   background: white;
 }
+
 
 header::after {
   content: '';
@@ -92,11 +93,63 @@ nav ul li a:visited {
 
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background:
-    #53b408;
+  background:#53b408;
   color: black;
   transition-duration: 1.5s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul li ul.dropdown li {
+display: block;
+
+}
+
+ul li ul.dropdown{
+  width: 100%;
+  background: #53b408;
+  position: absolute;
+  z-index: 999;
+  display: none;
+}
+
+ul li a:hover ul.dropdown{
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 nav ul li a:not(:only-child):after,
 nav ul li a:visited:not(:only-child):after {
@@ -221,6 +274,10 @@ article {
   margin: 0 auto;
   padding: 10px;
 }
+
+
+
+
 
 
 /* --------------------------------------------services + over ons--------------------------------------- */
@@ -1157,22 +1214,7 @@ margin-top: 170px;
   .header2 .second .overlay .right i:last-of-type{
    margin-left: -5px;
 
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  } 
 
 
 

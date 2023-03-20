@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/extra.css">
     <link  rel="stylesheet"  href="css/css.css"/>
-    <link rel="stylesheet" href="css/agend.css"/>
+    <link rel="stylesheet" href="css/agenda.css"/>
 <body>
     <?php
     include "PHP/functions.php";
