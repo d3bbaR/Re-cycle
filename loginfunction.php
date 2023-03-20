@@ -14,29 +14,33 @@ $password1 = $_POST["password"];
 
 
     //variabelen opvangen
-    $un = $_POST["username"];
-    $pw = $_POST["password"];
+    $un = sha1($_POST["username"]);
+    $pw = sha1($_POST["password"]);
+    echo $un."<br>".$pw."<br>"  ;      ;
 foreach ( query($account) as $user ) {
-    #code
+    echo $user["username"]."<br>";
+    echo $user["pw"]."<br><br>";
+
     
-    if (password_verify($un,$user["username"]) && password_verify($pw,$user["pw"]) ) {
+
+    if ($un === $user["username"]  && $pw === $user["pw"]) {
         //session variabelen aanmaaken bij een hit (pw en un is hetzelfde)
-        echo "succesvol";
+        echo "succesvol <br>";
         $_SESSION["rol"] = $user["FK_rol"];
         $_SESSION["klantid"] = $user["FK_klant"];
         $select = "SELECT * from klant where PK =".$user["FK_klant"];
-        foreach (query($select) as $dat)
-        $_SESSION["naam"] = $dat["naam"];
-        $_SESSION["familienaam"] = $dat["familienaam"];
-        $_SESSION["email"] = $dat["email"];
-        $_SESSION["telefoon"] = $dat["telefoon"];
-      
+        foreach (query($select) as $dat){
+            $_SESSION["naam"] = $dat["naam"];
+            $_SESSION["familienaam"] = $dat["familienaam"];
+            $_SESSION["email"] = $dat["email"];
+            $_SESSION["telefoon"] = $dat["telefoon"];
+        }
        
-       header("Location:login.php");
-        break;
+        //header("Location:login.php");
+        //break;
         }
     else{
-        header("Location:login.php?bad=1");
+        //header("Location:login.php?bad=1");
     }
     }
         
