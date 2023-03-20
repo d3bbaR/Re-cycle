@@ -599,8 +599,10 @@
     ?>
     <form action="PHP/C/afspraak.php" id ='form'>
         <?php 
-        echo" <label id='label2'>Afspraak op:".$trans[$dezedag].$translate[$naammaand]."</label>"?>
+        echo" <div><p id='label2' value='".$trans[$dezedag]."'>".$trans[$dezedag]."</p>".
+        "<p id='label3'>".$translate[$naammaand]."</p></div>"?>
         <label id="label">nog geen uur geselecteerd</label>
+        <input type="hidden" name="dag" id="hidden2" value="">
         <input type="hidden" name="uur" id="hidden" value="">
         <input type ="text" name ="naam" placeholder ="naam" required>
         <input type ="email" name ="email" placeholder ="email" required>
