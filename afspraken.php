@@ -455,7 +455,7 @@
         }
         else {
             if($dat == 0){
-                $vand = date('l');
+                $vand = date('l'); 
             }
             else{
                 $res = date_add($vandaag,date_interval_create_from_date_string($dat."days"));
@@ -486,12 +486,33 @@
                 break;
         }
         return $p;
+        
+        }
     }
-}
+
+    function day($data){
+        $vandaag = date("Y-m-d");
+        $str = date_create(strval($vandaag));
+        if ($data< 0){
+            $check = "";
+        }
+        else {
+            if($data == 0){
+                $check = $vandaag; 
+            }
+            else{
+                $res = date_add($str,date_interval_create_from_date_string($data."days"));
+                $check = date_format($res,'Y-m-d');
+            }
+
+        }
+        return $check;
+    }
     foreach ($jsdagen as $dag){
         $g = 0; 
         $p = uren($dag);
-        
+        $check = day($dag);
+        echo $check."<br>";
         if ($dag == 0){
             
             
@@ -598,8 +619,6 @@
          }
         $getal +=1;
     }*/
-       
-
     ?>
     <form action="PHP/C/afspraak.php" method = "post"id ='form'>
         <?php 
