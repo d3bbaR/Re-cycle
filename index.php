@@ -98,6 +98,11 @@
                         </li>
                         <li>
                             <a href="#">More</a>
+                            <ul class="dropdown">
+                                <li><a href="">Nuttige Info</a></li>
+                                <li><a href="">Onze Merken</a></li>
+                                <li><a href="">Inruilactie</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
@@ -130,9 +135,9 @@
 </div>
 </div>
 
+<!-- about section starts  -->
 
-
-    <div class="overons">
+<div class="overons">
 
         <div class="p">
             <p>
@@ -153,8 +158,11 @@
         </div>
         <div class="img"><img class="imgoverons" src="assets/b1.png" alt="foto van een fiets"></div>
     </div>
-    <div class="containerservices">
 
+<!-- about section ends -->
+    
+    
+    <div class="containerservices">
         <h1>SERVICES</h1>
 
         <div class="flex">
@@ -213,8 +221,11 @@
                     <ul>
                         <li><a href="#">Koopjes</a></li>
                         <li><a href="#">Fiets Leasing</a></li>
-                        <li><a href="#">Onze merken</a></li>
+                        <li><a href="merken.php">Onze merken</a></li>
+                        <li><a href="#">Leen/ Vervagfiets Voorwaarden</a></li>
                         <li><a href="#">Inruilactie</a></li>
+                        <li><a href="#">Algemene Verkoopsvoorwaarden</a></li>
+                        <li><a href="#">Een Fiets Leasen Via Uw Werkgever</a></li>
                         
                     </ul>
                 </div>

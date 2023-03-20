@@ -10,6 +10,7 @@ let vorigegeselecteerde = document.createElement("div");
 let hidden = document.getElementById("hidden");
 let hidden2 = document.getElementById("hidden2");
 let datum = new Date();
+let button = document.getElementById("button");
 function addDays(days) {
     var date = new Date();
     date.setDate(date.getDate() + days);
@@ -28,6 +29,7 @@ function test() {
         x = x.slice(0, -1);
     }
     hidden.value = x;
+    button.setAttribute("class", "vis");
     console.log(x)
 
     label.innerHTML = x;
