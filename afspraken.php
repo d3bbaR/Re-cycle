@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/extra.css">
     <link  rel="stylesheet"  href="css/css.css"/>
-    <link rel="stylesheet" href="css/agend.css"/>
+    <link rel="stylesheet" href="css/agendar.css"/>
 <body>
     <?php
     include "PHP/functions.php";
@@ -328,12 +328,12 @@
     //begin maand - einder maand --> steken in kalender
     $laatstedag = date('t');
     $laatstedag = $trans[$laatstedag];
-    $p = $laatstedag - $dezedag;
+    $verschild = $laatstedag - $dezedag;
     while ($w != 0 ){
         $w += 1;
         array_push($jsdagen,$w);
     }
-    while ($w != $p) {
+    while ($w != $verschild) {
         $w +=1;
         array_push($jsdagen,$w);
     }
@@ -346,7 +346,7 @@
     }
 
 
-    echo $translate[$newDate]." ".$dag." ".$translate[$naammaand];
+    echo "datum vandaag: ".$translate[$newDate]." ".$dag." ".$translate[$naammaand];
     echo "<div class='tabel'>";
     echo "<div class='naamdag'>";
     foreach ($dagen as $day){
@@ -374,7 +374,7 @@
             }
             else{
                 if ($y == 3){
-                    echo "<div class='donderdag ' id ='".$jsdagen[$d]."'onclick = 'ladenuren($jsdagen[$d])'>".$trans[$day]."</div>";
+                    echo "<div class='donderdag ' id ='".$jsdagen[$d]."'>".$trans[$day]."</div>";
                     $y +=1;
                     $d += 1;
                 }
@@ -417,93 +417,203 @@
        }
 
     }
-    $vand = date('l');
-    echo "<div class='urenkalender' id ='kalender'>";
-    echo "<div class='urenk' id = 'uren'>";
+   
+    
     //switch voor waarde vanaf wanneer de uren gegenereerd mogen worden (1 per half uur)
-    $y = 0;
-    switch ($translate[$vand]) {
-        case 'Maandag':
-            $y = 8;
-            break;
-        case 'Dinsdag':
-            $y = 2;
-            break;
-        case 'Woensdag':
-            $y = 2;
-            break;
-        case 'Donderdag':
-            $y = 100;
-            break;
-        case 'Vrijdag':
-            $y = 2;
-            break;
-        case 'Zaterdag':
-            $y = 0;
-            break;
-        case 'Zondag':
-            $y = 0;
-            break;
+    
+    function uren($dat){
+        $p = 0;
+        $translate = array( 
+            "Monday"=>"Maandag",
+            "Tuesday"=>"Dinsdag",
+            "Wednesday"=>"Woensdag",
+            "Thursday"=>"Donderdag",
+            "Friday"=>"Vrijdag",
+            "Saturday"=>"Zaterdag",
+            "Sunday"=>"Zondag",
+            "January"=>"Januari",
+            "February"=>"Februari",
+            "March"=>"Maart",
+            "April"=>"April",
+            "May"=>"Mei",
+            "June"=>"Juni",
+            "July"=>"Juli",
+            "August"=>"Augustus",
+            "September"=>"September",
+            "October"=>"Oktober",
+            "November"=>"November",
+            "December"=>"December",
+    
+        );
+        $vandaag = date("Y-m-d");
+        $vandaag = date_create(strval($vandaag));
+        if ($dat< 0){
         }
-    $g = 0;
-    if ($maand < 5 or $maand > 9 ){
-        if($y == 100){
-            echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+        else {
+            if($dat == 0){
+                $vand = date('l');
+            }
+            else{
+                $res = date_add($vandaag,date_interval_create_from_date_string($dat."days"));
+                $vand = $res->format('l');
+            }
+        
+        switch ($translate[$vand]) {
+            case 'Maandag':
+                $p = 8;
+                break;
+            case 'Dinsdag':
+                $p = 2;
+                break;
+            case 'Woensdag':
+                $p = 2;
+                break;
+            case 'Donderdag':
+                $p = 100;
+                break;
+            case 'Vrijdag':
+                $p = 2;
+                break;
+            case 'Zaterdag':
+                $p = 0;
+                break;
+            case 'Zondag':
+                $p = 0;
+                break;
         }
-        foreach (query($uren) as $dat){
+        return $p;
+    }
+}
+    foreach ($jsdagen as $dag){
+        $g = 0; 
+        $p = uren($dag);
+        
+        if ($dag == 0){
+            
+            
+            echo "<div class='kal' id = 'kal".$dag."'>";
+            echo "<div class='urenk' id = 'uren".$dag."'>";
+            if ($maand < 5 or $maand > 9 ){
+                if($p == 100){
+                echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+                }
+                foreach (query($uren) as $dat){
+                    
+                    if ($g >= $p){
+                        
+                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                        }
+                        else{
+                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                            <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                        }
+                
+                    }
+                    else{
+                        
+                        $g+=1;
+                    }
+                }
+            }
+            else{
+                if($p == 100){
+                    echo "<div class='uren'>".$dat["uren"]."</div>";    
+                }
+                foreach (query($uren) as $dat){
+                    if ($g >= $p){
+                
+                        echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                        <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                    }
+                    else{
+                        $g+=1;
+                    }
+                }
+            }   
+            echo "</div></div>";
+        }
+        else{
+            if($dag > 0){
+                echo "<div class='inv' id = 'kal".$dag."'>";
+                echo "<div class='urenk' id = 'uren".$dag."'>";
+                if ($maand < 5 or $maand > 9 ){
+                    if($p == 100){
+                    echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+                    }
+                    foreach (query($uren) as $dat){
            
-            if ($g >= $y){
-                if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                        if ($g >= $p){
+                            
+                            if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                            }
+                            else{
+                                echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                                <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                            }
+                
+                        }
+                        else{
+                            
+                            $g+=1;
+                        }
+                    }
                 }
                 else{
-                    echo "<label class='uren' for='".$dat['uren']."'>
-                    <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
-                }
+                    if($p == 100){
+                        echo "<div class='uren'>".$dat["uren"]."</div>";    
+                    }
+                    foreach (query($uren) as $dat){
+                        if ($g >= $p){
                 
+                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                            <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
+                        }
+                        else{
+                            $g+=1;
+                        }
+                    }
+                }
             }
             else{
-                $g+=1;
-            }
+
+            }  
+            echo "</div></div>";
         }
     }
-    else{
-        if($y == 100){
-            echo "<div class='uren'>".$dat["uren"]."</div>";    
-        }
-        foreach (query($uren) as $dat){
-            if ($g >= $y){
-                
-                echo "<label class='uren' for='".$dat['uren']."'>
-            <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
-            }
-            else{
-                $g+=1;
-            }
-        }
-    }   
-    echo "</div></div>";
+    
+    //echo print_r($jsdagen);
     //forbidden loop genereren van tussentabel
-    /*$x = 432;
-    while ($x < 5719){
-        $dagen_pk = "SELECT * from dagen where PK ="." ".$x;
-        foreach (query($dagen_pk) as $dag) {
-            foreach (query($uren) as $dat){
-                $fk_u = $dat["PK"];
-                $insert = "INSERT into resuren (FK_uren,bezet,FK_dagen) Values($fk_u,0,$x)";
-                $result = mysqli_query($conn,$insert);
+    /*$getal = 0;
+    while ($getal < 10000){
+        foreach (query($uren) as $dat){
+            $fk_u = $dat["PK"];
+            $insert = "INSERT into resuren (FK_uren,bezet,FK_dagen) Values($fk_u,0,$getal)";
+            $result = mysqli_query($conn,$insert);
                 
 
-            }
-            $x +=1;
-        }
+         }
+        $getal +=1;
+    }*/
        
 
-    }*/
-    //echo print_r($jsdagen);
     ?>
     <form action="PHP/C/afspraak.php" id ='form'>
-        <p>afspraak:</p>
+        <?php 
+        echo" <div><p id='label2' value='".$trans[$dezedag]."'>".$trans[$dezedag]."</p>".
+        "<p id='label3'>".$translate[$naammaand]."</p></div>"?>
+        <label id="label">nog geen uur geselecteerd</label>
+        <input type="hidden" name="dag" id="hidden2" value="">
+        <input type="hidden" name="uur" id="hidden" value="">
+        <input type ="text" name ="naam" placeholder ="naam" required>
+        <input type ="email" name ="email" placeholder ="email" required>
+        <input type="number" name ="telefoon" placeholder="telefoonnummer" required>
+        <select name="typeonderhoud" id="">
+            <option value="1">Klein onderhoud 30 minuten</option>
+            <option value="2">Groot onderhoud 1 uur</option>
+            <option value="3">Gesprek aankoop fiets 45 minuten</option>
+        </select>
+        <button type="submit">Plaats afspraak</button>
     </form>
-    <script src="js/tes.js"></script>
+    <script src="js/agenda.js"></script>
 </body>
 </html> 

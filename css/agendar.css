@@ -1,4 +1,3 @@
-
 .naamdag {
     display: flex;
     flex-direction: row;
@@ -36,4 +35,42 @@
     width: 27px;
     height: 27px;
     text-align: center;
+}
+
+.selected {
+    background-color: #9a9191;
+    font-weight: bold;
+    border: 1px solid #000;
+}
+
+.gesl {
+    background-color: red;
+}
+
+.inv {
+    display: none;
+}
+
+.uren {
+    border: 1px solid #000;
+}
+
+.urenk {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.kal {
+    max-width: 500px;
+}
+
+form {
+    border: 1px solid #000;
+    max-width: 500px;
+}
+
+.donderdag {
+    border: 1px solid #000;
+    background-color: red;
 }
