@@ -12,7 +12,7 @@ include "../functions.php";
     <title>Footer</title> 
 </head>
 <body>
-
+<div class="rolcontainer">
  <form action="../C/rol.php" method ="post">
 
     <label >rol toevoegen</label>
@@ -21,6 +21,7 @@ include "../functions.php";
 </div>
     <button name ="btn" type ="submit">Voeg toe</button>
 </form>
+</div>
 <?php
 foreach (query($rol_sort) as $dat) {
     if($dat["visible"] == 1) {
