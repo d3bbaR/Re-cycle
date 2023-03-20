@@ -11,17 +11,17 @@ include "../functions.php";
     <link rel="stylesheet" href="styles.css">
     <title>Footer</title> 
 </head>
-<body>
+<body class="rolbody">
 <div class="rolcontainer">
  <form action="../C/rol.php" method ="post">
 
-    <label >rol toevoegen</label>
 <div class="rolgeg">
+    <h2>rol toevoegen</h2>
     <input type="text" name ="rol" placeholder ="naam rol" required>
 </div>
-    <button name ="btn" type ="submit">Voeg toe</button>
+    <input name ="btn" type ="submit" value="Voeg toe">
 </form>
-</div>
+
 <?php
 foreach (query($rol_sort) as $dat) {
     if($dat["visible"] == 1) {
@@ -37,7 +37,7 @@ foreach (query($rol_sort) as $dat) {
 
 }
 ?>
-</table>
+</div>
 
 </body>
 </html>
