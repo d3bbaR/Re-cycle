@@ -346,7 +346,7 @@
     }
 
 
-    echo $translate[$newDate]." ".$dag." ".$translate[$naammaand];
+    echo "datum vandaag: ".$translate[$newDate]." ".$dag." ".$translate[$naammaand];
     echo "<div class='tabel'>";
     echo "<div class='naamdag'>";
     foreach ($dagen as $day){
@@ -565,7 +565,7 @@
                     foreach (query($uren) as $dat){
                         if ($g >= $p){
                 
-                            echo "<label class='urn' for='".$dat['uren']."hhhh".$dag."'>
+                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
                             <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
                         }
                         else{
@@ -580,32 +580,32 @@
             echo "</div></div>";
         }
     }
+    
+    //echo print_r($jsdagen);
     //forbidden loop genereren van tussentabel
-    /*$x = 0;
-    while ($x < 5719){
-        $dagen_pk = "SELECT * from dagen where PK ="." ".$x;
-        foreach (query($dagen_pk) as $dag) {
-            foreach (query($uren) as $dat){
-                $fk_u = $dat["PK"];
-                $insert = "INSERT into resuren (FK_uren,bezet,FK_dagen) Values($fk_u,0,$x)";
-                $result = mysqli_query($conn,$insert);
+    /*$getal = 0;
+    while ($getal < 10000){
+        foreach (query($uren) as $dat){
+            $fk_u = $dat["PK"];
+            $insert = "INSERT into resuren (FK_uren,bezet,FK_dagen) Values($fk_u,0,$getal)";
+            $result = mysqli_query($conn,$insert);
                 
 
-            }
-            $x +=1;
-        }
+         }
+        $getal +=1;
+    }*/
        
 
-    }*/
-    //echo print_r($jsdagen);
     ?>
     <form action="PHP/C/afspraak.php" id ='form'>
-        <p>afspraak:</p>
-        <label id="label">nog geen afspraak geselecteerd</label>
+        <?php 
+        echo" <label id='label2'>Afspraak op:".$trans[$dezedag].$translate[$naammaand]."</label>"?>
+        <label id="label">nog geen uur geselecteerd</label>
+        <input type="hidden" name="uur" id="hidden" value="">
         <input type ="text" name ="naam" placeholder ="naam" required>
         <input type ="email" name ="email" placeholder ="email" required>
         <input type="number" name ="telefoon" placeholder="telefoonnummer" required>
-        <select name="type onderhoud" id="">
+        <select name="typeonderhoud" id="">
             <option value="1">Klein onderhoud 30 minuten</option>
             <option value="2">Groot onderhoud 1 uur</option>
             <option value="3">Gesprek aankoop fiets 45 minuten</option>
