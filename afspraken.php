@@ -601,12 +601,12 @@
        
 
     ?>
-    <form action="PHP/C/afspraak.php" id ='form'>
+    <form action="PHP/C/afspraak.php" method = "post"id ='form'>
         <?php 
         echo" <div><p id='label2' value='".$trans[$dezedag]."'>".$trans[$dezedag]."</p>".
-        "<p id='label3'>".$translate[$naammaand]."</p></div>"?>
-        <label id="label">nog geen uur geselecteerd</label>
-        <input type="hidden" name="dag" id="hidden2" value="">
+        "<p id='label3'>".$translate[$naammaand]."</p></div>";
+        echo "<label id='label'>nog geen uur geselecteerd</label>
+        <input type='hidden' name='dag' id='hidden2' value='".$date."'>";?>
         <input type="hidden" name="uur" id="hidden" value="">
         <input type ="text" name ="naam" placeholder ="naam" required>
         <input type ="email" name ="email" placeholder ="email" required>
@@ -616,7 +616,7 @@
             <option value="2">Groot onderhoud 1 uur</option>
             <option value="3">Gesprek aankoop fiets 45 minuten</option>
         </select>
-        <button type="submit">Plaats afspraak</button>
+        <button type="submit" class='inv' id='button'>Plaats afspraak</button>
     </form>
     <script src="js/agenda.js"></script>
 </body>
