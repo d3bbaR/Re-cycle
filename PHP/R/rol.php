@@ -16,7 +16,9 @@ include "../functions.php";
  <form action="../C/rol.php" method ="post">
 
     <label >rol toevoegen</label>
+<div class="rolgeg">
     <input type="text" name ="rol" placeholder ="naam rol" required>
+</div>
     <button name ="btn" type ="submit">Voeg toe</button>
 </form>
 <?php

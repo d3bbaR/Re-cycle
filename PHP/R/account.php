@@ -6,16 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
-    <title>account</title>
+    <title>Account</title>
 </head>
-<body>
-<form action="../C/account.php" method = "post">
+<body class="Raccount">
+
+
+<div class="accountstyle">
+    <h2>Accounts: </h2>
+    <form class="formacc" action="../C/account.php" method = "post">
+<div class="gegevensacc">
     <input type="text" name ="username" placeholder ="username" required>
+</div>
+<div class="gegevensacc">
     <input type="password" name="password" placeholder ="password" required>
-    <button name ="class" type ="submit">Voeg Toe</button>
+</div>
+    <input name ="class" type ="submit" value="Voeg toe">
     </form>
+</div>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 include "../functions.php";
 foreach (query($account_sort) as $dat) {

@@ -1160,6 +1160,51 @@ margin-top: 170px;
   }
 
 
+/*--------------------------ADMIN DASHBOARD--------------------------*/
+.admindash {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  border-radius: 10px;
+}
+
+
+.admindash h2 {
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid rgb(67, 66, 66);
+}
+
+.admindash button{
+  background: #2691d9;
+  height: 10vh;
+  width: 10vw;
+  border-radius: 10px;
+}
+
+.admindashbtn label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+}
+.admindashboard{
+  background: linear-gradient(120deg, #94ec5b, #b4e8b0);  
+}
+
+
+
+
 
 
 
