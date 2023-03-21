@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+/*destroycookie(){
+    setcookie("dagwaarde", "",time()-3600);
+}*/
+  ?>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -492,6 +496,7 @@
 
     function day($data){
         $vandaag = date("Y-m-d");
+        $maand = date("n");
         $str = date_create(strval($vandaag));
         if ($data< 0){
             $check = "";
@@ -504,15 +509,133 @@
                 $res = date_add($str,date_interval_create_from_date_string($data."days"));
                 $check = date_format($res,'Y-m-d');
             }
-
         }
         return $check;
     }
+    function month($geg){
+        $today = date("Y-m-d");
+        $todaystr = date_create(strval($today));
+        if ($geg< 0){
+            $month = "";
+        }
+        else {
+            if($geg == 0){
+                $month = $date_format($todaystr,'n'); 
+            }
+            else{
+                $resultaat = date_add($todaystr,date_interval_create_from_date_string($geg."days"));
+                $month = date_format($resultaat,'n');
+            }
+        }
+        return $month;
+    }
+    function dag($gegeven){
+        $trans = array(
+            "01"=>"1",
+            "02"=>"2",
+            "03"=>"3",
+            "04"=>"4",
+            "05"=>"5",
+            "06"=>"6",
+            "07"=>"7",
+            "08"=>"8",
+            "09"=>"9",
+            "10"=>"10",
+            "11"=>"11",
+            "12"=>"12",
+            "13"=>"13",
+            "14"=>"14",
+            "15"=>"15",
+            "16"=>"16",
+            "17"=>"17",
+            "18"=>"18",
+            "19"=>"19",
+            "20"=>"20",
+            "21"=>"21",
+            "22"=>"22",
+            "23"=>"23",
+            "24"=>"24",
+            "25"=>"25",
+            "26"=>"26",
+            "27"=>"27",
+            "28"=>"28",
+            "29"=>"29",
+            "30"=>"30",
+            "31"=>"31",
+        )   ;
+        $today = date("Y-m-d");
+        $todaystring = date_create(strval($today));
+        if ($gegeven< 0){
+            $day = "";
+        }
+        else {
+            if($gegeven == 0){
+                $day = $date_format($todaystring,'d'); 
+                $day = $trans[$day];
+            }
+            else{
+                $resultaatday = date_add($todaystring,date_interval_create_from_date_string($gegeven."days"));
+                $day = date_format($resultaatday,'d');
+                $day = $trans[$day];
+            }
+        }
+        return $day;
+    }
+    function ladendagen(){
+        $uren = "SELECT * FROM uren";
+        $waardedag = $_COOKIE["dagwaarde"];
+        $p = uren($waardedag);
+        $counter = 0;
+        $check = day($waardedag);
+        $day = dag($waardedag);
+        $month = month($waardedag);
+        //destroycookie();
+        echo "<div class='kal' id = 'kal".$day."'>";
+        echo "<div class='urenk' id = 'uren".$day."'>"; 
+         if ($month < 5 or $month > 9 ){
+                if($p == 100){
+                echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+                }
+                foreach (query($uren) as $dat){
+                    
+                    if ($counter >= $p){
+                        
+                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                        }
+                        else{
+                            echo "<label class='uren' for='".$dat['uren']."hhhh".$day."'>
+                            <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$day."' value ='".$dat['uren']."hhhh".$day."'>".$dat["uren"]."</label>";
+                        }
+                
+                    }
+                    else{
+                        
+                        $counter += 1;
+                    }
+                }
+            }
+            else{
+                if($p == 100){
+                    echo "<div class='uren'>".$dat["uren"]."</div>";    
+                }
+                foreach (query($uren) as $dat){
+                    if ($counter >= $p){
+                
+                        echo "<label class='uren' for='".$dat['uren']."hhhh".$day."'>
+                        <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$day."' value ='".$dat['uren']."hhhh".$day."'>".$dat["uren"]."</label>";
+                    }
+                    else{
+                        $counter += 1;
+                    }
+                }
+            }   
+            echo "</div></div>";
+        }
+    
     foreach ($jsdagen as $dag){
         $g = 0; 
         $p = uren($dag);
         $check = day($dag);
-        echo $check."<br>";
         if ($dag == 0){
             
             
@@ -619,6 +742,9 @@
          }
         $getal +=1;
     }*/
+    if (isset($_COOKIE["dagwaarde"])){
+        //ladendagen();
+    }
     ?>
     <form action="PHP/C/afspraak.php" method = "post"id ='form'>
         <?php 

@@ -35,6 +35,8 @@ function test() {
     label.innerHTML = x;
 }
 function ladenuren(waarde) {
+
+    document.cookie = "dagwaarde=" + waarde;
     vandaag.setAttribute("class", "dag");
     vorigegeselecteerde.setAttribute("class", "dag");
     let geselecteerde = document.getElementById(waarde);
