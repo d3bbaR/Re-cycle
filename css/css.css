@@ -1258,8 +1258,11 @@ margin-top: 170px;
 }
 
 
+/*TEKST INPUTS*/
 
-
+.overons input{
+  width: 700px;
+}
 
 
 

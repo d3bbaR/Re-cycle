@@ -159,9 +159,9 @@ foreach (query($teskt_sort) as $dat) {
   <div class="container2">
       <div class="first">
         <div class=box2>
-        <h2>Re-cycle</h2>
+        <h2><input type="text" value="Re-cycle"> </h2>
    </div>
-   <a href="cat.php">Zie meer fietsen <i class="fa fa-angle-right"></a></i>
+   <a href="cat.php"><input type="text" value="Zie meer fietsen"> <i class="fa fa-angle-right"></a></i>
    <div class="left">
     <i  class="fa fa-facebook"></i>
     </div>
@@ -179,21 +179,21 @@ foreach (query($teskt_sort) as $dat) {
 <div class="overons">
 
         <div class="p">
-            <input type="text" value="Re-Cycle is een fietsenwinkel in Lovenjoel. Bij ons kan je terecht voor de aankoop van accessoires,
+            <textarea name="" id="" cols="30" rows="10">Re-Cycle is een fietsenwinkel in Lovenjoel. Bij ons kan je terecht voor de aankoop van accessoires,
                 nieuwe- en occasie fietsen. We hebben modellen voor iedereen, elektrische fietsen, kinderfietsen,
                 stadsfietsen en sportievere modellen. Bij elke aankoop voorzien wij een afstelling op maat of eventueel
                 een gepersonaliseerde bikefit. Graag meer informatie? Neem een kijkje op onze website, neem contact op
                 of bezoek onze winkel.">
-                
+                </textarea>
             
         </div>
         <div class="p">
-            <p>
-                Re-Cycle is tevens een fietsenmaker. We bespreken samen met u hoe de herstelling op een duurzame manier
+            <input type="text" value="Re-Cycle is tevens een fietsenmaker. We bespreken samen met u hoe de herstelling op een duurzame manier
                 kan gebeuren en wanneer deze klaar zal zijn, zodat u niet voor verrassingen komt te staan. Uw
                 herstelling is vaak op dezelfde dag al klaar. Kom gerust langs of maak je afspraak hier online. Indien
-                beschikbaar, kostenloze leen/vervangfiets bij grote herstelling.
-            </p>
+                beschikbaar, kostenloze leen/vervangfiets bij grote herstelling.">
+                
+            
         </div>
         <div class="img"><img class="imgoverons" src="../../assets/b1.png" alt="foto van een fiets"></div>
     </div>
@@ -202,41 +202,41 @@ foreach (query($teskt_sort) as $dat) {
     
     
     <div class="containerservices">
-        <h1>SERVICES</h1>
+        <h1><input type="text" value="SERVICES"></h1>
 
         <div class="flex">
             <a href="#" class="servicehover">
                 <div class="flexservices">
-                    <p> SNELLE SERVICE</p>
-                    <p>Meer info</p>
+                    <input type="text" value="SNELLE SERVICE">
+                    <input type="text" value="Meer info">
                 </div>
             </a>
 
             <a href="" class="servicehover">
                 <div class="flexservices">
-                    <p>NIEUWE FIETSEN</p>
-                    <p>Meer info</p>
+                    <input type="text" value="NIEUWE FIETSEN"> </p>
+                    <input type="text" value="Meer info"> 
                 </div>
             </a>
 
             <a href="" class="servicehover">
                 <div class="flexservices">
-                    <P>TWEEDEHANDS FIETSEN
-                    <p>Meer info</p>
+                    <input type="text" value="TWEEDEHANDS FIETSEN"> 
+                    <input type="text" value="Meer info">
                 </div>
             </a>
 
             <a href="" class="servicehover">
                 <div class="flexservices">
-                    <P> FIETS VERZEKERING</P>
-                    <p>Meer info</p>
+                    <input type="text" value="FIETS VERZEKERING">
+                    <input type="text" value="Meer info">
                 </div>
             </a>
 
             <a href="" class="servicehover">
                 <div class="flexservices">
-                    <p> FIETS LEASING</p>
-                    <p>Meer info</p>
+                    <input type="text" value="FIETS LEASING">
+                   <input type="text" value="Meer info">
                 </div>
             </a>
 
@@ -247,41 +247,41 @@ foreach (query($teskt_sort) as $dat) {
         <div class="containerf">
             <div class="row1">
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                     <h4><input type="text" value="Contact"></h4>
                     <ul>
-                        <li><a href="#">Bruulstraat 100 a 3360 Lovenjoel</a></li>
-                        <li><a href="#">0468 35 70 35</a></li>
-                        <li><a href="#">info@re-cycle.be</a></li>
-                        <li><a href="#">BTW BE 0656645854</a></li>
+                        <li><a href="#"> <input type="text" value="Bruulstraat 100 a 3360 Lovenjoel"> </a></li>
+                        <li><a href="#"><input type="text" value="0468 35 70 35"> </a></li>
+                        <li><a href="#"><input type="text" value="info@re-cycle.be"></a></li>
+                        <li><a href="#"><input type="text" value="BTW BE 0656645854"></a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Nuttige Info</h4>
+                    <h4><input type="text" value="Nuttige Info"></h4>
                     <ul>
-                        <li><a href="#">Koopjes</a></li>
-                        <li><a href="#">Fiets Leasing</a></li>
-                        <li><a href="merken.php">Onze merken</a></li>
-                        <li><a href="#">Leen/ Vervagfiets Voorwaarden</a></li>
-                        <li><a href="#">Inruilactie</a></li>
-                        <li><a href="#">Algemene Verkoopsvoorwaarden</a></li>
-                        <li><a href="#">Een Fiets Leasen Via Uw Werkgever</a></li>
+                        <li><a href="#"><input type="text" value="Koopjes"></a></li>
+                        <li><a href="#"><input type="text" value="Fiets Leasing"></a></li>
+                        <li><a href="merken.php"><input type="text" value="Onze merken"></a></li>
+                        <li><a href="#"><input type="text" value="Leen/ Vervagfiets Voorwaarden"></a></li>
+                        <li><a href="#"><input type="text" value="Inruilactie"></a></li>
+                        <li><a href="#"><input type="text" value="Algemene Verkoopsvoorwaarden"></a></li>
+                        <li><a href="#"><input type="text" value="Een Fiets Leasen Via Uw Werkgever"></a></li>
                         
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Openingsuren</h4>
+                    <h4><input type="text" value="Openingsuren"></h4>
                     <ul>
-                        <li><a href="#">Maandag:             13 tot 19 u*</a></li>
-                        <li><a href="#">Dinsdag:               10 tot 19u*</a></li>
-                        <li><a href="#">Woensdag:           10 tot 19 u*</a></li>
-                        <li><a href="#">Donderdag:          Gesloten</a></li>
-                        <li><a href="#">Vrijdag:                 10 tot 19 u*</a></li>
-                        <li><a href="#">Zaterdag:               9 tot 17 u</a></li>
-                        <li><a href="#">Zondag:                 9 tot 13 u</a></li>
+                        <li><a href="#"><input type="text" value="Maandag:             13 tot 19 u*"> </a></li>
+                        <li><a href="#"><input type="text" value="Dinsdag:               10 tot 19u*"></a></li>
+                        <li><a href="#"><input type="text" value="Woensdag:           10 tot 19 u*"></a></li>
+                        <li><a href="#"><input type="text" value="Donderdag:          Gesloten"></a></li>
+                        <li><a href="#"><input type="text" value="Vrijdag:                 10 tot 19 u*"></a></li>
+                        <li><a href="#"><input type="text" value="Zaterdag:               9 tot 17 u"></a></li>
+                        <li><a href="#"><input type="text" value="Zondag:                 9 tot 13 u"></a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Van Mei t.e.m. September:   tot 20 u</h4>
+                    <h4><input type="text" value="Van Mei t.e.m. September:   tot 20 u"></h4>
                 </div>
                 </div>
             </div>
