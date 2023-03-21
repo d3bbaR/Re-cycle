@@ -11,14 +11,17 @@ include "../functions.php";
     <link rel="stylesheet" href="styles.css">
     <title>Footer</title> 
 </head>
-<body>
-
+<body class="tekstbody">
+    <div class="tekstcontainer">
  <form action="../C/tekst.php" method ="post">
 
-    <label >Tekst toevoegen</label>
+ <div class="tekstgeg">
+    <h2>Tekst toevoegen</h2>
     <input type="text" name ="tekst" placeholder ="tekst" required>
-    <button name ="btn" type ="submit">Voeg toe</button>
+   </div> 
+   <input name ="btn" type ="submit" value="Voeg Toe">
 </form>
+
 <?php
 foreach (query($teskt_sort) as $dat) {
     if($dat["visible"] == 1) {
@@ -34,7 +37,7 @@ foreach (query($teskt_sort) as $dat) {
 
 }
 ?>
-</table>
+</div>
 
 </body>
 </html>
