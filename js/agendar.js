@@ -35,6 +35,7 @@ function test() {
     label.innerHTML = x;
 }
 function ladenuren(waarde) {
+    button.setAttribute("class", "inv");
     vandaag.setAttribute("class", "dag");
     vorigegeselecteerde.setAttribute("class", "dag");
     let geselecteerde = document.getElementById(waarde);

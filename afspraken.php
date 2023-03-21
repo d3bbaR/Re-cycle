@@ -512,7 +512,6 @@
         $g = 0; 
         $p = uren($dag);
         $check = day($dag);
-        echo $check."<br>";
         if ($dag == 0){
             
             
@@ -523,21 +522,48 @@
                 echo "<div class='uren'>wij zijn vandaag gesloten</div>";
                 }
                 foreach (query($uren) as $dat){
+                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                    $fk_uren = "SELECT * from uren where uren = '".$dat["uren"]."'";
+                    foreach (query($fk_dagen) as $res){
+                        foreach (query($fk_dagen) as $res2){
+                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                            foreach (query($pk) as $res3){
+                                if($res3["bezet"]==1){
+                                    if ($g >= $p){
+                        
+                                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                        }
+                                        else{
+                                            echo "<label class='gesl' for='".$dat['uren']."hhhh".$dag."'>
+                                            <input type='radio' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                        }
+                                
+                                    }
+                                    else{
+                                        
+                                        $g+=1;
+                                    }
+                                }
+                                else{
+                                    if ($g >= $p){
+                        
+                                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                        }
+                                        else{
+                                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                                            <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                        }
+                                
+                                    }
+                                    else{
+                                        
+                                        $g+=1;
+                                    }
+
+                                }
+                            }}}
                     
-                    if ($g >= $p){
-                        
-                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
-                        }
-                        else{
-                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                            <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
-                        }
-                
-                    }
-                    else{
-                        
-                        $g+=1;
-                    }
+                    
                 }
             }
             else{
@@ -545,14 +571,48 @@
                     echo "<div class='uren'>".$dat["uren"]."</div>";    
                 }
                 foreach (query($uren) as $dat){
-                    if ($g >= $p){
-                
-                        echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                        <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
-                    }
-                    else{
-                        $g+=1;
-                    }
+                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                    $fk_uren = "SELECT * from uren where uren = '".$dat["uren"]."'";
+                    foreach (query($fk_dagen) as $res){
+                        foreach (query($fk_dagen) as $res2){
+                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                            foreach (query($pk) as $res3){
+                                if($res3["bezet"]==1){
+                                    if ($g >= $p){
+                        
+                                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                        }
+                                        else{
+                                            echo "<label class='gesl' for='".$dat['uren']."hhhh".$dag."'>
+                                            <input type='radio' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                        }
+                                
+                                    }
+                                    else{
+                                        
+                                        $g+=1;
+                                    }
+                                }
+                                else{
+                                    if ($g >= $p){
+                        
+                                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                        }
+                                        else{
+                                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                                            <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                        }
+                                
+                                    }
+                                    else{
+                                        
+                                        $g+=1;
+                                    }
+
+                                }
+                            }}}
+                    
+                    
                 }
             }   
             echo "</div></div>";
@@ -566,21 +626,48 @@
                     echo "<div class='uren'>wij zijn vandaag gesloten</div>";
                     }
                     foreach (query($uren) as $dat){
-           
-                        if ($g >= $p){
+                        $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                        $fk_uren = "SELECT * from uren where uren = '".$dat["uren"]."'";
+                        foreach (query($fk_dagen) as $res){
+                            foreach (query($fk_dagen) as $res2){
+                                $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                                foreach (query($pk) as $res3){
+                                    if($res3["bezet"]==1){
+                                        if ($g >= $p){
                             
-                            if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
-                            }
-                            else{
-                                echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                                <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
-                            }
-                
-                        }
-                        else{
+                                            if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                            }
+                                            else{
+                                                echo "<label class='gesl' for='".$dat['uren']."hhhh".$dag."'>
+                                                <input type='radio' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                            }
+                                    
+                                        }
+                                        else{
+                                            
+                                            $g+=1;
+                                        }
+                                    }
+                                    else{
+                                        if ($g >= $p){
                             
-                            $g+=1;
-                        }
+                                            if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                            }
+                                            else{
+                                                echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                                                <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                            }
+                                    
+                                        }
+                                        else{
+                                            
+                                            $g+=1;
+                                        }
+    
+                                    }
+                                }}}
+                        
+                        
                     }
                 }
                 else{
@@ -588,14 +675,48 @@
                         echo "<div class='uren'>".$dat["uren"]."</div>";    
                     }
                     foreach (query($uren) as $dat){
-                        if ($g >= $p){
-                
-                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                            <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
-                        }
-                        else{
-                            $g+=1;
-                        }
+                        $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                        $fk_uren = "SELECT * from uren where uren = '".$dat["uren"]."'";
+                        foreach (query($fk_dagen) as $res){
+                            foreach (query($fk_dagen) as $res2){
+                                $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                                foreach (query($pk) as $res3){
+                                    if($res3["bezet"]==1){
+                                        if ($g >= $p){
+                            
+                                            if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                            }
+                                            else{
+                                                echo "<label class='gesl' for='".$dat['uren']."hhhh".$dag."'>
+                                                <input type='radio' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                            }
+                                    
+                                        }
+                                        else{
+                                            
+                                            $g+=1;
+                                        }
+                                    }
+                                    else{
+                                        if ($g >= $p){
+                            
+                                            if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
+                                            }
+                                            else{
+                                                echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
+                                                <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
+                                            }
+                                    
+                                        }
+                                        else{
+                                            
+                                            $g+=1;
+                                        }
+    
+                                    }
+                                }}}
+                        
+                        
                     }
                 }
             }
@@ -637,6 +758,6 @@
         </select>
         <button type="submit" class='inv' id='button'>Plaats afspraak</button>
     </form>
-    <script src="js/agenda.js"></script>
+    <script src="js/agendar.js"></script>
 </body>
 </html> 
