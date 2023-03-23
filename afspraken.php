@@ -562,6 +562,7 @@
             echo "</div></div>";
         }
     function vandaag(){
+       
         $dag = 0;
         $uren = "SELECT * FROM uren";
         $g = 0; 
@@ -578,6 +579,16 @@
                 echo "<div class='uren'>wij zijn vandaag gesloten</div>";
                 }
                 foreach (query($uren) as $dat){
+                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                    $fk_uren = "SELECT * from uren where uren = '".$dat."'";
+                    foreach (query($fk_dagen) as $res){
+                        echo "1";
+                        foreach (query($fk_dagen) as $res2){
+                            echo "2";
+                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                            foreach (query($pk) as $res3){
+                                echo"3<br>";
+                            }}}
                     
                     if ($g >= $p){
                         
@@ -600,14 +611,16 @@
                     echo "<div class='uren'>".$dat["uren"]."</div>";    
                 }
                 foreach (query($uren) as $dat){
-                    if ($g >= $p){
-                
-                        echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                        <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
-                    }
-                    else{
-                        $g+=1;
-                    }
+                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                    $fk_uren = "SELECT * from uren where uren = '".$dat."'";
+                    foreach (query($fk_dagen) as $res){
+                        echo "1";
+                        foreach (query($fk_dagen) as $res2){
+                            echo "2";
+                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                            foreach (query($pk) as $res3){
+                                echo"3<br>";
+                            }}}
                 }
             }   
             echo "</div></div>";

@@ -37,6 +37,9 @@ function test() {
     if (x.length == 12) {
         x = x.slice(0, -1);
     }
+    if (x == "9:30-10:00h" || x == "9:00-9:30h") {
+        x = x.slice(0, -1);
+    }
     hidden.value = x;
     button.setAttribute("class", "vis");
     console.log(x)
