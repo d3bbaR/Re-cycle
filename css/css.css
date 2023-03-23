@@ -1314,4 +1314,15 @@ margin: auto;
 
 
 
-  
+/*----------Afspraken bevestigen----------*/
+.afsprakenbevestigen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: yellow;
+  border-radius: 20px;
+  margin-top: 80px;
+  height: 400px;
+}

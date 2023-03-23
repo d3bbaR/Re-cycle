@@ -12,7 +12,9 @@
 
 
     <div class="afsprakenbevestigen">
-        
+        <h3>Er is een nieuwe afspraak binnen: </h3>
+            <p>Naam:</p>
+            <p>achternaam:</p>
     </div>
 </body>
 </html>
