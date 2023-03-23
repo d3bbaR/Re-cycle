@@ -13,8 +13,7 @@
 <body>
     
 
-<?php include 'nav-bar.php' ?>
-
+<?php include 'nav-bar.php'?>
 
 
 <header>
