@@ -28,7 +28,6 @@ function del_cookie(name) {
         '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
 }
 function test() {
-    form.setAttribute("class", "inv");
     prev.setAttribute("class", "uren");
     let x = event.target.value;
     let h = document.getElementById(x);
