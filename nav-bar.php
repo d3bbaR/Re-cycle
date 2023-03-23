@@ -26,7 +26,7 @@
                                 <a href="#">Cadeau ideeën</a>
                             </li>
                             <li>
-                                <a href="#">Fietsen</a>
+                                <a href="cat.php">Fietsen</a>
                             </li>
                             <li>
                                 <a href="#">More</a>
@@ -71,7 +71,7 @@
                             <a href="#">Cadeau ideeën</a>
                         </li>
                         <li>
-                            <a href="#">Fietsen</a>
+                            <a href="cat.php">Fietsen</a>
                         </li>
                         <li>
                             <a href="#">More</a>

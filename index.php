@@ -12,6 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/extra.css">
     <link href="css/css.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/about.css">
     <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -26,9 +27,142 @@
    <?php include 'header.php' ;?>
    <?php include 'overons.php';?>
    <?php include 'services.php'; ?>
+   <div class="elfsight-app-0871bc9d-5a4e-46d7-9c96-60f94a003a9d"></div>
+   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
    <?php include 'footer.php';?>
+ 
 
+<div class="header2">
+  <div class="container2">
+      <div class="first">
+        <div class=box2>
+        <h2>Re-cycle</h2>
+   </div>
+   <a href="cat.php">Zie meer fietsen <i class="fa fa-angle-right"></a></i>
+   <div class="left">
+    <i  class="fa fa-facebook"></i>
+    </div>
+    <div class="second">
+        <div class="overlay">
+       
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
+<!-- about section starts  -->
+<div class="container3">
+<div class="title">
+<h1>Over Ons</h1>
+</div>
+<div class="content3">
+<div class="article3">
+<h2>dsfdsfdsf</h2>
+<p>
+Re-Cycle is een fietsenwinkel in Lovenjoel. Bij ons kan je terecht voor de aankoop van accessoires,
+ nieuwe- en occasie fietsen. We hebben modellen voor iedereen, elektrische fietsen, kinderfietsen,
+stadsfietsen en sportievere modellen. Bij elke aankoop voorzien wij een afstelling op maat of eventueel
+een gepersonaliseerde bikefit. Graag meer informatie? Neem een kijkje op onze website, neem contact op of bezoek onze winkel.
+</p>
+<a href="" class="button3">Lees Meer</a>
+      </div>
+      <div class="image-section">
+      <img src="assets/overons.jpg" alt="overons">
+      </div>
+   </div>
+</div>
+<!-- about section ends -->
+    
+    
+    <div class="containerservices">
+        <h1>SERVICES</h1>
+
+        <div class="flex">
+            <a href="#" class="servicehover">
+                <div class="flexservices">
+                    <p> SNELLE SERVICE</p>
+                    <p>Meer info</p>
+                </div>
+            </a>
+
+            <a href="" class="servicehover">
+                <div class="flexservices">
+                    <p>NIEUWE FIETSEN</p>
+                    <p>Meer info</p>
+                </div>
+            </a>
+
+            <a href="" class="servicehover">
+                <div class="flexservices">
+                    <P>TWEEDEHANDS FIETSEN
+                    <p>Meer info</p>
+                </div>
+            </a>
+
+            <a href="" class="servicehover">
+                <div class="flexservices">
+                    <P> FIETS VERZEKERING</P>
+                    <p>Meer info</p>
+                </div>
+            </a>
+
+            <a href="" class="servicehover">
+                <div class="flexservices">
+                    <p> FIETS LEASING</p>
+                    <p>Meer info</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+<!-- Footer-->
+<footer class="footer">
+        <div class="containerf">
+            <div class="row1">
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Bruulstraat 100 a 3360 Lovenjoel</a></li>
+                        <li><a href="#">0468 35 70 35</a></li>
+                        <li><a href="#">info@re-cycle.be</a></li>
+                        <li><a href="#">BTW BE 0656645854</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Nuttige Info</h4>
+                    <ul>
+                        <li><a href="#">Koopjes</a></li>
+                        <li><a href="#">Fiets Leasing</a></li>
+                        <li><a href="merken.php">Onze merken</a></li>
+                        <li><a href="#">Leen/ Vervagfiets Voorwaarden</a></li>
+                        <li><a href="#">Inruilactie</a></li>
+                        <li><a href="#">Algemene Verkoopsvoorwaarden</a></li>
+                        <li><a href="#">Een Fiets Leasen Via Uw Werkgever</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Openingsuren</h4>
+                    <ul>
+                        <li><a href="#">Maandag:             13 tot 19 u*</a></li>
+                        <li><a href="#">Dinsdag:               10 tot 19u*</a></li>
+                        <li><a href="#">Woensdag:           10 tot 19 u*</a></li>
+                        <li><a href="#">Donderdag:          Gesloten</a></li>
+                        <li><a href="#">Vrijdag:                 10 tot 19 u*</a></li>
+                        <li><a href="#">Zaterdag:               9 tot 17 u</a></li>
+                        <li><a href="#">Zondag:                 9 tot 13 u</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Van Mei t.e.m. September:   tot 20 u</h4>
+                </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
 
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -95,19 +102,6 @@ nav ul li a:visited:hover {
   transition-duration: 1.5s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ul li ul.dropdown li {
 display: block;
 
@@ -124,28 +118,6 @@ ul li ul.dropdown{
 ul li a:hover ul.dropdown{
   display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 nav ul li a:not(:only-child):after,
@@ -271,8 +243,6 @@ article {
   margin: 0 auto;
   padding: 10px;
 }
-
-
 
 
 
@@ -972,31 +942,8 @@ h2:after{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .header2{
-     background: #364155;
+     background: #24262b;
      height: 660px;
      color: #fff;
      overflow: hidden;
@@ -1087,7 +1034,7 @@ margin-bottom: 40px;
 .header2 .first a:hover{
 
   background: #fff;
-  color:#364155 ;
+  color:#24262b ;
 }
 
 .header2 .first a i {
@@ -1164,7 +1111,7 @@ margin-top: 170px;
     height: 6px;
     margin-left: 3px;
     border-radius: 50%;
-    background: #364155;
+    background: #24262b;
     border: 1px solid #53b408;
     }
 
@@ -1270,13 +1217,99 @@ margin-top: 170px;
 
 
 
+.container3{
+width: 100%;
+min-height: 100vh;
+background-color: #F2ECE4;
+
+}
+
+.container3 .title{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-transform: uppercase;
+font-size: 22px;
+color: #222;
+letter-spacing: 1.5px;
+padding: 50px 0px;
+}
+
+.container3 .title h1::after{
+content: "";
+height: 6px;
+width: 180px;
+background-color: #53b408;
+border-radius: 6px;
+position: relative;
+display: block;
+margin:auto;
+}
+
+.content3{
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+  margin: 30px auto;
+}
+
+.content3 .article3{
+box-shadow: 0px 0px 2px 0px;
+background-color: #e0dede;
+padding: 25px 25px;
+}
+
+.content3 .article3 h2{
+color: #53b408;
+font-size: 22px;
+line-height: 1.5;
+letter-spacing: 1px;
+}
 
 
+.content3 .article3 p{
+margin-top: 30px;
+font-size: 19px;
+line-height: 1.5;
+color: #222;
+
+}
+
+.content3 .article3 a{
+font-size: 22px;
+text-decoration: none;
+display: inline-block;
+padding: 12px 35px;
+background-color: #cc0000;
+border-radius: 25px;
+color: #fff;
+border: 1px solid #53b408;
+letter-spacing: 1.5px;
+margin-top: 35px;
+
+}
 
 
+.content3 .article3 a:hover{
+  
+background-color: #e0dede;
+color: #53b408;
+transition: 0.2s ease;
+
+}
 
 
+.img-section{
+width: 100%;
+margin: auto;
 
+}
+
+.image-section img {
+  max-width: 600px;
+}
 
 
 
