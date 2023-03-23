@@ -22,8 +22,6 @@ $fk_dagen = "SELECT * from dagen where dagen = '".$dag."'";
 
 
 $fk_uren = "SELECT * from uren where uren = '".$uur."'";
-$res2 = query($fk_uren);
-
 foreach (query($fk_dagen) as $res){
     foreach (query($fk_dagen) as $res2){
         $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
@@ -35,7 +33,7 @@ foreach (query($fk_dagen) as $res){
     }
 }
 
-
+header("Location:../bevestigd.php");
 echo "halllooooo";
 include "../R/iets.php";
 
