@@ -1,5 +1,4 @@
 let prev = document.createElement("div");
-let form = document.getElementById("form");
 let label = document.getElementById("label");
 let label2 = document.getElementById("label2");
 let label3 = document.getElementById("label3");

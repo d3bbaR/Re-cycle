@@ -35,9 +35,10 @@ foreach (query($fk_dagen) as $res){
     }
 }
 
-header("Location:../bevestigd.php");
+
 echo "halllooooo";
 include "../R/iets.php";
+
 
 //mail naar eigenaar
 

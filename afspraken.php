@@ -770,6 +770,6 @@
     <?php
     }
     ?>
-    <script src="js/agenda.js"></script>
+    <script src="js/agendar.js"></script>
 </body>
 </html> 
