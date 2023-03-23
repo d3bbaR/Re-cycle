@@ -529,6 +529,23 @@
         }
         return $month;
     }
+    function maand($geg){
+        $today = date("Y-m-d");
+        $todaystr = date_create(strval($today));
+        if ($geg< 0){
+            $maand = "";
+        }
+        else {
+            if($geg == 0){
+                $maand = date_format($todaystr,'F'); 
+            }
+            else{
+                $resultaat = date_add($todaystr,date_interval_create_from_date_string($geg."days"));
+                $maand = date_format($resultaat,'F');
+            }
+        }
+        return $maand;
+    }
     function dag($gegeven){
         $trans = array(
             "01"=>"1",
@@ -704,6 +721,53 @@
     }
     else{
         vandaag();
+    }
+    function ladenform(){
+        $translate = array( 
+            "Monday"=>"Maandag",
+            "Tuesday"=>"Dinsdag",
+            "Wednesday"=>"Woensdag",
+            "Thursday"=>"Donderdag",
+            "Friday"=>"Vrijdag",
+            "Saturday"=>"Zaterdag",
+            "Sunday"=>"Zondag",
+            "January"=>"Januari",
+            "February"=>"Februari",
+            "March"=>"Maart",
+            "April"=>"April",
+            "May"=>"Mei",
+            "June"=>"Juni",
+            "July"=>"Juli",
+            "August"=>"Augustus",
+            "September"=>"September",
+            "October"=>"Oktober",
+            "November"=>"November",
+            "December"=>"December",
+    
+        );
+        $waardedag = $_COOKIE["dagwaarde"];
+        $day = dag($waardedag);
+        $check = day($waardedag);
+        $maand = maand($waardedag);
+        ?>
+        <form action="PHP/C/afspraak.php" method = "post"id ='form1'>
+        <?php 
+        echo" <div><p id='label2' value='".$day."'>".$day."</p>".
+        "<p id='label3' value='".$maand."'></p>".$translate[$maand]."</div>";
+        echo "<label id='label'>nog geen uur geselecteerd</label>
+        <input type='hidden' name='dag' id='hidden2' value='".$check."'>";?>
+        <input type="hidden" name="uur" id="hidden" value="">
+        <input type ="text" name ="naam" placeholder ="naam" required>
+        <input type ="email" name ="email" placeholder ="email" required>
+        <input type="number" name ="telefoon" placeholder="telefoonnummer" required>
+        <select name="typeonderhoud" id="">
+            <option value="1">Klein onderhoud 30 minuten</option>
+            <option value="2">Groot onderhoud 1 uur</option>
+            <option value="3">Gesprek aankoop fiets 45 minuten</option>
+        </select>
+        <button type="submit" class='inv' id='button'>Plaats afspraak</button>
+    </form>
+    <?php
     }
     ?>
     <form action="PHP/C/afspraak.php" method = "post"id ='form'>

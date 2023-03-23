@@ -26,9 +26,9 @@
    <?php include 'header.php' ;?>
    <?php include 'overons.php';?>
    <?php include 'services.php'; ?>
-   <div class="elfsight-app-0871bc9d-5a4e-46d7-9c96-60f94a003a9d"></div>
-   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-0871bc9d-5a4e-46d7-9c96-60f94a003a9d"></div>
    <?php include 'footer.php';?>
+   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
  
 
 

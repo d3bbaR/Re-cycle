@@ -1,5 +1,5 @@
-prev = document.createElement("div");
-form = document.getElementById("form");
+let prev = document.createElement("div");
+let form = document.getElementById("form");
 let label = document.getElementById("label");
 let label2 = document.getElementById("label2");
 let label3 = document.getElementById("label3");
@@ -28,6 +28,7 @@ function del_cookie(name) {
         '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
 }
 function test() {
+    form.setAttribute("class", "inv");
     prev.setAttribute("class", "uren");
     let x = event.target.value;
     let h = document.getElementById(x);
