@@ -520,7 +520,7 @@
         }
         else {
             if($geg == 0){
-                $month = $date_format($todaystr,'n'); 
+                $month = date_format($todaystr,'n'); 
             }
             else{
                 $resultaat = date_add($todaystr,date_interval_create_from_date_string($geg."days"));
@@ -570,7 +570,7 @@
         }
         else {
             if($gegeven == 0){
-                $day = $date_format($todaystring,'d'); 
+                $day = date_format($todaystring,'d'); 
                 $day = $trans[$day];
             }
             else{
@@ -631,17 +631,19 @@
             }   
             echo "</div></div>";
         }
-    
-    foreach ($jsdagen as $dag){
+    function vandaag(){
+        $dag = 0;
+        $uren = "SELECT * FROM uren";
         $g = 0; 
         $p = uren($dag);
         $check = day($dag);
+        $month = month($dag);
         if ($dag == 0){
             
             
             echo "<div class='kal' id = 'kal".$dag."'>";
             echo "<div class='urenk' id = 'uren".$dag."'>";
-            if ($maand < 5 or $maand > 9 ){
+            if ($month < 5 or $month > 9 ){
                 if($p == 100){
                 echo "<div class='uren'>wij zijn vandaag gesloten</div>";
                 }
@@ -680,53 +682,7 @@
             }   
             echo "</div></div>";
         }
-        else{
-            if($dag > 0){
-                echo "<div class='inv' id = 'kal".$dag."'>";
-                echo "<div class='urenk' id = 'uren".$dag."'>";
-                if ($maand < 5 or $maand > 9 ){
-                    if($p == 100){
-                    echo "<div class='uren'>wij zijn vandaag gesloten</div>";
-                    }
-                    foreach (query($uren) as $dat){
-           
-                        if ($g >= $p){
-                            
-                            if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
-                            }
-                            else{
-                                echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                                <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
-                            }
-                
-                        }
-                        else{
-                            
-                            $g+=1;
-                        }
-                    }
-                }
-                else{
-                    if($p == 100){
-                        echo "<div class='uren'>".$dat["uren"]."</div>";    
-                    }
-                    foreach (query($uren) as $dat){
-                        if ($g >= $p){
-                
-                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                            <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."'>".$dat["uren"]."</label>";
-                        }
-                        else{
-                            $g+=1;
-                        }
-                    }
-                }
-            }
-            else{
-
-            }  
-            echo "</div></div>";
-        }
+        
     }
     
     //echo print_r($jsdagen);
@@ -743,13 +699,17 @@
         $getal +=1;
     }*/
     if (isset($_COOKIE["dagwaarde"])){
-        //ladendagen();
+        ladendagen();
+        ladenform();
+    }
+    else{
+        vandaag();
     }
     ?>
     <form action="PHP/C/afspraak.php" method = "post"id ='form'>
         <?php 
-        echo" <div><p id='label2' value='".$trans[$dezedag]."'>".$trans[$dezedag]."</p>".
-        "<p id='label3'>".$translate[$naammaand]."</p></div>";
+        echo" <div><p id='label2' value='".$trans[$dezedag]."'></p>".
+        "<p id='label3'></p></div>";
         echo "<label id='label'>nog geen uur geselecteerd</label>
         <input type='hidden' name='dag' id='hidden2' value='".$date."'>";?>
         <input type="hidden" name="uur" id="hidden" value="">
