@@ -637,7 +637,6 @@
         $g = 0; 
         $p = uren($dag);
         $check = day($dag);
-        $check = day($dag);
         $month = month($dag);
         if ($dag == 0){
             
@@ -701,6 +700,7 @@
     }*/
     if (isset($_COOKIE["dagwaarde"])){
         ladendagen();
+        ladenform();
     }
     else{
         vandaag();
@@ -708,8 +708,8 @@
     ?>
     <form action="PHP/C/afspraak.php" method = "post"id ='form'>
         <?php 
-        echo" <div><p id='label2' value='".$trans[$dezedag]."'>".$trans[$dezedag]."</p>".
-        "<p id='label3'>".$translate[$naammaand]."</p></div>";
+        echo" <div><p id='label2' value='".$trans[$dezedag]."'></p>".
+        "<p id='label3'></p></div>";
         echo "<label id='label'>nog geen uur geselecteerd</label>
         <input type='hidden' name='dag' id='hidden2' value='".$date."'>";?>
         <input type="hidden" name="uur" id="hidden" value="">
