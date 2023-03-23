@@ -25,6 +25,7 @@
     <?php
     include "PHP/functions.php";
     include "PHP/conn.php";
+    include 'nav-bar.php';
     session_start();
     if(isset($_SESSION["naam"])){
         if ($_SESSION["rol"] == 1){
