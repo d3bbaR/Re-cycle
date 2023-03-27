@@ -5,7 +5,7 @@
 </div>
 <div class="content3">
 <div class="article3">
-<h2>dsfdsfdsf</h2>
+<h2>Re-Cycle</h2>
 <p>
 Re-Cycle is een fietsenwinkel in Lovenjoel. Bij ons kan je terecht voor de aankoop van accessoires,
  nieuwe- en occasie fietsen. We hebben modellen voor iedereen, elektrische fietsen, kinderfietsen,
