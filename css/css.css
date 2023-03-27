@@ -70,23 +70,23 @@ header::after {
   margin: 0 auto;
 }
 
-nav {
+.nav-re-cycle {
   float: right;
 }
 
-nav ul {
+.nav-re-cycle ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav ul li {
+.nav-re-cycle ul li {
   float: left;
   position: relative;
 }
 
-nav ul li a,
-nav ul li a:visited {
+.nav-re-cycle ul li a,
+.nav-re-cycle ul li a:visited {
   display: block;
   padding: 0 20px;
   line-height: 70px;
@@ -95,8 +95,8 @@ nav ul li a:visited {
   text-decoration: none !important;
 }
 
-nav ul li a:hover,
-nav ul li a:visited:hover {
+.nav-re-cycle ul li a:hover,
+.nav-re-cycle ul li a:visited:hover {
   background:#53b408;
   color: black;
   transition-duration: 1.5s;
@@ -120,17 +120,17 @@ ul li a:hover ul.dropdown{
 }
 
 
-nav ul li a:not(:only-child):after,
-nav ul li a:visited:not(:only-child):after {
+.nav-re-cycle ul li a:not(:only-child):after,
+.nav-re-cycle ul li a:visited:not(:only-child):after {
   padding-left: 4px;
   content: " ▾";
 }
 
-nav ul li ul li {
+.nav-re-cycle ul li ul li {
   min-width: 190px;
 }
 
-nav ul li ul li a {
+.nav-re-cycle ul li ul li a {
   padding: 15px;
   line-height: 20px;
 }
@@ -158,25 +158,25 @@ nav ul li ul li a {
     display: block;
   }
 
-  nav {
+  .nav-re-cycle {
     width: 100%;
     padding: 70px 0 0px;
   }
 
-  nav ul {
+  .nav-re-cycle ul {
     display: none;
   }
 
-  nav ul li {
+  .nav-re-cycle ul li {
     float: none;
   }
 
-  nav ul li a {
+  .nav-re-cycle ul li a {
     padding: 15px;
     line-height: 20px;
   }
 
-  nav ul li ul li a {
+  .nav-re-cycle ul li ul li a {
     padding-left: 30px;
   }
 
@@ -1314,6 +1314,19 @@ margin: auto;
 
 
 
+
+/*----------Afspraken bevestigen----------*/
+.afsprakenbevestigen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: yellow;
+  border-radius: 20px;
+  margin-top: 80px;
+  height: 400px;
+}
   
 
 
@@ -1371,4 +1384,5 @@ h2{
 }
 .copy{
   padding-top: 250px;
+
 }
