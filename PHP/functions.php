@@ -54,3 +54,8 @@ $account_sort = "SELECT * from account ORDER BY PK";
 
 $uren = "SELECT * FROM uren";
 
+$selector = "SELECT resuren.PK,uren.uren ,  dagen.dagen,  resuren.bezet , resuren.FK_geg from resuren 
+left join uren on resuren.FK_uren = uren.PK left join dagen on resuren.FK_dagen = dagen.PK  where bezet =1 ";
+$bezet = "SELECT resuren.bezet ,resuren.PK,uren.uren,dagen.dagen  from resuren left join uren on uren.PK = FK_uren 
+left join dagen on dagen.PK = resuren.FK_uren where bezet = 1";
+// moet manueel worden toegevoegd and FK_dagen = 4";

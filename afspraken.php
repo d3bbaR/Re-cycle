@@ -512,6 +512,7 @@
         return $day;
     }
     function ladendagen(){
+        $array = array();
         $uren = "SELECT * FROM uren";
         $waardedag = $_COOKIE["dagwaarde"];
         $p = uren($waardedag);
@@ -519,15 +520,30 @@
         $check = day($waardedag);
         $day = dag($waardedag);
         $month = month($waardedag);
+        $fk_dagen = "SELECT PK from dagen where dagen = '".$check."'";
+        foreach(query($fk_dagen) as $key){
         //destroycookie();
-        echo "<div class='kal' id = 'kal".$day."'>";
-        echo "<div class='urenk' id = 'uren".$day."'>"; 
+        $bezet = "SELECT uren.uren  from resuren left join uren on uren.PK = FK_uren 
+        left join dagen on dagen.PK = resuren.FK_uren where bezet = 1";
+        $bezet_ins = $bezet." "."and FK_dagen =".$key["PK"];
+        //$bezet_ins = $bezet." "."where FK_dagen =".$key["PK"];
+            echo "<div class='kal' id = 'kal".$day."'>";
+            echo "<div class='urenk' id = 'uren".$day."'>"; 
+            foreach (query($bezet_ins) as $bezet) {
+                array_push($array,$bezet["uren"]);
+            }
          if ($month < 5 or $month > 9 ){
                 if($p == 100){
                 echo "<div class='uren'>wij zijn vandaag gesloten</div>";
                 }
+                
                 foreach (query($uren) as $dat){
+                    if (in_array($dat["uren"],$array) ){
+                            echo "<label class='gesl' for='".$dat['uren']."hhhh".$day."'>
+                            <input type='radio'  class='inv' name='uur'id = '".$dat['uren']."hhhh".$day."' value ='".$dat['uren']."hhhh".$day."'>".$dat["uren"]."</label>";
+                        }
                     
+                    else{
                     if ($counter >= $p){
                         
                         if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
@@ -544,6 +560,9 @@
                     }
                 }
             }
+        }
+            
+        
             else{
                 if($p == 100){
                     echo "<div class='uren'>".$dat["uren"]."</div>";    
@@ -560,74 +579,9 @@
                 }
             }   
             echo "</div></div>";
-        }
-    function vandaag(){
-       
-        $dag = 0;
-        $uren = "SELECT * FROM uren";
-        $g = 0; 
-        $p = uren($dag);
-        $check = day($dag);
-        $month = month($dag);
-        if ($dag == 0){
-            
-            
-            echo "<div class='kal' id = 'kal".$dag."'>";
-            echo "<div class='urenk' id = 'uren".$dag."'>";
-            if ($month < 5 or $month > 9 ){
-                if($p == 100){
-                echo "<div class='uren'>wij zijn vandaag gesloten</div>";
-                }
-                foreach (query($uren) as $dat){
-                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
-                    $fk_uren = "SELECT * from uren where uren = '".$dat."'";
-                    foreach (query($fk_dagen) as $res){
-                        echo "1";
-                        foreach (query($fk_dagen) as $res2){
-                            echo "2";
-                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
-                            foreach (query($pk) as $res3){
-                                echo"3<br>";
-                            }}}
-                    
-                    if ($g >= $p){
-                        
-                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00"){
-                        }
-                        else{
-                            echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                            <input type='radio' onclick='test()' class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
-                        }
-                
-                    }
-                    else{
-                        
-                        $g+=1;
-                    }
-                }
-            }
-            else{
-                if($p == 100){
-                    echo "<div class='uren'>".$dat["uren"]."</div>";    
-                }
-                foreach (query($uren) as $dat){
-                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
-                    $fk_uren = "SELECT * from uren where uren = '".$dat."'";
-                    foreach (query($fk_dagen) as $res){
-                        echo "1";
-                        foreach (query($fk_dagen) as $res2){
-                            echo "2";
-                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
-                            foreach (query($pk) as $res3){
-                                echo"3<br>";
-                            }}}
-                }
-            }   
-            echo "</div></div>";
-        }
+        }    
         
-    }
-    
+        }
     //echo print_r($jsdagen);
     //forbidden loop genereren van tussentabel
     /*$getal = 0;
