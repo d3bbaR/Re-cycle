@@ -49,3 +49,14 @@ h2{
 .copy{
     padding-top: 250px;
 }
+
+@media only screen and (max-width: 480px) {
+    img {
+    width: 100%;
+    }
+    }
+
+    img {
+        max-width: 100%;
+        width: 800px; // assume this is the default size
+        }

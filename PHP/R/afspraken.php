@@ -12,6 +12,7 @@
     <?php include '../../afspraken.php';?>  
 
     <div class="afsprakenbevestigen">
+
         <?php
         foreach (query($selector) as $res) {
             echo "hallo ";
@@ -19,6 +20,5 @@
         }
 
         ?>
-    </div>
 </body>
 </html>
