@@ -824,7 +824,9 @@ input[type="submit"]:hover {
   }
 }
 /*-----------------------------CONTACT-----------------------------*/
-
+.bgc{
+  background: #F2ECE4;
+}
 .contactcontainer{
 	position: relative;
 	width: 100%;
@@ -833,6 +835,7 @@ input[type="submit"]:hover {
 	justify-content: center;
 	align-items: center;
 	padding: 20px 100px;
+  background-color: #F2ECE4;
 }
 
 .contactcontainer:after{
@@ -842,10 +845,8 @@ input[type="submit"]:hover {
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: url("../assets/contact_re-cycle.png") no-repeat center;
 	background-size: cover;
-	filter: blur(50px);
-	z-index: -1;
+  background:;
 }
 .contact{
 	max-width: 850px;
@@ -854,8 +855,7 @@ input[type="submit"]:hover {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	background-color: #fff;
-	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+	background-color: #faf4eb;
 }
 
 .linkscontact{
@@ -1218,6 +1218,8 @@ margin-top: 170px;
 
 
 .container3{
+  display: flex;
+  flex-direction: column;
 width: 100%;
 min-height: 100vh;
 background-color: #F2ECE4;
