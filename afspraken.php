@@ -25,94 +25,7 @@
     <?php
     include "PHP/functions.php";
     include "PHP/conn.php";
-    session_start();
-    if(isset($_SESSION["naam"])){
-        if ($_SESSION["rol"] == 1){
-    ?>
-    <header>
-        <section class="navigation">
-            <div class="nav-container">
-                <div class="brand">
-                    <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
-                </div>
-                <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="afspraken.php">Afspraken</a>
-                        </li>
-                        <li>
-                            <a href="#">Nieuw</a>
-                        </li>
-                        <li>
-                            <a href="#">Cadeau ideeën</a>
-                        </li>
-                        <li>
-                            <a href="#">Fietsen</a>
-                        </li>
-                        <li>
-                            <a href="#">More</a>
-                        </li>
-                        <li>
-                            <a href="dashboard.php">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-    </header>
-            <?php
-        }
-    }
-        else {
-    
-            ?>
-
-    <header>
-        <section class="navigation">
-            <div class="nav-container">
-                <div class="brand">
-                    <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
-                </div>
-                <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="afspraken.php">Afspraken</a>
-                        </li>
-                        <li>
-                            <a href="#">Nieuw</a>
-                        </li>
-                        <li>
-                            <a href="#">Cadeau ideeën</a>
-                        </li>
-                        <li>
-                            <a href="#">Fietsen</a>
-                        </li>
-                        <li>
-                            <a href="#">More</a>
-                        </li>
-                        <li>
-                            <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-    </header>
-    <?php
-        }
-    ?>
-    <?php
+    include 'nav-bar.php';
     $date = date("Y-m-d");
     $dag = date("d");
     $naammaand = date('F');
@@ -649,6 +562,7 @@
             echo "</div></div>";
         }
     function vandaag(){
+       
         $dag = 0;
         $uren = "SELECT * FROM uren";
         $g = 0; 
@@ -665,6 +579,16 @@
                 echo "<div class='uren'>wij zijn vandaag gesloten</div>";
                 }
                 foreach (query($uren) as $dat){
+                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                    $fk_uren = "SELECT * from uren where uren = '".$dat."'";
+                    foreach (query($fk_dagen) as $res){
+                        echo "1";
+                        foreach (query($fk_dagen) as $res2){
+                            echo "2";
+                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                            foreach (query($pk) as $res3){
+                                echo"3<br>";
+                            }}}
                     
                     if ($g >= $p){
                         
@@ -687,14 +611,16 @@
                     echo "<div class='uren'>".$dat["uren"]."</div>";    
                 }
                 foreach (query($uren) as $dat){
-                    if ($g >= $p){
-                
-                        echo "<label class='uren' for='".$dat['uren']."hhhh".$dag."'>
-                        <input type='radio' onclick='test()'class='inv' name='uur'id = '".$dat['uren']."hhhh".$dag."' value ='".$dat['uren']."hhhh".$dag."'>".$dat["uren"]."</label>";
-                    }
-                    else{
-                        $g+=1;
-                    }
+                    $fk_dagen = "SELECT * from dagen where dagen = '".$check."'";
+                    $fk_uren = "SELECT * from uren where uren = '".$dat."'";
+                    foreach (query($fk_dagen) as $res){
+                        echo "1";
+                        foreach (query($fk_dagen) as $res2){
+                            echo "2";
+                            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+                            foreach (query($pk) as $res3){
+                                echo"3<br>";
+                            }}}
                 }
             }   
             echo "</div></div>";
@@ -770,23 +696,6 @@
     <?php
     }
     ?>
-    <form action="PHP/C/afspraak.php" method = "post"id ='form'>
-        <?php 
-        echo" <div><p id='label2' value='".$trans[$dezedag]."'></p>".
-        "<p id='label3'></p></div>";
-        echo "<label id='label'>nog geen uur geselecteerd</label>
-        <input type='hidden' name='dag' id='hidden2' value='".$date."'>";?>
-        <input type="hidden" name="uur" id="hidden" value="">
-        <input type ="text" name ="naam" placeholder ="naam" required>
-        <input type ="email" name ="email" placeholder ="email" required>
-        <input type="number" name ="telefoon" placeholder="telefoonnummer" required>
-        <select name="typeonderhoud" id="">
-            <option value="1">Klein onderhoud 30 minuten</option>
-            <option value="2">Groot onderhoud 1 uur</option>
-            <option value="3">Gesprek aankoop fiets 45 minuten</option>
-        </select>
-        <button type="submit" class='inv' id='button'>Plaats afspraak</button>
-    </form>
-    <script src="js/agenda.js"></script>
+    <script src="js/agenda2.js"></script>
 </body>
 </html> 

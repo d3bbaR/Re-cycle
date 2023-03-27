@@ -1,5 +1,4 @@
 let prev = document.createElement("div");
-let form = document.getElementById("form");
 let label = document.getElementById("label");
 let label2 = document.getElementById("label2");
 let label3 = document.getElementById("label3");
@@ -28,7 +27,6 @@ function del_cookie(name) {
         '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
 }
 function test() {
-    form.setAttribute("class", "inv");
     prev.setAttribute("class", "uren");
     let x = event.target.value;
     let h = document.getElementById(x);
@@ -37,6 +35,9 @@ function test() {
     parent.setAttribute("class", "selected");
     x = x.slice(0, -5);
     if (x.length == 12) {
+        x = x.slice(0, -1);
+    }
+    if (x == "9:30-10:00h" || x == "9:00-9:30h") {
         x = x.slice(0, -1);
     }
     hidden.value = x;
