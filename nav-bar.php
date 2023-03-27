@@ -10,7 +10,7 @@
                     <div class="brand">
                         <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
                     </div>
-                    <nav>
+                    <nav class="nav-re-cycle">
                         <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                         <ul class="nav-list">
                             <li>
@@ -55,7 +55,7 @@
                 <div class="brand">
                     <a href="index.php"><img class="logonav" alt="Logo" src="assets/Re-cycle.png"></a>
                 </div>
-                <nav>
+                <nav class="nav-re-cycle">
                     <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                     <ul class="nav-list">
                         <li>
