@@ -13,7 +13,7 @@
 
 
 	<div class="contactcontainer">
-		<div class="contact">
+		<div class="contact bgc">
 			<div class="linkscontact"></div>
 			<div class="rechtscontact">
 				<h2>Contacteer ons</h2>

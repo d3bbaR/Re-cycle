@@ -1410,7 +1410,7 @@ h2:after {
 
 h2 {
   text-align: center;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .slick-slide {
@@ -1468,63 +1468,33 @@ h2 {
 
 
 /*slideshow*/
-
-
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+.slider {
+  background-color: #f2ece4;
 }
 
-.slideshow-container img {
+.slideshow-container {
+  margin: 0 auto;
+  max-height: 600px;
+  max-width: 1000px;
+}
+
+.slideshow-container .mySlides img {
   width: 100%;
+  max-height: 569px;
 }
 
 .text {
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
+
   bottom: 8px;
   width: 100%;
   text-align: center;
 }
 
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(242, 222, 222, 0.5);
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(186, 151, 151, 0.7);
+.bgc {
+  background-color: #f2ece4;
 }
 
 
@@ -1535,22 +1505,6 @@ h2 {
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-  background-color: #717171;
 }
 
 
