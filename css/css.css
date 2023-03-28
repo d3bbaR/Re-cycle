@@ -831,6 +831,7 @@ input[type="submit"]:hover {
 
 /*-----------------------------CONTACT-----------------------------*/
 
+
 .contactcontainer {
   position: relative;
   width: 100%;
@@ -852,6 +853,38 @@ input[type="submit"]:hover {
   background-size: cover;
   filter: blur(50px);
   z-index: -1;
+  background: #F2ECE4;
+}
+
+.contactcontainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 100px;
+  background-color: #F2ECE4;
+}
+
+.contactcontainer:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-size: cover;
+}
+
+.contact {
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #faf4eb;
 }
 
 .contact {
@@ -1229,11 +1262,11 @@ h2:after {
 
 
 
+
 .container3 {
   width: 100%;
   min-height: 100vh;
   background-color: #F2ECE4;
-
 }
 
 .container3 .title {
@@ -1320,9 +1353,14 @@ h2:after {
 }
 
 .image-section img {
-  max-width: 600px;
+  width: 100%;
 }
 
+@media only screen and (max-width: 820px) {
+  .image-section img {
+    display: none;
+  }
+}
 
 
 
