@@ -15,6 +15,7 @@
     <div class="afsprakenbevestigen">
 
         <?php
+        ladenklant();
         foreach (query($selector) as $res) {
             if ($res["gekeurd"] == 1){
 
