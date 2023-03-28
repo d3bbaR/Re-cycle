@@ -10,7 +10,90 @@ $type = $_POST["typeonderhoud"];
 
 $insert = "INSERT INTO gegevens (naam,email,telefoon,type,gekeurd) VALUES ('$naam' , '$email', '$telefoon', '$type',0)";
 $result = mysqli_query($conn, $insert);
-$pk = mysqli_insert_id($conn);
+$lastkey = mysqli_insert_id($conn);
+echo print_r($lastkey);
+$fk_dagen = "SELECT * from dagen where dagen = '".$dag."'";
+
+
+$fk_uren = "SELECT * from uren where uren = '".$uur."'";
+if ($type == 2){
+    echo "type =2";
+    foreach (query($fk_uren) as $res){
+        foreach (query($fk_dagen) as $res2){
+            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+            $pk2 = "SELECT * from resuren where FK_uren = $res[PK]+1 and FK_dagen = $res2[PK]";
+            foreach (query($pk2) as $result){
+                if ($result["bezet"] == 1){
+                    header("Location:../../afspraken.php?bad=1");
+                }
+                else{
+                    foreach (query($pk) as $res3){
+                        $update ="UPDATE resuren set FK_uren=$res[PK] ,FK_dagen =$res2[PK] ,bezet=1 ,FK_geg =$lastkey where pk=$res3[PK] ";
+                        $result = mysqli_query($conn,$update);
+                        echo $update;
+                        
+                    }
+                }
+            }
+           
+            
+
+        }
+    }
+    foreach (query($fk_uren) as $res){
+        $key = $res["PK"];
+        echo $key;
+        $key += 1;
+        echo $key;
+        foreach (query($fk_dagen) as $res2){
+            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+            foreach (query($pk) as $res3){
+                $ak = $res3["PK"];
+                $ak += 1;
+                $update ="UPDATE resuren set FK_uren=$key ,FK_dagen =$res2[PK] ,bezet=1 ,FK_geg =$lastkey where pk=$ak ";
+                $result = mysqli_query($conn,$update);
+                echo $update;
+            }
+        }
+    }
+mailer();
+}
+else{
+foreach (query($fk_uren) as $res){
+    foreach (query($fk_dagen) as $res2){
+        $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
+        echo $pk;
+        foreach (query($pk) as $res3){
+           echo "1";
+            $update ="UPDATE resuren set FK_uren=$res[PK] ,FK_dagen =$res2[PK] ,bezet=1 ,FK_geg =$lastkey where pk=$res3[PK] ";
+            echo $update;
+            $result = mysqli_query($conn,$update);
+        }
+    }
+}
+mailer();
+}
+
+
+include "../R/iets.php";
+
+
+//mail naar eigenaar
+
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+function mailer(){
+    include "../conn.php";
+    include "../functions.php";
+    $dag = $_POST["dag"];
+    $uur = $_POST["uur"];
+    $naam = mysqli_real_escape_string($conn,$_POST["naam"]);
+    $email = $_POST["email"];
+    $telefoon = $_POST["telefoon"];
+    $type = $_POST["typeonderhoud"];
 switch ($type){
     case 1:
         $msg = "Klein onderhoud 30 minuten";
@@ -22,59 +105,7 @@ switch ($type){
         $msg = "Gesprek aankoop fiets 45 minuten";
         break;
     }
-$fk_dagen = "SELECT * from dagen where dagen = '".$dag."'";
-
-
-$fk_uren = "SELECT * from uren where uren = '".$uur."'";
-if ($type == 2){
-    foreach (query($fk_uren) as $res){
-        foreach (query($fk_dagen) as $res2){
-            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
-            foreach (query($pk) as $res3){
-                $update ="UPDATE resuren set FK_uren=$res[PK] ,FK_dagen =$res2[PK] ,bezet=1 where pk=$res3[PK],FK_geg =$pk ";
-                $result = mysqli_query($conn,$update);
-                echo $update;
-            }
-        }
-    }
-    foreach (query($fk_uren) as $res){
-        $key = $res["PK"] +1;
-        foreach (query($fk_dagen) as $res2){
-            $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
-            foreach (query($pk) as $res3){
-                $update ="UPDATE resuren set FK_uren=$key ,FK_dagen =$res2[PK] ,bezet=1 where pk=$res3[PK],FK_geg =$pk ";
-                $result = mysqli_query($conn,$update);
-                echo $update;
-            }
-        }
-    }
-
-}
-else{
-foreach (query($fk_uren) as $res){
-    foreach (query($fk_dagen) as $res2){
-        $pk = "SELECT * from resuren where FK_uren = $res[PK] and FK_dagen = $res2[PK]";
-        foreach (query($pk) as $res3){
-            $update ="UPDATE resuren set FK_uren=$res[PK] ,FK_dagen =$res2[PK] ,bezet=1 where pk=$res3[PK],FK_geg =$pk ";
-            $result = mysqli_query($conn,$update);
-            echo $update;
-        }
-    }
-}
-}
-
-header("Location:../bevestigd.php");
-echo "halllooooo";
-include "../R/iets.php";
-
-
-//mail naar eigenaar
-
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+    header("Location:../bevestigd.php");
 
 require '../PHPMailer-master/PHPMailer-master/src/Exception.php';
 require '../PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
@@ -156,7 +187,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Beste'.$naam;
+    $mail->Subject = 'Beste'." ".$naam;
     $mail->Body    = "Je hebt een ".$msg." "." geplaatste voor: ".$dag." ".$uur." 
     uw afspraak word op dit moment verwerkt. U zult nog een mail krijgen als deze wordt goedgekeurd of afgekeurt."
    ;
@@ -166,5 +197,5 @@ try {
     echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+}}
 ?>
