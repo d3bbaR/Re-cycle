@@ -1309,9 +1309,13 @@ margin: auto;
 }
 
 .image-section img {
-  max-width: 600px;
+  width: 100%;
 }
-
+@media only screen and (max-width: 820px) {
+  .image-section img{
+    display: none;
+  }
+}
 
 
 
