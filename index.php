@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php setcookie("dagwaarde", "0") ?>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -23,15 +24,15 @@
 </head>
 
 <body>
-   <?php include 'nav-bar.php';?> 
-   <?php include 'header.php' ;?>
-   <?php include 'overons.php';?>
-   <?php include 'services.php'; ?>
-   
-<div class="elfsight-app-0871bc9d-5a4e-46d7-9c96-60f94a003a9d bgc"></div>
-<?php include 'contact.php';?>
-   <?php include 'footer.php';?>
-   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <?php include 'nav-bar.php'; ?>
+    <?php include 'header.php'; ?>
+    <?php include 'overons.php'; ?>
+    <?php include 'services.php'; ?>
+
+    <div class="elfsight-app-0871bc9d-5a4e-46d7-9c96-60f94a003a9d bgc"></div>
+    <?php include 'contact.php'; ?>
+    <?php include 'footer.php'; ?>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>

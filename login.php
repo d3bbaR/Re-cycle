@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,40 +12,41 @@
 </head>
 
 <body>
-    
-
-<?php include 'nav-bar.php'?>
 
 
-<header>
-        
-    <div class="container">
-        <div class="login">
-            <h1>Welkom bij re-cycle!</h1>
-            <form method="post" action="loginfunction.php">
-                <div class="gegevens">
-                    <input type="text" name="username" required>
-                    <label>Gebruikersnaam</label>
-                </div>
-                <div class="gegevens">
-                    <input type="password" name="password" required>
-                    <label>Wachtwoord</label>
-                </div>
-                <div class="pass">Wachtwoord vergeten?</div>
-                <input type="submit" value="login">
-                <div class="signup">
-                    Geen account?<a href="registreren.php"> Registreer je nu</a>
-                </div>
-            </form>
-            <?php if (isset($_GET["bad"])){
-            echo "<p style='color:red'>Je wachtwoord en of username kloppen niet</p>";
-        }
-        ?>
+    <?php include 'nav-bar.php' ?>
+
+
+    <header>
+
+        <div class="container">
+            <div class="login">
+                <h1>Welkom bij re-cycle!</h1>
+                <form method="post" action="loginfunction.php">
+                    <div class="gegevens">
+                        <input type="text" name="username" required>
+                        <label>Gebruikersnaam</label>
+                    </div>
+                    <div class="gegevens">
+                        <input type="password" name="password" required>
+                        <label>Wachtwoord</label>
+                    </div>
+                    <div class="pass">Wachtwoord vergeten?</div>
+                    <input type="submit" value="login">
+                    <div class="signup">
+                        Geen account?<a href="registreren.php"> Registreer je nu</a>
+                    </div>
+                </form>
+                <?php if (isset($_GET["bad"])) {
+                    echo "<p style='color:red'>Je wachtwoord en of username kloppen niet</p>";
+                }
+                ?>
+            </div>
         </div>
-    </div>
 </body>
 <?php
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
+
 </html>

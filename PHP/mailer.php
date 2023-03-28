@@ -18,18 +18,18 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'baftech3000@gmail.com';                     //SMTP username
-    $mail->Password   = $walf;                               //SMTP password
-    $mail->SMTPSecure = "TLS";            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
+    $mail->isSMTP(); //Send using SMTP
+    $mail->Host = 'smtp.gmail.com'; //Set the SMTP server to send through
+    $mail->SMTPAuth = true; //Enable SMTP authentication
+    $mail->Username = 'baftech3000@gmail.com'; //SMTP username
+    $mail->Password = $walf; //SMTP password
+    $mail->SMTPSecure = "TLS"; //Enable implicit TLS encryption
+    $mail->Port = 587; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
     $mail->setFrom('baftech3000@gmail.com', 'BafTech');
-    $mail->addAddress('baftech3000@gmail.com');     //Add a recipient
+    $mail->addAddress('baftech3000@gmail.com'); //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
@@ -40,9 +40,9 @@ try {
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
     //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true); //Set email format to HTML
     $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Body = 'This is the HTML message body <b>in bold!</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

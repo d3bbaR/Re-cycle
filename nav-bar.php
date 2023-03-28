@@ -1,9 +1,8 @@
-
 <?php
-    session_start();
-    if(isset($_SESSION["naam"])){
-        if ($_SESSION["rol"] == 1){
-    ?>
+session_start();
+if (isset($_SESSION["naam"])) {
+    if ($_SESSION["rol"] == 1) {
+        ?>
         <header>
             <section class="navigation">
                 <div class="nav-container">
@@ -42,12 +41,11 @@
                 </div>
             </section>
         </header>
-            <?php
-        }
+        <?php
     }
-        else {
-    
-            ?>
+} else {
+
+    ?>
 
     <header>
         <section class="navigation">
@@ -91,6 +89,6 @@
     </header>
 
     <?php
-        }
-    
-    ?>
+}
+
+?>

@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/css.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/css.css">
 </head>
 
 <body class="registratiebody">
- <?php include 'nav-bar.php'?>
+   <?php include 'nav-bar.php' ?>
 
 
-    <div class="registratiecontainer">
+   <div class="registratiecontainer">
       <h1>Geen Account? Registreer NU!</h1>
-      <form action="PHP/C/account.php" method ="post">
+      <form action="PHP/C/account.php" method="post">
          <div class="registratietxt">
             <input placeholder="Voornaam" name="naam" type="text" required>
             <span></span>
@@ -48,11 +48,11 @@
 
       </form>
    </div>
-    <?php
-    if (isset($_GET["bad"])){
-        echo "<p style='color:red'>Je wachtwoord is niet hetzelfde, probeer opnieuw</p>";
-    }
-    ?>
+   <?php
+   if (isset($_GET["bad"])) {
+      echo "<p style='color:red'>Je wachtwoord is niet hetzelfde, probeer opnieuw</p>";
+   }
+   ?>
 
 </body>
 
