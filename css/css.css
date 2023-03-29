@@ -920,6 +920,7 @@ h2:after {
 }
 
 .txtarea {
+  width: 100%;
   min-height: 150px;
 }
 
@@ -948,7 +949,9 @@ h2:after {
   .contact {
     grid-template-columns: 1fr;
   }
-
+  .contactcontainer{
+    padding: 0;
+  }
   .linkscontact {
     height: 200px;
   }
@@ -1497,4 +1500,36 @@ i.fa.fa-check.g {
 i.fa.fa-close.r {
   color: red;
 
+}
+
+/*LEASING PAGE*/
+.leasing{
+  display: flex;
+  flex-direction: column;
+}
+.leasingtext{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.leasingtext a{
+  text-decoration: underline;
+}
+.leasingtext img{
+  width: 40%;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.leasing h2{
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 45px;
+  margin: 20px;
+}
+.leasing p{
+  padding-bottom: 10px;
+}
+.styling{
+  list-style: disc;
+  padding-left:15px;
 }

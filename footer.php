@@ -14,7 +14,7 @@
                 <h4>More</h4>
                 <ul>
                     <li><a href="#">Koopjes</a></li>
-                    <li><a href="#">Fiets Leasing</a></li>
+                    <li><a href="leasing.php">Fiets Leasing</a></li>
                     <li><a href="merken.php" target="_blank">Onze merken</a></li>
                     <li><a href="#">Leen/ Vervagfiets Voorwaarden</a></li>
                     <li><a href="#">Inruilactie</a></li>
