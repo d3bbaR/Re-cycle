@@ -1553,3 +1553,18 @@ i.fa.fa-close.r {
   list-style: disc;
   padding-left:15px;
 }
+/*Leen voorwaarden page*/
+
+
+.leenvoorwaarden{
+  margin: auto;
+}
+.leenvoorwaarden p{
+  padding: 10px;
+}
+.leenvoorwaarden h2{
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 45px;
+  margin: 20px;
+}

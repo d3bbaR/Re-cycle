@@ -16,7 +16,7 @@
                     <li><a href="#">Koopjes</a></li>
                     <li><a href="leasing.php">Fiets Leasing</a></li>
                     <li><a href="merken.php" target="_blank">Onze merken</a></li>
-                    <li><a href="#">Leen/ Vervagfiets Voorwaarden</a></li>
+                    <li><a href="leenvoorwaarden.php">Leen/ Vervagfiets Voorwaarden</a></li>
                     <li><a href="#">Inruilactie</a></li>
                     <li><a href="#">Algemene Verkoopsvoorwaarden</a></li>
                     <li><a href="#">Een Fiets Leasen Via Uw Werkgever</a></li>
