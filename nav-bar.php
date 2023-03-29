@@ -28,7 +28,7 @@ if (isset($_SESSION["naam"])) {
                                 <a href="cat.php">Fietsen</a>
                             </li>
                             <li>
-                                <a href="#">More</a>
+                                <a href="footer.php">More</a>
                             </li>
                             <li>
                                 <a href="dashboard.php">Dashboard</a>
@@ -72,12 +72,8 @@ if (isset($_SESSION["naam"])) {
                             <a href="cat.php">Fietsen</a>
                         </li>
                         <li>
-                            <a href="#">More</a>
-                            <ul class="dropdown">
-                                <li><a href="">Nuttige Info</a></li>
-                                <li><a href="">Onze Merken</a></li>
-                                <li><a href="">Inruilactie</a></li>
-                            </ul>
+                            <a href="footer.php">More</a>
+                            
                         </li>
                         <li>
                             <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>

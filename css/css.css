@@ -102,22 +102,7 @@ header::after {
   transition-duration: 1.5s;
 }
 
-ul li ul.dropdown li {
-  display: block;
 
-}
-
-ul li ul.dropdown {
-  width: 100%;
-  background: #53b408;
-  position: absolute;
-  z-index: 999;
-  display: none;
-}
-
-ul li a:hover ul.dropdown {
-  display: block;
-}
 
 
 .nav-re-cycle ul li a:not(:only-child):after,
@@ -135,12 +120,7 @@ ul li a:hover ul.dropdown {
   line-height: 20px;
 }
 
-.nav-dropdown {
-  position: absolute;
-  display: none;
-  z-index: 1;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
+
 
 /*----------------------------------- Mobile navigation -------------------*/
 .nav-mobile {

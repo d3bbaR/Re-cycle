@@ -11,7 +11,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Nuttige Info</h4>
+                <h4>More</h4>
                 <ul>
                     <li><a href="#">Koopjes</a></li>
                     <li><a href="leasing.php">Fiets Leasing</a></li>
