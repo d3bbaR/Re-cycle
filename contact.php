@@ -20,7 +20,7 @@
 				<input type="text" class="txtveld" placeholder="Uw naam">
 				<input type="text" class="txtveld" placeholder="uw email">
 				<input type="text" class="txtveld" placeholder="Uw telefoonnummer">
-				<textarea placeholder="Wat is het probleem" class="txtarea"></textarea>
+				<input placeholder="Wat is het probleem" class="txtarea"></input>
 				<button class="btncontainer">Verzend</button>
 			</div>
 		</div>
