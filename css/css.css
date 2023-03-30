@@ -102,22 +102,7 @@ header::after {
   transition-duration: 1.5s;
 }
 
-ul li ul.dropdown li {
-  display: block;
 
-}
-
-ul li ul.dropdown {
-  width: 100%;
-  background: #53b408;
-  position: absolute;
-  z-index: 999;
-  display: none;
-}
-
-ul li a:hover ul.dropdown {
-  display: block;
-}
 
 
 .nav-re-cycle ul li a:not(:only-child):after,
@@ -135,12 +120,7 @@ ul li a:hover ul.dropdown {
   line-height: 20px;
 }
 
-.nav-dropdown {
-  position: absolute;
-  display: none;
-  z-index: 1;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
+
 
 /*----------------------------------- Mobile navigation -------------------*/
 .nav-mobile {
@@ -940,6 +920,7 @@ h2:after {
 }
 
 .txtarea {
+  width: 100%;
   min-height: 150px;
 }
 
@@ -968,7 +949,9 @@ h2:after {
   .contact {
     grid-template-columns: 1fr;
   }
-
+  .contactcontainer{
+    padding: 0;
+  }
   .linkscontact {
     height: 200px;
   }
@@ -1517,4 +1500,51 @@ i.fa.fa-check.g {
 i.fa.fa-close.r {
   color: red;
 
+}
+
+/*LEASING PAGE*/
+.leasing{
+  display: flex;
+  flex-direction: column;
+}
+.leasingtext{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.leasingtext a{
+  text-decoration: underline;
+}
+.leasingtext img{
+  width: 40%;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.leasing h2{
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 45px;
+  margin: 20px;
+}
+.leasing p{
+  padding-bottom: 10px;
+}
+.styling{
+  list-style: disc;
+  padding-left:15px;
+}
+/*Leen voorwaarden page*/
+
+
+.leenvoorwaarden{
+  margin: auto;
+}
+.leenvoorwaarden p{
+  padding: 10px;
+}
+.leenvoorwaarden h2{
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: 45px;
+  margin: 20px;
 }
