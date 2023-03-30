@@ -248,7 +248,7 @@ while ($erna != 0) {
 }
 
 
-echo "<div>datum vandaag: " . $translate[$newDate] . " " . $dag . " " . $translate[$naammaand];
+echo "<div><div class='dv'>datum vandaag: " . $translate[$newDate] . " " . $dag . " " . $translate[$naammaand] . "</div>";
 echo "<div class='tabel'>";
 echo "<div class='naamdag'>";
 foreach ($dagen as $day) {
@@ -581,6 +581,7 @@ function ladendagen()
             <input type="text" name="naam" placeholder="naam" required>
             <input type="email" name="email" placeholder="email" required>
             <input type="number" name="telefoon" placeholder="telefoonnummer" required>
+            <textarea type="text" id="textarea" placeholder="voer hier eventueel extra informatie toe"></textarea>
             <select name="typeonderhoud" id="">
                 <option value="1">Klein onderhoud 30 minuten</option>
                 <option value="2">Groot onderhoud 1 uur</option>

@@ -22,7 +22,7 @@ setcookie("dagwaarde", "",time()-3600);
 <body>
     <?php
     include 'nav-bar.php';
-    echo "<div class='navcountainer'>";
+    echo "<div class='agendacontainer'>";
     include 'afsprakenfuncties.php';
     if (isset($_COOKIE["dagwaarde"])) {
         ladendagen();

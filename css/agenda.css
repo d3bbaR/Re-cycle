@@ -1,50 +1,59 @@
 .naamdag {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 15px;
+
+}
+
+textarea {
+    resize: none;
 }
 
 .naam {
-    border: 1px solid #000;
     padding: 3px 3px;
     width: 27px;
     max-width: 27px;
     max-height: 27px;
 }
 
+.dv {
+    text-align: center;
+}
+
 .tabel {
     border: 1px solid #000;
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 400px;
 }
 
 .dagen {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
 }
 
 .dag {
-    border: 1px solid #000;
-    width: 27px;
-    height: 27px;
     text-align: center;
 }
 
 .selected {
     background-color: #9a9191;
     font-weight: bold;
-    border: 1px solid #000;
+    text-align: center;
+}
+
+.dag:hover,
+.donderdag:hover {
+    background-color: #9a9191;
+    transition-duration: 1s;
 }
 
 .gesl {
-    background-color: red;
+    color: #eacccc;
 }
 
 .inv {
@@ -71,15 +80,15 @@ form {
 }
 
 .donderdag {
-    border: 1px solid #000;
-    background-color: red;
+    color: #eacccc;
+    text-align: center;
 }
 
 .vis {
     display: block;
 }
 
-.navcontainer {
+.agendacontainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
