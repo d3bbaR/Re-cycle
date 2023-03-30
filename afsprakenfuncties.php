@@ -573,15 +573,21 @@ function ladendagen()
         ?>
         <form action="PHP/C/afspraak.php" method="post" id='form1'>
             <?php
-            echo " <div><p id='label2' value='" . $day . "'>" . $day . "</p>" .
-                "<p id='label3' value='" . $maand . "'></p>" . $translate[$maand] . "</div>";
+            echo " <p id='label2' value='" . $day . "'>" . $day . "</p>" .
+                "<p id='label3' value='" . $maand . "'>" . $translate[$maand] . "</p>";
             echo "<label id='label'>nog geen uur geselecteerd</label>
             <input type='hidden' name='dag' id='hidden2' value='" . $check . "'>"; ?>
             <input type="hidden" name="uur" id="hidden" value="">
-            <input type="text" name="naam" placeholder="naam" required>
-            <input type="email" name="email" placeholder="email" required>
-            <input type="number" name="telefoon" placeholder="telefoonnummer" required>
-            <textarea type="text" id="textarea" placeholder="voer hier eventueel extra informatie toe"></textarea>
+            <p></p>
+            <label for="naam">Naam*:</label>
+            <input type="text" id="naam" name="naam" required>
+            <label for="email">Emailadress*:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="telefoon">Telefoonnummer*:</label>
+            <input type="tel" id="telefoon" name="telefoon" required>
+            <label for="textarea">Extra informatie:</label>
+            <textarea type="text" id="textarea"></textarea>
+            <input type="hidden" name="tekst" id="tekst">
             <select name="typeonderhoud" id="">
                 <option value="1">Klein onderhoud 30 minuten</option>
                 <option value="2">Groot onderhoud 1 uur</option>

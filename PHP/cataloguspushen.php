@@ -3,6 +3,7 @@ include "conn.php";
 include "functions.php";
 $counter = 2;
 $rows = $_POST["rows"];
+$teller = 2;
 while ($rows > $counter) {
     $fietsnr = mysqli_real_escape_string($conn, $_POST['FietsNR_' . $counter]);
     $voorraad = mysqli_real_escape_string($conn, $_POST['Voorraad_' . $counter]);
@@ -27,6 +28,16 @@ while ($rows > $counter) {
     if ($framenr == "") {
         $framenr = 0;
     } else {
+    }
+    $pkselect = "SELECT FietsNr FROM catalogus";
+    foreach (query($pkselect) as $PK) {
+        if ($PK["FietsNR"] != $fietsnr) {
+            $teller += 1;
+            if ($teller == $rows) {
+                $del = "DELETE FROM catalogus WHERE FietsNR =$PK[FietsNR] ";
+            }
+        } else {
+        }
     }
     $counter += 1;
     $select = "SELECT * from  catalogus where FietsNR =" . $fietsnr;

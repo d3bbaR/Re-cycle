@@ -8,6 +8,8 @@ let hidden = document.getElementById("hidden");
 let hidden2 = document.getElementById("hidden2");
 let datum = new Date();
 let button = document.getElementById("button");
+let textarea = document.getElementById("textarea");
+let input2 = document.getElementById("tekst");
 function addDays(days) {
     var date = new Date();
     date.setDate(date.getDate() + days);
@@ -31,6 +33,9 @@ function test() {
     let x = event.target.value;
     let h = document.getElementById(x);
     let parent = h.parentNode;
+    let vs = textarea.innerHTML;
+    console.log(vs);
+    input2.value = vs;
     prev = h.parentNode;
     parent.setAttribute("class", "selected");
     x = x.slice(0, -5);
