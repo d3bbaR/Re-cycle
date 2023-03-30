@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include '../../nav-bar.php'; ?>
+    <?php include '../../nav-bar2.php'; ?>
     <form action="../upload.php" method="post" enctype="multipart/form-data">
         <input type="file" name="FuResume" id="FuResume">
         <button type="submit">upload file</button>

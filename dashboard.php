@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/css.css">
     <title>Document</title>
 </head>
-
+    <?php include 'nav-bar.php'; ?>
 <body class="admindashboard">
     <?php
     $folder = scandir('PHP/R');

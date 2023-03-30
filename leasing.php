@@ -9,9 +9,10 @@
 </head>
 <body> 
     <?php include 'nav-bar.php';?>
+    
     <div class="leasing">
-   
-    <h2>EEN FIETS LEASEN VIA UW WERKGEVER</h2>
+   <h2>EEN FIETS LEASEN VIA UW WERKGEVER</h2>
+    
 
     <div class="leasingtext">
     <p>
@@ -46,7 +47,8 @@
     </p>
     <img src="assets/leaseabikepartner.webp" alt="Logo Lease a bike">
     </div>
-        <?php include 'footer.php'; ?>
+        
 </div>
+<?php include 'footer.php'; ?>
 </body>
 </html>
