@@ -17,13 +17,12 @@ setcookie("dagwaarde", "",time()-3600);
     <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/extra.css">
     <link rel="stylesheet" href="css/css.css" />
-
     <link rel="stylesheet" href="css/agenda.css" />
-
-    <link rel="stylesheet" href="css/agendar.css" />
 
 <body>
     <?php
+    include 'nav-bar.php';
+    echo "<div class='navcountainer'>";
     include 'afsprakenfuncties.php';
     if (isset($_COOKIE["dagwaarde"])) {
         ladendagen();
@@ -35,6 +34,7 @@ setcookie("dagwaarde", "",time()-3600);
 
     ?>
     <script src="js/agenda2.js"></script>
+    </div>
 </body>
 
 </html>

@@ -29,7 +29,6 @@ if ($type == 2) {
                     foreach (query($pk) as $res3) {
                         $update = "UPDATE resuren set FK_uren=$res[PK] ,FK_dagen =$res2[PK] ,bezet=1 ,FK_geg =$lastkey where pk=$res3[PK] ";
                         $result = mysqli_query($conn, $update);
-                        echo $update;
 
                     }
                 }
@@ -87,7 +86,7 @@ use PHPMailer\PHPMailer\SMTP;
 function mailer()
 {
     include "../conn.php";
-    include "../functions.php";
+    include_once "../functions.php";
     $dag = $_POST["dag"];
     $uur = $_POST["uur"];
     $naam = mysqli_real_escape_string($conn, $_POST["naam"]);

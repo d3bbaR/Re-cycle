@@ -2,9 +2,10 @@
 echo '<table border="1">';
 $start_row = 1;
 $counter = 0;
-$row = 1;
+$row = 0;
 echo "<form method = 'post' action = 'cataloguspushen.php'>";
-if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\Tweewielers-29-03-2023.csv", "r")) !== FALSE) {
+echo "<button type = 'submit'>add</button>";
+if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\fietsen.csv", "r")) !== FALSE) {
     while (($read_data = fgetcsv($csv_file, 1000, ",")) !== FALSE) {
         $column_count = count($read_data);
         $start_row++;
@@ -14,6 +15,7 @@ if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\Tweewieler
             switch ($counter) {
                 case 1:
                     $type = "FietsNR";
+                    $row += 1;
                     break;
                 case 2:
                     $type = "Voorraad";
@@ -57,7 +59,6 @@ if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\Tweewieler
                 case 15:
                     $type = "Framenr";
                     $counter = 0;
-                    $row += 1;
                     break;
 
             }
@@ -68,5 +69,6 @@ if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\Tweewieler
     fclose($csv_file);
 }
 echo '</table>';
-echo "<button type = 'submit'>add</button></form>";
+echo "<input name ='rows' type = 'hidden' value = '" . $row . "'>";
+echo "</form>";
 ?>

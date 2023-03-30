@@ -1,7 +1,6 @@
 <?php
 include "PHP/functions.php";
 include "PHP/conn.php";
-include 'nav-bar.php';
 $date = date("Y-m-d");
 $dag = date("d");
 $naammaand = date('F');
@@ -249,7 +248,7 @@ while ($erna != 0) {
 }
 
 
-echo "datum vandaag: " . $translate[$newDate] . " " . $dag . " " . $translate[$naammaand];
+echo "<div>datum vandaag: " . $translate[$newDate] . " " . $dag . " " . $translate[$naammaand];
 echo "<div class='tabel'>";
 echo "<div class='naamdag'>";
 foreach ($dagen as $day) {
@@ -299,8 +298,7 @@ foreach ($dagenvoorkalender as $day) {
         }
     }
 }
-echo "</div>";
-echo "</div>";
+echo "</div></div></div>";
 $dagen = "SELECT * from dagen";
 $result = mysqli_query($conn, $dagen);
 $maand = date('m');

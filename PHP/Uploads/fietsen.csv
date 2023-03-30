@@ -1,5 +1,5 @@
 ﻿FietsNr,Voorraad,Merk,Type,Kleur,Cat.,Frame,Wielmaat,Jaar,Status,Demo,Maat,Versnellingen,Prijs,Framenr.
-10130,Voorraad,Kokua,Loopfiets,oranje,Kinderfietsen ,Uni,12,2019,Nieuw,Nee,0,0,219,0
+10130,Voorraad,Kokua,Loopfiets,oranje,Kinderfietsen ,Uni,12,2019,Nieuw,Nee,"12,5",0,219,
 10146,Voorraad,Merida,MATTS J.20+,Metallic Orange,Kinderfietsen ,Uni,20,2021,Nieuw,Nee,25 10,7,679,WC1158783S
 10152,Voorraad,Merida,E-Spresso CITY 800 EQ,Glossy Dark Blue,Stadsfietsen (elo),Uni,28,2021,Nieuw,Nee,43 S,5,4999,WC8037219S
 10154,Voorraad,Merida,E-Spresso CITY 800 EQ,Glossy Dark Blue,Stadsfietsen (elo),Uni,28,2021,Nieuw,Nee,43 ,5,4999,WC8037226S
@@ -14,7 +14,7 @@
 10260,Voorraad,Merida,Matts J.20+,Metallic Orange,Kinderfietsen ,Uni,20,2021,Nieuw,Nee,25 ,7,679,WC1160736S
 10302,Voorraad,Merida,Big Nine Xt,Zwart,Mountainbikes ,Heren,29,2021,Nieuw,Nee,43 ,12,3199,WC1285117R
 10906,Voorraad,Victoria,Trekking 4.7,Supersonic Silver  Black,Hybride fietsen ,Dames,28,2021,Nieuw,Nee,51 ,18,849,VCR21000010461
-10948,Voorraad,Victoria,Trekking 4.7,supersonic silver  black,Hybride fietsen ,Heren,28,2021,Nieuw,Nee,56 56 cm,18,849,0
+10948,Voorraad,Victoria,Trekking 4.7,supersonic silver  black,Hybride fietsen ,Heren,28,2021,Nieuw,Nee,56 56 cm,18,849,
 11284,Voorraad,Merida,Big Nine 200,Blauw,Mountainbikes ,Heren,0,2021,Nieuw,Nee, L,0,999,WC060007698T
 11288,Voorraad,Merida,Matts J 20+,Paars,Kinderfietsen ,Jongens,0,2021,Nieuw,Nee,0 ,0,679,WC1248113S
 11306,Voorraad,Merida,E-big nine 400,Blauw,Hybride fietsen (elo),Uni,0,2021,Nieuw,Nee, M,0,4199,WC1577606S
@@ -53,25 +53,25 @@
 12745,Voorraad,Merida,E-Spresso City 400 ,Silk Blue,Stadsfietsen (elo),Dames,28,2021,Nieuw,Nee,49 M,9,3899,WC1046158S
 13050,Voorraad,O2Feel,Iswan City boost 7.1 540 Wh,Grijs,Stadsfietsen (elo),Dames,0,2021,Nieuw,Nee,50 ,0,3699,
 13210,Voorraad,O2Feel,Vern Urban power 9.1 720 Wh,Zwart,Stadsfietsen (elo),Uni,0,2021,Nieuw,Nee,52 M,0,4499,S2103IKBP52149
-13395,Voorraad,Victoria,Pro 7.7. 26&quot; nexus 7,Zwart,Kinderfietsen ,Mixed,0,2021,Nieuw,Nee,0 ,0,599,11724540
+13395,Voorraad,Victoria,Pro 7.7. 26 nexus 7,Zwart,Kinderfietsen ,Mixed,0,2021,Nieuw,Nee,0 ,0,599,11724540
 13397,Voorraad,Merida,Speeder 100,Blauw,Hybride fietsen ,Uni,28,2021,Nieuw,Nee,54 M-L,24,899,WC8298886S
-13422,Voorraad,BFK,Lots of love 20&quot;,Wit,Kinderfietsen ,Meisjes,0,2021,Nieuw,Nee,0 ,0,355,
+13422,Voorraad,BFK,Lots of love 20,Wit,Kinderfietsen ,Meisjes,0,2021,Nieuw,Nee,0 ,0,355,
 13469,Voorraad,Gazelle,Ultimate C380 HMB speed 500Wh,Grijs,Stadsfietsen (elo),Mixed,28,2022,Nieuw,Nee,53 ,0,4899,GZ61604901
-13512,Voorraad,BFK,Flower fun 12&quot;,Blauw,Kinderfietsen ,Mixed,0,2022,Nieuw,Nee,0 12,0,249,
+13512,Voorraad,BFK,Flower fun 12,Blauw,Kinderfietsen ,Mixed,0,2022,Nieuw,Nee,0 12,0,249,
 13530,Voorraad,Merida,Reacto 6000 Di2,Rood,Racefietsen ,Heren,0,2023,Nieuw,Nee,0 M,0,3599,WC090031383T
 13586,Voorraad,Merida,E-speeder 400,Groen,Hybride fietsen (elo),Heren,0,2021,Nieuw,Nee, M,0,3399,WC8271352S
 13713,Voorraad,Merida,E-spresso city EP8,Rood,Stadsfietsen (elo),Dames,0,2021,Nieuw,Nee,0 L,0,4999,WC1044627S
 13802,Voorraad,Merida,SPEEDER 200 ,Zwart,Racefietsen ,Heren,0,2022,Nieuw,Nee,54 ,0,1049,WC8305538S
 13807,Voorraad,Gazelle,Ultimate T10,Grijs,Stadsfietsen (elo),Dames,28,0,Gebruikt,Nee,0 ,10,0,GZ 61411247
-13838,Voorraad,Victoria,Girly 5.3. 24&quot;,Paars,Kinderfietsen ,Meisjes,0,2021,Nieuw,Nee,34 ,0,529,
-13842,Voorraad,Victoria,Rad Pro 7.7 26&quot;,ZwartGroen,Kinderfietsen ,Jongens,0,2021,Nieuw,Nee,0 ,0,629,
+13838,Voorraad,Victoria,Girly 5.3. 24,Paars,Kinderfietsen ,Meisjes,0,2021,Nieuw,Nee,34 ,0,529,
+13842,Voorraad,Victoria,Rad Pro 7.7 26,ZwartGroen,Kinderfietsen ,Jongens,0,2021,Nieuw,Nee,0 ,0,629,
 13944,Voorraad,Merida,Big Nine 80 BlueBlack,Blauw,Mountainbikes ,Uni,0,2022,Nieuw,Nee,0 M,0,1099,WC1494440S
 14078,Voorraad,BFK,Flower fun. 16,Blauw,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,249,
 14088,Voorraad,Gazelle,Ultimate T10 HMB,Grijs,Stadsfietsen (elo),Dames,28,2022,Nieuw,Nee,57 ,10,3699,GZ61820003
 14130,Voorraad,Dutch ID,Phantom 65 TR belt auto D58 500Wh,Zwart,Stadsfietsen (elo),Dames,0,2022,Nieuw,Nee,58 M,0,4699,MMD2109841
 14250,Voorraad,Merida,SPEEDER 200,Rood,Stadsfietsen ,Heren,0,2022,Nieuw,Nee,52 S-M,0,1049,WC8310501S
 14252,Voorraad,Merida,SPEEDER 300,Grijs,Stadsfietsen ,Heren,0,2021,Nieuw,Nee,56 L,0,1149,WC8311797S
-14270,Voorraad,BFK,Flower fun 12&quot;,Groen,Kinderfietsen ,Mixed,0,2022,Nieuw,Nee,0 12,0,249,
+14270,Voorraad,BFK,Flower fun 12,Groen,Kinderfietsen ,Mixed,0,2022,Nieuw,Nee,0 12,0,249,
 14334,Voorraad,Merida,E-Spresso City 400 ,Silk Blue,Stadsfietsen (elo),Dames,28,2021,Nieuw,Nee,49 M,9,3899,WC8323166S
 14336,Voorraad,Merida,E-Spresso City 400 ,Silk Blue,Stadsfietsen (elo),Dames,28,2021,Nieuw,Nee,49 M,9,3899,WC8322727S
 14425,Voorraad,Merida,SILEX 4000,Rood,Racefietsen ,Uni,0,2022,Nieuw,Nee, M,0,2499,WC8143381R
@@ -79,9 +79,9 @@
 14566,Voorraad,Gazelle,Esprit T7,Jeans,Stadsfietsen ,Heren,28,2021,Nieuw,Nee,54 ,7,749,GZ12776350
 14582,Voorraad,Merida,E-spresso 800 Di2 504 wh,Grijs,Stadsfietsen (elo),Dames,0,2020,Nieuw,Nee,0 ,0,0.01,WC8022655R
 14592,Voorraad,Gazelle,Vento C7,Grijs,Stadsfietsen ,Dames,0,2022,Nieuw,Nee,57 ,7,799,GZ12767762
-14602,Voorraad,Bike Fun,You go girl 22&quot; ,Blauw,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,439,BF2211758
-14611,Voorraad,Bike Fun,You go girl 20&quot; ,Blauw,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,439,BF2211474
-14615,Voorraad,Bike Fun,You go girl 26&quot; ,Geel,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,459,BF2212343
+14602,Voorraad,Bike Fun,You go girl 22 ,Blauw,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,439,BF2211758
+14611,Voorraad,Bike Fun,You go girl 20 ,Blauw,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,439,BF2211474
+14615,Voorraad,Bike Fun,You go girl 26 ,Geel,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,459,BF2212343
 14621,Voorraad,Merida,E-one sixty 700,Zilver,Mountainbikes (elo),Uni,0,2022,Nieuw,Nee, L,0,6799,WC010005266T
 14645,Voorraad,Victoria,Trekking 1.1,Zwart,Stadsfietsen ,Dames,0,2022,Nieuw,Nee,50 ,0,599,
 14647,Voorraad,Victoria,E-touring 7.5 418 WH,Grijs,Stadsfietsen (elo),Heren,0,2021,Nieuw,Nee,55 ,0,2599,VCR21000007300
@@ -89,7 +89,7 @@
 14704,Voorraad,BFK,Flower fun. 16,Roze,Kinderfietsen ,Meisjes,0,2022,Nieuw,Nee,0 ,0,249,
 14738,Voorraad,Dutch ID,Phantom2 85 TR belt auto D53 630Wh,Zwart,Stadsfietsen (elo),Dames,0,2022,Nieuw,Nee,53 M,0,5299,MMD2203140
 14812,Voorraad,Dutch ID,Phantom2 75 TR belt auto D53 500Wh,Zwart,Stadsfietsen (elo),Dames,0,2022,Nieuw,Nee,53 M,0,4699,MMD2203186
-14828,Voorraad,BFK,Flower fun. 18&quot;,Groen,Kinderfietsen ,Meisjes,0,2021,Nieuw,Nee,0 18,0,269,
+14828,Voorraad,BFK,Flower fun. 18,Groen,Kinderfietsen ,Meisjes,0,2021,Nieuw,Nee,0 18,0,269,
 14832,Voorraad,Merida,E-SILEX+ 600,Oranje,Racefietsen (elo),Heren,27.5,2022,Nieuw,Nee,53 L,11,3899,WC030000502T
 14834,Voorraad,Merida,Matts J.24+,Geel,Mountainbikes ,Jongens,24,2022,Nieuw,Nee,0 11,8,699,WC040008473T
 14960,Voorraad,Gazelle,Ultimate C380 HMB riem 500 Wh 75 Nm,Blauw,Stadsfietsen (elo),Heren,0,2023,Nieuw,Nee,57 ,0,4299,GZ61992648
