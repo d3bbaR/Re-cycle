@@ -37,7 +37,7 @@ function test() {
     console.log(vs);
     input2.value = vs;
     prev = h.parentNode;
-    parent.setAttribute("class", "selected");
+    parent.setAttribute("class", "uren selected");
     x = x.slice(0, -5);
     if (x.length == 12) {
         x = x.slice(0, -1);

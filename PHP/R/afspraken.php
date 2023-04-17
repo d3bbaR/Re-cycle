@@ -45,7 +45,7 @@
         echo "<p id ='hoeveel'>".$x."</p>";
 
         ?>
-        <script src="../../js/agenda2.js"></script>
+        <script src="../../js/agenda2.js?1"></script>
         <script src="../../js/afspraak.js"></script>
 </body>
 
