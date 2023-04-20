@@ -29,7 +29,7 @@
 
             } else {
                 $x+= 1;
-                echo "<div class ='tb'>" . $res["naam"] . " " . $res["email"] . " " . $res["telefoon"] . " " . $res["type"] . " " . $res["dagen"] . " " . $res["uren"] .
+                echo "<div class ='tb".$x."'>" . $res["naam"] . " " . $res["email"] . " " . $res["telefoon"] . " " . $res["type"] . " " . $res["dagen"] . " " . $res["uren"] .
                     "<form action='../C/accept.php' method='post'> <button name ='edit' value='" . $res["FK_geg"] . "'><i class='fa fa-check' style='color:green'></i></button></form>" .
                     "<form action='../C/refuse.php' method='post'> <button name ='delete' value='" . $res["FK_geg"] . "'<i class='fa fa-close' style='color:red'></i></button></form></div>";
                 $datum =  strval($res["dagen"]);

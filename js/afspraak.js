@@ -19,6 +19,9 @@ while (tel < x) {
     if (afspr.className == "dag afspr"){
         console.log("jow");
         let modalplaats = document.getElementById("d"+uur+"hhhh"+dag);
+        let modalevent = document.getElementById(uur+"hhhh"+dag);
+        modalevent.removeEventListener("click",modalappear);
+        modalevent.addEventListener("click",modalappear("tb"+tel));
         modalplaats.setAttribute("class", "gesl afspr");
     }
   
