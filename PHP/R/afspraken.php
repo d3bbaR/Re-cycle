@@ -46,7 +46,7 @@
 
         ?>
         <script src="../../js/agenda2.js?1"></script>
-        <script src="../../js/afspraak.js?2"></script>
+        <script src="../../js/afspraak.js?12"></script>
 </body>
 
 </html>

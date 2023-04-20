@@ -1,7 +1,9 @@
 let x = document.getElementById("hoeveel");
 x = x.innerHTML;
 let tel = 0;
-document.onload = bezet(); 
+let tellertje = 0;
+document.onload = bezet();
+document.onload = console.log(document.getElementsByClassName("selected")[0]) 
 function bezet(){
 while (tel < x) {
    
@@ -9,15 +11,17 @@ while (tel < x) {
     let modal = document.getElementById("d"+tel);
     let uur = document.getElementById("uur"+tel);
     modal = modal.innerHTML;
-    console.log(modal);
     uur = uur.innerHTML;
     let afspr = document.getElementById(modal);
-    console.log(afspr);
     dag = afspr.innerHTML;
-    let modalplaats = document.getElementById("d"+uur+"hhhh"+dag);
-    modalplaats.setAttribute("class", "gesl afspr");
-    afspr.setAttribute("class" , "dag afspr");   
-   
+    afspr.setAttribute("class" , "dag afspr");  
+
+    if (afspr.className == "dag afspr"){
+        console.log("jow");
+        let modalplaats = document.getElementById("d"+uur+"hhhh"+dag);
+        modalplaats.setAttribute("class", "gesl afspr");
+    }
+  
 
 }
 }

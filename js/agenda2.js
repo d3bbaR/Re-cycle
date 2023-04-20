@@ -18,7 +18,6 @@ function addDays(days) {
 let cookie = getCookie("dagwaarde");
 let geselecteerde = document.getElementById(cookie);
 geselecteerde.setAttribute("class", "selected");
-console.log(cookie);
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
