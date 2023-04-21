@@ -631,14 +631,14 @@ function ladenklant()
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
                     echo "<label class='gesl' id='d" . $dat['uren'] . "hhhh" . $day . "' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                                <input type='radio' onclick='modalappear()'  class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
                         if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
                         } else {
                             echo "<label class='uren'  id='d" . $dat['uren'] . "hhhh" . $day . "' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                                <input type='radio' onclick='modalappear()'  class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
                         }
 
                     } else {
@@ -655,7 +655,7 @@ function ladenklant()
                 if ($counter >= $p) {
 
                     echo "<label class='uren'  id='d" . $dat['uren'] . "hhhh" . $day . "' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                            <input type='radio' onclick='modalappear()' class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
                 } else {
                     $counter += 1;
                 }
