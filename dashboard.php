@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
+    <?php setcookie("dagwaarde","" , time() - 3600); ?>
     <?php setcookie("dagwaarde", "", time() - 3600); ?>
     <?php if (isset($_COOKIE["dagwaarde"])) {
-        setcookie("dagwaarde", "0");
 
     } else {
         setcookie("dagwaarde", "0");

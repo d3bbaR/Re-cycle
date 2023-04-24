@@ -166,3 +166,10 @@ select {
     padding: 2% 10%;
 
 }
+.bez{
+    background-color: rgb(146, 142, 142);
+    color: white;
+}
+.afsprbez{
+    background: linear-gradient(80deg, orange, rgb(146, 142, 142));
+}
