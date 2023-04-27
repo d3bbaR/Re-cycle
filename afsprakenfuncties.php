@@ -498,7 +498,7 @@ function ladendagen()
         $bezet_ins = $bezet . " " . "and FK_dagen =" . $key["PK"];
         //$bezet_ins = $bezet." "."where FK_dagen =".$key["PK"];
         echo "<div class='kal' id = 'kal" . $day . "'>";
-        echo "<div class='urenk' id = 'uren" . $day . "'>";
+        echo "<div class='urenk' id = 'uren'>";
         foreach (query($bezet_ins) as $bezet) {
             array_push($array, $bezet["uren"]);
         }
@@ -509,15 +509,15 @@ function ladendagen()
 
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='gesl' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='gesl' for='" . $dat['uren']  . "'>
+                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
                         if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
                         } else {
-                            echo "<label class='uren' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                            <input type='radio' onclick='test()' class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                            echo "<label class='uren' for='" . $dat['uren']  . "'>
+                            <input type='radio' onclick='test()' class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']   . "'>" . $dat["uren"] . "</label>";
                         }
 
                     } else {
@@ -533,8 +533,8 @@ function ladendagen()
             foreach (query($uren) as $dat) {
                 if ($counter >= $p) {
 
-                    echo "<label class='uren' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                        <input type='radio' onclick='test()'class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='uren' for='" . $dat['uren']  . "'>
+                        <input type='radio' onclick='test()'class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
                 } else {
                     $counter += 1;
                 }
@@ -586,14 +586,13 @@ function ladendagen()
             <label for="telefoon">Telefoonnummer*:</label>
             <input type="tel" id="telefoon" name="telefoon" required>
             <label for="textarea">Extra informatie:</label>
-            <textarea type="text" id="textarea"></textarea>
-            <input type="hidden" name="tekst" id="tekst">
+            <textarea type="text" name ='tekst' id="textarea"></textarea>
             <select name="typeonderhoud" id="">
                 <option value="1">Klein onderhoud 30 minuten</option>
                 <option value="2">Groot onderhoud 1 uur</option>
                 <option value="3">Gesprek aankoop fiets 45 minuten</option>
             </select>
-            <button type="submit" class='inv' id='button'>Plaats afspraak</button>
+            <button type="submit" class='inv' id='button' onclick="">Plaats afspraak</button>
         </form>
         <?php
     }
@@ -626,19 +625,20 @@ function ladenklant()
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
                 echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+
             }
 
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='gesl' id='d" . $dat['uren'] . "hhhh" . $day . "' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren']  . "'>
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
                         if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
                         } else {
-                            echo "<label class='uren'  id='d" . $dat['uren'] . "hhhh" . $day . "' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                            echo "<label class='uren'  id='d" . $dat['uren']  . "' for='" . $dat['uren'] . "'>
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
                         }
 
                     } else {
@@ -654,8 +654,8 @@ function ladenklant()
             foreach (query($uren) as $dat) {
                 if ($counter >= $p) {
 
-                    echo "<label class='uren'  id='d" . $dat['uren'] . "hhhh" . $day . "' for='" . $dat['uren'] . "hhhh" . $day . "'>
-                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "hhhh" . $day . "' value ='" . $dat['uren'] . "hhhh" . $day . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren']. $day . "'>
+                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
                 } else {
                     $counter += 1;
                 }

@@ -34,8 +34,8 @@ function bezet() {
         if (seldag == dag){
         if (afspr.className == "dag afspr") {
 
-            let modalplaats = document.getElementById("d" + uur + "hhhh" + dag);
-            modalevent = document.getElementById(uur + "hhhh" + dag);
+            let modalplaats = document.getElementById("d"+uur);
+            modalevent = document.getElementById(uur);
 
             modalevent.addEventListener("click", function () { modalappear(tel) });
             modalplaats.setAttribute("class", "gesl afspr");
@@ -66,8 +66,8 @@ function bezetl() {
         if (seldag == dagl ){
         if (afsprl.className == "dag afspr" || afsprl.className == "dag afsprbez") {
 
-            let modalplaatsl = document.getElementById("d" + uurl + "hhhh" + dagl);
-            modaleventl = document.getElementById(uurl + "hhhh" + dagl);
+            let modalplaatsl = document.getElementById("d" + uurl );
+            modaleventl = document.getElementById(uurl);
 
             modaleventl.addEventListener("click", function () { modalappearl(tell) });
             modalplaatsl.setAttribute("class", "gesl bez");

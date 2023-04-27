@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="../../css/css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/agenda.css?1">
-    <link rel="stylesheet" href="../../css/css.css">
+    <link rel="stylesheet" href="../../css/css.css?1">
     <title>afsrpaken </title>
 </head>
 <?php include '../../nav-bar2.php'; ?>
 
 <body>
-    <?php include '../../afsprakenfuncties.php';
-
+    <?php
+    echo "<div class='agendacontainer'>"; 
+    include '../../afsprakenfuncties.php';
+    
     $maand = date("m");
     $dag = date('d');
     ?>
@@ -69,7 +71,7 @@
 
         ?>
         <script src="../../js/agenda2.js?5"></script>
-        <script src="../../js/afspraak.js?4"></script>
+        <script src="../../js/afspraak.js?5"></script>
 </body>
 
 </html>

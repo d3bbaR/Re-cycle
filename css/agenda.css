@@ -75,6 +75,7 @@ textarea {
     gap: 10px;
     margin-top: 55px;
     padding-top: 40px;
+    align-items: center;
 
 }
 
@@ -167,9 +168,10 @@ select {
 
 }
 .bez{
-    background-color: rgb(146, 142, 142);
+    background-color: red;
     color: white;
+    border: 1px solid #000;
 }
 .afsprbez{
-    background: linear-gradient(80deg, orange, rgb(146, 142, 142));
+    background: linear-gradient(90deg, rgb(247, 179, 54), red);
 }

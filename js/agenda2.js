@@ -8,7 +8,7 @@ let hidden = document.getElementById("hidden");
 let hidden2 = document.getElementById("hidden2");
 let datum = new Date();
 let button = document.getElementById("button");
-let textarea = document.getElementById("textarea");
+let text = document.getElementById("textarea");
 let input2 = document.getElementById("tekst");
 function addDays(days) {
     var date = new Date();
@@ -28,23 +28,14 @@ function del_cookie(name) {
     document.cookie = name +
         '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
 }
+
 function test() {
     prev.setAttribute("class", "uren");
     let x = event.target.value;
     let h = document.getElementById(x);
     let parent = h.parentNode;
-    let vs = textarea.innerHTML;
-    console.log(vs);
-    input2.value = vs;
     prev = h.parentNode;
     parent.setAttribute("class", "uren selected");
-    x = x.slice(0, -5);
-    if (x.length == 12) {
-        x = x.slice(0, -1);
-    }
-    if (x == "9:30-10:00h" || x == "9:00-9:30h") {
-        x = x.slice(0, -1);
-    }
     hidden.value = x;
     button.setAttribute("class", "vis");
     console.log(x)

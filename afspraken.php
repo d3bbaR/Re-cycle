@@ -33,7 +33,7 @@ setcookie("dagwaarde", "",time()-3600);
     }
 
     ?>
-    <script src="js/agenda2.js?1"></script>
+    <script src="js/agenda2.js?2"></script>
     </div>
 </body>
 

@@ -7,8 +7,9 @@ $naam = mysqli_real_escape_string($conn, $_POST["naam"]);
 $email = $_POST["email"];
 $telefoon = $_POST["telefoon"];
 $type = $_POST["typeonderhoud"];
+$tekst = $_POST["tekst"];
 
-$insert = "INSERT INTO gegevens (naam,email,telefoon,type,gekeurd) VALUES ('$naam' , '$email', '$telefoon', '$type',0)";
+$insert = "INSERT INTO gegevens (naam,email,telefoon,type,tekst,gekeurd) VALUES ('$naam' , '$email', '$telefoon', '$type','$tekst',0)";
 $result = mysqli_query($conn, $insert);
 $lastkey = mysqli_insert_id($conn);
 echo print_r($lastkey);
@@ -93,6 +94,7 @@ function mailer()
     $email = $_POST["email"];
     $telefoon = $_POST["telefoon"];
     $type = $_POST["typeonderhoud"];
+    $tekst = $_POST["tekst"];
     switch ($type) {
         case 1:
             $msg = "Klein onderhoud 30 minuten";
@@ -143,7 +145,7 @@ function mailer()
         $mail->isHTML(true); //Set email format to HTML
         $mail->Subject = 'Beste jurgen';
         $mail->Body = "de volgende persoon:" . " " . $naam . " heeft een " . " " . $msg . " " . " geplaatste voor: " . $dag . " " . $uur . " is dit oke?"
-            . " je kunt deze klant bereiken op:" . " " . $telefoon . " of " . $email;
+            . " je kunt deze klant bereiken op:" . " " . $telefoon . " of " . $email."<br><br> met hetvolgende bericht:". $tekst ;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
