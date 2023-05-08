@@ -9,7 +9,7 @@ document.onload = bezet();
 //document.onload = console.log(document.getElementsByClassName("selected")[0])
 
 function bezet() {
-    
+    urenarray = [];
     let x = document.getElementById("hoeveel");
     x = x.innerHTML;
     var tel = 0;
@@ -28,54 +28,54 @@ function bezet() {
         urenarray.push(uur);
         dagenarray.push(dag);
 
-        
-        
+
+
 
 
 
         afspr.setAttribute("class", "dag afspr");
-        
-        } 
-        addevent();
+
+    }
+    addevent();
 }
-function addevent(){
+function addevent() {
     let i = 0;
-    let modalnummer = 0;
+    let modalnummer = 1;
     let h = urenarray.length;
+
     console.log(urenarray);
     console.log(h);
     let modalevent = "";
     if (seldag == dag) {
-        while (i < h){
-           
-          
-         if (dagenarray[i] == dag){
-           
-           
-        
-            console.log("i:"+i);
-            console.log(document.getElementById(urenarray[i]));
-            document.getElementById("14:30-15:00").addEventListener("click", function () { modalappear(i) });
-           
-            let modalplaats = document.getElementById("d" + urenarray[i]);
+        urenarray.forEach(tijd => {
+
+
+            let modalplaats = document.getElementById("d" + tijd);
             modalplaats.setAttribute("class", "gesl afspr");
+            modalevent = document.getElementById(tijd);
+            modalevent.addEventListener("click", function () { modalappear(tijd) })
             i += 1;
-         }
-         else{
-            console.log("i:"+i);
-            i +=1;
-         }   
-            
-            
-           
-        }
+        });
+
+
+
+
+
     }
-    console.log("i:"+i);
+
+
+
+
 }
 
 
+
+
 function modalappear(dat) {
-    let modalappear = document.getElementById("tb" + dat)
+    let num = urenarray.indexOf(dat, 0);
+    num += 1;
+
+    let modalappear = document.getElementById("tb" + num)
     modalappear.style.display = "block";
 }
 function invisible(dat) {
