@@ -10,7 +10,7 @@ let modalevent = "";
 let modaleventl = "";
 let seldag = document.getElementsByClassName("selected")[0];
 seldag = seldag.innerHTML;
-        
+
 document.onload = bezet();
 document.onload = bezetl();
 //document.onload = console.log(document.getElementsByClassName("selected")[0])
@@ -22,26 +22,26 @@ function bezet() {
         modal = modal.innerHTML;
         let afspr = document.getElementById(modal);
         dag = afspr.innerHTML;
-        
+
         let uur = document.getElementById("uur" + tel);
         uur = uur.innerHTML;
 
-        
-            
 
-        
+
+
+
         afspr.setAttribute("class", "dag afspr");
-        if (seldag == dag){
-        if (afspr.className == "dag afspr") {
+        if (seldag == dag) {
+            if (afspr.className == "dag afspr") {
 
-            let modalplaats = document.getElementById("d"+uur);
-            modalevent = document.getElementById(uur);
+                let modalplaats = document.getElementById("d" + uur);
+                modalevent = document.getElementById(uur);
 
-            modalevent.addEventListener("click", function () { modalappear(tel) });
-            modalplaats.setAttribute("class", "gesl afspr");
+                modalevent.addEventListener("click", function () { modalappear(tel) });
+                modalplaats.setAttribute("class", "gesl afspr");
+            }
         }
-    }
-    
+
 
     }
 }
@@ -52,28 +52,28 @@ function bezetl() {
         modall = modall.innerHTML;
         let afsprl = document.getElementById(modall);
         dagl = afsprl.innerHTML;
-        
+
         let uurl = document.getElementById("uurl" + tell);
         uurl = uurl.innerHTML;
 
 
-        afsprl.setAttribute("class", "dag afspr");  
+        afsprl.setAttribute("class", "dag afspr");
 
         if (afsprl.className == "dag afspr") {
             afsprl.setAttribute("class", "dag afsprbez");
         }
-        
-        if (seldag == dagl ){
-        if (afsprl.className == "dag afspr" || afsprl.className == "dag afsprbez") {
 
-            let modalplaatsl = document.getElementById("d" + uurl );
-            modaleventl = document.getElementById(uurl);
+        if (seldag == dagl) {
+            if (afsprl.className == "dag afspr" || afsprl.className == "dag afsprbez") {
 
-            modaleventl.addEventListener("click", function () { modalappearl(tell) });
-            modalplaatsl.setAttribute("class", "gesl bez");
+                let modalplaatsl = document.getElementById("d" + uurl);
+                modaleventl = document.getElementById(uurl);
+
+                modaleventl.addEventListener("click", function () { modalappearl(tell) });
+                modalplaatsl.setAttribute("class", "gesl bez");
+            }
         }
-    }
-    
+
 
     }
 }
