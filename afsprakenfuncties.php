@@ -508,7 +508,9 @@ function ladendagen()
             }
 
             foreach (query($uren) as $dat) {
+               
                 if (in_array($dat["uren"], $array)) {
+                    
                     echo "<label class='gesl' for='" . $dat['uren']  . "'>
                             <input type='radio'  class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
                 } else {
@@ -531,6 +533,11 @@ function ladendagen()
                 echo "<div class='uren'>" . $dat["uren"] . "</div>";
             }
             foreach (query($uren) as $dat) {
+                if (in_array($dat["uren"], $array)) {
+                    
+                    echo "<label class='gesl' for='" . $dat['uren']  . "'>
+                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
+                } else {
                 if ($counter >= $p) {
 
                     echo "<label class='uren' for='" . $dat['uren']  . "'>
@@ -540,6 +547,7 @@ function ladendagen()
                 }
             }
         }
+    }
         echo "</div></div>";
     }
     function ladenform()
@@ -652,6 +660,10 @@ function ladenklant()
                 echo "<div class='uren'>" . $dat["uren"] . "</div>";
             }
             foreach (query($uren) as $dat) {
+                if (in_array($dat["uren"], $array)) {
+                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren']  . "'>
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
+                } else {
                 if ($counter >= $p) {
 
                     echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren']. $day . "'>
@@ -661,6 +673,7 @@ function ladenklant()
                 }
             }
         }
+    }
         echo "</div></div>";
     }
 

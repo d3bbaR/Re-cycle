@@ -1,21 +1,21 @@
-let x = document.getElementById("hoeveel");
-x = x.innerHTML;
-let y = document.getElementById("hoeveell");
-y = y.innerHTML;
-let tel = 0;
-let tell = 0;
+
+
 let tellertje = 0;
-let variabel = "";
-let modalevent = "";
-let modaleventl = "";
 let seldag = document.getElementsByClassName("selected")[0];
 seldag = seldag.innerHTML;
-
+let urenarray = [];
+let dagenarray = [];
 document.onload = bezet();
-document.onload = bezetl();
 //document.onload = console.log(document.getElementsByClassName("selected")[0])
 
 function bezet() {
+    
+    let x = document.getElementById("hoeveel");
+    x = x.innerHTML;
+    var tel = 0;
+    let y = document.getElementById("hoeveell");
+    y = y.innerHTML;
+
     while (tel < x) {
         tel += 1;
         let modal = document.getElementById("d" + tel);
@@ -25,58 +25,54 @@ function bezet() {
 
         let uur = document.getElementById("uur" + tel);
         uur = uur.innerHTML;
+        urenarray.push(uur);
+        dagenarray.push(dag);
 
-
+        
+        
 
 
 
         afspr.setAttribute("class", "dag afspr");
-        if (seldag == dag) {
-            if (afspr.className == "dag afspr") {
-
-                let modalplaats = document.getElementById("d" + uur);
-                modalevent = document.getElementById(uur);
-
-                modalevent.addEventListener("click", function () { modalappear(tel) });
-                modalplaats.setAttribute("class", "gesl afspr");
-            }
-        }
-
-
-    }
+        
+        } 
+        addevent();
 }
-function bezetl() {
-    while (tell < y) {
-        tell += 1;
-        let modall = document.getElementById("dl" + tell);
-        modall = modall.innerHTML;
-        let afsprl = document.getElementById(modall);
-        dagl = afsprl.innerHTML;
-
-        let uurl = document.getElementById("uurl" + tell);
-        uurl = uurl.innerHTML;
-
-
-        afsprl.setAttribute("class", "dag afspr");
-
-        if (afsprl.className == "dag afspr") {
-            afsprl.setAttribute("class", "dag afsprbez");
+function addevent(){
+    let i = 0;
+    let modalnummer = 0;
+    let h = urenarray.length;
+    console.log(urenarray);
+    console.log(h);
+    let modalevent = "";
+    if (seldag == dag) {
+        while (i < h){
+           
+          
+         if (dagenarray[i] == dag){
+           
+           
+        
+            console.log("i:"+i);
+            console.log(document.getElementById(urenarray[i]));
+            document.getElementById("14:30-15:00").addEventListener("click", function () { modalappear(i) });
+           
+            let modalplaats = document.getElementById("d" + urenarray[i]);
+            modalplaats.setAttribute("class", "gesl afspr");
+            i += 1;
+         }
+         else{
+            console.log("i:"+i);
+            i +=1;
+         }   
+            
+            
+           
         }
-
-        if (seldag == dagl) {
-            if (afsprl.className == "dag afspr" || afsprl.className == "dag afsprbez") {
-
-                let modalplaatsl = document.getElementById("d" + uurl);
-                modaleventl = document.getElementById(uurl);
-
-                modaleventl.addEventListener("click", function () { modalappearl(tell) });
-                modalplaatsl.setAttribute("class", "gesl bez");
-            }
-        }
-
-
     }
+    console.log("i:"+i);
 }
+
 
 function modalappear(dat) {
     let modalappear = document.getElementById("tb" + dat)
@@ -94,3 +90,4 @@ function invisiblel(dat) {
     let modaldissapear = document.getElementById("tbl" + dat);
     modaldissapear.style.display = "none";
 }
+
