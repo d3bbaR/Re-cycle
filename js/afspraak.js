@@ -67,21 +67,16 @@ function addevent(variabele) {
     if (variabele ==1){
         x = document.getElementById("hoeveel");
         x = x.innerHTML;
-        while (i < x) {
+       
         console.log(i);
     if (seldag == dagenarray[i]) {
-        console.log(i);
-        tijd = urenarray[i];
-        console.log(urenarray[i]);
-        let modalplaats = document.getElementById("d" + tijd);
-        modalplaats.setAttribute("class", "gesl afspr");
-        modalevent = document.getElementById(tijd);
-        modalevent.addEventListener("click", function () { modalappear(tijd) })
-        i += 1;
-        }
-    else{
-        i +=1;
-    }
+        urenarray.forEach(tijd => {
+
+            let modalplaats = document.getElementById("d" + tijd);
+            modalplaats.setAttribute("class", "gesl afspr");
+            modalevent = document.getElementById(tijd);
+            modalevent.addEventListener("click", function () { modalappear(tijd) })
+            i += 1;})
     }
 
     
@@ -90,20 +85,19 @@ function addevent(variabele) {
     else{
         if (seldag == dagenarray2[i]) {
             urenarray2.forEach(tijd => {
+
                 let modalplaats = document.getElementById("d" + tijd);
                 modalplaats.setAttribute("class", "bez afspr");
                 modalevent = document.getElementById(tijd);
                 modalevent.addEventListener("click", function () { modalappear2(tijd) })
-                i += 1;
-            });
-        }
-        else{
-            
-            console.log(urenarray2);
+                i += 1;})
+            };
         }
         
+            
+      
+        
     }
-}
 
 
 
