@@ -257,6 +257,8 @@ foreach ($dagen as $day) {
 echo "</div>";
 echo "<div class='dagen'>";
 //for each lus pusht alle dagen in de array naar de kalender
+
+
 $y = 0;
 $d = 0;
 foreach ($dagenvoorkalender as $day) {
@@ -508,18 +510,18 @@ function ladendagen()
             }
 
             foreach (query($uren) as $dat) {
-               
+
                 if (in_array($dat["uren"], $array)) {
-                    
-                    echo "<label class='gesl' for='" . $dat['uren']  . "'>
-                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
+
+                    echo "<label class='gesl' for='" . $dat['uren'] . "'>
+                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
                         if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
                         } else {
-                            echo "<label class='uren' for='" . $dat['uren']  . "'>
-                            <input type='radio' onclick='test()' class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']   . "'>" . $dat["uren"] . "</label>";
+                            echo "<label class='uren' for='" . $dat['uren'] . "'>
+                            <input type='radio' onclick='test()' class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                         }
 
                     } else {
@@ -534,20 +536,20 @@ function ladendagen()
             }
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    
-                    echo "<label class='gesl' for='" . $dat['uren']  . "'>
-                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
-                } else {
-                if ($counter >= $p) {
 
-                    echo "<label class='uren' for='" . $dat['uren']  . "'>
-                        <input type='radio' onclick='test()'class='inv' name='uur'id = '" . $dat['uren']  . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='gesl' for='" . $dat['uren'] . "'>
+                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
-                    $counter += 1;
+                    if ($counter >= $p) {
+
+                        echo "<label class='uren' for='" . $dat['uren'] . "'>
+                        <input type='radio' onclick='test()'class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                    } else {
+                        $counter += 1;
+                    }
                 }
             }
         }
-    }
         echo "</div></div>";
     }
     function ladenform()
@@ -594,7 +596,7 @@ function ladendagen()
             <label for="telefoon">Telefoonnummer*:</label>
             <input type="tel" id="telefoon" name="telefoon" required>
             <label for="textarea">Extra informatie:</label>
-            <textarea type="text" name ='tekst' id="textarea"></textarea>
+            <textarea type="text" name='tekst' id="textarea"></textarea>
             <select name="typeonderhoud" id="">
                 <option value="1">Klein onderhoud 30 minuten</option>
                 <option value="2">Groot onderhoud 1 uur</option>
@@ -638,15 +640,15 @@ function ladenklant()
 
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren']  . "'>
-                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
                         if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
                         } else {
-                            echo "<label class='uren'  id='d" . $dat['uren']  . "' for='" . $dat['uren'] . "'>
-                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
+                            echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                         }
 
                     } else {
@@ -661,19 +663,19 @@ function ladenklant()
             }
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren']  . "'>
-                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
-                if ($counter >= $p) {
+                    if ($counter >= $p) {
 
-                    echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren']. $day . "'>
-                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren']  . "'>" . $dat["uren"] . "</label>";
-                } else {
-                    $counter += 1;
+                        echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren'] . $day . "'>
+                            <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                    } else {
+                        $counter += 1;
+                    }
                 }
             }
         }
-    }
         echo "</div></div>";
     }
 

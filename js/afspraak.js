@@ -16,28 +16,31 @@ function bezet() {
     let x = "";
     let variabele = 1;
     while (variabele != 3) {
-   
-        if (variabele == 1){
-            
-        
+
+        if (variabele == 1) {
+
+
             x = document.getElementById("hoeveel");
             x = x.innerHTML;
-    
+
             console.log("var is 1");
             while (tel < x) {
                 tel += 1;
                 let modal = document.getElementById("d" + tel);
-                modal = modal.innerHTML;    
+                modal = modal.innerHTML;
                 let afspr = document.getElementById(modal);
                 dag = afspr.innerHTML;
                 let uur = document.getElementById("uur" + tel);
                 uur = uur.innerHTML;
-                urenarray.push(uur);
-                dagenarray.push(dag);
                 afspr.setAttribute("class", "dag afspr");
+                if (dag == seldag) {
+                    urenarray.push(uur);
+                    dagenarray.push(dag);
+
+                }
             }
         }
-        else{
+        else {
             tel = 0;
             let x = document.getElementById("hoeveell");
             x = x.innerHTML;
@@ -48,41 +51,57 @@ function bezet() {
                 modal = modal.innerHTML;
                 let afspr = document.getElementById(modal);
                 dag = afspr.innerHTML;
-    
+
                 let uur = document.getElementById("uurl" + tel);
                 uur = uur.innerHTML;
-                urenarray2.push(uur);
-                console.log(uur);
-                dagenarray2.push(dag);
-                afspr.setAttribute("class", "dag bez");
+                console.log("vandaag");
+                if (afspr.className == "dag afspr") {
+                    afspr.setAttribute("class", "dag afsprbez");
+                    if (dag == seldag) {
+                        urenarray2.push(uur);
+                        dagenarray2.push(dag);
+
+                    }
+                }
+                else {
+                    afspr.setAttribute("class", "dag bez");
+                    uur = uur.innerHTML;
+                    if (dag == seldag) {
+                        urenarray2.push(uur);
+                        dagenarray2.push(dag);
+
+                    }
+                }
+
             }
         }
-    variabele +=1;
-}
-addevent(1);
+        variabele += 1;
+    }
+    addevent(1);
 }
 function addevent(variabele) {
     let i = 0;
     let modalevent = "";
-    if (variabele ==1){
+    if (variabele == 1) {
         x = document.getElementById("hoeveel");
         x = x.innerHTML;
-       
+
         console.log(i);
-    if (seldag == dagenarray[i]) {
-        urenarray.forEach(tijd => {
+        if (seldag == dagenarray[i]) {
+            urenarray.forEach(tijd => {
 
-            let modalplaats = document.getElementById("d" + tijd);
-            modalplaats.setAttribute("class", "gesl afspr");
-            modalevent = document.getElementById(tijd);
-            modalevent.addEventListener("click", function () { modalappear(tijd) })
-            i += 1;})
-    }
+                let modalplaats = document.getElementById("d" + tijd);
+                modalplaats.setAttribute("class", "gesl afspr");
+                modalevent = document.getElementById(tijd);
+                modalevent.addEventListener("click", function () { modalappear(tijd) })
+                i += 1;
+            })
+        }
 
-    
-    addevent(2);
+
+        addevent(2);
     }
-    else{
+    else {
         if (seldag == dagenarray2[i]) {
             urenarray2.forEach(tijd => {
 
@@ -90,21 +109,22 @@ function addevent(variabele) {
                 modalplaats.setAttribute("class", "bez afspr");
                 modalevent = document.getElementById(tijd);
                 modalevent.addEventListener("click", function () { modalappear2(tijd) })
-                i += 1;})
-            };
-        }
-        
-            
-      
-        
+                i += 1;
+            })
+        };
     }
+
+
+
+
+}
 
 
 
 
 function modalappear(dat) {
     let num = urenarray.indexOf(dat, 0);
-   console.log(dat);
+    console.log(dat);
     num += 1;
     console.log(num);
     let modalappear = document.getElementById("tb" + num)
@@ -116,7 +136,7 @@ function invisible(dat) {
 }
 function modalappear2(dat) {
     let num = urenarray2.indexOf(dat, 0);
-   
+
     num += 1;
     console.log(num);
     let modalappear = document.getElementById("tbl" + num)

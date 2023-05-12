@@ -16,9 +16,9 @@
 
 <body>
     <?php
-    echo "<div class='agendacontainer'>"; 
+    echo "<div class='agendacontainer'>";
     include '../../afsprakenfuncties.php';
-    
+
     $maand = date("m");
     $dag = date('d');
     ?>
@@ -31,29 +31,27 @@
         foreach (query($selector) as $res) {
             $data = $res["dagen"];
             $vand = date("Y-m-d");
-            if ($data > $vand){
+            if ($data >= $vand) {
                 if ($res["gekeurd"] == 1) {
-               
-                
-                        $y +=1;
-                        echo "<div id ='tbl" . $y . "'class=' modal'><div class=' modal-content'><div class='flexboxtb'><p>" . $res["naam"] . "</p><p> " . $res["email"] . "</p><p> " . $res["telefoon"] . "</p><p> " . $res["type"] . "</p><p> " . $res["dagen"] . "</p><p> " . $res["uren"] . "</p>" .
+
+
+                    $y += 1;
+                    echo "<div id ='tbl" . $y . "'class=' modal'><div class=' modal-content'><div class='flexboxtb'><p>" . $res["naam"] . "</p><p> " . $res["email"] . "</p><p> " . $res["telefoon"] . "</p><p> " . $res["type"] . "</p><p> " . $res["dagen"] . "</p><p> " . $res["uren"] . "</p>" .
                         "</div>.<button class ='btn' onclick ='invisiblel(" . $y . ")'>sluiten </button></div></div>";
-                        $datum = strval($res["dagen"]);
-                        $uur = $res["uren"];
-                        $str = date_create($datum);
-                        $res = date_format($str, "m");
-                        $res2 = date_format($str, "d");
-                        $dagid = $res2 - $dag;
-                        echo "<p class='inv'id ='dl" . $y . "'>" . $dagid . "</p>";
-                        echo "<p class='inv'id ='uurl" . $y . "'>" . $uur . "</p>";
-                    } 
-             
-                else {
+                    $datum = strval($res["dagen"]);
+                    $uur = $res["uren"];
+                    $str = date_create($datum);
+                    $res = date_format($str, "m");
+                    $res2 = date_format($str, "d");
+                    $dagid = $res2 - $dag;
+                    echo "<p class='inv'id ='dl" . $y . "'>" . $dagid . "</p>";
+                    echo "<p class='inv'id ='uurl" . $y . "'>" . $uur . "</p>";
+                } else {
                     $x += 1;
-                
+
                     echo "<div id ='tb" . $x . "'class=' modal'><div class=' modal-content'><div class='flexboxtb'><p>" . $res["naam"] . "</p><p> " . $res["email"] . "</p><p> " . $res["telefoon"] . "</p><p> " . $res["type"] . "</p><p> " . $res["dagen"] . "</p><p> " . $res["uren"] . "</p>" .
-                    "</div><form class ='center'action='../C/accept.php' method='post'> <button name ='edit' value='" . $res["FK_geg"] . "'><i class='fa fa-check' style='color:green'></i></button></form>" .
-                    "<form class='center' action='../C/refuse.php' method='post'> <button name ='delete' value='" . $res["FK_geg"] . "'<i class='fa fa-close' style='color:red'></i></button></form>
+                        "</div><form class ='center'action='../C/accept.php' method='post'> <button name ='edit' value='" . $res["FK_geg"] . "'><i class='fa fa-check' style='color:green'></i></button></form>" .
+                        "<form class='center' action='../C/refuse.php' method='post'> <button name ='delete' value='" . $res["FK_geg"] . "'<i class='fa fa-close' style='color:red'></i></button></form>
                     <button class ='btn' onclick ='invisible(" . $x . ")'>sluiten </button></div></div>";
                     $datum = strval($res["dagen"]);
                     $uur = $res["uren"];
