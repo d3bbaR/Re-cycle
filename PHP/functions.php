@@ -59,6 +59,7 @@ $account_sort = "SELECT * from account ORDER BY PK";
 
 $uren = "SELECT * FROM uren";
 
+$dagen = "SELECT * FROM dagen";
 $selector = "SELECT gegevens.naam,gegevens.email, gegevens.gekeurd, gegevens.telefoon, gegevens.type, 
 resuren.PK,uren.uren ,  dagen.dagen,  resuren.bezet , resuren.FK_geg from resuren left join 
 uren on resuren.FK_uren = uren.PK left join dagen on resuren.FK_dagen = dagen.PK left join gegevens on 

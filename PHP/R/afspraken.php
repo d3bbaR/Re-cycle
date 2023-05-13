@@ -17,7 +17,7 @@
 <body>
     <?php
     echo "<div class='agendacontainer'>";
-    include '../../afsprakenfuncties.php';
+    include 'test.php';
 
     $maand = date("m");
     $dag = date('d');
@@ -25,7 +25,7 @@
     <div class="afsprakenbevestigen">
 
         <?php
-        ladenklant();
+        echo ladenklant();
         $x = 0;
         $y = 0;
         foreach (query($selector) as $res) {
@@ -68,8 +68,8 @@
         echo "<p class ='inv'id ='hoeveell'>" . $y . "</p>";
 
         ?>
-        <script src="../../js/agenda2.js?5"></script>
-        <script src="../../js/afspraak.js?5"></script>
+        <script src="../../js/agenda2.js?4"></script>
+        <script src="../../js/afspraak.js?4"></script>
 </body>
 
 </html>
