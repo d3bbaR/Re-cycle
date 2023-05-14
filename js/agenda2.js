@@ -15,6 +15,7 @@ document.onload = form();
 function form() {
     let cookie = getCookie("dagwaarde");
     console.log(cookie);
+    console.log(document.getElementById(cookie));
     let geselecteerde = document.getElementById(cookie);
     geselecteerde.setAttribute("class", "selected");
     let maand = document.getElementById("maand").innerHTML;

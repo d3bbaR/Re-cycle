@@ -84,7 +84,7 @@
 
                     ?>
 
-                    <script src="../../js/afspraak.js?2"></script>
+                    <script defer src="../../js/afspraak.js?3"></script>
 </body>
 
-</html>
+</html>D

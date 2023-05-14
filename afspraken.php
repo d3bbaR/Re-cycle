@@ -41,7 +41,7 @@ setcookie("dagwaarde", "",time()-3600);
 
                 echo ladenuurvandag();
                 echo ladenform() . "</div>";
-                echo "test";
+
 
                 if (isset($_GET["bad"])) {
                     echo "<p style='color:red'>Je hebt een onderhoud van 1 uur aangevraagd maar, er is maar slecht een half
