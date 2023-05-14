@@ -121,7 +121,6 @@ function build_calendar($month, $year)
     }
 
     $calendar .= "</tr></table>";
-
     return $calendar;
 
 }
@@ -411,6 +410,27 @@ function ladenform()
             <option value="3">Gesprek aankoop fiets 45 minuten</option>
         </select>
         <button type="submit" class='inv' id='button' onclick="">Plaats afspraak</button>
+        <script>function form() {
+                let cookie = getCookie("dagwaarde");
+                console.log(cookie);
+                console.log(document.getElementById(cookie));
+                let geselecteerde = document.getElementById(cookie);
+                geselecteerde.setAttribute("class", "selected");
+                let maand = document.getElementById("maand").innerHTML;
+                let dag = document.getElementsByClassName("selected");
+                dag = dag[0].innerHTML;
+                console.log(maand + " " + dag);
+                label2.innerHTML = dag;
+                label3.innerHTML = maand;
+
+            }
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            form();</script>
+
     </form>
     <?php
 }
@@ -484,7 +504,28 @@ function ladenklant()
         }
         echo "</div>";
     }
+    ?>
+    <script>function form() {
+            let cookie = getCookie("dagwaarde");
+            console.log(cookie);
+            console.log(document.getElementById(cookie));
+            let geselecteerde = document.getElementById(cookie);
+            geselecteerde.setAttribute("class", "selected");
+            let maand = document.getElementById("maand").innerHTML;
+            let dag = document.getElementsByClassName("selected");
+            dag = dag[0].innerHTML;
+            console.log(maand + " " + dag);
 
+
+        }
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        form();</script>
+
+    <?php
 }
 
 

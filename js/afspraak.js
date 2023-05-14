@@ -1,19 +1,19 @@
 
 
 let tellertje = 0;
-let seldag = document.getElementsByClassName("selected")[0];
-seldag = seldag.innerHTML;
+
 let urenarray = [];
 let urenarray2 = []
 let dagenarray = [];
 let dagenarray2 = [];
-let cookie = getCookie("dagwaarde");
-console.log("dit is het koekje " + cookie);
 document.onload = bezet();
+
 //document.onload = console.log(document.getElementsByClassName("selected")[0])
 
 
 function bezet() {
+    let seldag = document.getElementsByClassName("selected")[0];
+    seldag = seldag.innerHTML;
     var tel = 0;
     let x = "";
     let variabele = 1;
@@ -30,6 +30,7 @@ function bezet() {
                 tel += 1;
                 let modal = document.getElementById("d" + tel);
                 modal = modal.innerHTML;
+                console.log(modal);
                 let afspr = document.getElementById(modal);
                 dag = afspr.innerHTML;
                 let uur = document.getElementById("uur" + tel);

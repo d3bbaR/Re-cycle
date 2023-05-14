@@ -79,12 +79,15 @@
                             }
                         }
                     }
-                    echo "<p class ='inv'id ='hoeveel'>" . $x . "</p>";
-                    echo "<p class ='inv'id ='hoeveell'>" . $y . "</p>";
 
+
+                    echo "<p class='inv' id='hoeveel'>" . $x . "</p>";
+                    echo "<p class='inv' id='hoeveell'>" . $y . "</p>";
                     ?>
 
-                    <script defer src="../../js/afspraak.js?3"></script>
-</body>
 
-</html>D
+
+</body>
+<script src="../../js/afspraak.js"></script>
+
+</html>

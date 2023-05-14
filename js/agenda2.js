@@ -11,7 +11,6 @@ let button = document.getElementById("button");
 let text = document.getElementById("textarea");
 let input2 = document.getElementById("tekst");
 let maand = document.getElementById("maand");
-document.onload = form();
 function form() {
     let cookie = getCookie("dagwaarde");
     console.log(cookie);
