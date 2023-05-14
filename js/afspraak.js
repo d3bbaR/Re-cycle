@@ -7,9 +7,11 @@ let urenarray = [];
 let urenarray2 = []
 let dagenarray = [];
 let dagenarray2 = [];
+let cookie = getCookie("dagwaarde");
+console.log("dit is het koekje " + cookie);
 document.onload = bezet();
-
 //document.onload = console.log(document.getElementsByClassName("selected")[0])
+
 
 function bezet() {
     var tel = 0;

@@ -1,10 +1,10 @@
 <?php
-include '../functions.php';
-include '../conn.php';
+include 'PHP/functions.php';
+include 'PHP/conn.php';
 function build_calendar($month, $year)
 {
 
-    include '../conn.php';
+    include 'PHP/conn.php';
 
     //$mysqli = new mysqli($server, $username, $password, $db);
     $mysqli = $conn;
@@ -93,7 +93,7 @@ function build_calendar($month, $year)
         //*
         if ($today) {
             $cd = 0;
-            $calendar .= "<td id='$cd' class='dag'" . "' onclick = 'ladenuren($cd)'>$currentDay</td>";
+            $calendar .= "<td id=$cd class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
         } elseif ($date < date('Y-m-d')) {
             if ($dayOfWeek == 4) {
                 $calendar .= "<td  class='donderdag'></td>";
@@ -104,7 +104,7 @@ function build_calendar($month, $year)
             if ($dayOfWeek == 4) {
                 $calendar .= "<td  class='donderdag'></td>";
             } else {
-                $calendar .= "<td id='$cd' class='dag'" . "' onclick = 'ladenuren($cd)'>$currentDay</td>";
+                $calendar .= "<td id=$cd class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
             }
         }
         $currentDay++;
@@ -434,8 +434,7 @@ function ladenklant()
             left join dagen on dagen.PK = resuren.FK_uren where bezet = 1";
         $bezet_ins = $bezet . " " . "and FK_dagen =" . $key["PK"];
         //$bezet_ins = $bezet." "."where FK_dagen =".$key["PK"];
-        echo "<div class='kal' id = 'kal" . $day . "'>";
-        echo "<div class='urenk' id = 'uren" . $day . "'>";
+        echo "<div class='urenkalender' id = 'uren" . $day . "'>";
         foreach (query($bezet_ins) as $bezet) {
             array_push($array, $bezet["uren"]);
         }
@@ -483,7 +482,7 @@ function ladenklant()
                 }
             }
         }
-        echo "</div></div>";
+        echo "</div>";
     }
 
 }
@@ -498,7 +497,6 @@ function ladenklant()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/agenda.css?2">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>Document</title>
 
@@ -506,25 +504,9 @@ function ladenklant()
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <?php
-                $dateComponents = getdate();
-                if (isset($_GET['month']) && isset($_GET['year'])) {
-                    $month = $_GET['month'];
-                    $year = $_GET['year'];
-                } else {
-                    $month = $dateComponents['mon'];
-                    $year = $dateComponents['year'];
-                }
 
-                echo build_calendar($month, $year);
-
-                echo ladenuurvandag();
-                echo ladenform() . "</div>"; ?>
-            </div>
-        </div>
+    </div>
+    </div>
     </div>
 </body>
 <script src="../../js/agenda2.js?3"></script>
