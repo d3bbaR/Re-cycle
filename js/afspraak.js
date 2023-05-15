@@ -31,9 +31,9 @@ function bezet() {
             while (tel < x) {
                 tel += 1;
                 let modal = document.getElementById("d" + tel);
-                console.log(modal);
+               
                 modal = modal.innerHTML;
-                console.log(modal);
+                
                 if (modal < 0){
                     modal =modal.substring(1);
                 }
@@ -90,20 +90,20 @@ function bezet() {
     addevent(1);
 }
 function addevent(variabele) {
-    console.log("addevent functie called");
-    console.log(seldag);
     let i = 0;
     let modalevent = "";
     if (variabele == 1) {
-        x = document.getElementById("hoeveel");
-        x = x.innerHTML;
+      
 
         if (seldag == dagenarray[i]) {
+            console.log("aangekompen model");
             urenarray.forEach(tijd => {
 
                 let modalplaats = document.getElementById("d" + tijd);
                 modalplaats.setAttribute("class", "gesl afspr");
                 modalevent = document.getElementById(tijd);
+              
+                modalevent.addEventListener("click",console.log(tijd) );
                 modalevent.addEventListener("click", function () { modalappear(tijd) })
                 i += 1;
             })
@@ -134,6 +134,7 @@ function addevent(variabele) {
 
 
 function modalappear(dat) {
+    console.log("clicked");
     let num = urenarray.indexOf(dat, 0);
     console.log(dat);
     num += 1;

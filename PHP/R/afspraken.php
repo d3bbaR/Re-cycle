@@ -40,7 +40,7 @@
 
 
 
-                    echo ladenklant();
+                    echo ladenklant($month);
                     $x = 0;
                     $y = 0;
                     $selector2 .= "and month(dagen.dagen) = ".$month ;
