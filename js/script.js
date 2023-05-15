@@ -38,14 +38,6 @@ btn.on('click', function(e) {
 });
 
 
-
-
-
-
-
-
-
-
 var btn = $('#button');
 
 $(window).scroll(function() {
