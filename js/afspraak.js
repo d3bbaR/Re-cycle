@@ -6,6 +6,8 @@ let urenarray = [];
 let urenarray2 = []
 let dagenarray = [];
 let dagenarray2 = [];
+let seldag = document.getElementsByClassName("selected")[0];
+seldag = seldag.innerHTML;
 document.onload = bezet();
 
 //document.onload = console.log(document.getElementsByClassName("selected")[0])
@@ -29,9 +31,14 @@ function bezet() {
             while (tel < x) {
                 tel += 1;
                 let modal = document.getElementById("d" + tel);
+                console.log(modal);
                 modal = modal.innerHTML;
                 console.log(modal);
+                if (modal < 0){
+                    modal =modal.substring(1);
+                }
                 let afspr = document.getElementById(modal);
+                console.log(afspr);
                 dag = afspr.innerHTML;
                 let uur = document.getElementById("uur" + tel);
                 uur = uur.innerHTML;
@@ -83,13 +90,14 @@ function bezet() {
     addevent(1);
 }
 function addevent(variabele) {
+    console.log("addevent functie called");
+    console.log(seldag);
     let i = 0;
     let modalevent = "";
     if (variabele == 1) {
         x = document.getElementById("hoeveel");
         x = x.innerHTML;
 
-        console.log(i);
         if (seldag == dagenarray[i]) {
             urenarray.forEach(tijd => {
 
