@@ -40,10 +40,12 @@
 
 
 
-                    echo ladenklant();
+                    echo ladenklant($month);
                     $x = 0;
                     $y = 0;
-                    foreach (query($selector) as $res) {
+                    $selector2 .= "and month(dagen.dagen) = ".$month ;
+                   
+                    foreach (query($selector2) as $res) {
                         $data = $res["dagen"];
                         $vand = date("Y-m-d");
                         if ($data >= $vand) {
