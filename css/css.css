@@ -230,8 +230,9 @@ article {
 /* --------------------------------------------services + over ons--------------------------------------- */
 
 
-h1 {
+.containerservices h1 {
   text-align: center;
+  color: white;
 }
 
 .containerservices {
@@ -261,12 +262,13 @@ a .flexservices {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: rgb(242, 236, 228);
+  background-color: #f2ece4;
   height: 200px;
+  opacity: 0.7;
 }
 
-.flex p {
-  transform: translateY(-30%);
+.flexservices p {
+  color: black;
 }
 
 
@@ -369,6 +371,11 @@ a {
 @media (min-width:1059px) {
   .overons {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  a .flexservices {
+    height: 150px;
+    width: 150px;
   }
 }
 
@@ -913,6 +920,7 @@ h2:after {
   font-size: 1.1rem;
   margin-bottom: 22px;
   transition: .3s;
+  text-align: center;
 }
 
 .txtveld:hover {
@@ -922,6 +930,7 @@ h2:after {
 .txtarea {
   width: 100%;
   min-height: 150px;
+  text-align: center;
 }
 
 .btncontainer {
@@ -949,9 +958,11 @@ h2:after {
   .contact {
     grid-template-columns: 1fr;
   }
-  .contactcontainer{
+
+  .contactcontainer {
     padding: 0;
   }
+
   .linkscontact {
     height: 200px;
   }
@@ -1502,50 +1513,59 @@ i.fa.fa-close.r {
 }
 
 /*LEASING PAGE*/
-.leasing{
+.leasing {
   margin-left: 20%;
   margin-right: 20%;
   display: flex;
   flex-direction: column;
 }
-.leasingtext{
+
+.leasingtext {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
-.leasingtext a{
+
+.leasingtext a {
   text-decoration: underline;
 }
-.leasingtext img{
+
+.leasingtext img {
   width: 40%;
   padding-top: 10px;
   padding-bottom: 15px;
 }
-.leasing h2{
+
+.leasing h2 {
   background-color: rgb(0, 0, 0);
   color: white;
   font-size: 45px;
   margin: 20px;
 }
-.leasing p{
+
+.leasing p {
   padding-bottom: 10px;
 }
-.styling{
+
+.styling {
   list-style: disc;
-  padding-left:15px;
+  padding-left: 15px;
 }
+
 /*Leen voorwaarden page*/
 
 
-.leenvoorwaarden{
+.leenvoorwaarden {
   margin: auto;
 }
-.leenvoorwaarden p{
+
+.leenvoorwaarden p {
   padding: 10px;
   margin-left: 20%;
   margin-right: 20%;
 }
-.leenvoorwaarden h2{
+
+.leenvoorwaarden h2 {
   background-color: rgb(0, 0, 0);
   color: white;
   font-size: 45px;
@@ -1555,17 +1575,19 @@ i.fa.fa-close.r {
 
 /*INRUILACTIEPAGE*/
 
-.inruilactie{
+.inruilactie {
   display: flex;
   flex-direction: column;
   height: 56.5vh;
 }
-.inruilactie p{
+
+.inruilactie p {
   margin-left: 20%;
   margin-right: 20%;
   padding: 10px;
 }
-.inruilactie h2{
+
+.inruilactie h2 {
   background-color: rgb(0, 0, 0);
   color: white;
   font-size: 45px;
@@ -1574,19 +1596,26 @@ i.fa.fa-close.r {
 
 /*ALGEMENE VERKOOPSWAARDEN*/
 
-.AVW{
+.AVW {
   display: flex;
   flex-direction: column;
 
 }
-.AVW h2{
+
+.AVW h2 {
   background-color: rgb(0, 0, 0);
   color: white;
   font-size: 45px;
   margin: 20px;
 }
-.AVW p{ 
+
+.AVW p {
   margin-left: 20%;
   margin-right: 20%;
   padding: 10px;
+}
+
+.padding {
+  padding-top: 50px;
+  background-color: #f2ece4;
 }
