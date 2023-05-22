@@ -57,6 +57,8 @@ $rol_sort = "SELECT * from rol ORDER BY PK";
 $account = "SELECT * FROM account";
 $account_sort = "SELECT * from account ORDER BY PK";
 
+$catalogus = "SELECT * from catalogus";
+$type = "SELECT Cat from catalogus";
 $uren = "SELECT * FROM uren";
 
 $dagen = "SELECT * FROM dagen";

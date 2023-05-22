@@ -1,3 +1,7 @@
+<?php 
+ include "PHP/conn.php";
+ include "PHP/functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +19,7 @@
         type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
         type="text/css" />
+        <link rel="stylesheet" href="css/info.css">
     <link href="css/cat.css" rel="stylesheet" />
 </head>
 
@@ -66,158 +71,85 @@
                         <input type="radio" name="Category" data-value-category="all" id="radio-all"
                             class="category-control" checked>
                         <label class="radio-control" for="radio-all">Alle fietsen</label><br>
-                        <input type="radio" name="Category" data-value-category="road" id="radio-road"
-                            class="category-control">
-                        <label class="radio-control" for="radio-road">Trekkingfietsen</label><br>
-                        <input type="radio" name="Category" data-value-category="mountain" id="radio-mountain"
-                            class="category-control">
-                        <label class="radio-control" for="radio-mountain">Mountainbikes</label><br>
-                        <input type="radio" name="Category" data-value-category="bmx" id="radio-bmx"
-                            class="category-control">
-                        <label class="radio-control" for="radio-bmx">BMX</label><br>
-                    </div>
+                        <?php 
+                        $merken = array();
+                        foreach (query($type) as $dat){
+                            if (in_array($dat['Cat'],$merken)) {
+                               
+                            }
+                            else{
+                                array_push($merken,$dat['Cat']);
+                            }
 
+                        }
+                
+                        foreach ($merken as $merk) {
+                           echo " <input type='radio' name='Category' data-value-category=".$merk." id=".$merk."
+                            class='category-control'>
+                            <label class='radio-control' for=".$merk.">".$merk."</label><br>";
+                        }
+                        
+                        ?>
+                    </div>
                 </div>
                 <!-- /.select-box -->
                 <div class="price-select-box">
-                    <input type="range" min="0" max="3870" value="2850" class="price-control" data-filter='price'>
+                    <input type="range" min="1" max="3870" value="2850" class="price-control" data-filter='price'>
                     <span class="price-value">Prijs tot <span class="price-value__item">3870</span>€</span>
                 </div>
             </div>
             <!-- /filter-box-->
 
-
-
-            <div class="products-box grid-box">
-
-                <div data-category='road' value="2850" class="product-box__item">
-                    <h3 class="product-box__title">Cano One</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im1-min.png">
+            <?php 
+            echo "<div class='products-box grid-box'>";
+            foreach (query($catalogus) as $prod){
+                echo "<div data-category=".$prod['Cat']." value=".$prod['Prijs']." "."class='product-box__item' onclick =show(".$prod['FietsNr'].")>
+                    <h3 class='product-box__title'>".$prod['Type']."</h3>
+                    <div class='product-box__img'>
+                        <img class='img-fluid' src='assets/im1-min.png'>
                     </div>
-                    <div class="product-box__meta">
-                        <p>2850 €</p>
+                    <div class='product-box__meta'>
+                        <p>".$prod['Prijs']."  €</p>
 
                     </div>
+                </div>";
+                
+               
+            }
+            echo "</div>";
+            foreach (query($catalogus) as $prod){
+            echo  "<div class='fietscontainer' id=".$prod['FietsNr'].">
+        <div class='box'>
+            <div class='images'>
+                <div class='img-holder active'>
+                    <img src='assets/im4-min.png'>
                 </div>
-
-
-                <div data-category='bmx' value="1620" class="product-box__item">
-                    <h3 class="product-box__title">Predator</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im12-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>1620 €</p>
-
-                    </div>
-                </div>
-
-                <div data-category='mountain' value="780" class="product-box__item">
-                    <h3 class="product-box__title">Canyon</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im2-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>780 €</p>
-
-                    </div>
-                </div>
-                <div data-category='road' value="1100" class="product-box__item">
-                    <h3 class="product-box__title">Coselo</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im3-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>1100 €</p>
-
-                    </div>
-                </div>
-                <div data-category='mountain' value="450" class="product-box__item">
-                    <h3 class="product-box__title">Gt Cube</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im4-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>450 €</p>
-
-                    </div>
-                </div>
-                <div data-category='road' value="600" class="product-box__item">
-                    <h3 class="product-box__title">Cube Axeal</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im5-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>600 €</p>
-
-                    </div>
-                </div>
-                <div data-category='mountain' value="320" class="product-box__item">
-                    <h3 class="product-box__title">Gt 3000</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im7-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>320 €</p>
-
-                    </div>
-                </div>
-                <div data-category='mountain' value="500" class="product-box__item">
-                    <h3 class="product-box__title">Gt One</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im8-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>500 €</p>
-
-                    </div>
-                </div>
-                <div data-category='bmx' value="2200" class="product-box__item">
-                    <h3 class="product-box__title">Gt Perfomer</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im9-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>2200 €</p>
-
-                    </div>
-                </div>
-                <div data-category='mountain' value="1250" class="product-box__item">
-                    <h3 class="product-box__title">Haibike</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im10-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>1250 €</p>
-
-                    </div>
-                </div>
-                <div data-category='bmx' value="1350" class="product-box__item">
-                    <h3 class="product-box__title">Kenda XL</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im11-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>1350 €</p>
-
-                    </div>
-                </div>
-
-
-                <div data-category='road' value="1900" class="product-box__item">
-                    <h3 class="product-box__title">Forme Long</h3>
-                    <div class="product-box__img">
-                        <img class="img-fluid" src="assets/im6-min.png">
-                    </div>
-                    <div class="product-box__meta">
-                        <p>1900 €</p>
-
-                    </div>
-                </div>
-
-
+                <span>".$prod['Prijs']."</span>
             </div>
+            <div class='asic-info'>
+                <h1>".$prod['Type']."</h1>
+                
+                
+                
+            </div>
+            <div class='description'>
+                <p>Merk: ".$prod['Merk']."</p>
+                <p>Soort fiets: ".$prod['Cat']."</p>
+                <p>Kleur: ".$prod['Kleur']."</p>
+                <p>Frame: ".$prod['Frame']."</p>
+                <p>Wielmaat: ".$prod['Wielmaat']."</p>
+                <p>Fietsmaat: ".$prod['Maat']."</p>
+                <p>Versnellingen: ".$prod['Versnellingen']."</p>
+            </div>
+        </div>
+    </div>";
+            }
+            ?>
+
+            
+
+
+               
             <!-- /product-box-->
 
         </section>
