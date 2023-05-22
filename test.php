@@ -494,7 +494,7 @@ function ladenklant($maand)
                 } else {
                     if ($counter >= $p) {
 
-                        echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren'] . $day . "'>
+                        echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren']  . "'>
                             <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                     } else {
                         $counter += 1;

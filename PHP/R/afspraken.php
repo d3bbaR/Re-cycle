@@ -90,6 +90,6 @@
 
 
 </body>
-<script src="../../js/afspraak.js"></script>
+<script src="../../js/afspraak.js?1"></script>
 
 </html>

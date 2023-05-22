@@ -84,9 +84,10 @@
                         }
                 
                         foreach ($merken as $merk) {
-                           echo " <input type='radio' name='Category' data-value-category=".$merk." id=".$merk."
+                           // echo "<script>console.log(".$merk.")</script>";
+                           echo " <input type='radio' name='Category' data-value-category='".$merk."' id='".$merk."'
                             class='category-control'>
-                            <label class='radio-control' for=".$merk.">".$merk."</label><br>";
+                            <label class='radio-control' for='".$merk."'>".$merk."</label><br>";
                         }
                         
                         ?>

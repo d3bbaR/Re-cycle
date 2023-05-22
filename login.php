@@ -31,6 +31,9 @@
                         <input type="password" name="password" required>
                         <label>Wachtwoord</label>
                     </div>
+                   
+                    <input type="submit" value="login">
+                
                 </form>
                 <?php if (isset($_GET["bad"])) {
                     echo "<p style='color:red'>Je wachtwoord en of username kloppen niet</p>";
