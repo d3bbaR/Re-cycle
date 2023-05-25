@@ -2,18 +2,20 @@ const filter = {
     filterAction() {
       document.querySelectorAll(".product-box__item").forEach((item) => {
         let categoryAtribut = item.getAttribute("data-category");
-        let priceAtribut = Number(item.getAttribute("value"));
+        
       
         if (
-          (filter.category() == categoryAtribut || filter.category() == "all") &&
-          (filter.price() >= priceAtribut || filter.price() == "0")
+          (filter.category() == categoryAtribut || filter.category() == "all")
+          
         ) {
           item.style.display = "flex";
         } else {
           item.style.display = "none";
         }
       });
-      console.log(arr);
+      document.querySelectorAll(".fietscontainer").forEach((item) => {
+        item.style.display ="none";
+    });
     },
   
     price() {
@@ -48,12 +50,32 @@ const filter = {
   };
   
   filter.checkAtributeToggle();
-  
   document
     .querySelector(".select-control")
     .addEventListener("click", filter.filterAction);
+function show(dat){
+  document.querySelectorAll(".product-box__item").forEach((item) => {
+    item.style.display ="none";
+  });
+ 
+  let modal = document.getElementById(dat);
+  modal.style.display = "block";
+}
+function hide(dat){
+  document.querySelectorAll(".product-box__item").forEach((item) => {
+    let categoryAtribut = item.getAttribute("data-category");
+    
   
-  document
-    .querySelector(".price-control")
-    .addEventListener("change", filter.filterAction);
-  
+    if (
+      (filter.category() == categoryAtribut || filter.category() == "all")
+      
+    ) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+ 
+  let modal = document.getElementById(dat);
+  modal.style.display = "none";
+}

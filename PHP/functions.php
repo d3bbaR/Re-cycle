@@ -58,6 +58,7 @@ $account = "SELECT * FROM account";
 $account_sort = "SELECT * from account ORDER BY PK";
 
 $catalogus = "SELECT * from catalogus";
+$naam = "SELECT * from catalogus where";
 $type = "SELECT Cat from catalogus";
 $uren = "SELECT * FROM uren";
 

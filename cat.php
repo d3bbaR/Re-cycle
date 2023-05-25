@@ -19,8 +19,8 @@
         type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
         type="text/css" />
-        <link rel="stylesheet" href="css/info.css">
-    <link href="css/cat.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/info.css?2">
+    <link href="css/cat.css?2" rel="stylesheet" />
 </head>
 
 <body>
@@ -94,16 +94,17 @@
                     </div>
                 </div>
                 <!-- /.select-box -->
-                <div class="price-select-box">
-                    <input type="range" min="1" max="10000" value="2850" class="price-control" data-filter='price'>
-                    <span class="price-value">Prijs tot <span class="price-value__item">3870</span>€</span>
-                </div>
-            </div>
+                
             <!-- /filter-box-->
 
             <?php 
+            $fietsenarray = array();
             echo "<div class='products-box grid-box'>";
             foreach (query($catalogus) as $prod){
+                if (in_array($prod['Type'],$fietsenarray)){
+
+                }
+                else{
                 echo "<div data-category='".$prod['Cat']."' value=".$prod['Prijs']." "."class='product-box__item' onclick =show(".$prod['FietsNr'].")>
                     <h3 class='product-box__title'>".$prod['Type']."</h3>
                     <div class='product-box__img'>
@@ -114,10 +115,19 @@
 
                     </div>
                 </div>";
+                array_push($fietsenarray,$prod['Type']);
                 
-               
+                }
             }
             echo "</div>";
+            foreach ($fietsenarray as $item ) {
+                $naam .= " Type = ".''$item;
+               echo $naam;
+                foreach (query($naam) as $prod) {
+                    echo print_r($prod);
+                }
+                
+            }
             foreach (query($catalogus) as $prod){
             echo  "<div class='fietscontainer' id=".$prod['FietsNr'].">
         <div class='box'>
@@ -141,6 +151,7 @@
                 <p>Wielmaat: ".$prod['Wielmaat']."</p>
                 <p>Fietsmaat: ".$prod['Maat']."</p>
                 <p>Versnellingen: ".$prod['Versnellingen']."</p>
+                <button class='fa fa-close' onclick =hide(".$prod['FietsNr'].")></button>
             </div>
         </div>
     </div>";
@@ -164,7 +175,7 @@
 
 
 
-    <script src="js/filter.js?2"></script>
+    <script src="js/filter.js?4"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>

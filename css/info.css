@@ -17,11 +17,16 @@
 }
 
 .fietscontainer {
-    background-color: var(--primary-color);
     min-height: 100vh;
     display: none;
     justify-content: center;
     align-items: center;
+}
+.fa {
+    color: red;
+    width: 50px;
+   
+
 }
 
 .box {
