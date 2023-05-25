@@ -3,7 +3,7 @@ const filter = {
       document.querySelectorAll(".product-box__item").forEach((item) => {
         let categoryAtribut = item.getAttribute("data-category");
         let priceAtribut = Number(item.getAttribute("value"));
-  
+      
         if (
           (filter.category() == categoryAtribut || filter.category() == "all") &&
           (filter.price() >= priceAtribut || filter.price() == "0")
@@ -13,6 +13,7 @@ const filter = {
           item.style.display = "none";
         }
       });
+      console.log(arr);
     },
   
     price() {

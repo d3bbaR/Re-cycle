@@ -95,7 +95,7 @@
                 </div>
                 <!-- /.select-box -->
                 <div class="price-select-box">
-                    <input type="range" min="1" max="3870" value="2850" class="price-control" data-filter='price'>
+                    <input type="range" min="1" max="10000" value="2850" class="price-control" data-filter='price'>
                     <span class="price-value">Prijs tot <span class="price-value__item">3870</span>€</span>
                 </div>
             </div>
@@ -104,7 +104,7 @@
             <?php 
             echo "<div class='products-box grid-box'>";
             foreach (query($catalogus) as $prod){
-                echo "<div data-category=".$prod['Cat']." value=".$prod['Prijs']." "."class='product-box__item' onclick =show(".$prod['FietsNr'].")>
+                echo "<div data-category='".$prod['Cat']."' value=".$prod['Prijs']." "."class='product-box__item' onclick =show(".$prod['FietsNr'].")>
                     <h3 class='product-box__title'>".$prod['Type']."</h3>
                     <div class='product-box__img'>
                         <img class='img-fluid' src='assets/im1-min.png'>
@@ -164,9 +164,7 @@
 
 
 
-    <script src="js/filter.js"></script>
-    <script src="js/cart.js"></script>
-    <script src="js/test.js"></script>
+    <script src="js/filter.js?2"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>

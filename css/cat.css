@@ -38,7 +38,9 @@ html {
   }
   
   /* --------------------------------------------nav--------------------------------------- */
-  
+  .data-category{
+    display: block;
+  }
   .navigation {
     height: 70px;
     background: #e0dede;
