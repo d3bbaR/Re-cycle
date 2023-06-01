@@ -148,7 +148,7 @@ function ladenuurvandag()
         }
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
-                echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+                
             }
 
             foreach (query($uren) as $dat) {
@@ -174,7 +174,7 @@ function ladenuurvandag()
             }
         } else {
             if ($p == 100) {
-                echo "<div class='uren'>" . $dat["uren"] . "</div>";
+                echo "<div class='uren'>"  . "</div>";
             }
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {

@@ -22,6 +22,7 @@ include "PHP/functions.php";
     <link rel="stylesheet" href="css/info.css?2">
     <link href="css/cat.css?2" rel="stylesheet" />
 </head>
+
 <body>
     <?php include 'nav-bar.php'; ?>
 
@@ -44,22 +45,12 @@ include "PHP/functions.php";
                             }
 
                         }
-                        $teller = 0;
-                        switch ($merken) {
-                            case 'Kinderfietsen':
-                                echo "hello";
-                                break;
-                            
-                            default:
-                                # code...
-                                break;
-                        }
+
                         foreach ($merken as $merk) {
                             // echo "<script>console.log(".$merk.")</script>";
                             echo " <input type='radio' name='Category' data-value-category='" . $merk . "' id='" . $merk . "'
                             class='category-control'>
-                            <label class='radio-control' for='" . $merk . "'><img>" . $merk . "</label><br>";
-                            $teller += 1;
+                            <label class='radio-control' for='" . $merk . "'>" . $merk . "</label><br>";
                         }
 
                         ?>
@@ -73,9 +64,9 @@ include "PHP/functions.php";
                 $fietsenarray = array();
                 echo "<div class='products-box grid-box'>";
                 foreach (query($catalogus) as $prod) {
-                   /* if (in_array($prod['Type'], $fietsenarray)) {
+                    if (in_array($prod['Type'], $fietsenarray)) {
 
-                    } else {*/
+                    } else {
                         echo "<div data-category='" . $prod['Cat'] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick =show(" . $prod['FietsNr'] . ")>
                     <h3 class='product-box__title'>" . $prod['Type'] . "</h3>
                     <div class='product-box__img'>
@@ -89,19 +80,17 @@ include "PHP/functions.php";
                         array_push($fietsenarray, $prod['Type']);
 
                     }
-                //}
-                echo "</div>".print_r($fietsenarray);
-                $matenVdg = "";
-                
-                foreach ($fietsenarray as $item) {
-                    $naam = "SELECT * from catalogus where";
-                    $naam .= " Type =   '" . $item."'";
-                    echo $naam ."<br>";
+                }
+                echo "</div>";
+                /*foreach ($fietsenarray as $item) {
+                    $naam .= " Type = " . '' . $item;
+                    echo $naam;
                     foreach (query($naam) as $prod) {
                         echo print_r($prod);
-                        $matenVdg .= " / ".$prod["Maat"];
-
                     }
+
+                }*/
+                foreach (query($catalogus) as $prod) {
                     echo "<div class='fietscontainer' id=" . $prod['FietsNr'] . ">
         <div class='box'>
             <div class='images'>
@@ -122,18 +111,12 @@ include "PHP/functions.php";
                 <p>Kleur: " . $prod['Kleur'] . "</p>
                 <p>Frame: " . $prod['Frame'] . "</p>
                 <p>Wielmaat: " . $prod['Wielmaat'] . "</p>
-                <p>Fietsmaat: " . $matenVdg . "</p>
+                <p>Fietsmaat: " . $prod['Maat'] . "</p>
                 <p>Versnellingen: " . $prod['Versnellingen'] . "</p>
                 <button class='fa fa-close' onclick =hide(" . $prod['FietsNr'] . ")></button>
             </div>
         </div>
     </div>";
-    $matenVdg ="";
-
-                }
-
-                foreach (query($catalogus) as $prod) {
-                    
                 }
                 ?>
 
