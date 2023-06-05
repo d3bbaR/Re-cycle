@@ -70,6 +70,7 @@ include "PHP/functions.php";
 
                     }
                     else{
+                        
                     echo "<div data-category='" . $translate[$prod['Cat']] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick =show("  .  $prod['Type']  . ")>
                     <h3 class='product-box__title'>" . $prod['Type'] . "</h3>
                     <div class='product-box__img'>
