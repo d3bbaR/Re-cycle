@@ -22,6 +22,7 @@ include "PHP/functions.php";
     <link rel="stylesheet" href="css/info.css?2">
     <link href="css/cat.css?2" rel="stylesheet" />
 </head>
+
 <body>
     <?php include 'nav-bar.php'; ?>
 
@@ -31,35 +32,14 @@ include "PHP/functions.php";
             <div class="filter-box">
                 <div class="select-box">
                     <div class="select-control">
-                        <input type="radio" name="Category" data-value-category="all" id="radio-all"
-                            class="category-control" checked>
-                        <label class="radio-control" for="radio-all">Alle fietsen</label><br>
+
                         <?php
                         $merken = array();
                         foreach (query($type) as $dat) {
-                            if (in_array($dat['Cat'], $merken)) {
-
-                            } else {
-                                array_push($merken, $dat['Cat']);
-                            }
-
-                        }
-                        $teller = 0;
-                        switch ($merken) {
-                            case 'Kinderfietsen':
-                                echo "hello";
-                                break;
-                            
-                            default:
-                                # code...
-                                break;
-                        }
-                        foreach ($merken as $merk) {
-                            // echo "<script>console.log(".$merk.")</script>";
-                            echo " <input type='radio' name='Category' data-value-category='" . $merk . "' id='" . $merk . "'
+                            echo " <input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
                             class='category-control'>
-                            <label class='radio-control' for='" . $merk . "'><img>" . $merk . "</label><br>";
-                            $teller += 1;
+                            <label class='radio-control' for='" . $dat['Cat'] . "'><img>" . $dat['Cat'] . "</label><br>";
+
                         }
 
                         ?>
@@ -71,12 +51,26 @@ include "PHP/functions.php";
 
                 <?php
                 $fietsenarray = array();
+                $translate = array(
+                    'Kinderfietsen ' => 'Kinderfietsen',
+                    'Stadsfietsen ' => 'Stadsfietsen',
+                    'Mountainbikes ' => 'Mountainbikes',
+                    'Racefietsen ' => 'Racefietsen',
+                    'Hybride fietsen ' => 'Hybride fietsen',
+                    'Stadsfietsen (elo)' => 'Stadsfietsen elektris',
+                    'Mountainbikes (elo)' => 'Mountainbikes elektris',
+                    'Racefietsen (elo)' => 'Racefietsen elektris',
+                    'Hybride fietsen (elo)' => 'Hybride fietsen elektris',
+
+                ); 
                 echo "<div class='products-box grid-box'>";
                 foreach (query($catalogus) as $prod) {
-                   /* if (in_array($prod['Type'], $fietsenarray)) {
+                    if (in_array($prod['Type'],$fietsenarray)){
+                       
 
-                    } else {*/
-                        echo "<div data-category='" . $prod['Cat'] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick =show(" . $prod['FietsNr'] . ")>
+                    }
+                    else{
+                    echo "<div data-category='" . $translate[$prod['Cat']] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick =show("  .  $prod['Type']  . ")>
                     <h3 class='product-box__title'>" . $prod['Type'] . "</h3>
                     <div class='product-box__img'>
                         <img class='img-fluid' src='assets/im1-min.png'>
@@ -86,23 +80,20 @@ include "PHP/functions.php";
 
                     </div>
                 </div>";
-                        array_push($fietsenarray, $prod['Type']);
+                array_push($fietsenarray,$prod['Type']);
 
-                    }
-                //}
-                echo "</div>".print_r($fietsenarray);
-                $matenVdg = "";
+                }
+            }
                 
-                foreach ($fietsenarray as $item) {
-                    $naam = "SELECT * from catalogus where";
-                    $naam .= " Type =   '" . $item."'";
-                    echo $naam ."<br>";
-                    foreach (query($naam) as $prod) {
-                        echo print_r($prod);
-                        $matenVdg .= " / ".$prod["Maat"];
+                //}
+                $matenVdg = "";
 
-                    }
-                    echo "<div class='fietscontainer' id=" . $prod['FietsNr'] . ">
+                /*foreach ($fietsenarray as $item) {
+                    $naam = "SELECT * from catalogus where";
+                    $naam .= " Type =   '" . $item . "'";
+
+
+                    echo "<div class='fietscontainer' id='" . $prod['Type'] . "'>
         <div class='box'>
             <div class='images'>
                 <div class='img-holder active'>
@@ -128,13 +119,12 @@ include "PHP/functions.php";
             </div>
         </div>
     </div>";
-    $matenVdg ="";
+                    $matenVdg = "";
 
                 }
 
-                foreach (query($catalogus) as $prod) {
-                    
-                }
+
+*/
                 ?>
 
 

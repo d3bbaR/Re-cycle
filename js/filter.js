@@ -58,7 +58,7 @@ function show(dat){
     item.style.display ="none";
   });
  
-  let modal = document.getElementById(dat);
+  let modal = document.getElementById(toString(dat));
   modal.style.display = "block";
 }
 function hide(dat){

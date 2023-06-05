@@ -59,7 +59,7 @@ $account_sort = "SELECT * from account ORDER BY PK";
 
 $catalogus = "SELECT * from catalogus";
 $naam = "SELECT * from catalogus where";
-$type = "SELECT Cat from catalogus";
+$type = "SELECT Cat from Categorie";
 $uren = "SELECT * FROM uren";
 
 $dagen = "SELECT * FROM dagen";
