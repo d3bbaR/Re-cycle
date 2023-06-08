@@ -36,9 +36,9 @@ include "PHP/functions.php";
                         <?php
                         $merken = array();
                         foreach (query($type) as $dat) {
-                            echo " <input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
+                            echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
                             class='category-control'>
-                            <label class='radio-control' for='" . $dat['Cat'] . "'><img>" . $dat['Cat'] . "</label><br>";
+                            <label class='radio-control' for='" . $dat['Cat'] . "'><img src=".$dat['afbeelding']."><p>" . $dat['Cat'] . "</p></label><br>";
 
                         }
 
@@ -71,7 +71,7 @@ include "PHP/functions.php";
                     }
                     else{
                         
-                    echo "<div data-category='" . $translate[$prod['Cat']] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick =show("  .  $prod['Type']  . ")>
+                    echo "<div data-category='" . $translate[$prod['Cat']] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick ='show(\""  .  $prod['Type']  . "\")'>
                     <h3 class='product-box__title'>" . $prod['Type'] . "</h3>
                     <div class='product-box__img'>
                         <img class='img-fluid' src='assets/im1-min.png'>
@@ -89,10 +89,12 @@ include "PHP/functions.php";
                 //}
                 $matenVdg = "";
 
-                /*foreach ($fietsenarray as $item) {
+                foreach ($fietsenarray as $item) {
                     $naam = "SELECT * from catalogus where";
                     $naam .= " Type =   '" . $item . "'";
-
+                    foreach (query($naam) as $prod  ) {
+                        # code...
+                    }
 
                     echo "<div class='fietscontainer' id='" . $prod['Type'] . "'>
         <div class='box'>
@@ -116,7 +118,7 @@ include "PHP/functions.php";
                 <p>Wielmaat: " . $prod['Wielmaat'] . "</p>
                 <p>Fietsmaat: " . $matenVdg . "</p>
                 <p>Versnellingen: " . $prod['Versnellingen'] . "</p>
-                <button class='fa fa-close' onclick =hide(" . $prod['FietsNr'] . ")></button>
+                <button class='fa fa-close' onclick ='hide(\"" . $prod['Type'] . "\")'></button>
             </div>
         </div>
     </div>";
@@ -125,7 +127,7 @@ include "PHP/functions.php";
                 }
 
 
-*/
+
                 ?>
 
 

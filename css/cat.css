@@ -798,7 +798,10 @@ input[type="range"]::-webkit-slider-runnable-track {
 .bottom-footer {
   margin-bottom: 200px;
 }
-
+.filtercontainer{
+  
+ 
+}
 /* media ================================================================================ */
 
 @media (max-width: 768px) {
