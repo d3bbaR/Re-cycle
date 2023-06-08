@@ -1,4 +1,6 @@
 <?php
+
+// includen van pagina's
 include "../conn.php";
 include "../functions.php";
 include "../R/iets.php";
@@ -6,6 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
+//opvangen variabelen en declareren query
 $pk = $_POST["edit"];
 $edit = "UPDATE gegevens set gekeurd='1' where pk=$pk";
 $result = mysqli_query($conn, $edit);

@@ -1,6 +1,9 @@
 <?php
+//includen andere pagina's
 include "../conn.php";
 include "../functions.php";
+
+//opvangen variabelen
 $dag = $_POST["dag"];
 $uur = $_POST["uur"];
 $naam = mysqli_real_escape_string($conn, $_POST["naam"]);
@@ -9,8 +12,11 @@ $telefoon = $_POST["telefoon"];
 $type = $_POST["typeonderhoud"];
 $tekst = $_POST["tekst"];
 
+//wegschrijven in databank
 $insert = "INSERT INTO gegevens (naam,email,telefoon,type,tekst,gekeurd) VALUES ('$naam' , '$email', '$telefoon', '$type','$tekst',0)";
 $result = mysqli_query($conn, $insert);
+
+//opvangen van laatste PK
 $lastkey = mysqli_insert_id($conn);
 echo print_r($lastkey);
 $fk_dagen = "SELECT * from dagen where dagen = '" . $dag . "'";
@@ -25,6 +31,7 @@ if ($type == 2) {
             $pk2 = "SELECT * from resuren where FK_uren = $res[PK]+1 and FK_dagen = $res2[PK]";
             foreach (query($pk2) as $result) {
                 if ($result["bezet"] == 1) {
+                    //dit uur is al bezet
                     header("Location:../../afspraken.php?bad=1");
                 } else {
                     foreach (query($pk) as $res3) {
