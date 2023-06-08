@@ -11,12 +11,14 @@
 
 <body>
   <?php
+  //includen pagina's
   include "../functions.php";
+  //opvangen variabelen
   $pk = $_POST["edit"];
   $select = "SELECT * FROM rol where PK = $pk";
   $result = mysqli_query($conn, $select);
   $row = mysqli_fetch_assoc($result);
-
+//aanmaken velden 
   echo "<form action='../U/rol.php' method ='post'><input type ='text'value ='" . $row["rol"] . "'name ='rol'required>
 <input type ='number' value ='" . $row["visible"] . "'min ='0' max ='1' name='visible' required>
 <button name='edit' value='" . $pk . "'method='post'>edit </button>";
