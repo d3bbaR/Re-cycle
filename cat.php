@@ -29,27 +29,10 @@ include "PHP/functions.php";
 
     <div class="wrap">
         <section class="container">
-            <div class="filter-box" id="filterimg">
-                <div class="select-box">
-                    <div class="select-control">
-
-                        <?php
-                        $merken = array();
-                        foreach (query($type) as $dat) {
-                            echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
-                            class='category-control'>
-                            <label class='radio-control' for='" . $dat['Cat'] . "'><img src=".$dat['afbeelding']."><p>" . $dat['Cat'] . "</p></label><br>";
-
-                        }
-
-                        ?>
-                    </div>
-                </div>
-            </div>
             <div class="filter-box" id="filtertekst">
                 <div class="select-box">
                     <div class="select-control">
-                    <?php
+                        <?php
                         $merken = array();
                         foreach (query($type) as $dat) {
                             echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
@@ -62,34 +45,51 @@ include "PHP/functions.php";
                     </div>
                 </div>
             </div>
-                
-                <!-- /.select-box -->
+            <div class="filter-box" id="filterimg">
+                <div class="select-box">
+                    <div class="select-control">
 
-                <!-- /filter-box-->
+                        <?php
+                        $merken = array();
+                        foreach (query($type) as $dat) {
+                            echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
+                            class='category-control'>
+                            <label class='radio-control' for='" . $dat['Cat'] . "'><img src=" . $dat['afbeelding'] . "><p>" . $dat['Cat'] . "</p></label><br>";
 
-                <?php
-                $fietsenarray = array();
-                $translate = array(
-                    'Kinderfietsen ' => 'Kinderfietsen',
-                    'Stadsfietsen ' => 'Stadsfietsen',
-                    'Mountainbikes ' => 'Mountainbikes',
-                    'Racefietsen ' => 'Racefietsen',
-                    'Hybride fietsen ' => 'Hybride fietsen',
-                    'Stadsfietsen (elo)' => 'Stadsfietsen elektris',
-                    'Mountainbikes (elo)' => 'Mountainbikes elektris',
-                    'Racefietsen (elo)' => 'Racefietsen elektris',
-                    'Hybride fietsen (elo)' => 'Hybride fietsen elektris',
+                        }
 
-                ); 
-                echo "<div class='products-box grid-box'>";
-                foreach (query($catalogus) as $prod) {
-                    if (in_array($prod['Type'],$fietsenarray)){
-                       
+                        ?>
+                    </div>
+                </div>
+            </div>
 
-                    }
-                    else{
-                        
-                    echo "<div data-category='" . $translate[$prod['Cat']] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick ='show(\""  .  $prod['Type']  . "\")'>
+
+            <!-- /.select-box -->
+
+            <!-- /filter-box-->
+
+            <?php
+            $fietsenarray = array();
+            $translate = array(
+                'Kinderfietsen ' => 'Kinderfietsen',
+                'Stadsfietsen ' => 'Stadsfietsen',
+                'Mountainbikes ' => 'Mountainbikes',
+                'Racefietsen ' => 'Racefietsen',
+                'Hybride fietsen ' => 'Hybride fietsen',
+                'Stadsfietsen (elo)' => 'Stadsfietsen elektris',
+                'Mountainbikes (elo)' => 'Mountainbikes elektris',
+                'Racefietsen (elo)' => 'Racefietsen elektris',
+                'Hybride fietsen (elo)' => 'Hybride fietsen elektris',
+
+            );
+            echo "<div class='products-box grid-box'>";
+            foreach (query($catalogus) as $prod) {
+                if (in_array($prod['Type'], $fietsenarray)) {
+
+
+                } else {
+
+                    echo "<div data-category='" . $translate[$prod['Cat']] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick ='show(\"" . $prod['Type'] . "\")'>
                     <h3 class='product-box__title'>" . $prod['Type'] . "</h3>
                     <div class='product-box__img'>
                         <img class='img-fluid' src='assets/im1-min.png'>
@@ -99,22 +99,22 @@ include "PHP/functions.php";
 
                     </div>
                 </div>";
-                array_push($fietsenarray,$prod['Type']);
+                    array_push($fietsenarray, $prod['Type']);
 
                 }
             }
-                
-                //}
-                $matenVdg = "";
 
-                foreach ($fietsenarray as $item) {
-                    $naam = "SELECT * from catalogus where";
-                    $naam .= " Type =   '" . $item . "'";
-                    foreach (query($naam) as $prod  ) {
-                        # code...
-                    }
+            //}
+            $matenVdg = "";
 
-                    echo "<div class='fietscontainer' id='" . $prod['Type'] . "'>
+            foreach ($fietsenarray as $item) {
+                $naam = "SELECT * from catalogus where";
+                $naam .= " Type =   '" . $item . "'";
+                foreach (query($naam) as $prod) {
+                    # code...
+                }
+
+                echo "<div class='fietscontainer' id='" . $prod['Type'] . "'>
         <div class='box'>
             <div class='images'>
                 <div class='img-holder active'>
@@ -140,19 +140,19 @@ include "PHP/functions.php";
             </div>
         </div>
     </div>";
-                    $matenVdg = "";
+                $matenVdg = "";
 
-                }
-
-
-
-                ?>
+            }
 
 
 
+            ?>
 
 
-                <!-- /product-box-->
+
+
+
+            <!-- /product-box-->
 
         </section>
     </div>
