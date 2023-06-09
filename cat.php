@@ -19,7 +19,7 @@ include "PHP/functions.php";
         type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
         type="text/css" />
-    <link rel="stylesheet" href="css/info.css?2">
+    <link rel="stylesheet" href="css/info.css?3">
     <link href="css/cat.css?2" rel="stylesheet" />
 </head>
 
@@ -29,7 +29,7 @@ include "PHP/functions.php";
 
     <div class="wrap">
         <section class="container">
-            <div class="filter-box">
+            <div class="filter-box" id="filterimg">
                 <div class="select-box">
                     <div class="select-control">
 
@@ -45,6 +45,24 @@ include "PHP/functions.php";
                         ?>
                     </div>
                 </div>
+            </div>
+            <div class="filter-box" id="filtertekst">
+                <div class="select-box">
+                    <div class="select-control">
+                    <?php
+                        $merken = array();
+                        foreach (query($type) as $dat) {
+                            echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
+                            class='category-control'>
+                            <label class='radio-control' for='" . $dat['Cat'] . "'>" . $dat['Cat'] . "</label><br>";
+
+                        }
+
+                        ?>
+                    </div>
+                </div>
+            </div>
+                
                 <!-- /.select-box -->
 
                 <!-- /filter-box-->

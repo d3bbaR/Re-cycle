@@ -36,6 +36,7 @@ html {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+ 
   
   /* --------------------------------------------nav--------------------------------------- */
   .data-category{
@@ -226,9 +227,6 @@ html {
     margin: 0 auto;
     padding: 10px;
   }
-  
-
-
 
 
 
@@ -319,8 +317,8 @@ h3 {
 
 .product-box__item {
   z-index: 10;
-
-  display: flex;
+  display: none;
+  /*display: flex;*/
   flex-direction: column;
 
   padding: 1rem;
@@ -687,27 +685,34 @@ h3 {
 
 /* filter-box ================================================================================ */
 .filter-box {
-  display: flex;
-  flex-wrap: wrap;
 
-  margin-bottom: 1rem;
-  padding: 1rem;
-
-  border-radius: 10px;
-  background: #e0dede;
+  margin: 0 auto;
 }
 .filter-label {
   margin-right: 1rem;
 }
+.radio-control {
+  position: relative;
+}
+.radio-control p {
+  font-size: 25px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: rgba(255, 255, 255, 0.7);
+text-align: center;
+  
+}
+
 .select-control {
   display: flex;
-  justify-content: space-between;
-
-  min-width: 285px;
-  margin-right: 1rem;
-
-  background: none;
-  margin-bottom: 2%;
+    min-width: 285px;
+    margin-right: 3rem;
+    background: none;
+    margin-bottom: 2%;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .category-control {
@@ -721,7 +726,7 @@ h3 {
   transition: 0.2s linear;
 
   border-radius: 50px;
-  background: #e5ebed;
+  
 }
 
 .category-control:checked + .radio-control {
