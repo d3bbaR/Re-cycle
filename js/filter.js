@@ -13,8 +13,7 @@ const filter = {
         item.style.display = "none";
       }
     });
-    document.getElementById("filterimg").style.display = "none";
-    document.getElementById("filtertekst").style.display = "flex";
+      
     document.querySelectorAll(".fietscontainer").forEach((item) => {
       item.style.display = "none";
 
@@ -86,4 +85,13 @@ function hide(dat) {
 
   let modal = document.getElementById(dat);
   modal.style.display = "none";
+}
+function fietsladen(dat){
+del_cookie("fietssoort")
+document.cookie = "fietssoort="+dat;
+location.reload(); 
+}
+function del_cookie(name) {
+  document.cookie = name +
+      '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
 }

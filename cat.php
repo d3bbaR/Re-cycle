@@ -33,13 +33,26 @@ include "PHP/functions.php";
                 <div class="select-box">
                     <div class="select-control">
                         <?php
-                        $merken = array();
-                        foreach (query($type) as $dat) {
-                            echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
-                            class='category-control'>
-                            <label class='radio-control' for='" . $dat['Cat'] . "'>" . $dat['Cat'] . "</label><br>";
-
+                        if(isset($_COOKIE["fietssoort"])){
+                            foreach (query($type) as $dat) {
+                                echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
+                                class='category-control' onclick='fietsladen(\"".$dat['Cat']."\")'>
+                                <label class='radio-control' for='" . $dat['Cat'] . "'>" . $dat['Cat'] . "</label><br>";
+    
+                            }
+                            echo fietsen();
+                           
+                        } else{
+                            $merken = array();
+                            foreach (query($type) as $dat) {
+                                echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
+                                class='category-control' onclick='fietsladen(\"".$dat['Cat']."\")'>
+                                <label class='radio-control' for='" . $dat['Cat'] . "'><img src=" . $dat['afbeelding'] . "><p>" . $dat['Cat'] . "</p></label><br>";
+    
+                            }
                         }
+                        $merken = array();
+                       
 
                         ?>
                     </div>
@@ -51,12 +64,7 @@ include "PHP/functions.php";
 
                         <?php
                         $merken = array();
-                        foreach (query($type) as $dat) {
-                            echo "<input type='radio' name='Category' data-value-category='" . $dat['Cat'] . "' id='" . $dat['Cat'] . "'
-                            class='category-control'>
-                            <label class='radio-control' for='" . $dat['Cat'] . "'><img src=" . $dat['afbeelding'] . "><p>" . $dat['Cat'] . "</p></label><br>";
-
-                        }
+                        
 
                         ?>
                     </div>
@@ -69,21 +77,28 @@ include "PHP/functions.php";
             <!-- /filter-box-->
 
             <?php
-            $fietsenarray = array();
-            $translate = array(
-                'Kinderfietsen ' => 'Kinderfietsen',
-                'Stadsfietsen ' => 'Stadsfietsen',
-                'Mountainbikes ' => 'Mountainbikes',
-                'Racefietsen ' => 'Racefietsen',
-                'Hybride fietsen ' => 'Hybride fietsen',
-                'Stadsfietsen (elo)' => 'Stadsfietsen elektris',
-                'Mountainbikes (elo)' => 'Mountainbikes elektris',
-                'Racefietsen (elo)' => 'Racefietsen elektris',
-                'Hybride fietsen (elo)' => 'Hybride fietsen elektris',
-
-            );
-            echo "<div class='products-box grid-box'>";
+           
+            
+            function fietsen(){
+                $catalogus = "SELECT * FROM miniemen_baftech.catalogus where Cat ='".$_COOKIE["fietssoort"]."'";
+               
+                $fietsenarray = array();
+                $translate = array(
+                    'Kinderfietsen ' => 'Kinderfietsen',
+                    'Stadsfietsen ' => 'Stadsfietsen',
+                    'Mountainbikes ' => 'Mountainbikes',
+                    'Racefietsen ' => 'Racefietsen',
+                    'Hybride fietsen ' => 'Hybride fietsen',
+                    'Stadsfietsen (elo)' => 'Stadsfietsen elektris',
+                    'Mountainbikes (elo)' => 'Mountainbikes elektris',
+                    'Racefietsen (elo)' => 'Racefietsen elektris',
+                    'Hybride fietsen (elo)' => 'Hybride fietsen elektris',
+    
+                );
+                echo "<div class='products-box grid-box'>";
             foreach (query($catalogus) as $prod) {
+               
+                
                 if (in_array($prod['Type'], $fietsenarray)) {
 
 
@@ -102,47 +117,48 @@ include "PHP/functions.php";
                     array_push($fietsenarray, $prod['Type']);
 
                 }
+               /* foreach ($fietsenarray as $item) {
+                    $naam = "SELECT * from catalogus where";
+                    $naam .= " Type =   '" . $item . "'";
+                    foreach (query($naam) as $prod) {
+                        # code...
+                    }
+                    $matenVdg = "";
+                    echo "<div class='fietscontainer' id='" . $prod['Type'] . "'>
+            <div class='box'>
+                <div class='images'>
+                    <div class='img-holder active'>
+                        <img src='assets/im4-min.png'>
+                    </div>
+                    <span>" . $prod['Prijs'] . "</span>
+                </div>
+                <div class='asic-info'>
+                    <h1>" . $prod['Type'] . "</h1>
+                    
+                    
+                    
+                </div>
+                <div class='description'>
+                    <p>Merk: " . $prod['Merk'] . "</p>
+                    <p>Soort fiets: " . $prod['Cat'] . "</p>
+                    <p>Kleur: " . $prod['Kleur'] . "</p>
+                    <p>Frame: " . $prod['Frame'] . "</p>
+                    <p>Wielmaat: " . $prod['Wielmaat'] . "</p>
+                    <p>Fietsmaat: " . $matenVdg . "</p>
+                    <p>Versnellingen: " . $prod['Versnellingen'] . "</p>
+                    <button class='fa fa-close' onclick ='hide(\"" . $prod['Type'] . "\")'></button>
+                </div>
+            </div>
+        </div>";
+                    
+    
+                }*/
             }
 
             //}
             $matenVdg = "";
-
-            foreach ($fietsenarray as $item) {
-                $naam = "SELECT * from catalogus where";
-                $naam .= " Type =   '" . $item . "'";
-                foreach (query($naam) as $prod) {
-                    # code...
-                }
-
-                echo "<div class='fietscontainer' id='" . $prod['Type'] . "'>
-        <div class='box'>
-            <div class='images'>
-                <div class='img-holder active'>
-                    <img src='assets/im4-min.png'>
-                </div>
-                <span>" . $prod['Prijs'] . "</span>
-            </div>
-            <div class='asic-info'>
-                <h1>" . $prod['Type'] . "</h1>
-                
-                
-                
-            </div>
-            <div class='description'>
-                <p>Merk: " . $prod['Merk'] . "</p>
-                <p>Soort fiets: " . $prod['Cat'] . "</p>
-                <p>Kleur: " . $prod['Kleur'] . "</p>
-                <p>Frame: " . $prod['Frame'] . "</p>
-                <p>Wielmaat: " . $prod['Wielmaat'] . "</p>
-                <p>Fietsmaat: " . $matenVdg . "</p>
-                <p>Versnellingen: " . $prod['Versnellingen'] . "</p>
-                <button class='fa fa-close' onclick ='hide(\"" . $prod['Type'] . "\")'></button>
-            </div>
-        </div>
-    </div>";
-                $matenVdg = "";
-
-            }
+        }
+           
 
 
 
