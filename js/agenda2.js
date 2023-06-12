@@ -10,15 +10,28 @@ let datum = new Date();
 let button = document.getElementById("button");
 let text = document.getElementById("textarea");
 let input2 = document.getElementById("tekst");
+let maand = document.getElementById("maand");
+function form() {
+    let cookie = getCookie("dagwaarde");
+    console.log(cookie);
+    console.log(document.getElementById(cookie));
+    let geselecteerde = document.getElementById(cookie);
+    geselecteerde.setAttribute("class", "selected");
+    let maand = document.getElementById("maand").innerHTML;
+    let dag = document.getElementsByClassName("selected");
+    dag = dag[0].innerHTML;
+    console.log(maand + " " + dag);
+    label2.innerHTML = dag;
+    label3.innerHTML = maand;
+
+}
+maand = maand.innerHTML;
 function addDays(days) {
     var date = new Date();
     date.setDate(date.getDate() + days);
     return date;
 }
-let cookie = getCookie("dagwaarde");
-console.log(cookie);
-let geselecteerde = document.getElementById(cookie);
-geselecteerde.setAttribute("class", "selected");
+
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -30,6 +43,8 @@ function del_cookie(name) {
 }
 
 function test() {
+    let maand = document.getElementById("maand");
+    maand = maand.innerHTML;
     prev.setAttribute("class", "uren");
     let x = event.target.value;
     let h = document.getElementById(x);
@@ -40,23 +55,18 @@ function test() {
     button.setAttribute("class", "vis");
     console.log(x)
 
+
     label.innerHTML = x;
 }
 function ladenuren(waarde) {
+
     del_cookie("dagwaarde");
     location.reload();
     document.cookie = "dagwaarde=" + waarde;
     vandaag.setAttribute("class", "dag");
     label.innerHTML = "nog geen uur geselecteerd";
     date = addDays(waarde)
-    let month = date.getMonth();
-    let maand = date.getMonth() + 1;
-    const monthNames = ["Januari", "Februari", "Maart", "April", "Mei", "Juni",
-        "Juli", "Augustus", "September", "October", "November", "December"
-    ];
     let day = date.getDate();
     let year = date.getFullYear();
-    label2.innerHTML = day;
-    label3.innerHTML = monthNames[month];
-    hidden2.value = year + "-0" + maand + "-" + day;
+    hidden2.value = year + "-" + maand + "-" + day;
 }

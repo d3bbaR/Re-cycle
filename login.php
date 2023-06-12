@@ -31,11 +31,9 @@
                         <input type="password" name="password" required>
                         <label>Wachtwoord</label>
                     </div>
-                    <div class="pass">Wachtwoord vergeten?</div>
+                   
                     <input type="submit" value="login">
-                    <div class="signup">
-                        Geen account?<a href="registreren.php"> Registreer je nu</a>
-                    </div>
+                
                 </form>
                 <?php if (isset($_GET["bad"])) {
                     echo "<p style='color:red'>Je wachtwoord en of username kloppen niet</p>";

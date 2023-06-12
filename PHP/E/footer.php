@@ -11,11 +11,15 @@
 
 <body>
   <?php
+  //includen pagina's
   include "../functions.php";
+
+  //opvangen variabalen
   $pk = $_POST["edit"];
   $select = "SELECT * FROM footer where PK = $pk";
   $result = mysqli_query($conn, $select);
   $row = mysqli_fetch_assoc($result);
+  //aanpassen in velden
   if ($row["tekst"] == "0") {
     echo "<form action='../U/footer.php' method ='post'><input type ='text'value ='" . $row["gegevens"] . "'name ='gegevens'required>
     <input type='text' value='" . $row["uren"] . "' name='uren' required><input id='invis' type='text' name='tekst' value ='" . $row["tekst"] . "'>" . "

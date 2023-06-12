@@ -1,7 +1,11 @@
 <?php
+//includen paginas
 include "../functions.php";
+
+//opvangen gegevens
 $button = $_POST["btn"];
 
+//wegschrijven data
 if ($button == 1) {
     $gegevens = $_POST["gegevens"];
     $uren = $_POST["uren"];

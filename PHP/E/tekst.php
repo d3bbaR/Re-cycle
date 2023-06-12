@@ -11,12 +11,16 @@
 
 <body>
   <?php
+  //includen pagina's
   include "../functions.php";
+
+  //opvangen variabelen
   $pk = $_POST["edit"];
   $select = "SELECT * FROM tekst where PK = $pk";
   $result = mysqli_query($conn, $select);
   $row = mysqli_fetch_assoc($result);
 
+  // aanmaak velden
   echo "<form action='../U/tekst.php' method ='post'><input type ='text'value ='" . $row["tekst"] . "'name ='tekst'required>
 <input type ='number' value ='" . $row["visible"] . "'min ='0' max ='1' name='visible' required>
 <button name='edit' value='" . $pk . "'method='post'>edit </button>";

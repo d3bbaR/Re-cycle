@@ -1,13 +1,16 @@
 <?php
+//includen pagina's
 include "../conn.php";
 include "../functions.php";
+// opvangen variabelen escape string voor tekens zoals '
 $password = mysqli_real_escape_string($conn, $_POST["paswoord"]);
 $password2 = mysqli_real_escape_string($conn, $_POST["paswoord2"]);
+// Verkeerde 2de wachtwoord
 if ($password != $password2) {
     header("Location:../../registreren.php?bad=1");
 
 } else {
-    //klanten
+    //Wegschrijven klanten
     $naam = mysqli_real_escape_string($conn, $_POST['naam']);
     $familienaam = mysqli_real_escape_string($conn, $_POST['familienaam']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -19,7 +22,7 @@ values ('$naam','$familienaam','$email','$telefoon')";
     $pk = mysqli_insert_id($conn);
 
 
-    //account
+    //Wegschrijven account
     $username = mysqli_real_escape_string($conn, $_POST["username"]);
     $pw = sha1($password);
     $un = sha1($username);
