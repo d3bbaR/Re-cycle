@@ -18,12 +18,7 @@ if (isset($_SESSION["naam"])) {
                             <li>
                                 <a href="afspraken.php">Afspraken</a>
                             </li>
-                            <li>
-                                <a href="#">Nieuw</a>
-                            </li>
-                            <li>
-                                <a href="#">Cadeau ideeën</a>
-                            </li>
+                           
                             <li>
                                 <a href="cat.php">Fietsen</a>
                             </li>
@@ -62,12 +57,7 @@ if (isset($_SESSION["naam"])) {
                         <li>
                             <a href="afspraken.php">Afspraken</a>
                         </li>
-                        <li>
-                            <a href="#">Nieuw</a>
-                        </li>
-                        <li>
-                            <a href="#">Cadeau ideeën</a>
-                        </li>
+                       
                         <li>
                             <a href="cat.php">Fietsen</a>
                         </li>
