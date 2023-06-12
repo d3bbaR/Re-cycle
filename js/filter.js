@@ -13,7 +13,7 @@ const filter = {
         item.style.display = "none";
       }
     });
-      
+
     document.querySelectorAll(".fietscontainer").forEach((item) => {
       item.style.display = "none";
 
@@ -86,6 +86,7 @@ function hide(dat) {
   let modal = document.getElementById(dat);
   modal.style.display = "none";
 }
+translate[];
 function fietsladen(dat){
 del_cookie("fietssoort")
 document.cookie = "fietssoort="+dat;
