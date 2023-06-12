@@ -14,6 +14,7 @@ setcookie("dagwaarde", "",time()-3600);
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://use.fontawesome.com/1a4d35d4d9.js"></script>
     <title>Re-cycle</title>
+    <script src="js/script.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="assets/Logo ICON White.png">
     <link rel="stylesheet" href="css/agenda.css?2">
     <link rel="stylesheet" href="css/css.css" />
