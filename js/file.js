@@ -4,6 +4,7 @@ function gen(id) {
     button.setAttribute('type', 'submit');
     button.setAttribute('id', 'btn');
     button.setAttribute('value', id);
+    button.setAttribute('name', 'pkbtn');
     button.innerHTML = 'uploaden foto';
     form.appendChild(button);
 

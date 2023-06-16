@@ -48,7 +48,7 @@ foreach (query($catalogus) as $prod) {
 
 ?>
 <form action="../C/fotoplaatsen.php" method="post" id="fotoform" enctype="multipart/form-data>">
-    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="file" name="FuResume" id="FuResume">
     <input type=" text" name='naamfoto'>
 
 </form>
