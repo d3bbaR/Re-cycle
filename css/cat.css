@@ -294,7 +294,7 @@ h3 {
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 
@@ -701,10 +701,12 @@ h3 {
   width: 600px;
 }
 
-/* filter-box ================================================================================ */
-#filtertekst {
-  display: flex;
+.radio-control.checked {
+  background-color: #928d8d;
 }
+
+/* filter-box ================================================================================ */
+#filtertekst {}
 
 .filter-box {
 

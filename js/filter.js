@@ -12,6 +12,7 @@ const filter = {
       } else {
         item.style.display = "none";
       }
+      console.log(categoryAtribut);
     });
 
     document.querySelectorAll(".fietscontainer").forEach((item) => {
@@ -70,29 +71,60 @@ function show(dat) {
 }
 function hide(dat) {
   document.querySelectorAll(".product-box__item").forEach((item) => {
+    console.log(item);
     let categoryAtribut = item.getAttribute("data-category");
+    console.log(categoryAtribut);
 
+    item.style.display = "flex";
 
-    if (
-      (filter.category() == categoryAtribut || filter.category() == "all")
-
-    ) {
-      item.style.display = "flex";
-    } else {
-      item.style.display = "none";
-    }
   });
 
   let modal = document.getElementById(dat);
   modal.style.display = "none";
 }
-translate[];
-function fietsladen(dat){
-del_cookie("fietssoort")
-document.cookie = "fietssoort="+dat;
-location.reload(); 
+function fietsladen(dat) {
+  if (dat == 'Stadsfietsen elektris') {
+    dat = 'Stadsfietsen (elo)'
+  }
+  else if (dat == 'Mountainbikes elektris') {
+    dat = 'Mountainbikes (elo)';
+  }
+  else if (dat == 'Racefietsen elektris') {
+    dat = 'Racefietsen (elo)';
+  }
+  else if (dat == 'Hybride fietsen elektris') {
+    dat = 'Hybride fietsen (elo)';
+  }
+
+  del_cookie("fietssoort")
+  document.cookie = "fietssoort=" + dat;
+  location.reload();
 }
 function del_cookie(name) {
   document.cookie = name +
-      '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+    '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+}
+document.onload = selecter();
+function selecter() {
+  let cookiedata = getCookie("fietssoort");
+  if (cookiedata == 'Stadsfietsen (elo)') {
+    cookiedata = 'Stadsfietsen elektris'
+  }
+  else if (cookiedata == 'Mountainbikes (elo)') {
+    cookiedata = 'Mountainbikes elektris';
+  }
+  else if (cookiedata == 'Racefietsen (elo)') {
+    cookiedata = 'Racefietsen elektris';
+  }
+  else if (cookiedata == 'Hybride fietsen (elo)') {
+    cookiedata = 'Hybride fietsen elektris';
+  }
+  let label = document.getElementById(cookiedata + 1);
+  label.setAttribute("class", "radio-control checked");
+
+}
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
 }
