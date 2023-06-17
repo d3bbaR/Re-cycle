@@ -185,27 +185,29 @@ function ladenuurvandag()
                     echo "<label class='gesl' for='" . $dat['uren'] . "'>
                             <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
-                    if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
-                        echo
-                            "<label class='gesl' for='" . $dat['uren'] . "'>
-                        <input type='radio' onclick='test()' class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
 
-                    } else {
 
-                        if ($counter >= $p)
+                    if ($counter >= $p) {
+                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
+                            echo
+                                "<label class='gesl' for='" . $dat['uren'] . "'>
+                            <input type='radio' onclick='test()' class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+
+                        } else {
 
                             echo "<label class='uren' for='" . $dat['uren'] . "'>
-                        <input type='radio' onclick='test()'class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
-                        else {
-                            $counter += 1;
+                            <input type='radio' onclick='test()'class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                         }
+                    } else {
+                        $counter += 1;
                     }
                 }
             }
         }
-        echo "</div></div>";
     }
+    echo "</div></div>";
 }
+
 function uren($dat)
 {
     $p = 0;
@@ -483,6 +485,9 @@ function ladenklant($maand)
                     if ($counter >= $p) {
 
                         if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
+                        } elseif ($dat["uren"] == "18:00-18:30" or $dat["uren"] == "19:30-20:00") {
+                            echo "<label class='gesl' for='" . $dat['uren'] . "'>
+                            <input type='radio' onclick='test()' class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                         } else {
                             echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
                                 <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
@@ -503,10 +508,18 @@ function ladenklant($maand)
                     echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
                                 <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
-                    if ($counter >= $p) {
 
-                        echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                    if ($counter >= $p) {
+                        if ($dat["uren"] == "19:00-19:30" or $dat["uren"] == "19:30-20:00") {
+                            echo
+                                "<label class='gesl' for='" . $dat['uren'] . "'>
                             <input type='radio'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+
+                        } else {
+
+                            echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                            <input type='radio' onclick ='sluiten(" . $dat['uren'] . ") class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                        }
                     } else {
                         $counter += 1;
                     }

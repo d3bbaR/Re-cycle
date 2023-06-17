@@ -108,7 +108,7 @@ include "PHP/functions.php";
                         echo "<div data-category='" . $translate[$prod['Cat']] . "' value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick ='show(\"" . $prod['Type'] . "\")'>
                     <h3 class='product-box__title'>" . $prod['Type'] . "</h3>
                     <div class='product-box__img'>
-                        <img class='img-fluid' src='assets/im1-min.png'>
+                        <img class='img-fluid' src='" . $prod["foto"] . "'>
                     </div>
                     <div class='product-box__meta'>
                         <p>" . $prod['Prijs'] . "  €</p>
@@ -134,7 +134,7 @@ include "PHP/functions.php";
             <div class='box'>
                 <div class='images'>
                     <div class='img-holder active'>
-                        <img src='assets/im4-min.png'>
+                        <img src='" . $prod["foto"] . "'>
                     </div>
                     <span>" . $prod['Prijs'] . "</span>
                 </div>

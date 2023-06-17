@@ -43,8 +43,8 @@
                     echo ladenklant($month);
                     $x = 0;
                     $y = 0;
-                    $selector2 .= "and month(dagen.dagen) = ".$month ;
-                   
+                    $selector2 .= "and month(dagen.dagen) = " . $month;
+
                     foreach (query($selector2) as $res) {
                         $data = $res["dagen"];
                         $vand = date("Y-m-d");

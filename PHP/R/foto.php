@@ -22,7 +22,7 @@
 <?php
 include "../functions.php";
 $fietsenarray = [];
-echo "<div class='select-box'>" . "<div class='products-box grid-box'>";
+echo "<div class='select-box' id='selectbox'>" . "<div class='products-box grid-box'>";
 foreach (query($catalogus) as $prod) {
 
 
@@ -32,9 +32,9 @@ foreach (query($catalogus) as $prod) {
     } else {
 
         echo "<div data-category= value=" . $prod['Prijs'] . " " . "class='product-box__item' onclick ='gen(\"" . $prod['FietsNr'] . "\")'>
-<h3 class='product-box__title'>" . $prod['Type'] . "</h3>
-<div class='product-box__img'>
-    <img class='img-fluid' src='../../assets/im1-min.png'>
+<h3 class='product-box__title' id='" . $prod['FietsNr'] . "'>" . $prod['Type'] . "</h3>
+<div class='product-box__img' >
+    <img class='img-fluid' id='img" . $prod['FietsNr'] . "' src='../../" . $prod['foto'] . "'>
 </div>
 <div class='product-box__meta'>
     <p>" . $prod['Prijs'] . "  €</p>
@@ -44,11 +44,18 @@ foreach (query($catalogus) as $prod) {
         array_push($fietsenarray, $prod['Type']);
 
     }
+
 }
+echo "</div></div>";
 
 ?>
-<form action="../C/fotoplaatsen.php" method="post" id="fotoform" enctype="multipart/form-data>">
-    <input type="file" name="FuResume" id="FuResume">
-    <input type=" text" name='naamfoto'>
+<form method="post" id="fotoform" enctype="multipart/form-data" action="../C/fotoplaatsen.php">
+
+    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="1048576"> -->
+
+    <label for="image">Image file</label>
+    <input type="file" id="image" name="image">
+
+
 
 </form>

@@ -56,6 +56,10 @@ textarea {
     transition-duration: 1s;
 }
 
+.uren input {
+    display: none;
+}
+
 .gesl {
     color: #eacccc;
     text-align: center;

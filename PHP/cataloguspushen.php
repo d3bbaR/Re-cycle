@@ -25,17 +25,17 @@ while ($rows > $counter) {
     $versnellingen = mysqli_real_escape_string($conn, $_POST['Versnellingen_' . $counter]);
     $prijs = mysqli_real_escape_string($conn, $_POST['Prijs_' . $counter]);
     $framenr = mysqli_real_escape_string($conn, $_POST['Framenr_' . $counter]);
-    $elektris = 0;
+    $foto = "";
     if ($framenr == "") {
         $framenr = 0;
     } else {
     }
     $pkselect = "SELECT FietsNr FROM catalogus";
     foreach (query($pkselect) as $PK) {
-        if ($PK["FietsNR"] != $fietsnr) {
+        if ($PK["FietsNr"] != $fietsnr) {
             $teller += 1;
             if ($teller == $rows) {
-                $del = "DELETE FROM catalogus WHERE FietsNR =$PK[FietsNR] ";
+                $del = "DELETE FROM catalogus WHERE FietsNR =$PK[FietsNr] ";
             }
         } else {
         }
@@ -43,15 +43,15 @@ while ($rows > $counter) {
     $counter += 1;
     $select = "SELECT * from  catalogus where FietsNR =" . $fietsnr;
     $ans = query($select);
-   
+
     if (empty($ans) == true) {
         $insert = "INSERT into catalogus (FietsNr, Voorraad, Merk, Type, Kleur, Cat, Frame, Wielmaat, Jaar, Status, Demo, Maat, Versnellingen, Prijs, 
-        Framenr,elektris)values ($fietsnr,$hvl,'$merk','$type','$kleur','$cat','$frame',$wielmaat,$jaar,'$status','$demo','$maat',$versnellingen,$prijs,'$framenr',$elektris)";
+        Framenr,foto)values ($fietsnr,$hvl,'$merk','$type','$kleur','$cat','$frame',$wielmaat,$jaar,'$status','$demo','$maat',$versnellingen,$prijs,'$framenr','assets/im1-min.png')";
         echo $insert;
         $result = mysqli_query($conn, $insert);
     } else {
         $upd = "UPDATE catalogus SET Voorraad =$hvl,Merk ='$merk',Type = '$type',Kleur ='$kleur' ,Cat='$cat' ,Frame='$frame' 
-        ,Wielmaat=$wielmaat ,Jaar=$jaar,Status='$status' ,Demo='$demo' ,Maat='$maat' ,Versnellingen=$versnellingen ,Prijs= $prijs,Framenr= '$framenr',elektris = $elektris
+        ,Wielmaat=$wielmaat ,Jaar=$jaar,Status='$status' ,Demo='$demo' ,Maat='$maat' ,Versnellingen=$versnellingen ,Prijs= $prijs,Framenr= '$framenr'
         where FietsNr = $fietsnr";
         $result = mysqli_query($conn, $upd);
 
