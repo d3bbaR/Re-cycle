@@ -89,7 +89,7 @@ textarea {
     max-width: 500px;
 }
 
-#formsluiten {
+.sluitenform {
     border: none;
     display: none;
     position: fixed;
@@ -100,7 +100,7 @@ textarea {
     overflow: auto;
 }
 
-#formsluiten button {
+.sluitenform button {
     text-align: center;
 }
 

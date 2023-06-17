@@ -88,11 +88,18 @@
                     ?>
 
 
-                    <form action="../C/sluiten.php" id="formsluiten" method="post">
+                    <form action="../C/sluiten.php" class="sluitenform" id="formsluiten" method="post">
                         <label id="label" for=""></label>
                         <label id="label2" for=""></label>
                         <input name="input" type="hidden" id="input">
                         <button name="button" id="button"></button>
+
+                    </form>
+                    <button onclick="sluitendag()">sluiten dag</button>
+                    <form action="../C/sluitendag.php" class="sluitenform" id="formsluitendag" method="post">
+                        <label id="label2dag" for=""></label>
+                        <input name="inputdag" type="hidden" id="inputdag">
+                        <button name="buttondag" id="buttondag"></button>
 
                     </form>
 </body>

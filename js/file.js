@@ -119,3 +119,22 @@ function sluiten(dat) {
     form.style.display = "block";
 
 }
+function sluitendag() {
+    let form = document.getElementById("formsluitendag");
+    let input = document.getElementById("inputdag");
+    let label2 = document.getElementById("label2dag");
+    let button = document.getElementById("buttondag");
+
+    let day = document.getElementsByClassName("selected")[0].innerHTML;
+    let year = document.getElementById("jaar").innerHTML;
+    console.log(year);
+    button.value = year + "-" + maand + "-" + day;
+    button.innerHTML = "Sluit deze dag";
+
+
+    label2.innerHTML = "dag: " + document.getElementsByClassName("selected")[0].innerHTML;
+
+
+    form.style.display = "block";
+
+}

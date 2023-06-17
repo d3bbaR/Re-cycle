@@ -16,6 +16,7 @@ foreach (query($fk_uren) as $res) {
         foreach (query($pk2) as $result) {
             foreach (query($pk) as $res3) {
                 $update = "UPDATE resuren set FK_uren=$res[PK] ,FK_dagen =$res2[PK] ,bezet=1  where pk=$res3[PK] ";
+                echo print_r($update);
                 $result = mysqli_query($conn, $update);
 
 
@@ -28,5 +29,5 @@ foreach (query($fk_uren) as $res) {
 }
 
 echo $uur . " " . $datum;
-
+go("R", "afspraken");
 ?>

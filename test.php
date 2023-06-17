@@ -464,11 +464,13 @@ function ladenklant($maand)
         $geg = "SELECT gegevens.naam,gegevens.email,gegevens.telefoon from resuren 
             left join gegevens on resuren.FK_geg = gegevens.PK where FK_dagen =" . $key["PK"];
         $bezet = "SELECT uren.uren  from resuren left join uren on uren.PK = FK_uren 
-            left join dagen on dagen.PK = resuren.FK_uren where bezet = 1 and month(dagen.dagen) = $maand";
+            left join dagen on dagen.PK = resuren.FK_uren where bezet = 1";
         $bezet_ins = $bezet . " " . "and FK_dagen =" . $key["PK"];
         //$bezet_ins = $bezet." "."where FK_dagen =".$key["PK"];
         echo "<div class='urenkalender' id = 'uren" . $day . "'>";
+
         foreach (query($bezet_ins) as $bezet) {
+
             array_push($array, $bezet["uren"]);
         }
         if ($month < 5 or $month > 9) {
@@ -527,6 +529,7 @@ function ladenklant($maand)
             }
         }
         echo "</div>";
+
     }
     ?>
     <script>function form() {
