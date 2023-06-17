@@ -57,7 +57,7 @@ function build_calendar($month, $year)
     $prev_year = date('Y', mktime(0, 0, 0, $month - 1, 1, $year));
     $next_month = date('m', mktime(0, 0, 0, $month + 1, 1, $year));
     $next_year = date('Y', mktime(0, 0, 0, $month + 1, 1, $year));
-    $calendar = "<center><h2 id='maand'>$translate[$monthName]</h2><h2> $year</h2></center>";
+    $calendar = "<center><h2 id='maand'>$translate[$monthName]</h2><h2 id='jaar'>$year</h2></center>";
     $calendar .= "<div class='griddrie'><a class='btn btn-primary btn-xs' href='?month=" . $prev_month . "&year=" . $prev_year . "'><= Vorige Maand </a>";
     $calendar .= "<a class='btn btn-primary btn-xs' href='?month=" . date('m') . "&year=" . date('Y') . "'>Deze Maand </a>";
     $calendar .= "<a class='btn btn-primary btn-xs' href='?month=" . $next_month . "&year=$next_year'>Volgende Maand =></a></div>";
@@ -518,7 +518,7 @@ function ladenklant($maand)
                         } else {
 
                             echo "<label class='uren'  id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
-                            <input type='radio' onclick ='sluiten(" . $dat['uren'] . ") class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                            <input type='radio' onclick ='sluiten(\"" . $dat['uren'] . "\")' class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                         }
                     } else {
                         $counter += 1;
@@ -574,6 +574,5 @@ function ladenklant($maand)
     </div>
     </div>
 </body>
-<script src="../../js/agenda2.js?3"></script>
 
 </html>

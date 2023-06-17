@@ -88,8 +88,15 @@
                     ?>
 
 
+                    <form action="../C/sluiten.php" id="formsluiten" method="post">
+                        <label id="label" for=""></label>
+                        <label id="label2" for=""></label>
+                        <input name="input" type="hidden" id="input">
+                        <button name="button" id="button"></button>
 
+                    </form>
 </body>
-<script src="../../js/afspraak.js?1"></script>
+<script src="../../js/file.js?1"></script>
+
 
 </html>

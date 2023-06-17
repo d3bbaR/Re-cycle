@@ -27,18 +27,18 @@ function bezet() {
             x = document.getElementById("hoeveel");
             x = x.innerHTML;
 
-           
+
             while (tel < x) {
                 tel += 1;
                 let modal = document.getElementById("d" + tel);
-               
+
                 modal = modal.innerHTML;
-                
-                if (modal < 0){
-                    modal =modal.substring(1);
+
+                if (modal < 0) {
+                    modal = modal.substring(1);
                 }
                 let afspr = document.getElementById(modal);
-             
+
                 dag = afspr.innerHTML;
                 let uur = document.getElementById("uur" + tel);
                 uur = uur.innerHTML;
@@ -54,7 +54,7 @@ function bezet() {
             tel = 0;
             let x = document.getElementById("hoeveell");
             x = x.innerHTML;
-           
+
             while (tel < x) {
                 tel += 1;
                 let modal = document.getElementById("dl" + tel);
@@ -64,7 +64,7 @@ function bezet() {
 
                 let uur = document.getElementById("uurl" + tel);
                 uur = uur.innerHTML;
-              
+
                 if (afspr.className == "dag afspr") {
                     afspr.setAttribute("class", "dag afsprbez");
                     if (dag == seldag) {
@@ -93,16 +93,16 @@ function addevent(variabele) {
     let i = 0;
     let modalevent = "";
     if (variabele == 1) {
-      
+
 
         if (seldag == dagenarray[i]) {
-           
+
             urenarray.forEach(tijd => {
 
                 let modalplaats = document.getElementById("d" + tijd);
                 modalplaats.setAttribute("class", "gesl afspr");
                 modalevent = document.getElementById(tijd);
-                console.log('wordt uitgevoerd:'+tijd);
+                console.log('wordt uitgevoerd:' + tijd);
                 tijd = tijd.toString()
                 console.log(modalevent);
                 modalevent.addEventListener("click", function () { modalappear(tijd) })
@@ -122,7 +122,7 @@ function addevent(variabele) {
                 modalevent = document.getElementById(tijd);
                 modalevent.addEventListener("click", function () { modalappear2(tijd) })
                 i += 1;
-            })  
+            })
         };
     }
 
@@ -159,4 +159,5 @@ function invisiblel(dat) {
     let modaldissapear = document.getElementById("tbl" + dat);
     modaldissapear.style.display = "none";
 }
+
 
