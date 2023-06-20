@@ -64,7 +64,7 @@ $base = preg_replace("/[^\w-]/", "_", $base);
 
 $filename = $base . "." . $pathinfo["extension"];
 
-$destination = __DIR__ . "/../../assets/" . $filename;
+$destination = __DIR__ . "/../../assets/" . $_POST["naamfiets"];
 
 // Add a numeric suffix if the file already exists
 $i = 1;

@@ -6,6 +6,7 @@ function gen(id) {
     let value = document.getElementById(id).innerHTML;
     //img.src = imgsrc;
     label.innerHTML = value;
+    label.setAttribute('name', 'naamfiets');
     let button = document.createElement('button');
     button.setAttribute('type', 'submit');
     button.setAttribute('id', 'btn');
