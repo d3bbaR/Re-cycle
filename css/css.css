@@ -1388,19 +1388,6 @@ h2:after {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 h2 {
   text-align: center;
   padding-top: 20px;
@@ -1495,10 +1482,21 @@ h2 {
   background-color: #717171;
 }
 
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2.5s;
 }
+
 
 
 

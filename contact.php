@@ -16,12 +16,14 @@
 		<div class="contact bgc">
 			<div class="linkscontact"></div>
 			<div class="rechtscontact">
-				<h2>Contacteer ons</h2>
-				<input type="text" class="txtveld" placeholder="Uw naam">
-				<input type="text" class="txtveld" placeholder="uw email">
-				<input type="text" class="txtveld" placeholder="Uw telefoonnummer">
-				<input placeholder="Wat is het probleem" class="txtarea"></input>
-				<button class="btncontainer">Verzend</button>
+				<form action="PHP/C/contactmail.php" method="post">
+					<h2>Contacteer ons</h2>
+					<input type="text" name="naam" class="txtveld" placeholder="Uw naam">
+					<input type="text" name="email" class="txtveld" placeholder="uw email">
+					<input type="text" name="telefoon" class="txtveld" placeholder="Uw telefoonnummer">
+					<textarea placeholder="Wat is het probleem" name="bericht" class="txtarea"></textarea>
+					<button class="btncontainer" type="submit">Verzend</button>
+				</form>
 			</div>
 		</div>
 	</div>
