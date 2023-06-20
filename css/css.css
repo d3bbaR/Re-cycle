@@ -1627,3 +1627,30 @@ i.fa.fa-close.r {
   padding-top: 50px;
   background-color: #f2ece4;
 }
+
+.uploadform {
+  border: 1px solid #000;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 75%;
+  height: 4rem;
+  padding-top: 20px;
+  background-color: #f2ece4;
+
+}
+
+.uploadcontainer {
+  text-align: center;
+}
+
+.uploadcontainer form {
+  margin-top: 10px;
+}
+
+.uploadcontainer form+form {
+  padding-top: 20px;
+}
+
+.uploadform button {
+  margin-left: 5em;
+}
