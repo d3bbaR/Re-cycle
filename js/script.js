@@ -19,6 +19,7 @@
     $('#nav-toggle').on('click', function () {
       this.classList.toggle('active');
     });
+
   }); // end DOM ready
 })(jQuery); // end jQuery
 

@@ -83,7 +83,7 @@ include "PHP/functions.php";
 
                 function fietsen()
                 {
-                    $catalogus = "SELECT * FROM miniemen_baftech.catalogus where Cat ='" . $_COOKIE["fietssoort"] . "'";
+                    $catalogus = "SELECT * FROM miniemen_baftech.catalogus where Cat ='" . $_COOKIE["fietssoort"] . "'and Prijs > 10 ";
 
                     $fietsenarray = array();
                     $translate = array(

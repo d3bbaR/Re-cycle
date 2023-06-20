@@ -21,7 +21,11 @@ setcookie("dagwaarde", "",time()-3600);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <body>
-    <?php
+    <?php if (isset($_COOKIE["dagwaarde"])) {
+
+    } else {
+        setcookie("dagwaarde", "0");
+    }
     if (isset($_GET["mail"])) {
         echo "
 <script>window.alert('uw afspraak is sucessvol aangemaakt. U krijgt een mail in uw inbox alvast bedankt en tot binnenkort. ') </script>";
