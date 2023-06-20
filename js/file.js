@@ -2,11 +2,14 @@ function gen(id) {
     let form = document.getElementById('fotoform');
     let label = document.createElement('label');
     let img = document.createElement('img');
+    let input = document.createElement('input');
     let imgsrc = document.getElementById('img' + id).src;
     let value = document.getElementById(id).innerHTML;
     //img.src = imgsrc;
     label.innerHTML = value;
-    label.setAttribute('name', 'naamfiets');
+    input.setAttribute('name', 'naamfiets');
+    input.setAttribute('value', value);
+    input.style.display = 'none';
     let button = document.createElement('button');
     button.setAttribute('type', 'submit');
     button.setAttribute('id', 'btn');
@@ -17,6 +20,7 @@ function gen(id) {
     document.getElementById('selectbox').style.display = 'none';
     form.appendChild(label);
     form.appendChild(img);
+    form.appendChild(input);
     form.appendChild(button);
 
 }

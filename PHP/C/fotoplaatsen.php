@@ -2,6 +2,8 @@
 include "../conn.php";
 include "../functions.php";
 $pk = $_POST["pkbtn"];
+$naam = $_POST["naamfiets"];
+echo $naam;
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit('POST request method required');
 }
@@ -58,8 +60,7 @@ if (!in_array($_FILES["image"]["type"], $mime_types)) {
 // Replace any characters not \w- in the original filename
 $pathinfo = pathinfo($_FILES["image"]["name"]);
 
-$base = $pathinfo["filename"];
-
+$base = $_POST["naamfiets"];
 $base = preg_replace("/[^\w-]/", "_", $base);
 
 $filename = $base . "." . $pathinfo["extension"];
@@ -83,7 +84,7 @@ if (!move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
 
 }
 $update = "UPDATE catalogus set foto='assets/$filename'  where FietsNr=$pk";
-echo $pk;
+
 $result = mysqli_query($conn, $update);
 echo print_r($result);
 go("R", "foto");
