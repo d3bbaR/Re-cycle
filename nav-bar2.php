@@ -67,7 +67,8 @@ if (isset($_SESSION["naam"])) {
                             <a href="#footer">More</a>
                         </li>
                         <li>
-                            <a href="../../login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
+                            <a href="../../login.php"><img class="taalpic" alt="Logo"
+                                    src="../../assets/user-interface.png"></a>
                         </li>
 
                     </ul>
