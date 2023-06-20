@@ -83,8 +83,14 @@ if (!move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
     exit("Can't move uploaded file");
 
 }
-$update = "UPDATE catalogus set foto='assets/$filename'  where FietsNr=$pk";
+$queryfiets = "SELECT * FROM catalogus where Type ='$naam'";
+foreach (query($queryfiets) as $dat) {
+    $update = "UPDATE catalogus set foto='assets/$filename'  where FietsNr=" . $dat['FietsNr'];
+    $result = mysqli_query($conn, $update);
 
-$result = mysqli_query($conn, $update);
+}
+
+
+
 echo print_r($result);
 go("R", "foto");
