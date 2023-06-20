@@ -28,6 +28,10 @@ if (isset($_SESSION["naam"])) {
                             <li>
                                 <a href="dashboard.php">Dashboard</a>
                             </li>
+                            <li>
+                                <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
+                            </li>
+
 
                         </ul>
                     </nav>
@@ -61,7 +65,9 @@ if (isset($_SESSION["naam"])) {
                         </li>
                         <li>
                             <a href="#footer">More</a>
-
+                        </li>
+                        <li>
+                            <a href="login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
                         </li>
 
                     </ul>
