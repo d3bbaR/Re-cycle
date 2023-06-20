@@ -111,7 +111,7 @@ include "PHP/functions.php";
                         <img class='img-fluid' src='" . $prod["foto"] . "'>
                     </div>
                     <div class='product-box__meta'>
-                        <p>" . $prod['Prijs'] . "  €</p>
+                        <p>€" . $prod['Prijs'] . "  </p>
 
                     </div>
                 </div>";
@@ -137,7 +137,7 @@ include "PHP/functions.php";
                     
                         <img src='" . $prod["foto"] . "'>
                     </div>
-                    <span>" . $prod['Prijs'] . "</span>
+                    <span>" . "&euro;" . $prod['Prijs'] . "</span>
                 </div>
                 <div class='asic-info'>
                     <h1>" . $prod['Type'] . "</h1>
