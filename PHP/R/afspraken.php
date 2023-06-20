@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../css/agenda.css?2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/css.css?1">
-    <title>afsrpaken </title>
+    <title>afspraken beheer </title>
 </head>
 <?php include '../../nav-bar2.php'; ?>
 <?php if (isset($_COOKIE["dagwaarde"])) {

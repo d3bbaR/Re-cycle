@@ -13,7 +13,7 @@
             een gepersonaliseerde bikefit. Graag meer informatie? Neem een kijkje op onze website, neem contact op of
             bezoek onze winkel.
          </p>
-         <a href="" class="button3">Lees Meer</a>
+
       </div>
       <div class="image-section">
          <img src="assets/overons.jpg" alt="overons">

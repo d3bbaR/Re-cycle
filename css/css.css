@@ -566,11 +566,14 @@ ul {
 .footer {
   background-color: #24262b;
   padding: 30px 0;
+  margin-top: 20px;
+  min-width: 100%;
 }
 
 .footer-col {
   width: 25%;
   padding: 0 20px;
+
 }
 
 .footer-col h4 {
@@ -1477,10 +1480,17 @@ h2 {
   background-color: #f2ece4;
 }
 
-
-.active {
-  background-color: #717171;
+.footercontainer {
+  position: relative;
+  min-height: 100vw;
 }
+
+#footer {
+  position: absolute;
+
+}
+
+.active {}
 
 @keyframes fade {
   from {

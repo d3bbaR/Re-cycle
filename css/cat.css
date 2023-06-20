@@ -682,23 +682,70 @@ h3 {
   grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
 }
 
-.fietscontainer {
-  display: none;
-  position: fixed;
-  left: 25%;
-  top: 25%;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+.containertw {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+
+@media (min-width:360px) {
+  .select-box {
+    align-items: center;
+  }
+
+  .select-control {
+    padding: 0;
+    margin: 0;
+  }
+
+  .fietscontainer {
+    margin-top: 20px;
+    display: none;
+    max-width: 100%;
+    height: 25%;
+    overflow: auto;
+    font-size: 1em;
+    border-radius: 1rem;
+
+  }
+
+  .fietscontainer h1 {
+    font-size: 0.8em;
+  }
+
+  .images span {
+    font-size: 1em;
+  }
 
 }
 
-.fietscontainer.box {
-  margin: auto;
-  background-color: #fff;
-  position: relative;
-  outline: 0;
-  width: 600px;
+.box {
+  width: 100%;
+  border-radius: 0;
+  padding: 35px;
+  margin: 0;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width:720px) {
+  .fietscontainer {
+    display: none;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    max-width: 50%;
+    height: 100%;
+    overflow: auto;
+
+  }
+
+  .fietscontainer.box {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    outline: 0;
+    width: 600px;
+  }
 }
 
 #fotoform {
@@ -751,7 +798,7 @@ h3 {
 .select-control,
 .select-control2 {
   display: flex;
-  min-width: 285px;
+
   margin-right: 3rem;
   background: none;
   margin-bottom: 2%;
@@ -855,9 +902,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 /* media ================================================================================ */
 
 @media (max-width: 768px) {
-  .filter-box {
-    height: 100px;
-  }
+  .filter-box {}
 
   .select-control {
     margin: 20px;

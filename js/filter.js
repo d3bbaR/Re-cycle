@@ -63,7 +63,7 @@ function show(dat) {
   document.querySelectorAll(".product-box__item").forEach((item) => {
     item.style.display = "none";
   });
-
+  document.getElementById("footer").style.display = "none";
   let modal = document.getElementById(dat);
   console.log(dat);
   console.log(modal);
@@ -74,7 +74,7 @@ function hide(dat) {
     console.log(item);
     let categoryAtribut = item.getAttribute("data-category");
     console.log(categoryAtribut);
-
+    document.getElementById("footer").style.display = "block";
     item.style.display = "flex";
 
   });

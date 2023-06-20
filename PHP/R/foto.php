@@ -20,6 +20,7 @@
     <script src="../../js/file.js"></script>
 </head>
 <?php
+include '../../nav-bar2.php';
 include "../functions.php";
 $fietsenarray = [];
 echo "<div class='select-box' id='selectbox'>" . "<div class='products-box grid-box'>";

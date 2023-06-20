@@ -18,17 +18,17 @@ if (isset($_SESSION["naam"])) {
                             <li>
                                 <a href="afspraken.php">Afspraken</a>
                             </li>
-                           
+
                             <li>
                                 <a href="cat.php">Fietsen</a>
                             </li>
                             <li>
-                                <a href="footer.php">More</a>
+                                <a href="#footer">More</a>
                             </li>
                             <li>
                                 <a href="dashboard.php">Dashboard</a>
                             </li>
-                            
+
                         </ul>
                     </nav>
                 </div>
@@ -55,21 +55,21 @@ if (isset($_SESSION["naam"])) {
                         <li>
                             <a href="afspraken.php">Afspraken</a>
                         </li>
-                       
+
                         <li>
                             <a href="cat.php">Fietsen</a>
                         </li>
                         <li>
-                            <a href="footer.php">More</a>
-                            
+                            <a href="#footer">More</a>
+
                         </li>
-                        
+
                     </ul>
                 </nav>
             </div>
         </section>
     </header>
-
+    <script src="js/script.js"></script>
     <?php
 }
 

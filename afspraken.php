@@ -55,8 +55,12 @@ setcookie("dagwaarde", "",time()-3600);
                 }
 
                 ?>
-                <script src="js/agenda2.js?2"></script>
             </div>
+        </div>
+    </div>
+    <?php include 'footer.php'; ?>
+    <script src="js/agenda2.js?2"></script>
+    </div>
 </body>
 
 </html>

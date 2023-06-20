@@ -104,15 +104,7 @@ textarea {
     text-align: center;
 }
 
-form {
-    border: 1px solid #000;
-    max-width: 500px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: right;
-    gap: 10px;
-    padding: 10px 20px;
-}
+
 
 .donderdag {
     color: #eacccc;
@@ -206,9 +198,38 @@ select {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.flextwee {
-    display: flex;
-    justify-content: space-around;
+@media (min-width: 320px) {
+    .flextwee {
+
+        display: blockx;
+    }
+
+    form {
+        border: 1px solid #000;
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+}
+
+@media (min-width: 720px) {
+    .flextwee {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    form {
+        border: 1px solid #000;
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: right;
+        gap: 10px;
+        padding: 10px 20px;
+    }
 }
 
 .containertw {

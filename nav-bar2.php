@@ -18,24 +18,18 @@ if (isset($_SESSION["naam"])) {
                             <li>
                                 <a href="../../afspraken.php">Afspraken</a>
                             </li>
-                            <li>
-                                <a href="#">Nieuw</a>
-                            </li>
-                            <li>
-                                <a href="#">Cadeau ideeën</a>
-                            </li>
+
+
                             <li>
                                 <a href="../../cat.php">Fietsen</a>
                             </li>
                             <li>
-                                <a href="../../footer.php">More</a>
+                                <a href="#footer">More</a>
                             </li>
                             <li>
                                 <a href="../../dashboard.php">Dashboard</a>
                             </li>
-                            <li>
-                                <a href="../../login.php"><img class="taalpic" alt="Logo" src="../../assets/user-interface.png"></a>
-                            </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -62,22 +56,15 @@ if (isset($_SESSION["naam"])) {
                         <li>
                             <a href="../../afspraken.php">Afspraken</a>
                         </li>
-                        <li>
-                            <a href="#">Nieuw</a>
-                        </li>
-                        <li>
-                            <a href="#">Cadeau ideeën</a>
-                        </li>
+
                         <li>
                             <a href="../../cat.php">Fietsen</a>
                         </li>
                         <li>
-                            <a href="../../footer.php">More</a>
-                            
+                            <a href="#footer">More</a>
+
                         </li>
-                        <li>
-                            <a href="../../login.php"><img class="taalpic" alt="Logo" src="assets/user-interface.png"></a>
-                        </li>
+
                     </ul>
                 </nav>
             </div>
