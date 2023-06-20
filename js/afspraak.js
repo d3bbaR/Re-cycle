@@ -42,7 +42,7 @@ function bezet() {
                 dag = afspr.innerHTML;
                 let uur = document.getElementById("uur" + tel);
                 uur = uur.innerHTML;
-                afspr.setAttribute("class", "dag afspr");
+                afspr.setAttribute("class", "dag afspr selected");
                 if (dag == seldag) {
                     urenarray.push(uur);
                     dagenarray.push(dag);
@@ -65,8 +65,8 @@ function bezet() {
                 let uur = document.getElementById("uurl" + tel);
                 uur = uur.innerHTML;
 
-                if (afspr.className == "dag afspr") {
-                    afspr.setAttribute("class", "dag afsprbez");
+                if (afspr.className == "dag afspr selected") {
+                    afspr.setAttribute("class", "dag afsprbez selected");
                     if (dag == seldag) {
                         urenarray2.push(uur);
                         dagenarray2.push(dag);
@@ -74,7 +74,7 @@ function bezet() {
                     }
                 }
                 else {
-                    afspr.setAttribute("class", "dag bez");
+                    afspr.setAttribute("class", "dag bez selected");
                     uur = uur.innerHTML;
                     if (dag == seldag) {
                         urenarray2.push(uur);

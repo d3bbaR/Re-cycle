@@ -83,7 +83,7 @@ if (!move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
 
 }
 $update = "UPDATE catalogus set foto='assets/$filename'  where FietsNr=$pk";
-
+echo $pk;
 $result = mysqli_query($conn, $update);
 echo print_r($result);
 go("R", "foto");

@@ -13,6 +13,22 @@
     <title>afsrpaken </title>
 </head>
 <?php include '../../nav-bar2.php'; ?>
+<?php if (isset($_COOKIE["dagwaarde"])) {
+
+} else {
+    setcookie("dagwaarde", "0");
+}
+?>
+<?php
+if (isset($_GET["mail"])) {
+    echo "
+<script>window.alert('U heeft deze afspraak goedgekeurd. ') </script>";
+} ?>
+<?php
+if (isset($_GET["nomail"])) {
+    echo "
+<script>window.alert('U heeft deze afspraak gewijgerd. ') </script>";
+} ?>
 
 <body>
     <?php
@@ -105,5 +121,7 @@
 </body>
 <script src="../../js/file.js?1"></script>
 
+<script src="../../js/afspraak.js?1"></script>
+<script src="../../js/agenda2.js?1"></script>
 
 </html>

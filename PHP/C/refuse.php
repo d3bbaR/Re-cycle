@@ -22,7 +22,7 @@ foreach (query($select) as $res) {
     $datum = $res["dagen"];
     $uur = $res["uren"];
     echo $naam . " " . $email . " " . $telefoon . " " . $datum . " " . $uur;
-    header("Location:../R/afspraken.php");
+    header("Location:../R/afspraken.php?nomail=1");
 
 
     //mail naar klant het is goedgekeurd

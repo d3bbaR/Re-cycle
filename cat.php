@@ -129,11 +129,12 @@ include "PHP/functions.php";
                         $maten .= $prod['Maat'] . "/";
                     }
                     $maten = substr($maten, 0, -1);
-
+                    echo $prod["foto"];
                     echo "<div class='fietscontainer' id='" . $prod['Type'] . "'>
             <div class='box'>
                 <div class='images'>
                     <div class='img-holder active'>
+                    
                         <img src='" . $prod["foto"] . "'>
                     </div>
                     <span>" . $prod['Prijs'] . "</span>

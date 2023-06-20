@@ -4,7 +4,7 @@ function gen(id) {
     let img = document.createElement('img');
     let imgsrc = document.getElementById('img' + id).src;
     let value = document.getElementById(id).innerHTML;
-    img.src = imgsrc;
+    //img.src = imgsrc;
     label.innerHTML = value;
     let button = document.createElement('button');
     button.setAttribute('type', 'submit');
@@ -20,14 +20,9 @@ function gen(id) {
 
 }
 
-let prev = document.createElement("div");
-let label = document.getElementById("label");
-let label2 = document.getElementById("label2");
-let label3 = document.getElementById("label3");
-let vandaag = document.getElementById("0");
-let vorigegeselecteerde = document.createElement("div");
-let maand = document.getElementById("maand");
+
 function form() {
+
     let cookie = getCookie("dagwaarde");
     console.log(cookie);
     console.log(document.getElementById(cookie));
@@ -104,8 +99,7 @@ function sluiten(dat) {
     let label = document.getElementById("label");
     let input = document.getElementById("input");
     let label2 = document.getElementById("label2");
-    let button = document.getElementById("button");
-
+    let button = document.getElementById("button")
     let day = document.getElementsByClassName("selected")[0].innerHTML;
     let year = document.getElementById("jaar").innerHTML;
     console.log(year);
@@ -117,6 +111,7 @@ function sluiten(dat) {
 
     input.value = document.getElementById(dat).value;
     form.style.display = "block";
+
 
 }
 function sluitendag() {

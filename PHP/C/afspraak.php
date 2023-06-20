@@ -113,7 +113,7 @@ function mailer()
             $msg = "Gesprek aankoop fiets 45 minuten";
             break;
     }
-    header("Location:../bevestigd.php");
+    header("Location:../../afspraken.php?mail=1");
 
     require '../PHPMailer-master/PHPMailer-master/src/Exception.php';
     require '../PHPMailer-master/PHPMailer-master/src/PHPMailer.php';
@@ -152,7 +152,7 @@ function mailer()
         $mail->isHTML(true); //Set email format to HTML
         $mail->Subject = 'Beste jurgen';
         $mail->Body = "de volgende persoon:" . " " . $naam . " heeft een " . " " . $msg . " " . " geplaatste voor: " . $dag . " " . $uur . " is dit oke?"
-            . " je kunt deze klant bereiken op:" . " " . $telefoon . " of " . $email."<br><br> met hetvolgende bericht:". $tekst ;
+            . " je kunt deze klant bereiken op:" . " " . $telefoon . " of " . $email . "<br><br> met hetvolgende bericht:" . $tekst;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();

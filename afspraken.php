@@ -22,6 +22,11 @@ setcookie("dagwaarde", "",time()-3600);
 
 <body>
     <?php
+    if (isset($_GET["mail"])) {
+        echo "
+<script>window.alert('uw afspraak is sucessvol aangemaakt. U krijgt een mail in uw inbox alvast bedankt en tot binnenkort. ') </script>";
+    } ?>
+    <?php
     include 'nav-bar.php';
     echo "<div class='agendacontainer'>";
     include 'test.php'; ?>
