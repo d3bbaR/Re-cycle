@@ -60,44 +60,45 @@ function del_cookie(name) {
 
 switch (maand) {
     case maand = "Januari":
-        maand = "01"
+        res = "01"
         break;
     case maand = "Februari":
-        maand = "02"
+        res = "02"
         break;
     case maand = "Maart":
-        maand = "03"
+        res = "03"
         break;
     case maand = "April":
-        maand = "04"
+        res = "04"
         break;
     case maand = "Mei":
-        maand = "05"
+        res = "05"
         break;
     case maand = "Juni":
-        maand = "06"
+        res = "06"
         break;
     case maand = "Juli":
-        maand = "07"
+        res = "07"
         break;
     case maand = "Augustus":
-        maand = "08"
+        res = "08"
         break;
     case maand = "September":
-        maand = "09"
+        res = "09"
         break;
     case maand = "Oktober":
-        maand = "10"
+        res = "10"
         break;
     case maand = "November":
-        maand = "11"
+        res = "11"
         break;
     case maand = "December":
-        maand = "12"
+        res = "12"
         break;
     default:
         break;
 }
+console.log(res);
 
 function sluiten(dat) {
     let form = document.getElementById("formsluiten");
@@ -108,7 +109,7 @@ function sluiten(dat) {
     let day = document.getElementsByClassName("selected")[0].innerHTML;
     let year = document.getElementById("jaar").innerHTML;
     console.log(year);
-    button.value = year + "-" + maand + "-" + day;
+    button.value = year + "-" + res + "-" + day;
     button.innerHTML = "Sluit dit uur";
 
     label.innerHTML = "uur: " + document.getElementById(dat).value;
@@ -128,7 +129,7 @@ function sluitendag() {
     let day = document.getElementsByClassName("selected")[0].innerHTML;
     let year = document.getElementById("jaar").innerHTML;
     console.log(year);
-    button.value = year + "-" + maand + "-" + day;
+    button.value = year + "-" + res + "-" + day;
     button.innerHTML = "Sluit deze dag";
 
 
