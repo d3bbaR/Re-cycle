@@ -134,6 +134,7 @@ select {
     background-color: orange;
     color: black;
     border: 1px solid #000;
+    text-align: center;
 }
 
 #label3 {

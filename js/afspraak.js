@@ -99,13 +99,13 @@ function addevent(variabele) {
         if (seldag == dagenarray[i]) {
 
             urenarray.forEach(tijd => {
-                console.log(tijd);
+
                 let modalplaats = document.getElementById("d" + tijd);
                 modalplaats.setAttribute("class", "gesl afspr");
                 modalevent = document.getElementById(tijd);
-                console.log('wordt uitgevoerd:' + tijd);
+
                 tijd = tijd.toString()
-                console.log(modalevent);
+
                 modalevent.addEventListener("click", function () { modalappear(tijd) })
                 i += 1;
             })
