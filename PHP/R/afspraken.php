@@ -16,19 +16,19 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="../../js/file.js?3"></script>
-
+    <script defer src="../../js/vdg.js?v=2"></script>
     <script defer src="../../js/afspraak.js?v=2"></script>
     <script defer src="../../js/agenda2.js?1"></script>
 
     <title>afspraken beheer </title>
-</head>
+</head><?php /* 
 <script>
     let afsprakenarray = [];
     let testing = "";
     let main;
     let cookiedag = ""
     let dedag = "";
-    let dit = ""
+    let dit = "";
     let testingdag = "";
     let dzdag = "";
     let dzmaand = "";
@@ -37,12 +37,13 @@
     vmaand = vmaand.getMonth() + 1;
     if (vmaand < 10) {
         vmaand = "0" + vmaand;
-    }  
+    }
     $.post("vdg.php",
         {
             bezeting: 1
         },
         function (data) {
+            console.log("data aangekomen");
             dit = document.getElementById("datumvandaag").innerHTML;
             cookiedag = getCookie("dagwaarde");
             dedag = getCookie("Dag");
@@ -58,14 +59,14 @@
         for (let i = 0; i < testing.length; i++) {
 
             dzmaand = testing[i].dag.substring(5, testing[i].dag.length - 3);
-            
+
             dzdag = testing[i].dag.substring(8);
             testingdag = dzdag - dit;
             let ele = document.getElementById(testingdag);
             let soortafspraak = testing[i].geaccepteerd;
-            
-            if (dzmaand == vmaand){
-                 if (soortafspraak == 0) {
+
+            if (dzmaand == vmaand) {
+                if (soortafspraak == 0) {
                     if (ele.className == "dag bez") {
                         ele.setAttribute("class", "dag afsprbez");
                     }
@@ -76,7 +77,7 @@
 
                 }
                 else {
-                    
+
                     if (ele.className == "dag afspr") {
                         ele.setAttribute("class", "dag afsprbez");
                     }
@@ -86,32 +87,33 @@
                 }
 
             }
-            else{
+            else {
                 console.log("andere maand");
             }
             if (testing[i].dag == dedag) {
                 dzuur = testing[i].uur;
+                
                 if (soortafspraak == 0) {
-                    document.getElementById("d"+dzuur).setAttribute("class", "afspr");
-            }
-                else{
-                    document.getElementById("d"+dzuur).setAttribute("class", "bez");
+                    document.getElementById("d" + dzuur).setAttribute("class", "afspr");
+                }
+                else {
+                    document.getElementById("d" + dzuur).setAttribute("class", "bez");
                 }
             }
         }
-        
+
     }
     function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
-    function modalcreate(uur){
+    function modalcreate(uur) {
         for (let i = 0; i < testing.length; i++) {
-            if (testing[i].uur == uur && testing[i].dag == dedag){
+            if (testing[i].uur == uur && testing[i].dag == dedag) {
                 let body = document.getElementById('body');
                 let modal = document.createElement("div");
-                modal.setAttribute('id',"modal"+testing[i].uur);
+                modal.setAttribute('id', "modal" + testing[i].uur);
                 let content = document.createElement("div");
                 let flexboxtw = document.createElement("div");
                 flexboxtw.setAttribute("class", "flexboxtb");
@@ -128,15 +130,16 @@
                 telefoon.innerHTML = testing[i].telefoonklant;
 
                 let type = document.createElement("p");
-                if (testing[i].type ==1){
-                type.innerHTML ="Klein onderhoud 30 minuten" ;}
-                else if(testing[i].type ==2){
-                    type.innerHTML ="Groot onderhoud 1 uur" ;
+                if (testing[i].type == 1) {
+                    type.innerHTML = "Klein onderhoud 30 minuten";
                 }
-                else if(testing[i].type ==3){
-                    type.innerHTML ="Gesprek aankoop fiets 45 minuten" ;
+                else if (testing[i].type == 2) {
+                    type.innerHTML = "Groot onderhoud 1 uur";
                 }
-                
+                else if (testing[i].type == 3) {
+                    type.innerHTML = "Gesprek aankoop fiets 45 minuten";
+                }
+
 
                 let info = document.createElement("p");
                 info.innerHTML = testing[i].info;
@@ -148,10 +151,9 @@
                 dtuur.innerHTML = testing[i].uur;
 
                 let btn = document.createElement("button");
-                button.setAttribute("Class","btn");
+                button.setAttribute("Class", "btn");
                 button.innerHTML = "sluiten";
                 button.addEventListener("click", function () { modalremove(testing[i].uur) })
-                 
                 flexboxtw.appendChild(naam);
                 flexboxtw.appendChild(email);
                 flexboxtw.appendChild(telefoon);
@@ -160,6 +162,42 @@
                 flexboxtw.appendChild(dtuur);
                 flexboxtw.appendChild(info);
                 flexboxtw.appendChild(button);
+                
+                if (testing[i].gekeurd == 0) {
+                    let aform = document.createElement("form");
+                    let sform = document.createElement("form");
+                    aform.setAttribute("class", "center");
+                    aform.setAttribute("action", "../C/accept.php");
+                    aform.setAttribute("method", "POST");
+                    let abutton = document.createElement("button");
+                    abutton.setAttribute("name", "edit");
+                    abutton.setAttribute("value", testing[i].fk);
+                    let asymb =document.createElement("i");
+                    asymb.setAttribute("class", "fa fa-check");
+                    asymb.style.color = "green";
+
+                    let dsymb =document.createElement("i");
+                    asymb.setAttribute("class", "fa fa-close");
+                    asymb.style.color = "red";
+                    sform.setAttribute("class", "center");
+                    sform.setAttribute("action", "../C/reject.php");
+                    sform.setAttribute("method", "POST");
+                    let dbutton = document.createElement("button");
+                    dbutton.setAttribute("name", "delete");
+                    dbutton.setAttribute("value", testing[i].fk);
+
+                    abutton.appendChild(asymb);
+                    aform.appendChild(abutton);
+                    dbutton.appendChild(dsymb);
+                    sform.appendChild(dbutton);
+                    flexboxtw.appendChild(aform);
+                    flexboxtw.appendChild(sform);
+
+                }
+                else{
+ 
+                }
+
                 content.appendChild(flexboxtw);
                 modal.appendChild(content);
                 body.appendChild(modal);
@@ -167,12 +205,13 @@
             }
         }
     }
-    function modalremove(tijd){
-        let modal = document.getElementById("modal"+tijd);
+    function modalremove(tijd) {
+        let modal = document.getElementById("modal" + tijd);
         modal.remove();
     }
 
 </script>
+*/ ?>
 <?php include '../../nav-bar2.php'; ?>
 <?php if (isset($_COOKIE["dagwaarde"])) {
 
@@ -214,7 +253,7 @@ $transarray = array(
 
     $maand = date("m");
     $dag = date('d');
-    ?>
+ ?>
     <div class="afsprakenbevestigen">
         <div class="containertw">
             <div class="row">
@@ -267,8 +306,8 @@ $transarray = array(
                                     . $res["dagen"] . "</p><p> " . $res["uren"] . "</p><p>" . $res["tekst"] . "</p>" .
                                     "</div><form class ='center'action='../C/accept.php' method='post'> <button name ='edit' value='" . $res["FK_geg"] . "'><i class='fa fa-check' style='color:green'></i></button></form>" .
                                     "<form class='center' action='../C/refuse.php' method='post'> <button name ='delete' value='" . $res["FK_geg"] . "'<i class='fa fa-close' style='color:red'></i></button></form>
-                    <button class ='btn' onclick ='invisible(" . $x . ")'>sluiten </button></div></div>";
-                                $datum = strval($res["dagen"]);
+                                                        <button class ='btn' onclick ='invisible(" . $x . ")'>sluiten </button></div></div>";
+                                                  $datum = strval($res["dagen"]);
                                 $uur = $res["uren"];
                                 $str = date_create($datum);
                                 $res = date_format($str, "m");
@@ -283,7 +322,7 @@ $transarray = array(
 
 
                     echo "<p class='inv' id='hoeveel'>" . $x . "</p>";
-                    echo "<p class='inv' id='hoeveell'>" . $y . "</p>";
+                                      echo "<p class='inv' id='hoeveell'>" . $y . "</p>";
   ?>
                     <input name="input" type="hidden" id="input">
 
