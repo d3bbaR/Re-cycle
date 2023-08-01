@@ -23,14 +23,19 @@
     <title>afspraken beheer </title>
 </head>
 <script>
+    let afsprakenarray = [];
+    let array = [];
     let main;
     $.post("vdg.php",
         {
             bezeting: 1
         },
         function (data) {
-
+           
+            afsprakenarray.push(data);
             console.log(data);
+            console.log(data[0]);
+            console.log(afsprakenarray[0[0]]);
             document.getElementById("1").innerHTML = "BJORN";
 
         });
@@ -145,7 +150,7 @@ $transarray = array(
 
                     echo "<p class='inv' id='hoeveel'>" . $x . "</p>";
                     echo "<p class='inv' id='hoeveell'>" . $y . "</p>";
-                    ?>
+  ?>
                     <input name="input" type="hidden" id="input">
 
                     <button name="button" id="button"></button>
