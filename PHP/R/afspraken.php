@@ -25,14 +25,16 @@
 <script>
     let afsprakenarray = [];
     let array = [];
+    let testing = "";
     let main;
     $.post("vdg.php",
         {
             bezeting: 1
         },
         function (data) {
-           
+
             afsprakenarray.push(data);
+            testing = JSON.parse(afsprakenarray[0]);
             console.log(data);
             console.log(data[0]);
             console.log(afsprakenarray[0[0]]);
