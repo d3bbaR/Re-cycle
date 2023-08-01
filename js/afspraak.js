@@ -48,6 +48,7 @@ function bezet() {
                     dagenarray.push(dag);
 
                 }
+
             }
         }
         else {

@@ -31,6 +31,7 @@
         "afspraken" => "afspraken",
         "tekst" => "tekst beheer",
         "verlof" => "verlof beheer",
+        "vdg" => "ignore",
 
     )
 

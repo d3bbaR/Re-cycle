@@ -10,8 +10,31 @@
     <link rel="stylesheet" href="../../css/agenda.css?2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/css.css?1">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="../../js/file.js?3"></script>
+
+    <script defer src="../../js/afspraak.js?v=2"></script>
+    <script defer src="../../js/agenda2.js?1"></script>
+   
     <title>afspraken beheer </title>
 </head>
+<script>
+    let main;
+    $.post("vdg.php",
+    {
+        bezeting: 1
+    },
+    function (data) {
+        
+        console.log(data);
+document.getElementById("1").innerHTML = "BJORN";
+
+    });
+    </script>
 <?php include '../../nav-bar2.php'; ?>
 <?php if (isset($_COOKIE["dagwaarde"])) {
 
@@ -20,9 +43,10 @@
 }
 ?>
 <?php
-if (isset($_GET["mail"])) {
-    echo "
-<script>window.alert('U heeft deze afspraak goedgekeurd. ') </script>";
+if (isset($_GET["mail"])  && $_GET["mail"]=="ok") {
+    echo "<script>window.alert('U heeft deze afspraak goedgekeurd. ') </script>";
+$_GET["mail"] = "verstuurd";
+header("Location:afspraken.php");
 
 } ?>
 <?php
@@ -118,17 +142,12 @@ $transarray = array(
                     echo "<p class='inv' id='hoeveel'>" . $x . "</p>";
                     echo "<p class='inv' id='hoeveell'>" . $y . "</p>";
                     ?>
-
-
-                    <form action="../C/sluiten.php" class="sluitenform" id="formsluiten" method="post">
-                        <label id="label" for=""></label>
-                        <label id="label2" for=""></label>
-                        <input name="input" type="hidden" id="input">
-                        <br>
-                        <button name="button" id="button"></button>
-                        <br>
-                        <br>
-                        <label for="" onclick="nietsluiten()">Niet sluiten</label>
+  <input name="input" type="hidden" id="input">
+                  
+                    <button name="button" id="button"></button>
+                    <br>
+                    <br>
+                    <label for="" onclick="nietsluiten()">Niet sluiten</label>
 
 
                     </form>
@@ -143,9 +162,6 @@ $transarray = array(
                         <label for="" onclick="nietsluitendag()">Niet sluiten</label>
                     </form>
 </body>
-<script src="../../js/file.js?3"></script>
 
-<script src="../../js/afspraak.js?2"></script>
-<script src="../../js/agenda2.js?1"></script>
 
 </html>
