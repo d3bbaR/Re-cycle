@@ -125,6 +125,137 @@ function build_calendar($month, $year)
     return $calendar;
 
 }
+function build_calendar2($month, $year)
+{
+
+    include 'PHP/conn.php';
+
+    //$mysqli = new mysqli($server, $username, $password, $db);
+    $mysqli = $conn;
+    $stmt = $mysqli->prepare('select * from dagen where month(dagen) = ? AND year(dagen) = ?');
+    $stmt->bind_param('ss', $month, $year);
+    $bookings = array();
+    if ($stmt->execute()) {
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $bookings[] = $row['dagen'];
+            }
+
+            $stmt->close();
+        }
+    }
+
+
+    $daysOfWeek = array('Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag');
+    $translate = array(
+        "Monday" => "Maandag",
+        "Tuesday" => "Dinsdag",
+        "Wednesday" => "Woensdag",
+        "Thursday" => "Donderdag",
+        "Friday" => "Vrijdag",
+        "Saturday" => "Zaterdag",
+        "Sunday" => "Zondag",
+        "January" => "Januari",
+        "February" => "Februari",
+        "March" => "Maart",
+        "April" => "April",
+        "May" => "Mei",
+        "June" => "Juni",
+        "July" => "Juli",
+        "August" => "Augustus",
+        "September" => "September",
+        "October" => "Oktober",
+        "November" => "November",
+        "December" => "December",
+
+    );
+    $firstDayOfMonth = mktime(0, 0, 0, $month, 1, $year);
+    $numberDays = date('t', $firstDayOfMonth);
+    $dateComponents = getdate($firstDayOfMonth);
+    $monthName = $dateComponents['month'];
+    $dayOfWeek = $dateComponents['wday'];
+    $dateToday = date('Y-m-d');
+
+    $prev_month = date('m', mktime(0, 0, 0, $month - 1, 1, $year));
+    $prev_year = date('Y', mktime(0, 0, 0, $month - 1, 1, $year));
+    $next_month = date('m', mktime(0, 0, 0, $month + 1, 1, $year));
+    $next_year = date('Y', mktime(0, 0, 0, $month + 1, 1, $year));
+    $calendar = "<center><h2 id='maand'>$translate[$monthName]</h2><h2 id='jaar'>$year</h2></center>";
+    $calendar .= "<div class='griddrie'><a class='btn btn-primary btn-xs' href='?month=" . $prev_month . "&year=" . $prev_year . "'><= Vorige Maand </a>";
+    $calendar .= "<a class='btn btn-primary btn-xs' href='?month=" . date('m') . "&year=" . date('Y') . "'>Deze Maand </a>";
+    $calendar .= "<a class='btn btn-primary btn-xs' href='?month=" . $next_month . "&year=$next_year'>Volgende Maand =></a></div>";
+    $calendar .= "<br><table class='table table-bordered'>";
+    $calendar .= "<tr>";
+    foreach ($daysOfWeek as $day) {
+
+        $calendar .= "<th class='header'>$day</th>";
+    }
+
+    $calendar .= "</tr><tr>";
+    $currentDay = 1;
+    if ($dayOfWeek > 0) {
+        for ($k = 0; $k < $dayOfWeek; $k++) {
+            $calendar .= "<td class='empty'></td>";
+        }
+    }
+
+    $month = str_pad($month, 2, "0", STR_PAD_LEFT);
+    $cd = null;
+    while ($currentDay <= $numberDays) {
+        if ($dayOfWeek == 7) {
+            $dayOfWeek = 0;
+            $calendar .= "</tr><tr>";
+        }
+
+
+        $currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
+        $date = "$year-$month-$currentDayRel";
+
+        $dayName = strtolower(date('l', strtotime($date)));
+        $eventNum = 0;
+        $today = $date == date('Y-m-d') ? 'today' : '';
+        //*
+        if ($today) {
+            $cd = 0;
+            $calendar .= "<td id=$cd class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
+        } elseif ($date < date('Y-m-d')) {
+            if ($dayOfWeek == 4) {
+                $calendar .= "<td  id =$cd class='dag'></td>";
+            } else {
+                $calendar .= "<td class ='gesl'>$currentDay";
+            }
+        } else {
+            if ($dayOfWeek == 4) {
+                $calendar .= "<td  id=$cd  class='donderdag' " . "onclick = 'ladenuren($cd)'>$currentDay</td>";
+            } else {
+                $calendar .= "<td id=$cd class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
+            }
+        }
+        $currentDay++;
+        $dayOfWeek++;
+        $cd += 1;
+
+    }
+
+    if ($dayOfWeek < 7) {
+        $remainingDays = 7 - $dayOfWeek;
+        for ($i = 0; $i < $remainingDays; $i++) {
+            $calendar .= "<td class='empty'></td>";
+        }
+    }
+
+    $calendar .= "</tr></table>";
+    return $calendar;
+
+}
+
+
+
+
+
+
+
 function ladenuurvandag()
 {
     $array = array();
@@ -435,7 +566,7 @@ function ladenklant($maand)
 
             array_push($array, $bezet["uren"]);
         }
-        
+
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
                 echo "<label class='uren'> We zijn vandaag gesloten </label>";
@@ -445,7 +576,7 @@ function ladenklant($maand)
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
                     echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
-                                <input type='radio' onclick='modalappear(1)'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                                <input type='radio' onclick='modalcreate('" . $dat["uren"] . ")'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
@@ -471,7 +602,7 @@ function ladenklant($maand)
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
                     echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
-                    <input type='radio' onclick='modalappear2(2)'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                                <input type='radio' onclick='modalcreate(\"" . $dat["uren"] . "\")'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
 
                     if ($counter >= $p) {

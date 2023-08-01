@@ -24,23 +24,65 @@
 </head>
 <script>
     let afsprakenarray = [];
-    let array = [];
     let testing = "";
     let main;
+    let cookiedag = ""
+    let dit = ""
+    let testingdag = "";
+    let dzdag = "";
     $.post("vdg.php",
         {
             bezeting: 1
         },
         function (data) {
-
+            dit = document.getElementById("datumvandaag").innerHTML;
+            cookiedag  = getCookie("dagwaarde");
+            cookiedag = document.getElementById(cookiedag).innerHTML;
             afsprakenarray.push(data);
             testing = JSON.parse(afsprakenarray[0]);
-            console.log(data);
-            console.log(data[0]);
-            console.log(afsprakenarray[0[0]]);
-            document.getElementById("1").innerHTML = "BJORN";
 
+
+            load();
         });
+
+        function load() {
+        for (let i = 0; i < testing.length; i++) {
+           
+        
+            dzdag = testing[i].dag.substring(8);
+            testingdag = dzdag - dit;
+            let ele = document.getElementById(testingdag);
+            let soortafspraak = testing[i].geaccepteerd;
+            if (soortafspraak == 0){
+                if (ele.className == "dag bez"){ 
+                    ele.setAttribute("class", "dag afsprbez"); 
+                }
+                else{
+                    ele.setAttribute("class", "dag afspr"); 
+                }
+                
+                
+            }
+            else{
+                console.log(ele.className + " " + testingdag);
+                console.log(ele);
+                if (ele.className == "dag afspr"){ 
+                    ele.setAttribute("class", "dag afsprbez"); 
+                }
+                else{
+                    ele.setAttribute("class", "dag bez"); 
+                }
+            }
+            
+            
+        }
+    }
+    function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
 </script>
 <?php include '../../nav-bar2.php'; ?>
 <?php if (isset($_COOKIE["dagwaarde"])) {
@@ -77,6 +119,7 @@ $transarray = array(
 
 <body>
     <?php
+    echo "<p id ='datumvandaag' class=inv>".date("d") ."</p>";
     echo "<div class='agendacontainer'>";
     include '../../test.php';
 
@@ -97,7 +140,7 @@ $transarray = array(
                         $year = $dateComponents['year'];
                     }
 
-                    echo build_calendar($month, $year);
+                    echo build_calendar2($month, $year);
 
 
 
@@ -152,7 +195,7 @@ $transarray = array(
 
                     echo "<p class='inv' id='hoeveel'>" . $x . "</p>";
                     echo "<p class='inv' id='hoeveell'>" . $y . "</p>";
-  ?>
+                    ?>
                     <input name="input" type="hidden" id="input">
 
                     <button name="button" id="button"></button>

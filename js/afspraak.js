@@ -8,7 +8,7 @@ let dagenarray = [];
 let dagenarray2 = [];
 let seldag = document.getElementsByClassName("selected")[0];
 seldag = seldag.innerHTML;
-document.onload = bezet();
+//document.onload = bezet();
 
 //document.onload = console.log(document.getElementsByClassName("selected")[0])
 
