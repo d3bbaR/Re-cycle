@@ -575,7 +575,7 @@ function ladenklant($maand)
 
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
                                 <input type='radio' onclick='modalcreate('" . $dat["uren"] . ")'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
@@ -601,7 +601,7 @@ function ladenklant($maand)
             }
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
                                 <input type='radio' onclick='modalcreate(\"" . $dat["uren"] . "\")'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
 

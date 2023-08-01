@@ -118,7 +118,11 @@ function sluiten(dat) {
     let day = document.getElementsByClassName("selected")[0].innerHTML;
     let year = document.getElementById("jaar").innerHTML;
     console.log(year);
-    button.value = year + "-" + res + "-" + day;
+    if (day < 10) {
+        day = "0" + day
+    }
+    button.value = year + "-0" + res + "-" + day;
+
     button.innerHTML = "Sluit dit uur";
 
     label.innerHTML = "uur: " + document.getElementById(dat).value;
@@ -136,9 +140,12 @@ function sluitendag() {
     let button = document.getElementById("buttondag");
 
     let day = document.getElementsByClassName("selected")[0].innerHTML;
+    if (day < 10) {
+        day = "0" + day
+    }
     let year = document.getElementById("jaar").innerHTML;
     console.log(year);
-    button.value = year + "-" + res + "-" + day;
+    button.value = year + "-0" + res + "-" + day;
     button.innerHTML = "Sluit deze dag";
 
 

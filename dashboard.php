@@ -4,6 +4,7 @@
 <head>
     <?php setcookie("dagwaarde", "", time() - 3600); ?>
     <?php setcookie("dagwaarde", "", time() - 3600); ?>
+    <?php setcookie("Dag", "", time() - 3600); ?>
     <?php if (isset($_COOKIE["dagwaarde"])) {
 
     } else {

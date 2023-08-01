@@ -4,6 +4,7 @@ include "../conn.php";
 include "../functions.php";
 $datum = $_POST["buttondag"];
 $fk_dagen = "SELECT * from dagen where dagen = '" . $datum . "'";
+echo print_r($fk_dagen);
 foreach (query($fk_dagen) as $res2) {
     $pk = "Select * from resuren where FK_dagen =" . $res2["PK"];
     echo print_r($pk);
@@ -20,6 +21,6 @@ foreach (query($fk_dagen) as $res2) {
 
 
 
-echo $uur . " " . $datum;
+
 go("R", "afspraken");
 ?>

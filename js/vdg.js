@@ -8,11 +8,9 @@ let testingdag = "";
 let dzdag = "";
 let dzmaand = "";
 let dzuur = "";
-let vmaand = new Date();
-vmaand = vmaand.getMonth() + 1;
-if (vmaand < 10) {
-    vmaand = "0" + vmaand;
-}
+let vmaand = getCookie("Dag");
+vmaand = vmaand.substring(5, vmaand.length - 3);
+console.log(vmaand);
 $.post("vdg.php",
     {
         bezeting: 1
@@ -44,9 +42,17 @@ function load() {
             if (soortafspraak == 0) {
                 if (ele.className == "dag bez") {
                     ele.setAttribute("class", "dag afsprbez");
+                    if (testing[i].dag == dedag) {
+                        ele.setAttribute("class", "dag afsprbez selected");
+                    }
+
                 }
                 else {
                     ele.setAttribute("class", "dag afspr");
+                    if (testing[i].dag == dedag) {
+                        ele.setAttribute("class", "dag afspr selected");
+                    }
+
                 }
 
 
@@ -55,9 +61,15 @@ function load() {
 
                 if (ele.className == "dag afspr") {
                     ele.setAttribute("class", "dag afsprbez");
+                    if (testing[i].dag == dedag) {
+                        ele.setAttribute("class", "dag afsprbez selected");
+                    }
                 }
                 else {
                     ele.setAttribute("class", "dag bez");
+                    if (testing[i].dag == dedag) {
+                        ele.setAttribute("class", "dag bez selected");
+                    }
                 }
             }
 
