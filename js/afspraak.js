@@ -34,12 +34,10 @@ function bezet() {
 
                 modal = modal.innerHTML;
 
-
                 if (modal < 0) {
                     modal = modal.substring(1);
                 }
                 let afspr = document.getElementById(modal);
-                afspr.setAttribute("class", "dag afspr selected");
 
                 dag = afspr.innerHTML;
                 let uur = document.getElementById("uur" + tel);
@@ -58,53 +56,33 @@ function bezet() {
             x = x.innerHTML;
 
             while (tel < x) {
-
                 tel += 1;
                 let modal = document.getElementById("dl" + tel);
                 modal = modal.innerHTML;
-
                 let afspr = document.getElementById(modal);
                 dag = afspr.innerHTML;
 
-
                 let uur = document.getElementById("uurl" + tel);
+                uur = uur.innerHTML;
 
                 if (afspr.className == "dag afspr selected") {
-
-                    uur = uur.innerHTML;
                     afspr.setAttribute("class", "dag afsprbez selected");
                     if (dag == seldag) {
-
-                        console.log("dit uur wordt gepusht: " + uur);
                         urenarray2.push(uur);
-
                         dagenarray2.push(dag);
 
                     }
                 }
                 else {
-
                     afspr.setAttribute("class", "dag bez selected");
                     uur = uur.innerHTML;
                     if (dag == seldag) {
-
-
-
-                        console.log("dit uur wordt gepusht: " + uur);
                         urenarray2.push(uur);
-
                         dagenarray2.push(dag);
 
-                    }
-                    else {
-
-
-                        urenarray2.push(uur);
-
-                        dagenarray2.push(dag);
                     }
                 }
-                x
+
             }
         }
         variabele += 1;
@@ -120,13 +98,13 @@ function addevent(variabele) {
         if (seldag == dagenarray[i]) {
 
             urenarray.forEach(tijd => {
-
+                console.log(tijd);
                 let modalplaats = document.getElementById("d" + tijd);
                 modalplaats.setAttribute("class", "gesl afspr");
                 modalevent = document.getElementById(tijd);
-
+                console.log('wordt uitgevoerd:' + tijd);
                 tijd = tijd.toString()
-
+                console.log(modalevent);
                 modalevent.addEventListener("click", function () { modalappear(tijd) })
                 i += 1;
             })
@@ -140,7 +118,6 @@ function addevent(variabele) {
             urenarray2.forEach(tijd => {
 
                 let modalplaats = document.getElementById("d" + tijd);
-                console.log(modalplaats);
                 modalplaats.setAttribute("class", "bez afspr");
                 modalevent = document.getElementById(tijd);
                 modalevent.addEventListener("click", function () { modalappear2(tijd) })
@@ -174,7 +151,7 @@ function modalappear2(dat) {
     let num = urenarray2.indexOf(dat, 0);
 
     num += 1;
-    console.log(dat + " " + num);
+    console.log(num);
     let modalappear = document.getElementById("tbl" + num)
     modalappear.style.display = "block";
 }
