@@ -74,6 +74,37 @@ $transarray = array(
                     foreach (query($selector2) as $res) {
                         $data = $res["dagen"];
                         $vand = date("Y-m-d");
+                        if ($data >= $vand) {
+                            if ($res["gekeurd"] == 1) {
+                                $y += 1;
+                                $datum = strval($res["dagen"]);
+                                $uur = $res["uren"];
+                                $str = date_create($datum);
+                                $res = date_format($str, "m");
+                                $res2 = date_format($str, "d");
+                                $dagid = $res2 - $dag;
+                                echo "<p class='inv'id ='dl" . $y . "'>" . $dagid . "</p>";
+                                echo "<p class='inv'id ='uurl" . $y . "'>" . $uur . "</p>";
+                            } else {
+                                $x += 1;
+                                $datum = strval($res["dagen"]);
+                                $uur = $res["uren"];
+                                $str = date_create($datum);
+                                $res = date_format($str, "m");
+                                $res2 = date_format($str, "d");
+                                $dagid = $res2 - $dag;
+                                echo "<p class='inv' id ='d" . $x . "'>" . $dagid . "</p>";
+                                echo "<p class='inv'id ='uur" . $x . "'>" . $uur . "</p>";
+
+                            }
+                        }
+
+                    }
+                    $x = 0;
+                    $y = 0;
+                    foreach (query($selector2) as $res) {
+                        $data = $res["dagen"];
+                        $vand = date("Y-m-d");
 
                         if ($data == $waardedag) {
                             if ($res["gekeurd"] == 1) {
@@ -91,8 +122,7 @@ $transarray = array(
                                 $res = date_format($str, "m");
                                 $res2 = date_format($str, "d");
                                 $dagid = $res2 - $dag;
-                                echo "<p class='inv'id ='dl" . $y . "'>" . $dagid . "</p>";
-                                echo "<p class='inv'id ='uurl" . $y . "'>" . $uur . "</p>";
+
                             } else {
                                 $x += 1;
 
@@ -107,11 +137,11 @@ $transarray = array(
                                 $res = date_format($str, "m");
                                 $res2 = date_format($str, "d");
                                 $dagid = $res2 - $dag;
-                                echo "<p class='inv' id ='d" . $x . "'>" . $dagid . "</p>";
-                                echo "<p class='inv'id ='uur" . $x . "'>" . $uur . "</p>";
+
                             }
                         }
                     }
+
 
 
 
