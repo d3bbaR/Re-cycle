@@ -435,7 +435,7 @@ function ladenklant($maand)
 
             array_push($array, $bezet["uren"]);
         }
-        echo print_r($array);
+        
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
                 echo "<label class='uren'> We zijn vandaag gesloten </label>";

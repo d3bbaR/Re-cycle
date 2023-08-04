@@ -74,7 +74,7 @@ $transarray = array(
                     foreach (query($selector2) as $res) {
                         $data = $res["dagen"];
                         $vand = date("Y-m-d");
-                        echo $vand . " " . $data;
+
                         if ($data >= $vand) {
                             if ($res["gekeurd"] == 1) {
 
