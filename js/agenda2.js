@@ -11,17 +11,18 @@ let button = document.getElementById("button");
 let text = document.getElementById("textarea");
 let input2 = document.getElementById("tekst");
 let maand = document.getElementById("maand");
+let dag = "";
 function form() {
     let cookie = getCookie("dagwaarde");
-    console.log(cookie);
-    console.log(document.getElementById(cookie));
+
     let geselecteerde = document.getElementById(cookie);
     geselecteerde.setAttribute("class", "selected");
     let maand = document.getElementById("maand").innerHTML;
     let dag = document.getElementsByClassName("selected");
     dag = dag[0].innerHTML;
-    console.log(maand + " " + dag);
-    label2.innerHTML = dag;
+    labeldata = (dag + document.getElementById("maand").innerHTML);
+    console.log(labeldata);
+    document.getElementById("label2").innerHTML = labeldata;
     label3.innerHTML = maand;
 
 }
@@ -42,7 +43,7 @@ function del_cookie(name) {
         '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
 }
 let month = datum.getMonth() + 1;
-console.log(month);
+
 switch (maand) {
     case maand = "Januari":
         res = "1"
@@ -83,7 +84,7 @@ switch (maand) {
     default:
         break;
 }
-console.log(month - res);
+
 function test() {
     let maand = document.getElementById("maand");
     maand = maand.innerHTML;
@@ -96,7 +97,7 @@ function test() {
     hidden.value = x;
     if (month - res >= -1 && month - res <= 0 || month - res == 11) {
         button.setAttribute("class", "vis");
-        console.log(x)
+
     }
     else {
 
@@ -118,20 +119,30 @@ function ladenuren(waarde) {
     document.cookie = "dagwaarde=" + waarde;
     vandaag.setAttribute("class", "dag");
     label.innerHTML = "nog geen uur geselecteerd";
+    dag = document.getElementById(waarde);
+
     date = addDays(waarde)
     let day = date.getDate();
-    let year = date.getElementById(jaar).innerHTML;
+
     hidden2.value = year + "-" + maand + "-" + day;
-}
-let dag = document.getElementsByClassName("selected")
-let Cookiemaand = "";
-dag = (dag[0].innerHTML);
-if (res < 10) {
-    Cookiemaand = "0" + res;
+    cookiemaken(waarde);
 
 
 }
-else {
-    Cookiemaand = res;
+function cookiemaken(waarde) {
+    dag = document.getElementById(waarde).innerHTML;
+    let Cookiemaand = "";
+
+    if (dag < 10) {
+        dag = "0" + dag;
+    }
+    if (res < 10) {
+        Cookiemaand = "0" + res;
+
+
+    }
+    else {
+        Cookiemaand = res;
+    }
+    document.cookie = "Dag=" + jaar.innerHTML + "-" + Cookiemaand + "-" + dag;
 }
-document.cookie = "Dag=" + jaar.innerHTML + "-" + Cookiemaand + "-" + dag;
