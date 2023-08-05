@@ -12,18 +12,17 @@ let text = document.getElementById("textarea");
 let input2 = document.getElementById("tekst");
 let maand = document.getElementById("maand");
 let dag = "";
+document.onload = form();
 function form() {
     let cookie = getCookie("dagwaarde");
-
     let geselecteerde = document.getElementById(cookie);
+    console.log(geselecteerde);
     geselecteerde.setAttribute("class", "selected");
     let maand = document.getElementById("maand").innerHTML;
     let dag = document.getElementsByClassName("selected");
-    dag = dag[0].innerHTML;
-    labeldata = (dag + document.getElementById("maand").innerHTML);
-    console.log(labeldata);
-    document.getElementById("label2").innerHTML = labeldata;
-    label3.innerHTML = maand;
+
+
+
 
 }
 maand = maand.innerHTML;
@@ -113,23 +112,28 @@ function test() {
     label.innerHTML = x;
 }
 function ladenuren(waarde) {
-
+    cookiemaken(waarde);
     del_cookie("dagwaarde");
     location.reload();
     document.cookie = "dagwaarde=" + waarde;
+
     vandaag.setAttribute("class", "dag");
+
     label.innerHTML = "nog geen uur geselecteerd";
     dag = document.getElementById(waarde);
 
     date = addDays(waarde)
+    cookiemaken(waarde);
     let day = date.getDate();
 
-    hidden2.value = year + "-" + maand + "-" + day;
-    cookiemaken(waarde);
+
+
+
 
 
 }
 function cookiemaken(waarde) {
+
     dag = document.getElementById(waarde).innerHTML;
     let Cookiemaand = "";
 

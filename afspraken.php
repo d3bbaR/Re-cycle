@@ -64,7 +64,7 @@ setcookie("dagwaarde", "",time()-3600);
         </div>
     </div>
     <?php include 'footer.php'; ?>
-    <script src="js/agenda2.js?4"></script>
+    <script src="js/agenda2.js?1000000"></script>
     </div>
 </body>
 

@@ -99,7 +99,16 @@ switch (maand) {
         break;
 }
 console.log(res);
-
+function nietsluiten() {
+    console.log("pressed");
+    let form = document.getElementById("formsluiten");
+    form.style.display = "none";
+}
+function nietsluitendag() {
+    console.log("pressed");
+    let form = document.getElementById("formsluitendag");
+    form.style.display = "none";
+}
 function sluiten(dat) {
     let form = document.getElementById("formsluiten");
     let label = document.getElementById("label");

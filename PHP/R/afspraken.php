@@ -23,11 +23,13 @@
 if (isset($_GET["mail"])) {
     echo "
 <script>window.alert('U heeft deze afspraak goedgekeurd. ') </script>";
+
 } ?>
 <?php
 if (isset($_GET["nomail"])) {
     echo "
 <script>window.alert('U heeft deze afspraak gewijgerd. ') </script>";
+
 } ?>
 <?php
 $transarray = array(
@@ -120,20 +122,28 @@ $transarray = array(
                         <label id="label" for=""></label>
                         <label id="label2" for=""></label>
                         <input name="input" type="hidden" id="input">
+                        <br>
                         <button name="button" id="button"></button>
+                        <br>
+                        <br>
+                        <label for="" onclick="nietsluiten()">Niet sluiten</label>
+
 
                     </form>
                     <button onclick="sluitendag()">sluiten dag</button>
                     <form action="../C/sluitendag.php" class="sluitenform" id="formsluitendag" method="post">
                         <label id="label2dag" for=""></label>
                         <input name="inputdag" type="hidden" id="inputdag">
+                        <br>
                         <button name="buttondag" id="buttondag"></button>
-
+                        <br>
+                        <br>
+                        <label for="" onclick="nietsluitendag()">Niet sluiten</label>
                     </form>
 </body>
-<script src="../../js/file.js?1"></script>
+<script src="../../js/file.js?3"></script>
 
-<script src="../../js/afspraak.js?1"></script>
+<script src="../../js/afspraak.js?2"></script>
 <script src="../../js/agenda2.js?1"></script>
 
 </html>

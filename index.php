@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php setcookie("dagwaarde", "0") ?>
+<?php setcookie("dagwaarde", "0");
+setcookie("Dag", "0");
+?>
 
 <head>
     <meta charset="utf-8" />
