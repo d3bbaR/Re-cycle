@@ -104,13 +104,13 @@ function mailer()
     $tekst = $_POST["tekst"];
     switch ($type) {
         case 1:
-            $msg = "Klein onderhoud 30 minuten";
+            $msg = "klein onderhoud 30 minuten";
             break;
         case 2:
-            $msg = "Groot onderhoud 1 uur";
+            $msg = "groot onderhoud 1 uur";
             break;
         case 3:
-            $msg = "Gesprek aankoop fiets 45 minuten";
+            $msg = "gesprek aankoop fiets 45 minuten";
             break;
     }
     header("Location:../../afspraken.php?mail=1");
@@ -151,7 +151,7 @@ function mailer()
         //Content
         $mail->isHTML(true); //Set email format to HTML
         $mail->Subject = 'Beste jurgen';
-        $mail->Body = "de volgende persoon:" . " " . $naam . " heeft een " . " " . $msg . " " . " geplaatste voor: " . $dag . " " . $uur . " is dit oke?"
+        $mail->Body = "de volgende persoon:" . " " . $naam . " heeft een " . " " . $msg . " " . " geplaatst voor: " . $dag . " " . $uur . " is dit oke?"
             . " je kunt deze klant bereiken op:" . " " . $telefoon . " of " . $email . "<br><br> met hetvolgende bericht:" . $tekst;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
@@ -196,8 +196,8 @@ function mailer()
         //Content
         $mail->isHTML(true); //Set email format to HTML
         $mail->Subject = 'Beste' . " " . $naam;
-        $mail->Body = "Je hebt een " . $msg . " " . " geplaatste voor: " . $dag . " " . $uur . " 
-    uw afspraak word op dit moment verwerkt. U zult nog een mail krijgen als deze wordt goedgekeurd of afgekeurt."
+        $mail->Body = "Je hebt een " . $msg . " " . " geplaatst voor: " . $dag . " " . $uur . "<br><br> 
+    uw afspraak word op dit moment verwerkt. U zal nog een mail krijgen als deze afspraak wordt goedgekeurd of afgekeurd."
         ;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

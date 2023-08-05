@@ -158,7 +158,7 @@ select {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 1% 45%;
+
 }
 
 .modal-content {
@@ -212,6 +212,7 @@ select {
         text-align: center;
         gap: 10px;
         padding: 10px 20px;
+        background-color: #f2ece4;
     }
 }
 
@@ -230,6 +231,8 @@ select {
         text-align: right;
         gap: 10px;
         padding: 10px 20px;
+        background-color: #f2ece4;
+
     }
 }
 

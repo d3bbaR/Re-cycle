@@ -4,6 +4,7 @@
 /*destroycookie(){
 setcookie("dagwaarde", "",time()-3600);
 }*/
+
 ?>
 
 <head>

@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>footer bijwerken</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>tekst bijwerken</title>
+  <link rel="stylesheet" href="../../css/css.css">
 </head>
 
 <body>
@@ -21,8 +21,8 @@
   $row = mysqli_fetch_assoc($result);
 
   // aanmaak velden
-  echo "<form action='../U/tekst.php' method ='post'><input type ='text'value ='" . $row["tekst"] . "'name ='tekst'required>
-<input type ='number' value ='" . $row["visible"] . "'min ='0' max ='1' name='visible' required>
+  echo "<form action='../U/tekst.php' method ='post'><textarea type ='text' name ='tekst'required>" . $row["tekst"] . "</textarea>
+
 <button name='edit' value='" . $pk . "'method='post'>edit </button>";
   ?>
 </body>

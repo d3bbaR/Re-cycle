@@ -1,5 +1,5 @@
 <?php
-include 'PHP/functions.php';
+include_once 'PHP/functions.php';
 include 'PHP/conn.php';
 function build_calendar($month, $year)
 {
@@ -87,6 +87,7 @@ function build_calendar($month, $year)
 
         $currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
         $date = "$year-$month-$currentDayRel";
+
         $dayName = strtolower(date('l', strtotime($date)));
         $eventNum = 0;
         $today = $date == date('Y-m-d') ? 'today' : '';
@@ -96,13 +97,13 @@ function build_calendar($month, $year)
             $calendar .= "<td id=$cd class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
         } elseif ($date < date('Y-m-d')) {
             if ($dayOfWeek == 4) {
-                $calendar .= "<td  class='donderdag'></td>";
+                $calendar .= "<td  id =$cd class='dag'></td>";
             } else {
                 $calendar .= "<td class ='gesl'>$currentDay";
             }
         } else {
             if ($dayOfWeek == 4) {
-                $calendar .= "<td  class='donderdag'></td>";
+                $calendar .= "<td  id=$cd  class='donderdag' " . "onclick = 'ladenuren($cd)'>$currentDay</td>";
             } else {
                 $calendar .= "<td id=$cd class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
             }
@@ -135,6 +136,7 @@ function ladenuurvandag()
     $day = dag($waardedag);
     $month = month($waardedag);
     $fk_dagen = "SELECT PK from dagen where dagen = '" . $check . "'";
+    echo print_r($fk_dagen);
     foreach (query($fk_dagen) as $key) {
         //destroycookie();
         $bezet = "SELECT uren.uren  from resuren left join uren on uren.PK = FK_uren 
@@ -148,7 +150,7 @@ function ladenuurvandag()
         }
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
-
+                echo "<label class='uren'> We zijn vandaag gesloten </label>";
             }
 
             foreach (query($uren) as $dat) {
@@ -177,7 +179,7 @@ function ladenuurvandag()
             }
         } else {
             if ($p == 100) {
-                echo "<div class='uren'>" . "</div>";
+                echo "<label class='uren'> We zijn vandaag gesloten </label>";
             }
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
@@ -424,25 +426,8 @@ function ladenform()
         </select>
         <button type="submit" class='inv' id='button' onclick="">Plaats afspraak</button>
         <script>function form() {
-                let cookie = getCookie("dagwaarde");
-                console.log(cookie);
-                console.log(document.getElementById(cookie));
-                let geselecteerde = document.getElementById(cookie);
-                geselecteerde.setAttribute("class", "selected");
-                let maand = document.getElementById("maand").innerHTML;
-                let dag = document.getElementsByClassName("selected");
-                dag = dag[0].innerHTML;
-                console.log(maand + " " + dag);
-                label2.innerHTML = dag;
-                label3.innerHTML = maand;
-
-            }
-            function getCookie(name) {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-                if (parts.length === 2) return parts.pop().split(';').shift();
-            }
-            form();</script>
+                let cookie = getCookie("dagwaarde"); console.log(cookie); console.log(document.getElementById(cookie)); let geselecteerde = document.getElementById(cookie); geselecteerde.setAttribute("class", "selected"); let maand = document.getElementById("maand").innerHTML; let dag = document.getElementsByClassName("selected"); dag = dag[0].innerHTML; console.log(maand + " " + dag); label2.innerHTML = dag; label3.innerHTML = maand;
+            } function getCookie(name) { const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift(); } form();</script>
 
     </form>
     <?php
@@ -459,6 +444,7 @@ function ladenklant($maand)
     $day = dag($waardedag);
     $month = month($waardedag);
     $fk_dagen = "SELECT PK from dagen where dagen = '" . $check . "'";
+    echo print_r($fk_dagen);
     foreach (query($fk_dagen) as $key) {
         //destroycookie();
         $geg = "SELECT gegevens.naam,gegevens.email,gegevens.telefoon from resuren 
@@ -475,7 +461,7 @@ function ladenklant($maand)
         }
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
-                echo "<div class='uren'>wij zijn vandaag gesloten</div>";
+                echo "<label class='uren'> We zijn vandaag gesloten </label>";
 
             }
 
@@ -503,7 +489,7 @@ function ladenklant($maand)
             }
         } else {
             if ($p == 100) {
-                echo "<div class='uren'>" . $dat["uren"] . "</div>";
+                echo "<label class='uren'> We zijn vandaag gesloten </label>";
             }
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
@@ -533,24 +519,8 @@ function ladenklant($maand)
     }
     ?>
     <script>function form() {
-            let cookie = getCookie("dagwaarde");
-            console.log(cookie);
-            console.log(document.getElementById(cookie));
-            let geselecteerde = document.getElementById(cookie);
-            geselecteerde.setAttribute("class", "selected");
-            let maand = document.getElementById("maand").innerHTML;
-            let dag = document.getElementsByClassName("selected");
-            dag = dag[0].innerHTML;
-            console.log(maand + " " + dag);
-
-
-        }
-        function getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
-        form();</script>
+            let cookie = getCookie("dagwaarde"); console.log(cookie); console.log(document.getElementById(cookie)); let geselecteerde = document.getElementById(cookie); geselecteerde.setAttribute("class", "selected"); let maand = document.getElementById("maand").innerHTML; let dag = document.getElementsByClassName("selected"); dag = dag[0].innerHTML; console.log(maand + " " + dag);
+        } function getCookie(name) { const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift(); } form();</script>
 
     <?php
 }

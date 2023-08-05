@@ -6,7 +6,7 @@ $row = 0;
 echo "<form method = 'post' action = 'cataloguspushen.php'>";
 echo "<button type = 'submit'>add</button>";
 if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\fietsen.csv", "r")) !== FALSE) {
-    while (($read_data = fgetcsv($csv_file, 1000, ",")) !== FALSE) {
+    while (($read_data = fgetcsv($csv_file, 1000, ";")) !== FALSE) {
 
         $column_count = count($read_data);
         $start_row++;
@@ -55,12 +55,8 @@ if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\fietsen.cs
                     break;
                 case 14:
                     $type = "Prijs";
-                    break;
-                case 15:
-                    $type = "Framenr";
                     $counter = 0;
                     break;
-
             }
             echo "<input type = 'text' value ='" . $read_data[$c] . "' name='" . $type . '_' . $row . "'>";
         }

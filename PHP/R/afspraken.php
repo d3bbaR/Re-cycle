@@ -29,6 +29,14 @@ if (isset($_GET["nomail"])) {
     echo "
 <script>window.alert('U heeft deze afspraak gewijgerd. ') </script>";
 } ?>
+<?php
+$transarray = array(
+    "1" => "Klein onderhoud 30 minuten",
+    "2" => "Groot onderhoud 1 uur",
+    "3" => "Gesprek aankoop fiets 45 minuten"
+
+);
+?>
 
 <body>
     <?php
@@ -69,8 +77,11 @@ if (isset($_GET["nomail"])) {
 
 
                                 $y += 1;
-                                echo "<div id ='tbl" . $y . "'class='modal'><div class=' modal-content'><div class='flexboxtb'><p>" . $res["naam"] . "</p><p> " . $res["email"] . "</p><p> " . $res["telefoon"] . "</p><p> " . $res["type"] . "</p><p> " . $res["dagen"] . "</p><p> " . $res["uren"] . "</p>" .
-                                    "</div>.<button class ='btn' onclick ='invisiblel(" . $y . ")'>sluiten </button></div></div>";
+                                echo "<div id ='tbl" . $y . "'class='modal'><div class=' modal-content'><div class='flexboxtb'><p>" .
+                                    $res["naam"] . "</p><p> " . $res["email"] . "</p><p> " . $res["telefoon"] .
+                                    "</p><p> " . $transarray[$res["type"]] . "</p><p> " . $res["dagen"] . "</p><p> " . $res["uren"] . "</p><p> "
+                                    . $res["tekst"] . "</p>"
+                                    . "</div>.<button class ='btn' onclick ='invisiblel(" . $y . ")'>sluiten </button></div></div>";
                                 $datum = strval($res["dagen"]);
                                 $uur = $res["uren"];
                                 $str = date_create($datum);
@@ -82,7 +93,8 @@ if (isset($_GET["nomail"])) {
                             } else {
                                 $x += 1;
 
-                                echo "<div id ='tb" . $x . "'class=' modal'><div class=' modal-content'><div class='flexboxtb'><p>" . $res["naam"] . "</p><p> " . $res["email"] . "</p><p> " . $res["telefoon"] . "</p><p> " . $res["type"] . "</p><p> " . $res["dagen"] . "</p><p> " . $res["uren"] . "</p>" .
+                                echo "<div id ='tb" . $x . "'class=' modal'><div class=' modal-content'><div class='flexboxtb'><p>" . $res["naam"] . "</p><p> " . $res["email"] . "</p><p> " . $res["telefoon"] . "</p><p> " . $transarray[$res["type"]] . "</p><p> "
+                                    . $res["dagen"] . "</p><p> " . $res["uren"] . "</p><p>" . $res["tekst"] . "</p>" .
                                     "</div><form class ='center'action='../C/accept.php' method='post'> <button name ='edit' value='" . $res["FK_geg"] . "'><i class='fa fa-check' style='color:green'></i></button></form>" .
                                     "<form class='center' action='../C/refuse.php' method='post'> <button name ='delete' value='" . $res["FK_geg"] . "'<i class='fa fa-close' style='color:red'></i></button></form>
                     <button class ='btn' onclick ='invisible(" . $x . ")'>sluiten </button></div></div>";

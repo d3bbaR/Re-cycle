@@ -255,6 +255,47 @@ article {
 
 }
 
+form#CForm textarea {
+  width: 500px;
+  height: 150px;
+}
+
+.tekstitem {
+
+  text-align: center;
+  border: 1px solid #000;
+  max-width: 500px;
+  margin: 1em auto;
+}
+
+.tekstitem textarea {
+  margin-top: 10px;
+  width: 500px;
+  height: 200px;
+
+}
+
+.tekstitem form {
+  margin-top: 15px;
+}
+
+.containerform {
+  text-align: center;
+  width: 250px;
+  margin: 0 auto;
+  padding-top: 1em;
+
+}
+
+.containerform form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.containerform form input {
+  margin-bottom: 20px;
+}
+
 a .flexservices {
   font-family: helvetica-w01-bold, helvetica-w02-bold, helvetica-lt-w10-bold, sans-serif;
   width: 200px;
@@ -262,7 +303,7 @@ a .flexservices {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #f2ece4;
+  background-color: #fff;
   height: 200px;
   opacity: 0.7;
 }
@@ -550,7 +591,7 @@ body {
 
 .containerf {
   max-width: 1170px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .row1 {
@@ -1256,7 +1297,18 @@ h2:after {
 
 
 
+#verlof {
+  color: red;
+  font-weight: bold;
+  font-size: 1.5em;
 
+}
+
+#opening {
+  font-weight: bold;
+  font-size: 1em;
+
+}
 
 
 
@@ -1264,6 +1316,7 @@ h2:after {
   width: 100%;
   min-height: 100vh;
   background-color: #F2ECE4;
+  padding-bottom: 30px;
 }
 
 .container3 .title {

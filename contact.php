@@ -18,9 +18,9 @@
 			<div class="rechtscontact">
 				<form action="PHP/C/contactmail.php" method="post">
 					<h2>Contacteer ons</h2>
-					<input type="text" name="naam" class="txtveld" placeholder="Uw naam">
-					<input type="text" name="email" class="txtveld" placeholder="uw email">
-					<input type="text" name="telefoon" class="txtveld" placeholder="Uw telefoonnummer">
+					<input type="text" name="naam" class="txtveld" placeholder="Uw naam" required>
+					<input type="text" name="email" class="txtveld" placeholder="uw email" required>
+					<input type="text" name="telefoon" class="txtveld" placeholder="Uw telefoonnummer" resuired>
 					<textarea placeholder="Wat is het probleem" name="bericht" class="txtarea"></textarea>
 					<button class="btncontainer" type="submit">Verzend</button>
 				</form>

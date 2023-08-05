@@ -125,6 +125,7 @@ include "PHP/functions.php";
                         $naam = "SELECT * from catalogus where";
                         $naam .= " Type =   '" . $item . "'";
                         $maten = "";
+
                         $aanwezig = 0;
                         foreach (query($naam) as $prod) {
                             $aanwezig += 1;
@@ -160,6 +161,7 @@ include "PHP/functions.php";
 
 
                     }
+
                 }
 
                 //}

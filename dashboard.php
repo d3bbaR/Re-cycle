@@ -28,8 +28,9 @@
         "catalogus" => "catalogus ",
         "iets" => "ignore",
         "rol" => "ignore",
-        "afspraken" => "afgspraken",
-        "tekst" => "ignore",
+        "afspraken" => "afspraken",
+        "tekst" => "tekst beheer",
+        "verlof" => "verlof beheer",
 
     )
 
@@ -40,7 +41,7 @@
         if (substr($file, -4) == '.php') {
             $filename = substr($file, 0, -4);
             if ($translate[$filename] != "ignore") {
-                echo "<div class'admindashbtn'><a href='PHP/R/$file'><button class='adminbtn'>" . $filename . "</button></a></div>";
+                echo "<div class'admindashbtn'><a href='PHP/R/$file'><button class='adminbtn'>" . $translate[$filename] . "</button></a></div>";
             }
         }
     }

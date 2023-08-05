@@ -1,116 +1,108 @@
-﻿FietsNr;Voorraad;Merk;Type;Kleur;Cat.;Frame;Wielmaat;Jaar;Status;Demo;Maat;Versnellingen;Prijs;Framenr.
-10130;Voorraad;Kokua;Loopfiets;oranje;Kinderfietsen ;Uni;12;2019;Nieuw;Nee;12,5;;219;
-10146;Voorraad;Merida;MATTS J.20+;Metallic Orange;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25 10;7;679;WC1158783S
-10152;Voorraad;Merida;E-Spresso CITY 800 EQ;Glossy Dark Blue;Stadsfietsen (elo);Uni;28;2021;Nieuw;Nee;43 S;5;4999;WC8037219S
-10154;Voorraad;Merida;E-Spresso CITY 800 EQ;Glossy Dark Blue;Stadsfietsen (elo);Uni;28;2021;Nieuw;Nee;43;5;4999;WC8037226S
-10160;Voorraad;Merida;E-Spresso CITY 800 EQ;Glossy Dark Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;53 L;5;4999;WC8037191S
-10216;Voorraad;Merida;ONE-TWENTY 700;Glossy Metallic Merida Green;Mountainbikes ;Heren;29;2021;Nieuw;Nee;44 M;12;3599;WC1094924S
-10218;Voorraad;Merida;Big Nine 700;Groen;Mountainbikes ;Uni;29;2021;Nieuw;Nee; L;24;2199;WC1459994S
-10248;Voorraad;Merida;MATTS J.20+;Glossy Light Blue;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25 10;7;679;WC1152993S
-10250;Voorraad;Merida;Matts J.20+;Glossy Light Blue;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25;7;679;WC1153356S
-10252;Voorraad;Merida;Matts J.20+;Glossy Light Blue;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25;7;679;WC1197930S
-10256;Voorraad;Merida;Matts J.20+;Metallic Orange;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25;7;679;WC1243506S
-10258;Voorraad;Merida;Matts J.20+;Metallic Orange;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25;7;679;WC1153366S
-10260;Voorraad;Merida;Matts J.20+;Metallic Orange;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25;7;679;WC1160736S
-10302;Voorraad;Merida;Big Nine Xt;Zwart;Mountainbikes ;Heren;29;2021;Nieuw;Nee;43;12;3199;WC1285117R
-10906;Voorraad;Victoria;Trekking 4.7;Supersonic Silver  Black;Hybride fietsen ;Dames;28;2021;Nieuw;Nee;51;18;849;VCR21000010461
-10948;Voorraad;Victoria;Trekking 4.7;supersonic silver  black;Hybride fietsen ;Heren;28;2021;Nieuw;Nee;56 56 cm;18;849;
-11284;Voorraad;Merida;Big Nine 200;Blauw;Mountainbikes ;Heren;0;2021;Nieuw;Nee; L;0;999;WC060007698T
-11288;Voorraad;Merida;Matts J 20+;Paars;Kinderfietsen ;Jongens;0;2021;Nieuw;Nee;0;0;679;WC1248113S
-11306;Voorraad;Merida;E-big nine 400;Blauw;Hybride fietsen (elo);Uni;0;2021;Nieuw;Nee; M;0;4199;WC1577606S
-11312;Voorraad;Merida;Big Nine Limited;Zwart;Mountainbikes ;Heren;0;2021;Nieuw;Nee;0 S;0;1499;WC1453129S
-11314;Voorraad;Merida;SILEX 4000;Rood;Racefietsen ;Heren;0;2021;Nieuw;Nee;53 L;0;2499;WC8225778S
-11318;Voorraad;Merida;SCULTURA ENDURANCE 5000;Grijs;Racefietsen ;Heren;28;2021;Nieuw;Nee; M;22;2899;WC090024457T
-11328;Voorraad;Merida;Big Nine XT;Rood;Mountainbikes ;Heren;0;2021;Nieuw;Nee;0 L;0;3199;WC1285518R
-11338;Voorraad;Merida;Scultura 300;Zwart;Racefietsen ;Heren;0;2022;Nieuw;Nee;53 L;0;1499;WC8330522S
-11464;Voorraad;Merida;SPEEDER 400;Paars;Stadsfietsen ;Heren;0;2022;Nieuw;Nee;52 S-M;0;1349;WC8542609S
-11498;Voorraad;Merida;E-one sixty 700;Zilver;Mountainbikes (elo);Uni;0;2022;Nieuw;Nee; L;0;6799;WC1097997S
-11520;Voorraad;Gazelle;Ultimate C8+ HMB Belt;Rood;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;53;8;3699;GZ61717055
-11578;Voorraad;Merida;E-big nine 400 EQ;Grijs;Mountainbikes (elo);Heren;0;2021;Nieuw;Nee;48 L;0;4399;WC1440527S
-11590;Voorraad;Merida;Matts J.24+;Rood;Mountainbikes ;Jongens;0;2021;Nieuw;Nee;0 11;0;699;WC1244056S
-11592;Voorraad;Merida;MATTS J.20+;Paars;Mountainbikes ;Jongens;0;2022;Nieuw;Nee;0 10;0;679;WC1531940S
-11753;Voorraad;Merida;SILEX 400;Zwart;Racefietsen ;Heren;0;2022;Nieuw;Nee;53 L;0;1799;WC020030881T
-11762;Voorraad;Merida;SILEX 4000;Rood;Racefietsen ;Uni;0;2022;Nieuw;Nee;53 L;0;2499;WC8215947S
-11784;Voorraad;Merida;Big Seven 20;Groen;Mountainbikes ;Uni;0;2022;Nieuw;Nee; S;0;799;WC1238368S
-11802;Voorraad;Merida;BIG NINE 60;Rood;Mountainbikes ;Uni;0;2022;Nieuw;Nee; S;0;929;WC040016172T
-11804;Voorraad;Merida;BIG NINE 60;Rood;Mountainbikes ;Uni;0;2022;Nieuw;Nee;0 S;0;929;WC040013969T
-11824;Voorraad;Merida;E-Spresso EP8 City;Rood;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;48 M;0;4999;WC1751680S
-11826;Voorraad;Merida;E-Spresso EP8 City;Rood;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;48 M;0;4999;WC1751682S
-11840;Voorraad;Merida;E-Spresso EP8 City;Rood;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 S;0;4999;WC1751728S
-11856;Voorraad;Merida;E-Spresso 700 EQ City;Blauw;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 M;0;4699;WC8529997S
-11860;Voorraad;Merida;E-Spresso 700 EQ City;Blauw;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 M;0;4699;WC8337671S
-11864;Voorraad;Merida;E-Spresso 500 EQ;Zwart;Racefietsen (elo);Dames;0;2022;Nieuw;Nee;0 L;0;4299;WC1751201S
-11866;Voorraad;Merida;E-Spresso 500 EQ City;Zwart;Racefietsen (elo);Dames;0;2022;Nieuw;Nee;0 L;0;4299;WC1755517S
-11868;Voorraad;Merida;E-Spresso 500 EQ City;Zwart;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 M;0;4299;WC020001973T
-11872;Voorraad;Merida;E-Spresso 700 EQ City;Blauw;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 L;0;4699;WC8307855S
-11874;Voorraad;Merida;E-Spresso 700 EQ City;Blauw;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 L;0;4699;WC8302697S
-12016;Voorraad;Merida;E-spresso EP8;Rood;Stadsfietsen (elo);Heren;0;2021;Nieuw;Nee;0 L;0;4999;WC8271467S
-12092;Voorraad;Merida;E-SPRESSO 700 heren;Blauw;Stadsfietsen (elo);Heren;0;2022;Nieuw;Nee;0 M;0;4699;WC8338555S
-12134;Voorraad;Merida;Matts J20.+ Blauw;Blauw;Kinderfietsen ;Jongens;0;2022;Nieuw;Nee;0 20;0;679;WC1248999S
-12136;Voorraad;Merida;Matts J20.+ Paars;Paars;Kinderfietsen ;Uni;0;2022;Nieuw;Nee;0;0;679;WC1246553S
-12550;Voorraad;Merida;E-Spresso City 700;Brons;Stadsfietsen (elo);Dames;0;2021;Nieuw;Nee;0 M;0;4699;WC8307897S
-12716;Voorraad;Merida;REACTO 9000-E;Zwart;Racefietsen ;Heren;0;2020;Nieuw;Nee;0 S-M;0;9999;WC8160022R
-12745;Voorraad;Merida;E-Spresso City 400 ;Silk Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;49 M;9;3899;WC1046158S
-13050;Voorraad;O2Feel;Iswan City boost 7.1 540 Wh;Grijs;Stadsfietsen (elo);Dames;0;2021;Nieuw;Nee;50;0;3699;
-13210;Voorraad;O2Feel;Vern Urban power 9.1 720 Wh;Zwart;Stadsfietsen (elo);Uni;0;2021;Nieuw;Nee;52 M;0;4499;S2103IKBP52149
-13395;Voorraad;Victoria;Pro 7.7. 26 nexus 7;Zwart;Kinderfietsen ;Mixed;0;2021;Nieuw;Nee;0;0;599;11724540
-13397;Voorraad;Merida;Speeder 100;Blauw;Hybride fietsen ;Uni;28;2021;Nieuw;Nee;54 M-L;24;899;WC8298886S
-13422;Voorraad;BFK;Lots of love 20;Wit;Kinderfietsen ;Meisjes;0;2021;Nieuw;Nee;0;0;355;
-13469;Voorraad;Gazelle;Ultimate C380 HMB speed 500Wh;Grijs;Stadsfietsen (elo);Mixed;28;2022;Nieuw;Nee;53;0;4899;GZ61604901
-13512;Voorraad;BFK;Flower fun 12;Blauw;Kinderfietsen ;Mixed;0;2022;Nieuw;Nee;0 12;0;249;
-13530;Voorraad;Merida;Reacto 6000 Di2;Rood;Racefietsen ;Heren;0;2023;Nieuw;Nee;0 M;0;3599;WC090031383T
-13586;Voorraad;Merida;E-speeder 400;Groen;Hybride fietsen (elo);Heren;0;2021;Nieuw;Nee; M;0;3399;WC8271352S
-13713;Voorraad;Merida;E-spresso city EP8;Rood;Stadsfietsen (elo);Dames;0;2021;Nieuw;Nee;0 L;0;4999;WC1044627S
-13802;Voorraad;Merida;SPEEDER 200 ;Zwart;Racefietsen ;Heren;0;2022;Nieuw;Nee;54;0;1049;WC8305538S
-13807;Voorraad;Gazelle;Ultimate T10;Grijs;Stadsfietsen (elo);Dames;28;0;Gebruikt;Nee;0;10;0;GZ 61411247
-13838;Voorraad;Victoria;Girly 5.3. 24;Paars;Kinderfietsen ;Meisjes;0;2021;Nieuw;Nee;34;0;529;
-13842;Voorraad;Victoria;Rad Pro 7.7 26;ZwartGroen;Kinderfietsen ;Jongens;0;2021;Nieuw;Nee;0;0;629;
-13944;Voorraad;Merida;Big Nine 80 BlueBlack;Blauw;Mountainbikes ;Uni;0;2022;Nieuw;Nee;0 M;0;1099;WC1494440S
-14078;Voorraad;BFK;Flower fun. 16;Blauw;Kinderfietsen ;Meisjes;0;2022;Nieuw;Nee;0;0;249;
-14088;Voorraad;Gazelle;Ultimate T10 HMB;Grijs;Stadsfietsen (elo);Dames;28;2022;Nieuw;Nee;57;10;3699;GZ61820003
-14130;Voorraad;Dutch ID;Phantom 65 TR belt auto D58 500Wh;Zwart;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;58 M;0;4699;MMD2109841
-14250;Voorraad;Merida;SPEEDER 200;Rood;Stadsfietsen ;Heren;0;2022;Nieuw;Nee;52 S-M;0;1049;WC8310501S
-14252;Voorraad;Merida;SPEEDER 300;Grijs;Stadsfietsen ;Heren;0;2021;Nieuw;Nee;56 L;0;1149;WC8311797S
-14270;Voorraad;BFK;Flower fun 12;Groen;Kinderfietsen ;Mixed;0;2022;Nieuw;Nee;0 12;0;249;
-14334;Voorraad;Merida;E-Spresso City 400 ;Silk Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;49 M;9;3899;WC8323166S
-14336;Voorraad;Merida;E-Spresso City 400 ;Silk Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;49 M;9;3899;WC8322727S
-14425;Voorraad;Merida;SILEX 4000;Rood;Racefietsen ;Uni;0;2022;Nieuw;Nee; M;0;2499;WC8143381R
-14443;Voorraad;Gazelle;Grenoble C5 HMB. Riem 400 wh;Zwart;Stadsfietsen (elo);Heren;28;2021;Nieuw;Nee;53;5;3599;GZ61867417
-14566;Voorraad;Gazelle;Esprit T7;Jeans;Stadsfietsen ;Heren;28;2021;Nieuw;Nee;54;7;749;GZ12776350
-14582;Voorraad;Merida;E-spresso 800 Di2 504 wh;Grijs;Stadsfietsen (elo);Dames;0;2020;Nieuw;Nee;0;0;0,01;WC8022655R
-14592;Voorraad;Gazelle;Vento C7;Grijs;Stadsfietsen ;Dames;0;2022;Nieuw;Nee;57;7;799;GZ12767762
-14602;Voorraad;Bike Fun;You go girl 22 ;Blauw;Kinderfietsen ;Meisjes;0;2022;Nieuw;Nee;0;0;439;BF2211758
-14611;Voorraad;Bike Fun;You go girl 20 ;Blauw;Kinderfietsen ;Meisjes;0;2022;Nieuw;Nee;0;0;439;BF2211474
-14615;Voorraad;Bike Fun;You go girl 26 ;Geel;Kinderfietsen ;Meisjes;0;2022;Nieuw;Nee;0;0;459;BF2212343
-14621;Voorraad;Merida;E-one sixty 700;Zilver;Mountainbikes (elo);Uni;0;2022;Nieuw;Nee; L;0;6799;WC010005266T
-14645;Voorraad;Victoria;Trekking 1.1;Zwart;Stadsfietsen ;Dames;0;2022;Nieuw;Nee;50;0;599;
-14647;Voorraad;Victoria;E-touring 7.5 418 WH;Grijs;Stadsfietsen (elo);Heren;0;2021;Nieuw;Nee;55;0;2599;VCR21000007300
-14688;Voorraad;Gazelle;Ultimate T10 HMB;Grijs;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;53;10;3699;GZ61851187
-14704;Voorraad;BFK;Flower fun. 16;Roze;Kinderfietsen ;Meisjes;0;2022;Nieuw;Nee;0;0;249;
-14738;Voorraad;Dutch ID;Phantom2 85 TR belt auto D53 630Wh;Zwart;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;53 M;0;5299;MMD2203140
-14812;Voorraad;Dutch ID;Phantom2 75 TR belt auto D53 500Wh;Zwart;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;53 M;0;4699;MMD2203186
-14828;Voorraad;BFK;Flower fun. 18;Groen;Kinderfietsen ;Meisjes;0;2021;Nieuw;Nee;0 18;0;269;
-14832;Voorraad;Merida;E-SILEX+ 600;Oranje;Racefietsen (elo);Heren;27,5;2022;Nieuw;Nee;53 L;11;3899;WC030000502T
-14834;Voorraad;Merida;Matts J.24+;Geel;Mountainbikes ;Jongens;24;2022;Nieuw;Nee;0 11;8;699;WC040008473T
-14960;Voorraad;Gazelle;Ultimate C380 HMB riem 500 Wh 75 Nm;Blauw;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;57;0;4299;GZ61992648
-14962;Voorraad;Gazelle;Ultimate C380 HMB riem 500 Wh 75 Nm;Blauw;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;53;0;4299;GZ61992620
-14986;Voorraad;Victoria;Trekking 4.7;Supersonic Silver  Black;Hybride fietsen ;Dames;28;2022;Nieuw;Nee;45;18;849;
-14996;Voorraad;Gazelle;Esprit T7;Zwart;Stadsfietsen ;Dames;0;2022;Nieuw;Nee;46;0;749;GZ12829261
-14998;Voorraad;Gazelle;Ultimate C380 HMB riem 625 Wh 75 Nm;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53;0;4499;GZ62002118
-15014;Voorraad;Rebel;Loopfiets;Oranje;Kinderfietsen ;Uni;0;2022;Nieuw;Nee;0;0;100;
-15018;Voorraad;Gazelle;Ultimate C380 HMB riem 500 Wh 75 Nm;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;57;0;4299;GZ62002114
-15020;Voorraad;Gazelle;Ultimate C380 HMB riem 500 Wh 75 Nm;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53;0;4299;GZ62016011
-15030;Voorraad;Victoria;AVYON 5 perf 750 wh Enviolo riem;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 M;0;4899;VE22080083
-15034;Voorraad;Gazelle;Vento C7;Blauw;Stadsfietsen ;Dames;0;2023;Nieuw;Nee;53;7;799;12829780
-15038;Voorraad;Gazelle;Ultimate c5 HMB 75 NM 500 Wh;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53;0;3999;GZ62001808
-15044;Voorraad;Gazelle;Avignon C380 HMB 625 Wh;Groen;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53;0;4499;GE62023813
-15046;Voorraad;Gazelle;Chamonix C5 HMS. 630 Wh;Wit;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53;0;3799;GZ61998899
-15072;Voorraad;Gazelle;Ultimate C8+ HMB Belt 500 Wh;Grijs;Stadsfietsen (elo);Heren;0;2022;Nieuw;Nee;53;8;3699;GZ62008144
-15074;Voorraad;Gazelle;Ultimate c8+ riem;Grijs;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;53;0;3699;GZ61995683
-15076;Voorraad;Gazelle;Ultimate c5 HMB 75 NM 500 Wh;Blauw;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;53;0;3999;GZ62021503
-15078;Voorraad;Gazelle;Ultimate c5 HMB 75 NM 500 Wh;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;57;0;3999;GZ62021537
-15080;Voorraad;Gazelle;Grenoble C5 HMB. Riem 500 wh;Zwart;Stadsfietsen (elo);Heren;28;2023;Nieuw;Nee;57;5;3799;G62030806
-15086;Voorraad;Gazelle;Avignon C380 HMB 625 Wh;Groen;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;57;0;4499;GZ62030125
-15142;Voorraad;Gazelle;Grenoble C5 HMB. Riem 500 wh test;Blauw;Stadsfietsen (elo);Dames;28;2023;Nieuw;Nee;53;5;3799;GZ62033829
-15144;Voorraad;Gazelle;Ultimate C380 HMB riem 625 Wh 75 Nm;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53;0;4499;GZ62023402
-;;;;;;;;;;;;Totaal;309625,01;
+﻿FietsNr;Voorraad;Merk;Type;Kleur;Cat.;Frame;Wielmaat;Jaar;Status;Demo;Maat;Versnellingen;Prijs
+10130;Voorraad;Kokua;Loopfiets;oranje;Kinderfietsen ;Uni;12;2019;Nieuw;Nee; ;0;219
+10146;Voorraad;Merida;MATTS J.20+;Metallic Orange;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;"25 10&quot;";7;679
+10152;Voorraad;Merida;E-Spresso CITY 800 EQ;Glossy Dark Blue;Stadsfietsen (elo);Uni;28;2021;Nieuw;Nee;43 S;5;4999
+10154;Voorraad;Merida;E-Spresso CITY 800 EQ;Glossy Dark Blue;Stadsfietsen (elo);Uni;28;2021;Nieuw;Nee;43 ;5;4999
+10160;Voorraad;Merida;E-Spresso CITY 800 EQ;Glossy Dark Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;53 L;5;4999
+10216;Voorraad;Merida;ONE-TWENTY 700;Glossy Metallic Merida Green;Mountainbikes ;Heren;29;2021;Nieuw;Nee;44 M;12;3599
+10218;Voorraad;Merida;Big Nine 700;Groen;Mountainbikes ;Uni;29;2021;Nieuw;Nee; L;24;2199
+10248;Voorraad;Merida;MATTS J.20+;Glossy Light Blue;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;"25 10&quot;";7;679
+10250;Voorraad;Merida;Matts J.20+;Glossy Light Blue;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25 ;7;679
+10252;Voorraad;Merida;Matts J.20+;Glossy Light Blue;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25 ;7;679
+10256;Voorraad;Merida;Matts J.20+;Metallic Orange;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25 ;7;679
+10258;Voorraad;Merida;Matts J.20+;Metallic Orange;Kinderfietsen ;Uni;20;2021;Nieuw;Nee;25 ;7;679
+10302;Voorraad;Merida;Big Nine Xt;Zwart;Mountainbikes ;Heren;29;2021;Nieuw;Nee;43 ;12;3199
+10948;Voorraad;Victoria;Trekking 4.7;supersonic silver  black;Hybride fietsen ;Heren;28;2021;Nieuw;Nee;56 56 cm;18;849
+11284;Voorraad;Merida;Big Nine 200;Blauw;Mountainbikes ;Heren;0;2021;Nieuw;Nee; L;0;999
+11288;Voorraad;Merida;Matts J 20+;Paars;Kinderfietsen ;Jongens;0;2021;Nieuw;Nee;0 ;0;679
+11312;Voorraad;Merida;Big Nine Limited;Zwart;Mountainbikes ;Heren;0;2021;Nieuw;Nee;0 S;0;1499
+11314;Voorraad;Merida;SILEX 4000;Rood;Racefietsen ;Heren;0;2021;Nieuw;Nee;53 L;0;2499
+11328;Voorraad;Merida;Big Nine XT;Rood;Mountainbikes ;Heren;0;2021;Nieuw;Nee;0 L;0;3199
+11338;Voorraad;Merida;Scultura 300;Zwart;Racefietsen ;Heren;0;2022;Nieuw;Nee;53 L;0;1499
+11462;Voorraad;Merida;E-spresso Urban 300 EQ;Rood;Hybride fietsen (elo);Dames;0;2022;Nieuw;Nee;48 M;0;3599
+11464;Voorraad;Merida;SPEEDER 400;Paars;Stadsfietsen ;Heren;0;2022;Nieuw;Nee;52 S-M;0;1349
+11470;Voorraad;Merida;E-Spresso Urban 100 EQ;Grijs;Hybride fietsen (elo);Dames;0;2022;Nieuw;Nee;48 M;0;2999
+11498;Voorraad;Merida;E-one sixty 700;Zilver;Mountainbikes (elo);Uni;0;2022;Nieuw;Nee; L;0;6799
+11520;Voorraad;Gazelle;Ultimate C8+ HMB Belt;Rood;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;53 ;8;3699
+11578;Voorraad;Merida;E-big nine 400 EQ;Grijs;Mountainbikes (elo);Heren;0;2021;Nieuw;Nee;48 L;0;4399
+11590;Voorraad;Merida;Matts J.24+;Rood;Mountainbikes ;Jongens;0;2021;Nieuw;Nee;0 11;0;699
+11592;Voorraad;Merida;MATTS J.20+;Paars;Mountainbikes ;Jongens;0;2022;Nieuw;Nee;0 10;0;679
+11753;Voorraad;Merida;SILEX 400;Zwart;Racefietsen ;Heren;0;2022;Nieuw;Nee;53 L;0;1799
+11802;Voorraad;Merida;BIG NINE 60;Rood;Mountainbikes ;Uni;0;2022;Nieuw;Nee; S;0;929
+11824;Voorraad;Merida;E-Spresso EP8 City;Rood;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;48 M;0;4999
+11826;Voorraad;Merida;E-Spresso EP8 City;Rood;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;48 M;0;4999
+11840;Voorraad;Merida;E-Spresso EP8 City;Rood;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 S;0;4999
+11860;Voorraad;Merida;E-Spresso 700 EQ City;Blauw;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 M;0;4699
+11864;Voorraad;Merida;E-Spresso 500 EQ;Zwart;Racefietsen (elo);Dames;0;2022;Nieuw;Nee;0 L;0;4299
+11866;Voorraad;Merida;E-Spresso 500 EQ City;Zwart;Racefietsen (elo);Dames;0;2022;Nieuw;Nee;0 L;0;4299
+11868;Voorraad;Merida;E-Spresso 500 EQ City;Zwart;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 M;0;4299
+11872;Voorraad;Merida;E-Spresso 700 EQ City;Blauw;Stadsfietsen (elo);Dames;0;2022;Nieuw;Nee;0 L;0;4699
+12134;Voorraad;Merida;Matts J20.+ Blauw;Blauw;Kinderfietsen ;Jongens;0;2022;Nieuw;Nee;0 20;0;679
+12136;Voorraad;Merida;Matts J20.+ Paars;Paars;Kinderfietsen ;Uni;0;2022;Nieuw;Nee;0 ;0;679
+12716;Voorraad;Merida;REACTO 9000-E;Zwart;Racefietsen ;Heren;0;2020;Nieuw;Nee;0 S-M;0;9999
+12745;Voorraad;Merida;E-Spresso City 400 ;Silk Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;49 M;9;3899
+13050;Voorraad;O2Feel;Iswan City boost 7.1 540 Wh;Grijs;Stadsfietsen (elo);Dames;0;2021;Nieuw;Nee;50 ;0;3699
+13210;Voorraad;O2Feel;Vern Urban power 9.1 720 Wh;Zwart;Stadsfietsen (elo);Uni;0;2021;Nieuw;Nee;52 M;0;4499
+13422;Voorraad;BFK;"Lots of love 20&quot;";Wit;Kinderfietsen ;Meisjes;0;2021;Nieuw;Nee;0 ;0;355
+13512;Voorraad;BFK;"Flower fun 12&quot;";Blauw;Kinderfietsen ;Mixed;0;2022;Nieuw;Nee;"0 12&quot;";0;249
+13526;Voorraad;Merida;SCULTURA ENDURANCE 6000 DI2;Rood;Racefietsen ;Heren;0;2022;Nieuw;Nee;0 L;0;3499
+13530;Voorraad;Merida;Reacto 6000 Di2;Rood;Racefietsen ;Heren;0;2023;Nieuw;Nee;0 M;0;3599
+13586;Voorraad;Merida;E-speeder 400;Groen;Hybride fietsen (elo);Heren;0;2021;Nieuw;Nee; M;0;3399
+13802;Voorraad;Merida;SPEEDER 200 ;Zwart;Racefietsen ;Heren;0;2022;Nieuw;Nee;54 ;0;1049
+13807;Voorraad;Gazelle;Ultimate T10;Grijs;Stadsfietsen (elo);Dames;28;0;Gebruikt;Nee;0 ;10;0
+14250;Voorraad;Merida;SPEEDER 200;Rood;Stadsfietsen ;Heren;0;2022;Nieuw;Nee;52 S-M;0;1049
+14252;Voorraad;Merida;SPEEDER 300;Grijs;Stadsfietsen ;Heren;0;2021;Nieuw;Nee;56 L;0;1149
+14256;Voorraad;Merida;Silex + Limited;Groen;Racefietsen ;Uni;0;2022;Nieuw;Nee;0 M;0;4099
+14334;Voorraad;Merida;E-Spresso City 400 ;Silk Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;49 M;9;3899
+14336;Voorraad;Merida;E-Spresso City 400 ;Silk Blue;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;49 M;9;3899
+14582;Voorraad;Merida;E-spresso 800 Di2 504 wh;Grijs;Stadsfietsen (elo);Dames;0;2020;Nieuw;Nee;0 ;0;0
+14592;Voorraad;Gazelle;Vento C7;Grijs;Stadsfietsen ;Dames;0;2022;Nieuw;Nee;57 ;7;849
+14611;Voorraad;Bike Fun;"You go girl 20&quot; ";Blauw;Kinderfietsen ;Meisjes;0;2022;Nieuw;Nee;0 ;0;439
+14621;Voorraad;Merida;E-one sixty 700;Zilver;Mountainbikes (elo);Uni;0;2022;Nieuw;Nee; L;0;6799
+14645;Voorraad;Victoria;Trekking 1.1;Zwart;Stadsfietsen ;Dames;0;2022;Nieuw;Nee;50 ;0;599
+14828;Voorraad;BFK;"Flower fun. 18&quot;";Groen;Kinderfietsen ;Meisjes;0;2021;Nieuw;Nee;"0 18&quot;";0;269
+14834;Voorraad;Merida;Matts J.24+;Geel;Mountainbikes ;Jongens;24;2022;Nieuw;Nee;0 11;8;699
+14922;Voorraad;MERIDA;SCULTURA ENDURANCE RIVAL-EDITION;Glossy Gunmetal Grey;Racefietsen ;Uni;28;2023;Nieuw;Nee;53 M;24;4199
+14960;Voorraad;Gazelle;Ultimate C380 HMB riem 500 Wh 75 Nm;Blauw;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;57 ;0;4299
+15014;Voorraad;Rebel;Loopfiets;Oranje;Kinderfietsen ;Uni;0;2022;Nieuw;Nee;0 ;0;119,95
+15038;Voorraad;Gazelle;Ultimate c5 HMB 75 NM 500 Wh;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53 ;0;3999
+15046;Voorraad;Gazelle;Chamonix C5 HMS. 630 Wh;Wit;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53 ;0;3799
+15076;Voorraad;Gazelle;Ultimate c5 HMB 75 NM 500 Wh;Blauw;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;53 ;0;3999
+15078;Voorraad;Gazelle;Ultimate c5 HMB 75 NM 500 Wh;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;57 ;0;3999
+15080;Voorraad;Gazelle;Grenoble C5 HMB. Riem 500 wh;Zwart;Stadsfietsen (elo);Heren;28;2023;Nieuw;Nee;57 ;5;3799
+15142;Voorraad;Gazelle;Grenoble C5 HMB. Riem 500 wh test;Blauw;Stadsfietsen (elo);Dames;28;2023;Nieuw;Nee;53 ;5;3799
+15218;Voorraad;VICTORIA;Rad E-Trekk. 6.3  2853. 300 Wh;Magma Red Mattzilver;Crosshybrides (elo);Uni;28;2022;Nieuw;Nee;53 53 cm;9;2599
+15283;Voorraad;Gazelle;Ultimate C380 HMB speed 500Wh;Grijs;Stadsfietsen (elo);Heren;28;2022;Nieuw;Nee;53 ;0;4899
+15293;Voorraad;BIKEFUN;Flower Fun 16;Roze;Kinderfietsen ;Meisje;16;2022;Nieuw;Nee;0 ;;259
+15314;Voorraad;Gazelle;Esprit C7 HMS 400 Wh;Zwart;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 ;0;2399
+15316;Voorraad;Gazelle;Esprit C7 HMS 400 Wh;Zwart;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 ;0;2399
+15320;Voorraad;Gazelle;Grenoble C7+ HMB. 500 Wh;Grijs Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53 ;0;3299
+15335;Voorraad;Granville;E-urban 25 Wave. 400 Wh;Grijs;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;0 M;0;2499
+15339;Voorraad;Granville;E-Integrated 20 Wave. 500 Wh Active +;Grijs;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 M;0;2899
+15396;Voorraad;Klever;N Rouge Pinion 1200 Wh;Blauw;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;0 M;0;6599
+15398;Voorraad;Klever;N Rouge Pinion 1200 Wh;Grijs;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;0 M;0;6599
+15404;Voorraad;Gazelle;Esprit C7 HMS 400 Wh;Groen;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 ;0;2399
+15406;Voorraad;Gazelle;Esprit C7 HMS 400 Wh;Groen;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 ;0;2399
+15408;Voorraad;Gazelle;Esprit C7 HMS 400 Wh;Zwart;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 M;0;2399
+15422;Voorraad;Klever;N Rouge Pinion 1200 Wh;Blauw;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;0 M;0;6599
+15436;Voorraad;O2Feel;EQUO CARGO POWER 7.1 riem 720Wh;Zwart;Bakfietsen (elo);Uni;0;2021;Nieuw;Nee;0 ;0;5299
+15438;Voorraad;Granville;E-urban 25 Wave. 400 Wh;Grijs;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 M;0;2499
+15440;Voorraad;Granville;E-urban 25 Wave. 400 Wh;Grijs;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 L;0;2499
+15442;Voorraad;Granville;E-urban 15 Wave. 500 Wh;Grijs;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;0 L;0;2699
+15480;Voorraad;BIKEFUN;Flower Fun 24;Geel;Kinderfietsen ;Meisje;24;2023;Nieuw;Nee;0 ;;459
+15484;Voorraad;Gazelle;Ultimate C8+ HMB Belt test;Blauw;Stadsfietsen (elo);Dames;28;2021;Nieuw;Nee;53 ;8;3699
+15516;Voorraad;Granville;GRV E-Urban 30 Man Black M 40 Nm 400Wh;Black;Stadsfietsen (elo);Uni;0;2022;Nieuw;Nee;0 ;;2199
+15520;Voorraad;Gazelle;Esprit T7;Zwart;Stadsfietsen ;Heren;28;2022;Nieuw;Nee;54 ;7;799
+15526;Voorraad;Gazelle;Esprit T7;Jeans;Stadsfietsen ;Heren;28;2021;Nieuw;Nee;59 ;7;799
+15530;Voorraad;Gazelle;Esprit C7 HMS 400 Wh;Groen;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;0 ;0;2399
+15540;Voorraad;MERIDA;SILEX+;Transparant Green Grey;Racefietsen ;Uni;28;2023;Nieuw;Nee;50 M;12;4099
+15556;Voorraad;Granville;GRV Traffic 21 Vrouw L;Zwart;Stadsfietsen ;Dames;28;2022;Nieuw;Nee;0 ;21;839
+15560;Voorraad;Gazelle;Ultimate C380 HMB riem 500 Wh 75 Nm;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53 ;0;4299
+15562;Voorraad;Gazelle;Ultimate C380 HMB riem 500 Wh 75 Nm;Blauw;Stadsfietsen (elo);Dames;0;2023;Nieuw;Nee;53 ;0;4299
+15564;Voorraad;Gazelle;Ultimate C8+ HMB Belt. 500 Wh;Grijs;Stadsfietsen (elo);Dames;28;2023;Nieuw;Nee;46 ;8;3699
+15598;Voorraad;Granville;GRV Traffic 21 Vrouw M;Zwart;Stadsfietsen ;Dames;28;2022;Nieuw;Nee;0 M;21;839
+15600;Voorraad;Granville;GRV Traffic 21 Vrouw M;Zwart;Stadsfietsen ;Dames;28;2022;Nieuw;Nee;0 M;21;839
+15602;Voorraad;Granville;GRV Traffic 21 Man M;Zwart;Stadsfietsen ;Heren;28;2022;Nieuw;Nee;0 M;21;839
+15604;Voorraad;Granville;GRV Traffic 21 Man L;Zwart;Stadsfietsen ;Heren;28;2022;Nieuw;Nee;0 L;21;839
+15606;Voorraad;Granville;E-urban 15  500 Wh;Grijs;Stadsfietsen (elo);Heren;0;2023;Nieuw;Nee;0 L;0;2699
+;;;;;;;;;;;;Totaal;290002,96

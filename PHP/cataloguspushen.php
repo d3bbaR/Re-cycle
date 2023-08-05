@@ -24,12 +24,9 @@ while ($rows > $counter) {
     $maat = mysqli_real_escape_string($conn, $_POST['Maat_' . $counter]);
     $versnellingen = mysqli_real_escape_string($conn, $_POST['Versnellingen_' . $counter]);
     $prijs = mysqli_real_escape_string($conn, $_POST['Prijs_' . $counter]);
-    $framenr = mysqli_real_escape_string($conn, $_POST['Framenr_' . $counter]);
+
     $foto = "";
-    if ($framenr == "") {
-        $framenr = 0;
-    } else {
-    }
+
     $pkselect = "SELECT FietsNr FROM catalogus";
     foreach (query($pkselect) as $PK) {
         if ($PK["FietsNr"] != $fietsnr) {
@@ -46,13 +43,14 @@ while ($rows > $counter) {
 
     if (empty($ans) == true) {
         $insert = "INSERT into catalogus (FietsNr, Voorraad, Merk, Type, Kleur, Cat, Frame, Wielmaat, Jaar, Status, Demo, Maat, Versnellingen, Prijs, 
-        Framenr,foto)values ($fietsnr,$hvl,'$merk','$type','$kleur','$cat','$frame',$wielmaat,$jaar,'$status','$demo','$maat',$versnellingen,$prijs,'$framenr','assets/im1-min.png')";
+        Framenr,foto)values ($fietsnr,$hvl,'$merk','$type','$kleur','$cat','$frame',$wielmaat,$jaar,'$status','$demo','$maat',$versnellingen,$prijs,'assets/im1-min.png')";
         echo $insert;
         $result = mysqli_query($conn, $insert);
     } else {
         $upd = "UPDATE catalogus SET Voorraad =$hvl,Merk ='$merk',Type = '$type',Kleur ='$kleur' ,Cat='$cat' ,Frame='$frame' 
-        ,Wielmaat=$wielmaat ,Jaar=$jaar,Status='$status' ,Demo='$demo' ,Maat='$maat' ,Versnellingen=$versnellingen ,Prijs= $prijs,Framenr= '$framenr'
+        ,Wielmaat=$wielmaat ,Jaar=$jaar,Status='$status' ,Demo='$demo' ,Maat='$maat' ,Versnellingen=$versnellingen ,Prijs= $prijs
         where FietsNr = $fietsnr";
+        echo print_r($upd) . "<br>";
         $result = mysqli_query($conn, $upd);
 
     }

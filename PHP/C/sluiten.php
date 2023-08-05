@@ -32,5 +32,5 @@ foreach (query($fk_uren) as $res) {
 }
 
 echo $uur . " " . $datum;
-//go("R", "afspraken");
+go("R", "afspraken");
 ?>

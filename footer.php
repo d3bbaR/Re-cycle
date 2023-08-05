@@ -1,4 +1,32 @@
 <footer class="footer" id="footer">
+    <?php
+    $month = date("n");
+    if ($month < 5 or $month > 9) {
+        $urenarray = array(
+            "Monday" => "13:00 - 19:00",
+            "Tuesday" => "10:00 - 19:00",
+            "Wednesday" => "10:00 - 19:00",
+            "Thursday" => "Gesloten",
+            "Friday" => "10:00 - 19:00",
+            "Saturday" => "9:00 - 17:00",
+            "Sunday" => "9:00 - 13:00",
+            "Feestdag" => "9:00 - 13:00",
+        );
+    } else {
+        $urenarray = array(
+            "Monday" => "13:00 - 20:00",
+            "Tuesday" => "10:00 - 20:00",
+            "Wednesday" => "10:00 - 20:00",
+            "Thursday" => "Gesloten",
+            "Friday" => "10:00 - 20:00",
+            "Saturday" => "9:00 - 17:00",
+            "Sunday" => "9:00 - 13:00",
+            "Feestdag" => "9:00 - 13:00",
+        );
+
+    }
+
+    ?>
     <div class="containerf">
         <div class="row1">
             <div class="footer-col">
@@ -24,16 +52,33 @@
 
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-col" id="openingsuren">
                 <h4>Openingsuren</h4>
                 <ul>
-                    <li><a href="">Maandag: 13 tot 19 u*</a></li>
-                    <li><a href="">Dinsdag: 10 tot 19u*</a></li>
-                    <li><a href="">Woensdag: 10 tot 19 u*</a></li>
-                    <li><a href="">Donderdag: Gesloten</a></li>
-                    <li><a href="">Vrijdag: 10 tot 19 u*</a></li>
-                    <li><a href="">Zaterdag: 9 tot 17 u</a></li>
-                    <li><a href="">Zondag: 9 tot 13 u</a></li>
+                    <li><a href="">Maandag:
+                            <?php echo $urenarray["Monday"] ?>
+                        </a></li>
+                    <li><a href="">Dinsdag:
+                            <?php echo $urenarray["Tuesday"] ?>
+                        </a></li>
+                    <li><a href="">Woensdag:
+                            <?php echo $urenarray["Wednesday"] ?>
+                        </a></li>
+                    <li><a href="">Donderdag:
+                            <?php echo $urenarray["Thursday"] ?>
+                        </a></li>
+                    <li><a href="">Vrijdag:
+                            <?php echo $urenarray["Friday"] ?>
+                        </a></li>
+                    <li><a href="">Zaterdag:
+                            <?php echo $urenarray["Saturday"] ?>
+                        </a></li>
+                    <li><a href="">Zondag:
+                            <?php echo $urenarray["Sunday"] ?>
+                        </a></li>
+                    <li><a href="">Feestdagen :
+                            <?php echo $urenarray["Feestdag"] ?>
+                        </a></li>
                 </ul>
             </div>
             <div class="footer-col">

@@ -50,6 +50,7 @@ $footer_sort = "SELECT * FROM footer ORDER BY PK ";
 
 $tekst = "SELECT * from  tekst";
 $teskt_sort = "SELECT * from  tekst ORDER BY PK";
+$tekst_pk = "SELECT tekst from tekst where PK =  ";
 
 $rol = "SELECT * from rol";
 $rol_sort = "SELECT * from rol ORDER BY PK";
@@ -68,7 +69,7 @@ resuren.PK,uren.uren ,  dagen.dagen,  resuren.bezet , resuren.FK_geg from resure
 uren on resuren.FK_uren = uren.PK left join dagen on resuren.FK_dagen = dagen.PK left join gegevens on 
 gegevens.PK = resuren.FK_geg where bezet =1 and FK_geg !=0 order by resuren.PK";
 
-$selector2 = "SELECT gegevens.naam,gegevens.email, gegevens.gekeurd, gegevens.telefoon, gegevens.type, 
+$selector2 = "SELECT gegevens.naam,gegevens.email, gegevens.gekeurd,gegevens.tekst, gegevens.telefoon, gegevens.type, 
 resuren.PK,uren.uren ,  dagen.dagen,  resuren.bezet , resuren.FK_geg from resuren left join 
 uren on resuren.FK_uren = uren.PK left join dagen on resuren.FK_dagen = dagen.PK left join gegevens on 
 gegevens.PK = resuren.FK_geg where bezet =1 and FK_geg !=0 ";
@@ -76,3 +77,6 @@ gegevens.PK = resuren.FK_geg where bezet =1 and FK_geg !=0 ";
 $bezet = "SELECT resuren.bezet ,resuren.PK,uren.uren,dagen.dagen  from resuren left join uren on uren.PK = FK_uren 
 left join dagen on dagen.PK = resuren.FK_uren where bezet = 1";
 // moet manueel worden toegevoegd and FK_dagen = 4";
+
+$verlof = "SELECT * from verlof ";
+$verlof_pk = "SELECT tekst from verlof where PK = 1";
