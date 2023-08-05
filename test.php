@@ -435,6 +435,7 @@ function ladenklant($maand)
 
             array_push($array, $bezet["uren"]);
         }
+        echo print_r($array);
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
                 echo "<label class='uren'> We zijn vandaag gesloten </label>";
@@ -443,8 +444,8 @@ function ladenklant($maand)
 
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
-                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                                <input type='radio' onclick='modalappear(1)'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
@@ -469,8 +470,8 @@ function ladenklant($maand)
             }
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
-                    echo "<label class='gesl' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
-                                <input type='radio'   class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                    echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
+                    <input type='radio' onclick='modalappear2(2)'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
 
                     if ($counter >= $p) {
