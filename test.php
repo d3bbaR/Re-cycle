@@ -129,13 +129,14 @@ function ladenuurvandag()
 {
     $array = array();
     $uren = "SELECT * FROM uren";
-    $waardedag = $_COOKIE["Dag"];
+    $waardedag = $_COOKIE["dagwaarde"];
     $p = uren($waardedag);
     $counter = 0;
-    $month = date('m', strtotime($waardedag));
-    $day = date('d', strtotime($waardedag));
-    $fk_dagen = "SELECT PK from dagen where dagen = '" . $waardedag . "'";
-
+    $check = day($waardedag);
+    $day = dag($waardedag);
+    $month = month($waardedag);
+    $fk_dagen = "SELECT PK from dagen where dagen = '" . $check . "'";
+    echo print_r($fk_dagen);
     foreach (query($fk_dagen) as $key) {
         //destroycookie();
         $bezet = "SELECT uren.uren  from resuren left join uren on uren.PK = FK_uren 
@@ -211,8 +212,6 @@ function ladenuurvandag()
 
 function uren($dat)
 {
-
-    $date = date('l', strtotime($dat));
     $p = 0;
     $translate = array(
         "Monday" => "Maandag",
@@ -236,36 +235,44 @@ function uren($dat)
         "December" => "December",
 
     );
+    $vandaag = date("Y-m-d");
+    $vandaag = date_create(strval($vandaag));
+    if ($dat < 0) {
+    } else {
+        if ($dat == 0) {
+            $vand = date('l');
+        } else {
+            $res = date_add($vandaag, date_interval_create_from_date_string($dat . "days"));
+            $vand = $res->format('l');
+        }
 
+        switch ($translate[$vand]) {
+            case 'Maandag':
+                $p = 8;
+                break;
+            case 'Dinsdag':
+                $p = 2;
+                break;
+            case 'Woensdag':
+                $p = 2;
+                break;
+            case 'Donderdag':
+                $p = 100;
+                break;
+            case 'Vrijdag':
+                $p = 2;
+                break;
+            case 'Zaterdag':
+                $p = 0;
+                break;
+            case 'Zondag':
+                $p = 0;
+                break;
+        }
+        return $p;
 
-    switch ($translate[$date]) {
-        case 'Maandag':
-            $p = 8;
-            break;
-        case 'Dinsdag':
-            $p = 2;
-            break;
-        case 'Woensdag':
-            $p = 2;
-            break;
-        case 'Donderdag':
-            $p = 100;
-            break;
-        case 'Vrijdag':
-            $p = 2;
-            break;
-        case 'Zaterdag':
-            $p = 0;
-            break;
-        case 'Zondag':
-            $p = 0;
-            break;
     }
-
-    return $p;
-
 }
-
 
 function day($data)
 {
@@ -282,7 +289,6 @@ function day($data)
             $check = date_format($res, 'Y-m-d');
         }
     }
-
     return $check;
 }
 function month($geg)
@@ -319,7 +325,6 @@ function maand($geg)
 }
 function dag($gegeven)
 {
-    echo $gegeven;
     $trans = array(
         "01" => "1",
         "02" => "2",
@@ -393,19 +398,17 @@ function ladenform()
         "December" => "December",
 
     );
-    //$day = dag($waardedag);
-    //$check = day($waardedag);
-    //$maand = maand($waardedag);
-    $waardedag = $_COOKIE["Dag"];
-    $month = date('m', strtotime($waardedag));
-    $day = date('d', strtotime($waardedag));
+    $waardedag = $_COOKIE["dagwaarde"];
+    $day = dag($waardedag);
+    $check = day($waardedag);
+    $maand = maand($waardedag);
     ?>
     <form action="PHP/C/afspraak.php" method="post" id='form1'>
         <?php
-        echo " <p id='label2'   >" . $day . " " . $month . "</p>" .
+        echo " <p id='label2'   >" . "</p>" .
             "<p id='label3'  >" . "</p>";
         echo "<label id='label'>nog geen uur geselecteerd</label>
-        <input type='hidden' name='dag' id='hidden2' value='" . $waardedag . "'>"; ?>
+        <input type='hidden' name='dag' id='hidden2' value='" . $check . "'>"; ?>
         <input type="hidden" name="uur" id="hidden" value="">
         <p></p>
         <label for="naam">Naam*:</label>
@@ -422,22 +425,26 @@ function ladenform()
             <option value="3">Gesprek aankoop fiets 45 minuten</option>
         </select>
         <button type="submit" class='inv' id='button' onclick="">Plaats afspraak</button>
+        <script>function form() {
+                let cookie = getCookie("dagwaarde"); console.log(cookie); console.log(document.getElementById(cookie)); let geselecteerde = document.getElementById(cookie); geselecteerde.setAttribute("class", "selected"); let maand = document.getElementById("maand").innerHTML; let dag = document.getElementsByClassName("selected"); dag = dag[0].innerHTML; console.log(maand + " " + dag); label2.innerHTML = dag; label3.innerHTML = maand;
+            } function getCookie(name) { const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift(); } form();</script>
 
-        <?php
+    </form>
+    <?php
 }
 function ladenklant($maand)
 {
 
     $array = array();
     $uren = "SELECT * FROM uren";
-    $waardedag = $_COOKIE["Dag"];
+    $waardedag = $_COOKIE["dagwaarde"];
     $p = uren($waardedag);
     $counter = 0;
-    $month = date('m', strtotime($waardedag));
-    $day = date('d', strtotime($waardedag));
-    $fk_dagen = "SELECT PK from dagen where dagen = '" . $waardedag . "'";
-
-
+    $check = day($waardedag);
+    $day = dag($waardedag);
+    $month = month($waardedag);
+    $fk_dagen = "SELECT PK from dagen where dagen = '" . $check . "'";
+    echo print_r($fk_dagen);
     foreach (query($fk_dagen) as $key) {
         //destroycookie();
         $geg = "SELECT gegevens.naam,gegevens.email,gegevens.telefoon from resuren 
@@ -511,34 +518,34 @@ function ladenklant($maand)
 
     }
     ?>
-        <script>function form() {
-                let cookie = getCookie("dagwaarde"); console.log(cookie); console.log(document.getElementById(cookie)); let geselecteerde = document.getElementById(cookie); geselecteerde.setAttribute("class", "selected"); let maand = document.getElementById("maand").innerHTML; let dag = document.getElementsByClassName("selected"); dag = dag[0].innerHTML; console.log(maand + " " + dag);
-            } function getCookie(name) { const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift(); } form();</script>
+    <script>function form() {
+            let cookie = getCookie("dagwaarde"); console.log(cookie); console.log(document.getElementById(cookie)); let geselecteerde = document.getElementById(cookie); geselecteerde.setAttribute("class", "selected"); let maand = document.getElementById("maand").innerHTML; let dag = document.getElementsByClassName("selected"); dag = dag[0].innerHTML; console.log(maand + " " + dag);
+        } function getCookie(name) { const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift(); } form();</script>
 
-        <?php
+    <?php
 }
 
 
 ?>
 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Document</title>
 
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        </div>
-        </div>
-        </div>
-    </body>
+    </div>
+    </div>
+    </div>
+</body>
 
-    </html>
+</html>
