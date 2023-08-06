@@ -70,12 +70,43 @@ $transarray = array(
                     $x = 0;
                     $y = 0;
                     $selector2 .= "and month(dagen.dagen) = " . $month;
-
+                    $waardedag = $_COOKIE["Dag"];
                     foreach (query($selector2) as $res) {
                         $data = $res["dagen"];
                         $vand = date("Y-m-d");
-                        echo $vand . " " . $data;
                         if ($data >= $vand) {
+                            if ($res["gekeurd"] == 1) {
+                                $y += 1;
+                                $datum = strval($res["dagen"]);
+                                $uur = $res["uren"];
+                                $str = date_create($datum);
+                                $res = date_format($str, "m");
+                                $res2 = date_format($str, "d");
+                                $dagid = $res2 - $dag;
+                                echo "<p class='inv'id ='dl" . $y . "'>" . $dagid . "</p>";
+                                echo "<p class='inv'id ='uurl" . $y . "'>" . $uur . "</p>";
+                            } else {
+                                $x += 1;
+                                $datum = strval($res["dagen"]);
+                                $uur = $res["uren"];
+                                $str = date_create($datum);
+                                $res = date_format($str, "m");
+                                $res2 = date_format($str, "d");
+                                $dagid = $res2 - $dag;
+                                echo "<p class='inv' id ='d" . $x . "'>" . $dagid . "</p>";
+                                echo "<p class='inv'id ='uur" . $x . "'>" . $uur . "</p>";
+
+                            }
+                        }
+
+                    }
+                    $x = 0;
+                    $y = 0;
+                    foreach (query($selector2) as $res) {
+                        $data = $res["dagen"];
+                        $vand = date("Y-m-d");
+
+                        if ($data == $waardedag) {
                             if ($res["gekeurd"] == 1) {
 
 
@@ -91,8 +122,7 @@ $transarray = array(
                                 $res = date_format($str, "m");
                                 $res2 = date_format($str, "d");
                                 $dagid = $res2 - $dag;
-                                echo "<p class='inv'id ='dl" . $y . "'>" . $dagid . "</p>";
-                                echo "<p class='inv'id ='uurl" . $y . "'>" . $uur . "</p>";
+
                             } else {
                                 $x += 1;
 
@@ -107,11 +137,11 @@ $transarray = array(
                                 $res = date_format($str, "m");
                                 $res2 = date_format($str, "d");
                                 $dagid = $res2 - $dag;
-                                echo "<p class='inv' id ='d" . $x . "'>" . $dagid . "</p>";
-                                echo "<p class='inv'id ='uur" . $x . "'>" . $uur . "</p>";
+
                             }
                         }
                     }
+
 
 
 
@@ -143,9 +173,9 @@ $transarray = array(
                         <label for="" onclick="nietsluitendag()">Niet sluiten</label>
                     </form>
 </body>
-<script src="../../js/file.js?3"></script>
+<script src="../../js/file.js?4"></script>
 
-<script src="../../js/afspraak.js?2"></script>
-<script src="../../js/agenda2.js?1"></script>
+<script src="../../js/afspraak.js?5"></script>
+<script src="../../js/agenda2.js?2"></script>
 
 </html>

@@ -94,10 +94,10 @@ function build_calendar($month, $year)
         //*
         if ($today) {
             $cd = 0;
-            $calendar .= "<td id=$cd class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
+            $calendar .= "<td id='0' class='dag'" . " onclick = 'ladenuren($cd)'>$currentDay</td>";
         } elseif ($date < date('Y-m-d')) {
             if ($dayOfWeek == 4) {
-                $calendar .= "<td  id =$cd class='dag'></td>";
+                $calendar .= "<td class='donderdag'>$currentDay</td>";
             } else {
                 $calendar .= "<td class ='gesl'>$currentDay";
             }
@@ -111,6 +111,7 @@ function build_calendar($month, $year)
         $currentDay++;
         $dayOfWeek++;
         $cd += 1;
+
 
     }
 
@@ -435,7 +436,7 @@ function ladenklant($maand)
 
             array_push($array, $bezet["uren"]);
         }
-        echo print_r($array);
+
         if ($month < 5 or $month > 9) {
             if ($p == 100) {
                 echo "<label class='uren'> We zijn vandaag gesloten </label>";
@@ -445,7 +446,7 @@ function ladenklant($maand)
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
                     echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
-                                <input type='radio' onclick='modalappear(1)'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                    <input type='radio' onclick='modalappear2(\"" . $dat['uren'] . "\")  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
                     if ($counter >= $p) {
 
@@ -471,7 +472,7 @@ function ladenklant($maand)
             foreach (query($uren) as $dat) {
                 if (in_array($dat["uren"], $array)) {
                     echo "<label class='groen' id='d" . $dat['uren'] . "' for='" . $dat['uren'] . "'>
-                    <input type='radio' onclick='modalappear2(2)'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
+                    <input type='radio' onclick='modalappear2(\"" . $dat['uren'] . "\")'  class='inv' name='uur'id = '" . $dat['uren'] . "' value ='" . $dat['uren'] . "'>" . $dat["uren"] . "</label>";
                 } else {
 
                     if ($counter >= $p) {

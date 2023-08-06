@@ -29,14 +29,14 @@ function gen(id) {
 function form() {
 
     let cookie = getCookie("dagwaarde");
-    console.log(cookie);
-    console.log(document.getElementById(cookie));
+
+
     let geselecteerde = document.getElementById(cookie);
     geselecteerde.setAttribute("class", "selected");
     let maand = document.getElementById("maand").innerHTML;
     let dag = document.getElementsByClassName("selected");
     dag = dag[0].innerHTML;
-    console.log(maand + " " + dag);
+
     label2.innerHTML = dag;
     label3.innerHTML = maand;
 
@@ -137,7 +137,7 @@ function sluitendag() {
 
     let day = document.getElementsByClassName("selected")[0].innerHTML;
     let year = document.getElementById("jaar").innerHTML;
-    console.log(year);
+
     button.value = year + "-" + res + "-" + day;
     button.innerHTML = "Sluit deze dag";
 
