@@ -19,22 +19,22 @@
 
     <script defer src="../../js/afspraak.js?v=2"></script>
     <script defer src="../../js/agenda2.js?1"></script>
-   
+
     <title>afspraken beheer </title>
 </head>
 <script>
     let main;
     $.post("vdg.php",
-    {
-        bezeting: 1
-    },
-    function (data) {
-        
-        console.log(data);
-document.getElementById("1").innerHTML = "BJORN";
+        {
+            bezeting: 1
+        },
+        function (data) {
 
-    });
-    </script>
+            console.log(data);
+            document.getElementById("1").innerHTML = "BJORN";
+
+        });
+</script>
 <?php include '../../nav-bar2.php'; ?>
 <?php if (isset($_COOKIE["dagwaarde"])) {
 
@@ -43,16 +43,20 @@ document.getElementById("1").innerHTML = "BJORN";
 }
 ?>
 <?php
-if (isset($_GET["mail"])  && $_GET["mail"]=="ok") {
+if (isset($_GET["mail"]) && $_GET["mail"] == "ok") {
     echo "<script>window.alert('U heeft deze afspraak goedgekeurd. ') </script>";
-$_GET["mail"] = "verstuurd";
-header("Location:afspraken.php");
+    $_GET["mail"] = "verstuurd";
+
+    //header("Location:afspraken.php");
 
 } ?>
 <?php
 if (isset($_GET["nomail"])) {
     echo "
 <script>window.alert('U heeft deze afspraak gewijgerd. ') </script>";
+    $_GET["nomail"] = "verstuurd";
+
+    //header("Location:afspraken.php");
 
 } ?>
 <?php
@@ -142,8 +146,8 @@ $transarray = array(
                     echo "<p class='inv' id='hoeveel'>" . $x . "</p>";
                     echo "<p class='inv' id='hoeveell'>" . $y . "</p>";
                     ?>
-  <input name="input" type="hidden" id="input">
-                  
+                    <input name="input" type="hidden" id="input">
+
                     <button name="button" id="button"></button>
                     <br>
                     <br>
