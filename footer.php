@@ -82,7 +82,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Van Mei t.e.m. September: tot 20 u</h4>
+                <h4>Mei t.e.m. September: tot 20 u</h4>
             </div>
         </div>
     </div>
