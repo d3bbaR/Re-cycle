@@ -13,7 +13,7 @@ $conn = mysqli_connect($server, $username, $password, $db);
 else {
     echo "Connection established";
 }
-*/
 
+*/
 
 ?>

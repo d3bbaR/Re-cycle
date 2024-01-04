@@ -16,8 +16,7 @@ $password1 = $_POST["password"];
 //variabelen opvangen
 $un = sha1($_POST["username"]);
 $pw = sha1($_POST["password"]);
-echo $un . "<br>" . $pw . "<br>";
-;
+
 foreach (query($account) as $user) {
     echo $user["username"] . "<br>";
     echo $user["pw"] . "<br><br>";

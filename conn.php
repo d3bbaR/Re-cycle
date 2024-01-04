@@ -1,9 +1,9 @@
 <?php
-include "R/iets.php";
+include "PHP/R/iets.php";
 $server = "minoffice.be";
-$username = "s.dhooghe";
+$username = "miniemen_baftech";
 $password = "$hallo";
-$db = "miniemen_simen";
+$db = "miniemen_baftech";
 $conn = mysqli_connect($server, $username, $password, $db);
 //echo "ik ben included";
 //check if connection is established

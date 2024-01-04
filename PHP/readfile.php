@@ -1,11 +1,12 @@
 <?php
-echo '<table border="1">';
 $start_row = 1;
 $counter = 0;
 $row = 0;
-echo "<form method = 'post' action = 'cataloguspushen.php'>";
-echo "<button type = 'submit'>add</button>";
-if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\fietsen.csv", "r")) !== FALSE) {
+
+echo "<br>";
+if (($csv_file = fopen("Uploads/fietsen.csv", "r")) !== FALSE) {
+    echo "<form method = 'post' action = 'cataloguspushen.php'>";
+    echo "<button type = 'submit'>add</button>";
     while (($read_data = fgetcsv($csv_file, 1000, ";")) !== FALSE) {
 
         $column_count = count($read_data);
@@ -60,12 +61,10 @@ if (($csv_file = fopen("C:\\xampp\htdocs\GitHub\Re-cycle\PHP\Uploads\\fietsen.cs
             }
             echo "<input type = 'text' value ='" . $read_data[$c] . "' name='" . $type . '_' . $row . "'>";
         }
-        echo '</tr>';
-
+       
     }
     fclose($csv_file);
 }
-echo '</table>';
-echo "<input name ='rows' type = 'hidden' value = '" . $row . "'>";
+echo "<input type = 'text' value = '" . $row ."' name ='rows' >";
 echo "</form>";
 ?>
